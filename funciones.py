@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt  
 import seaborn as sns 
 import pandas as pd
+import numpy as np
 
 def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None):
     if ax is None:
@@ -86,3 +87,19 @@ def plot_all(df, columna: str,
 
     plt.tight_layout()
     plt.show()
+
+# Graficar todas las variables numéricas como series de tiempo
+def plot_all_timeseries(df):
+    num_cols = df.select_dtypes(include=[np.number]).columns
+    if 'date_time' not in df.columns:
+        raise ValueError("El DataFrame debe tener una columna 'date_time'.")
+    fig, axs = plt.subplots(len(num_cols), 1, figsize=(12, 3*len(num_cols)), sharex=True)
+    if len(num_cols) == 1:
+        axs = [axs]
+    for i, col in enumerate(num_cols):
+        axs[i].plot(df['date_time'], df[col], label=col)
+        axs[i].set_ylabel(col)
+        axs[i].legend(loc='upper right')
+    plt.xlabel('date_time')
+    plt.show()
+
