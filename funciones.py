@@ -3,16 +3,29 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None):
+def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None,
+                  warning_min=None, warning_max=None, critical_min=None, critical_max=None):
     if ax is None:
         fig, ax = plt.subplots(figsize=(12, 6))
     d = df.copy()
     d['date_time'] = pd.to_datetime(d['date_time'], errors='coerce')
     ax.plot(d['date_time'], d[columna], color=color, marker=marker, markersize=3, linewidth=1)
+    # Líneas de límites si existen
+    if warning_min is not None:
+        ax.axhline(warning_min, color='orange', linestyle='--', label='Warning Min')
+    if warning_max is not None:
+        ax.axhline(warning_max, color='orange', linestyle='--', label='Warning Max')
+    if critical_min is not None:
+        ax.axhline(critical_min, color='red', linestyle=':', label='Critical Min')
+    if critical_max is not None:
+        ax.axhline(critical_max, color='red', linestyle=':', label='Critical Max')
     ax.set_title(f'{columna} vs fecha')
     ax.set_xlabel('fecha')
     ax.set_ylabel(columna)
     ax.grid(True)
+    # Mostrar leyenda solo si hay límites
+    if any(x is not None for x in [warning_min, warning_max, critical_min, critical_max]):
+        ax.legend()
     if ax is None:  # retrocompat
         plt.tight_layout(); plt.show()
 
@@ -71,13 +84,16 @@ def plot_corr(df):
     plt.show()
 
 def plot_all(df, columna: str,
-                          color_temporal='blue', marker_temporal='o',
-                          color_avg='skyblue', color_densidad='purple',
-                          agg_heatmap='mean'):
+             color_temporal='blue', marker_temporal='o',
+             color_avg='skyblue', color_densidad='purple',
+             agg_heatmap='mean',
+             warning_min=None, warning_max=None, critical_min=None, critical_max=None):
     fig, axes = plt.subplots(2, 2, figsize=(16, 10))
     plt.subplots_adjust(hspace=0.35, wspace=0.25)
 
-    plot_temporal(df, columna, color_temporal, marker_temporal, ax=axes[0, 0])
+    plot_temporal(df, columna, color_temporal, marker_temporal, ax=axes[0, 0],
+                  warning_min=warning_min, warning_max=warning_max,
+                  critical_min=critical_min, critical_max=critical_max)
 
     plot_avg_hora(df, columna, color_avg, ax=axes[0, 1])
 
@@ -103,3 +119,73 @@ def plot_all_timeseries(df):
     plt.xlabel('date_time')
     plt.show()
 
+
+# Función auxiliar para extraer límites de una variable desde el DataFrame de descripción
+def get_limits(desc_df, variable):
+    row = desc_df[desc_df['name'] == variable]
+    if row.empty:
+        return None, None, None, None
+    def safe_get(col):
+        v = row.iloc[0][col] if col in row else None
+        return v if pd.notna(v) else None
+    warning_min = safe_get('warning_min_value')
+    warning_max = safe_get('warning_max_value')
+    critical_min = safe_get('critical_min_value')
+    critical_max = safe_get('critical_max_value')
+    return warning_min, warning_max, critical_min, critical_max
+
+
+def evaluar_estados(df_datos, df_desc):
+
+    df_largo = df_datos.melt(
+        id_vars=['date_time'],
+        var_name='name',
+        value_name='valor'
+    )
+    
+    df_merged = df_largo.merge(df_desc, on='name', how='left')
+
+    def evaluar_estado(row):
+        v = row['valor']
+        cmax = row['critical_max_value']
+        wmax = row['warning_max_value']
+        wmin = row['warning_min_value']
+        cmin = row['critical_min_value']
+
+        if pd.isna(v):
+            return "sin_dato"
+        if not pd.isna(cmax) and v > cmax:
+            return "critico_max"
+        if not pd.isna(cmin) and v < cmin:
+            return "critico_min"
+        if not pd.isna(wmax) and v > wmax:
+            return "advertencia_max"
+        if not pd.isna(wmin) and v < wmin:
+            return "advertencia_min"
+        return "ok"
+
+    df_merged['estado'] = df_merged.apply(evaluar_estado, axis=1)
+
+    resumen = df_merged.groupby(['name','estado']).size().unstack(fill_value=0)
+    resumen['total'] = resumen.sum(axis=1)
+    for col in resumen.columns:
+        if col != 'total':
+            resumen[f'%_{col}'] = (resumen[col] / resumen['total'] * 100).round(2)
+
+    return df_merged, resumen
+
+
+def filtrar_por_estado(df_merged, variable=None, estados=None):
+    df_filtrado = df_merged.copy()
+    
+    if variable is not None:
+        if isinstance(variable, str):
+            variable = [variable]
+        df_filtrado = df_filtrado[df_filtrado['name'].isin(variable)]
+    
+    if estados is not None:
+        if isinstance(estados, str):
+            estados = [estados]
+        df_filtrado = df_filtrado[df_filtrado['estado'].isin(estados)]
+    
+    return df_filtrado.reset_index(drop=True)
