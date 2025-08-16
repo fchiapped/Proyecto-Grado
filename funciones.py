@@ -1,5 +1,6 @@
 import matplotlib.pyplot as plt  
 import seaborn as sns 
+import pandas as pd
 
 def plot_temporal(df, columna: str, color: str, marker: str):
 
