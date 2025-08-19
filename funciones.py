@@ -189,3 +189,30 @@ def filtrar_por_estado(df_merged, variable=None, estados=None):
         df_filtrado = df_filtrado[df_filtrado['estado'].isin(estados)]
     
     return df_filtrado.reset_index(drop=True)
+
+def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
+
+    d = df.copy()
+    d = d.dropna(subset=["date_time"])
+    d = d[~d[columna].isna()].copy()
+
+    if mes is not None:
+        d = d[d["date_time"].dt.month == mes]
+    if dia is not None:
+        d = d[d["date_time"].dt.day == dia]
+    
+    diff = d["date_time"].diff()
+
+    prom = diff.mean()
+    std = diff.std()
+    minimo = diff.min()
+    maximo = diff.max()
+
+    diccionario = {"n_intervalos": len(diff),
+                   "promedio": prom,
+                   "promedio_minutos": prom.total_seconds() / 60,
+                   "std_minutos": std.total_seconds() / 60, 
+                   "minimo": minimo.total_seconds() / 60, 
+                   "maximo": maximo.total_seconds() / 60}
+    
+    return diccionario
