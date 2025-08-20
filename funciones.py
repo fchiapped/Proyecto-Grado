@@ -202,17 +202,23 @@ def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
         d = d[d["date_time"].dt.day == dia]
     
     diff = d["date_time"].diff()
+    diff_v = d[columna].diff()
 
     prom = diff.mean()
     std = diff.std()
     minimo = diff.min()
     maximo = diff.max()
 
+    prom_v = float(diff_v.mean())
+    std_v = float(diff_v.std())
+
     diccionario = {"n_intervalos": len(diff),
                    "promedio": prom,
                    "promedio_minutos": prom.total_seconds() / 60,
                    "std_minutos": std.total_seconds() / 60, 
                    "minimo": minimo.total_seconds() / 60, 
-                   "maximo": maximo.total_seconds() / 60}
+                   "maximo": maximo.total_seconds() / 60,
+                   "promedio valor": prom_v,
+                   "std_valor": std_v}
     
     return diccionario
