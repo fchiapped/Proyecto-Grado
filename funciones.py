@@ -3,6 +3,10 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
+# Drift
+from scipy.stats import ks_2samp, chi2_contingency
+#--------------------------------------------------------------------------------------------------------#
+
 def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None,
                   warning_min=None, warning_max=None, critical_min=None, critical_max=None):
     if ax is None:
@@ -119,7 +123,6 @@ def plot_all_timeseries(df):
     plt.xlabel('date_time')
     plt.show()
 
-
 # Función auxiliar para extraer límites de una variable desde el DataFrame de descripción
 def get_limits(desc_df, variable):
     row = desc_df[desc_df['name'] == variable]
@@ -222,3 +225,119 @@ def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
                    "std_valor": std_v}
     
     return diccionario
+
+
+# Drift y tendencia
+
+def detectar_drift_unificado(
+    df,
+    ref_inicio=None,
+    ref_fin=None,
+    test_inicio=None,
+    test_fin=None,
+    frac=0.2,
+    bins=10,
+    aplicar_psi=True
+):
+
+    df = df.copy()
+    df = df.dropna(subset=["date_time"])
+    df["date_time"] = pd.to_datetime(df["date_time"], errors="coerce")
+
+    # --- Selección de periodos ---
+    if ref_inicio and ref_fin and test_inicio and test_fin:
+        ref = df[(df['date_time'] >= ref_inicio) & (df['date_time'] <= ref_fin)]
+        test = df[(df['date_time'] >= test_inicio) & (df['date_time'] <= test_fin)]
+    else:
+        # partición automática
+        n = len(df)
+        corte = int(n * frac)
+        ref = df.iloc[:corte]
+        test = df.iloc[-corte:]
+
+    resultados = []
+
+    for col in df.columns:
+        if col == "date_time":
+            continue
+
+        serie_ref = ref[col].dropna()
+        serie_test = test[col].dropna()
+
+        # --- Validación de datos suficientes ---
+        if len(serie_ref) < 10 or len(serie_test) < 10:
+            resultados.append({
+                "variable": col,
+                "tipo": str(df[col].dtype),
+                "metodo": None,
+                "stat": None,
+                "pvalue": None,
+                "psi": None,
+                "drift_detectado": None,
+                "detalle": "pocos datos"
+            })
+            continue
+
+        # --- Numéricas ---
+        if np.issubdtype(df[col].dtype, np.number):
+            # KS
+            stat, pval = ks_2samp(serie_ref, serie_test)
+            drift = pval < 0.05
+            resultados.append({
+                "variable": col,
+                "tipo": "numerica",
+                "metodo": "KS",
+                "stat": float(stat),
+                "pvalue": float(pval),
+                "psi": None,
+                "drift_detectado": drift,
+                "detalle": None
+            })
+
+            # PSI opcional
+            if aplicar_psi:
+                base_counts, bin_edges = np.histogram(serie_ref, bins=bins)
+                comp_counts, _ = np.histogram(serie_test, bins=bin_edges)
+                base_perc = base_counts / (base_counts.sum() + 1e-8)
+                comp_perc = comp_counts / (comp_counts.sum() + 1e-8)
+                psi = np.sum((base_perc - comp_perc) * np.log((base_perc + 1e-8) / (comp_perc + 1e-8)))
+                resultados.append({
+                    "variable": col,
+                    "tipo": "numerica",
+                    "metodo": "PSI",
+                    "stat": None,
+                    "pvalue": None,
+                    "psi": float(psi),
+                    "drift_detectado": psi > 0.2,
+                    "detalle": None
+                })
+
+        else:
+            # --- Categóricas ---
+            cont = pd.crosstab(serie_ref, serie_test)
+            if cont.shape[0] > 1 and cont.shape[1] > 1:
+                chi2, pval, _, _ = chi2_contingency(cont)
+                drift = pval < 0.05
+                resultados.append({
+                    "variable": col,
+                    "tipo": "categorica",
+                    "metodo": "Chi2",
+                    "stat": float(chi2),
+                    "pvalue": float(pval),
+                    "psi": None,
+                    "drift_detectado": drift,
+                    "detalle": None
+                })
+            else:
+                resultados.append({
+                    "variable": col,
+                    "tipo": "categorica",
+                    "metodo": "Chi2",
+                    "stat": None,
+                    "pvalue": None,
+                    "psi": None,
+                    "drift_detectado": None,
+                    "detalle": "sin variación suficiente"
+                })
+
+    return pd.DataFrame(resultados)
