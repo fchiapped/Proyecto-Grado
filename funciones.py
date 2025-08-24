@@ -87,52 +87,54 @@ def plot_corr(df):
     plt.title('Mapa de Correlación entre Variables Numéricas')
     plt.show()
 
-def plot_outliers(df, columna: str, color: str='blue', marker: str='o', ax=None, ph=False):
+def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
+                  ax=None, ph: bool=False, z_thresh: float=3.5):
     if ax is None:
         fig, ax = plt.subplots(figsize=(12, 6))
 
     d = df.copy()
-    d['date_time'] = pd.to_datetime(d['date_time'], errors='coerce')
 
-    # Serie numérica para análisis
     s = pd.to_numeric(d[columna], errors='coerce')
 
-    # Sacar outliers por naturaleza variable
+    # Outliers por naturaleza variables
     if ph:
         mask_ph_out = (s < 0) | (s > 14)
     else:
         mask_ph_out = pd.Series(False, index=d.index)
 
-    # Sacar iqr
-    
-    s_iqr = s.copy()
-
-    s_iqr = s_iqr.dropna()
-    if len(s_iqr) >= 2:
-        Q1 = s_iqr.quantile(0.25)
-        Q3 = s_iqr.quantile(0.75)
-        IQR = Q3 - Q1
-        li = Q1 - 3 * IQR
-        ls = Q3 + 3 * IQR
-        mask_iqr_out = (s < li) | (s > ls)
+    # z-score robusto
+    if ph:
+        base = s[(s >= 0) & (s <= 14)]
     else:
-        mask_iqr_out = pd.Series(False, index=d.index)
+        base = s.copy()
+    base = base.dropna()
 
-    # 1) Puntos normales (no pH outlier y no IQR outlier)
-    mask_ok = (~mask_ph_out) & (~mask_iqr_out)
+    if len(base) >= 2:
+        med = base.mean()
+        mad = (base - med).abs().mean()
+        if mad and mad > 0:
+            z_rob = (s - med) / (3 * mad)
+            mask_rob_out = z_rob.abs() >= z_thresh
+        else:
+            mask_rob_out = pd.Series(False, index=d.index)
+    else:
+        mask_rob_out = pd.Series(False, index=d.index)
+
+    # 1) Puntos "normales"
+    mask_ok = (~mask_ph_out) & (~mask_rob_out)
     ax.scatter(d.loc[mask_ok, 'date_time'], s.loc[mask_ok],
                color=color, marker=marker, s=20, label=columna)
 
     # 2) Outliers pH (rojo)
     if mask_ph_out.any():
         ax.scatter(d.loc[mask_ph_out, 'date_time'], s.loc[mask_ph_out],
-                   color='red', marker=marker, s=24, label='Outliers pH (<0 o >14)')
+                   color='red', marker=marker, s=24, label='Outliers pH')
 
-    # 3) Outliers IQR (naranjo) — excluimos los que ya son pH outliers para no tapar el rojo
-    mask_iqr_only = mask_iqr_out & (~mask_ph_out)
-    if mask_iqr_only.any():
-        ax.scatter(d.loc[mask_iqr_only, 'date_time'], s.loc[mask_iqr_only],
-                   color='orange', marker=marker, s=24, label='Outliers IQR')
+    # 3) Outliers robustos (naranjo), excluyendo los ya rojos
+    mask_rob_only = mask_rob_out & (~mask_ph_out)
+    if mask_rob_only.any():
+        ax.scatter(d.loc[mask_rob_only, 'date_time'], s.loc[mask_rob_only],
+                   color='orange', marker=marker, s=24, label='Outliers robustos')
 
     # Estética
     ax.set_title(f'{columna}', fontsize=16)
@@ -141,8 +143,7 @@ def plot_outliers(df, columna: str, color: str='blue', marker: str='o', ax=None,
     ax.tick_params(axis='both', labelsize=12)
     ax.grid(True, linestyle='--', alpha=0.7)
 
-    # Leyenda solo si hay alguna clase de outlier marcada
-    if mask_ph_out.any() or mask_iqr_out.any():
+    if mask_ph_out.any() or mask_rob_out.any():
         ax.legend()
 
     if ax is None:
@@ -184,6 +185,7 @@ def plot_all_timeseries(df):
         axs[i].legend(loc='upper right')
     plt.xlabel('date_time')
     plt.show()
+
 
 # Función auxiliar para extraer límites de una variable desde el DataFrame de descripción
 def get_limits(desc_df, variable):
