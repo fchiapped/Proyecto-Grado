@@ -285,11 +285,35 @@ def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
                    "std_minutos": std.total_seconds() / 60, 
                    "minimo": minimo.total_seconds() / 60, 
                    "maximo": maximo.total_seconds() / 60,
+                   "diff": diff,
                    "promedio valor": prom_v,
                    "std_valor": std_v}
     
     return diccionario
 
+def plot_hist_intervalos(df, columna: str, dia: int=None, mes: int=None):
+    # Calcula periodicidad con tu función
+    stats = periocidad_data(df, columna, dia=dia, mes=mes)
+    diff = stats["diff"].dropna().dt.total_seconds() / 60  # en minutos
+    
+    prom = stats["promedio_minutos"]
+    std = stats["std_minutos"]
+
+    # Gráfico
+    plt.figure(figsize=(10,6))
+    sns.histplot(diff, kde=True, bins=50, color="skyblue")
+
+    plt.title(f"Distribución de intervalos (min) para {columna}", fontsize=16)
+    plt.xlabel("Intervalo (min)", fontsize=14)
+    plt.ylabel("Frecuencia", fontsize=14)
+    plt.tick_params(axis='both', labelsize=12)
+
+    # Leyenda con valores de promedio y std
+    plt.legend([f"Promedio = {prom:.2f} min,  Std = {std:.2f} min"])
+
+    plt.grid(axis="y", linestyle="--", alpha=0.7)
+    plt.tight_layout()
+    plt.show()
 
 # Drift y tendencia
 
