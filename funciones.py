@@ -432,24 +432,30 @@ def detectar_drift_unificado(
 
 
 # --- Outlier detection by threshold methods ---
-
 def outliers_zscore(series, threshold=3):
-    """Z-score method"""
-    mu, sigma = series.mean(), series.std()
+    """
+    Z-score method: 标准差法，返回True为异常点。
+    """
+    mu = series.mean()
+    sigma = series.std()
     z = (series - mu) / sigma
-    return (z.abs() > threshold)
+    return z.abs() > threshold
 
 def outliers_iqr(series, k=1.5):
-    """IQR method"""
-    Q1, Q3 = series.quantile(0.25), series.quantile(0.75)
+    """
+    IQR method: 四分位距法，返回True为异常点。
+    """
+    Q1 = series.quantile(0.25)
+    Q3 = series.quantile(0.75)
     IQR = Q3 - Q1
-    lower, upper = Q1 - k*IQR, Q3 + k*IQR
+    lower = Q1 - k * IQR
+    upper = Q3 + k * IQR
     return (series < lower) | (series > upper)
 
 def outliers_rolling(series, window=30, k=3):
     """
-    Rolling window method
-    window: 窗口大小（样本点数，比如30个点）
+    Rolling window method: 滚动窗口法，返回True为异常点。
+    window: 窗口大小（样本点数）
     k: 超过均值 ± k*std 判定为异常
     """
     rolling_mean = series.rolling(window).mean()
