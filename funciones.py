@@ -3,10 +3,10 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-# Drift
-from scipy.stats import ks_2samp, chi2_contingency
+from scipy.stats import ks_2samp
 #--------------------------------------------------------------------------------------------------------#
-
+#--------------------------------------------------------------------------------------------------------#
+# Plots Análisis Exploratorio
 def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None,
                   warning_min=None, warning_max=None, critical_min=None, critical_max=None):
     if ax is None:
@@ -87,69 +87,6 @@ def plot_corr(df):
     plt.title('Mapa de Correlación entre Variables Numéricas')
     plt.show()
 
-def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
-                  ax=None, ph: bool=False, z_thresh: float=3.5):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=(12, 6))
-
-    d = df.copy()
-
-    s = pd.to_numeric(d[columna], errors='coerce')
-
-    # Outliers por naturaleza variables
-    if ph:
-        mask_ph_out = (s < 0) | (s > 14)
-    else:
-        mask_ph_out = pd.Series(False, index=d.index)
-
-    # z-score robusto
-    if ph:
-        base = s[(s >= 0) & (s <= 14)]
-    else:
-        base = s.copy()
-    base = base.dropna()
-
-    if len(base) >= 2:
-        med = base.mean()
-        mad = (base - med).abs().mean()
-        if mad and mad > 0:
-            z_rob = (s - med) / (3 * mad)
-            mask_rob_out = z_rob.abs() >= z_thresh
-        else:
-            mask_rob_out = pd.Series(False, index=d.index)
-    else:
-        mask_rob_out = pd.Series(False, index=d.index)
-
-    # 1) Puntos "normales"
-    mask_ok = (~mask_ph_out) & (~mask_rob_out)
-    ax.scatter(d.loc[mask_ok, 'date_time'], s.loc[mask_ok],
-               color=color, marker=marker, s=20, label=columna)
-
-    # 2) Outliers pH (rojo)
-    if mask_ph_out.any():
-        ax.scatter(d.loc[mask_ph_out, 'date_time'], s.loc[mask_ph_out],
-                   color='red', marker=marker, s=24, label='Outliers pH')
-
-    # 3) Outliers robustos (naranjo), excluyendo los ya rojos
-    mask_rob_only = mask_rob_out & (~mask_ph_out)
-    if mask_rob_only.any():
-        ax.scatter(d.loc[mask_rob_only, 'date_time'], s.loc[mask_rob_only],
-                   color='orange', marker=marker, s=24, label='Outliers robustos')
-
-    # Estética
-    ax.set_title(f'{columna}', fontsize=16)
-    ax.set_xlabel('fecha', fontsize=14)
-    ax.set_ylabel(columna, fontsize=14)
-    ax.tick_params(axis='both', labelsize=12)
-    ax.grid(True, linestyle='--', alpha=0.7)
-
-    if mask_ph_out.any() or mask_rob_out.any():
-        ax.legend()
-
-    if ax is None:
-        plt.tight_layout()
-        plt.show()
-
 def plot_all(df, columna: str,
              color_temporal='blue', marker_temporal='o',
              color_avg='skyblue', color_densidad='purple',
@@ -171,7 +108,6 @@ def plot_all(df, columna: str,
     plt.tight_layout()
     plt.show()
 
-# Graficar todas las variables numéricas como series de tiempo
 def plot_all_timeseries(df):
     num_cols = df.select_dtypes(include=[np.number]).columns
     if 'date_time' not in df.columns:
@@ -185,9 +121,9 @@ def plot_all_timeseries(df):
         axs[i].legend(loc='upper right')
     plt.xlabel('date_time')
     plt.show()
-
-
-# Función auxiliar para extraer límites de una variable desde el DataFrame de descripción
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+# Limites pre-definidos
 def get_limits(desc_df, variable):
     row = desc_df[desc_df['name'] == variable]
     if row.empty:
@@ -200,7 +136,6 @@ def get_limits(desc_df, variable):
     critical_min = safe_get('critical_min_value')
     critical_max = safe_get('critical_max_value')
     return warning_min, warning_max, critical_min, critical_max
-
 
 def evaluar_estados(df_datos, df_desc):
 
@@ -240,7 +175,6 @@ def evaluar_estados(df_datos, df_desc):
             resumen[f'%_{col}'] = (resumen[col] / resumen['total'] * 100).round(2)
 
     return df_merged, resumen
-
 
 def filtrar_por_estado(df_merged, variable=None, estados=None):
     df_filtrado = df_merged.copy()
@@ -314,124 +248,132 @@ def plot_hist_intervalos(df, columna: str, dia: int=None, mes: int=None):
     plt.grid(axis="y", linestyle="--", alpha=0.7)
     plt.tight_layout()
     plt.show()
-
+#--------------------------------------------------------------------------------------------------------#
 # Drift y tendencia
-
-def detectar_drift_unificado(
-    df,
-    ref_inicio=None,
-    ref_fin=None,
-    test_inicio=None,
-    test_fin=None,
-    frac=0.2,
-    bins=10,
-    aplicar_psi=True
-):
-
+def detectar_drift_ks(df, columnas=None, fecha_col="date_time", min_dias=60):
+    """
+    Aplica test de Kolmogorov-Smirnov para detección de drift en sensores.
+    
+    Args:
+        df: DataFrame con datos de sensores.
+        columnas: lista de columnas a analizar (si None, toma todas numéricas).
+        fecha_col: nombre de la columna de fechas.
+        min_dias: mínimo de días con datos para considerar la variable.
+        
+    Returns:
+        DataFrame con resultados de KS test.
+    """
     df = df.copy()
-    df = df.dropna(subset=["date_time"])
-    df["date_time"] = pd.to_datetime(df["date_time"], errors="coerce")
+    df[fecha_col] = pd.to_datetime(df[fecha_col])
+    df["fecha"] = df[fecha_col].dt.date
 
-    # --- Selección de periodos ---
-    if ref_inicio and ref_fin and test_inicio and test_fin:
-        ref = df[(df['date_time'] >= ref_inicio) & (df['date_time'] <= ref_fin)]
-        test = df[(df['date_time'] >= test_inicio) & (df['date_time'] <= test_fin)]
-    else:
-        # partición automática
-        n = len(df)
-        corte = int(n * frac)
-        ref = df.iloc[:corte]
-        test = df.iloc[-corte:]
+    # Si no se especifican columnas, usar todas las numéricas
+    if columnas is None:
+        columnas = df.select_dtypes(include=[np.number]).columns.tolist()
 
     resultados = []
 
-    for col in df.columns:
-        if col == "date_time":
-            continue
-
-        serie_ref = ref[col].dropna()
-        serie_test = test[col].dropna()
-
-        # --- Validación de datos suficientes ---
-        if len(serie_ref) < 10 or len(serie_test) < 10:
+    for col in columnas:
+        # Fechas con datos
+        fechas_con_datos = df.loc[df[col].notna(), "fecha"].nunique()
+        if fechas_con_datos < min_dias:
             resultados.append({
                 "variable": col,
-                "tipo": str(df[col].dtype),
-                "metodo": None,
                 "stat": None,
                 "pvalue": None,
-                "psi": None,
                 "drift_detectado": None,
                 "detalle": "pocos datos"
             })
             continue
 
-        # --- Numéricas ---
-        if np.issubdtype(df[col].dtype, np.number):
-            # KS
-            stat, pval = ks_2samp(serie_ref, serie_test)
-            drift = pval < 0.05
-            resultados.append({
-                "variable": col,
-                "tipo": "numerica",
-                "metodo": "KS",
-                "stat": float(stat),
-                "pvalue": float(pval),
-                "psi": None,
-                "drift_detectado": drift,
-                "detalle": None
-            })
+        # Dividir en referencia (primer bloque) y comparación (último bloque)
+        valores = df[[fecha_col, col]].dropna().sort_values(fecha_col)
+        mitad = int(len(valores) / 2)
+        ref = valores[col].iloc[:mitad]
+        nuevo = valores[col].iloc[mitad:]
 
-            # PSI opcional
-            if aplicar_psi:
-                base_counts, bin_edges = np.histogram(serie_ref, bins=bins)
-                comp_counts, _ = np.histogram(serie_test, bins=bin_edges)
-                base_perc = base_counts / (base_counts.sum() + 1e-8)
-                comp_perc = comp_counts / (comp_counts.sum() + 1e-8)
-                psi = np.sum((base_perc - comp_perc) * np.log((base_perc + 1e-8) / (comp_perc + 1e-8)))
-                resultados.append({
-                    "variable": col,
-                    "tipo": "numerica",
-                    "metodo": "PSI",
-                    "stat": None,
-                    "pvalue": None,
-                    "psi": float(psi),
-                    "drift_detectado": psi > 0.2,
-                    "detalle": None
-                })
+        # KS test
+        stat, pvalue = ks_2samp(ref, nuevo)
+        drift = pvalue < 0.05  # nivel de significancia
 
-        else:
-            # --- Categóricas ---
-            cont = pd.crosstab(serie_ref, serie_test)
-            if cont.shape[0] > 1 and cont.shape[1] > 1:
-                chi2, pval, _, _ = chi2_contingency(cont)
-                drift = pval < 0.05
-                resultados.append({
-                    "variable": col,
-                    "tipo": "categorica",
-                    "metodo": "Chi2",
-                    "stat": float(chi2),
-                    "pvalue": float(pval),
-                    "psi": None,
-                    "drift_detectado": drift,
-                    "detalle": None
-                })
-            else:
-                resultados.append({
-                    "variable": col,
-                    "tipo": "categorica",
-                    "metodo": "Chi2",
-                    "stat": None,
-                    "pvalue": None,
-                    "psi": None,
-                    "drift_detectado": None,
-                    "detalle": "sin variación suficiente"
-                })
+        resultados.append({
+            "variable": col,
+            "stat": stat,
+            "pvalue": pvalue,
+            "drift_detectado": drift,
+            "detalle": "ok"
+        })
 
     return pd.DataFrame(resultados)
 
 
+
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
 # --- Outlier detection by threshold methods ---
+def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
+                  ax=None, ph: bool=False, z_thresh: float=3.5):
+    if ax is None:
+        fig, ax = plt.subplots(figsize=(12, 6))
+
+    d = df.copy()
+
+    s = pd.to_numeric(d[columna], errors='coerce')
+
+    # Outliers por naturaleza variables
+    if ph:
+        mask_ph_out = (s < 0) | (s > 14)
+    else:
+        mask_ph_out = pd.Series(False, index=d.index)
+
+    # z-score robusto
+    if ph:
+        base = s[(s >= 0) & (s <= 14)]
+    else:
+        base = s.copy()
+    base = base.dropna()
+
+    if len(base) >= 2:
+        med = base.mean()
+        mad = (base - med).abs().mean()
+        if mad and mad > 0:
+            z_rob = (s - med) / (3 * mad)
+            mask_rob_out = z_rob.abs() >= z_thresh
+        else:
+            mask_rob_out = pd.Series(False, index=d.index)
+    else:
+        mask_rob_out = pd.Series(False, index=d.index)
+
+    # 1) Puntos "normales"
+    mask_ok = (~mask_ph_out) & (~mask_rob_out)
+    ax.scatter(d.loc[mask_ok, 'date_time'], s.loc[mask_ok],
+               color=color, marker=marker, s=20, label=columna)
+
+    # 2) Outliers pH (rojo)
+    if mask_ph_out.any():
+        ax.scatter(d.loc[mask_ph_out, 'date_time'], s.loc[mask_ph_out],
+                   color='red', marker=marker, s=24, label='Outliers pH')
+
+    # 3) Outliers robustos (naranjo), excluyendo los ya rojos
+    mask_rob_only = mask_rob_out & (~mask_ph_out)
+    if mask_rob_only.any():
+        ax.scatter(d.loc[mask_rob_only, 'date_time'], s.loc[mask_rob_only],
+                   color='orange', marker=marker, s=24, label='Outliers robustos')
+
+    # Estética
+    ax.set_title(f'{columna}', fontsize=16)
+    ax.set_xlabel('fecha', fontsize=14)
+    ax.set_ylabel(columna, fontsize=14)
+    ax.tick_params(axis='both', labelsize=12)
+    ax.grid(True, linestyle='--', alpha=0.7)
+
+    if mask_ph_out.any() or mask_rob_out.any():
+        ax.legend()
+
+    if ax is None:
+        plt.tight_layout()
+        plt.show()
+
 def outliers_zscore(series, threshold=3):
     """
     Z-score method: 标准差法，返回True为异常点。
@@ -462,3 +404,85 @@ def outliers_rolling(series, window=30, k=3):
     rolling_std = series.rolling(window).std()
     mask = (series - rolling_mean).abs() > k * rolling_std
     return mask.fillna(False)
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+# Fechas sin Datos
+def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=1):
+    df = df.copy()
+    df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
+    fechas_validas = df.groupby(df[dt_col].dt.date).size()
+    fechas_validas = fechas_validas[fechas_validas >= min_rows]
+
+    fechas_con = set(fechas_validas.index)
+    if not fechas_con:
+        return {
+            "con_datos": [],
+            "sin_datos": [],
+            "total_con": 0,
+            "total_sin": 0,
+            "porcentaje_con": 0.0,
+            "porcentaje_sin": 0.0
+        }
+
+    rango_total = pd.date_range(min(fechas_con), max(fechas_con), freq='D').date
+    fechas_sin = sorted(set(rango_total) - fechas_con)
+
+    def agrupar_en_rangos(lista_fechas):
+        bloques = []
+        if not lista_fechas:
+            return bloques
+        inicio = fin = lista_fechas[0]
+        for fecha in lista_fechas[1:]:
+            if (fecha - fin).days == 1:
+                fin = fecha
+            else:
+                bloques.append((inicio.isoformat(), fin.isoformat()))
+                inicio = fin = fecha
+        bloques.append((inicio.isoformat(), fin.isoformat()))
+        return bloques
+
+    total_dias = len(rango_total)
+    total_con = len(fechas_con)
+    total_sin = len(fechas_sin)
+
+    porcentaje_con = round(100 * total_con / total_dias, 2)
+    porcentaje_sin = round(100 * total_sin / total_dias, 2)
+
+    return {
+        "con_datos": agrupar_en_rangos(sorted(fechas_con)),
+        "sin_datos": agrupar_en_rangos(fechas_sin),
+        "total_con": total_con,
+        "total_sin": total_sin,
+        "porcentaje_con": porcentaje_con,
+        "porcentaje_sin": porcentaje_sin
+    }
+
+def imprimir_bloques(nombre, bloques, total_dias, porcentaje):
+    print(f"{nombre}:")
+    total = 0
+    for inicio, fin in bloques:
+        inicio_dt = pd.to_datetime(inicio).date()
+        fin_dt = pd.to_datetime(fin).date()
+        dias = (fin_dt - inicio_dt).days + 1
+        total += dias
+        print(f"[{inicio}, {fin}], {dias} {'día' if dias == 1 else 'días'}")
+    print(f"\nTotal {nombre.lower()}: {total} ({porcentaje}%)\n")
+
+def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=1):
+    df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
+    df = df.dropna(subset=[dt_col])
+
+    for col in columnas:
+        print(f"\n==============================")
+        print(f" Análisis de: '{col}'")
+        print(f"==============================\n")
+
+        # Filtra donde esa columna tiene datos
+        df_col = df[~df[col].isna()]
+
+        resultados = fechas_con_y_sin_datos(df_col, dt_col=dt_col, min_rows=min_rows)
+        imprimir_bloques("Fechas con datos", resultados["con_datos"], resultados["total_con"], resultados["porcentaje_con"])
+        imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+
