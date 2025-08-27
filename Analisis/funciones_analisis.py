@@ -1,3 +1,4 @@
+
 import matplotlib.pyplot as plt  
 import seaborn as sns 
 import pandas as pd
@@ -527,6 +528,66 @@ def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=1):
         resultados = fechas_con_y_sin_datos(df_col, dt_col=dt_col, min_rows=min_rows)
         imprimir_bloques("Fechas con datos", resultados["con_datos"], resultados["total_con"], resultados["porcentaje_con"])
         imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
-#--------------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------------#
 
+
+
+# 合并重叠或相邻的时间区块
+def merge_blocks(blocks, gap=pd.Timedelta(seconds=0)):
+    """
+    合并重叠或相邻的时间区块。
+    blocks: list of (start, end) 元组，或DataFrame有'start','end'列
+    gap: 允许合并的最大间隔（如0表示仅合并重叠/相邻，1min表示间隔1分钟内也合并）
+    返回合并后的区块列表 [(start, end), ...]
+    """
+    if isinstance(blocks, pd.DataFrame):
+        blocks = list(zip(pd.to_datetime(blocks['start']), pd.to_datetime(blocks['end'])))
+    elif not blocks:
+        return []
+    # 排序
+    blocks = sorted(blocks, key=lambda x: x[0])
+    merged = []
+    for b in blocks:
+        if not merged:
+            merged.append(list(b))
+        else:
+            last = merged[-1]
+            # 如果当前区块与上一区块重叠或间隔小于gap，则合并
+            if b[0] <= last[1] + gap:
+                last[1] = max(last[1], b[1])
+            else:
+                merged.append(list(b))
+    # 转回元组
+    return [tuple(x) for x in merged]
+
+# --- 原始时序数据与drift区块可视化 ---
+def plot_raw_with_drift(df, fecha_col, var, blocks, resample=None, color='tab:red', alpha=0.22, show_points=False):
+    """
+    绘制原始时序数据，并用色块标注drift区块。
+    df: DataFrame，包含时间和变量
+    fecha_col: 时间列名
+    var: 变量名
+    blocks: [(start, end), ...] 区块列表
+    resample: 例如'15min'，对数据重采样（中位数），None为原始
+    color, alpha: 区块色彩与透明度
+    show_points: 是否显示原始点
+    """
+    d = df[[fecha_col, var]].dropna().copy()
+    d[fecha_col] = pd.to_datetime(d[fecha_col])
+    d = d.sort_values(fecha_col)
+    if resample:
+        s = d.set_index(fecha_col)[var].resample(resample).median().dropna().reset_index()
+    else:
+        s = d.rename(columns={var: 'value'}).rename(columns={'value': var})
+    plt.figure(figsize=(12, 4))
+    if show_points:
+        plt.plot(s[fecha_col], s[var], marker='.', linestyle='None', markersize=2)
+    else:
+        plt.plot(s[fecha_col], s[var])
+    for start, end in blocks:
+        plt.axvspan(pd.to_datetime(start), pd.to_datetime(end), color=color, alpha=alpha)
+    plt.title(f"Serie de tiempo – {var} (drift 区块高亮)")
+    plt.xlabel("Tiempo"); plt.ylabel(var); plt.tight_layout(); plt.show()
+
+
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
