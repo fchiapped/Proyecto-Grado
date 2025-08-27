@@ -327,7 +327,8 @@ def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=60):
         imprimir_bloques("Fechas con datos", resultados["con_datos"], resultados["total_con"], resultados["porcentaje_con"])
         imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
 #--------------------------------------------------------------------------------------------------------#
-
+#--------------------------------------------------------------------------------------------------------#
+# Outliers
 def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
                   ax=None, ph: bool=False, z_thresh: float=3.5):
     if ax is None:
@@ -390,3 +391,119 @@ def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
     if ax is None:
         plt.tight_layout()
         plt.show()
+
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
+# Ventanas Activas (Planta 1)
+def build_active_flag(
+    df: pd.DataFrame,
+    fecha_col: str,
+    rules: dict,
+    smooth_window: int = 15,       # ~15 min si tienes dato por minuto
+    min_block_len: int = 10        # descarta bloques < 10 muestras
+) -> pd.Series:
+    """
+    rules: diccionario {nombre_variable: {"op": ">", "thr": valor}} o {"op": "diff>", "thr": valor}
+           Soporta:
+             - ">"  : variable > thr
+             - "<"  : variable < thr
+             - "diff>" : |diff(variable)| > thr  (movimiento)
+    """
+    df2 = df.copy()
+    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
+    df2 = df2.sort_values(fecha_col)
+
+    conds = []
+    for col, spec in rules.items():
+        op = spec.get("op", ">")
+        thr = spec.get("thr", 0)
+        if col not in df2.columns:
+            continue
+        s = df2[col]
+        if op == ">":
+            c = s > thr
+        elif op == "<":
+            c = s < thr
+        elif op == "diff>":
+            c = s.diff().abs() > thr
+        else:
+            raise ValueError(f"Operador no soportado: {op}")
+        conds.append(c.fillna(False))
+
+    if not conds:
+        return pd.Series(False, index=df2.index, name="proceso_activo")
+
+    raw = np.logical_or.reduce(conds)
+
+    # Suavizado para evitar parpadeos (cierre morfológico sencillo)
+    smooth = pd.Series(raw, index=df2.index).rolling(smooth_window, min_periods=1).max().astype(bool)
+
+    # Enforce min_block_len: elimina bloques muy cortos (ruido)
+    flag = smooth.copy()
+    run_start = None
+    for i, v in enumerate(flag.values):
+        if v and run_start is None:
+            run_start = i
+        if (not v or i == len(flag)-1) and run_start is not None:
+            end = i if not v else i  # cierre
+            length = end - run_start + (1 if v and i == len(flag)-1 else 0)
+            if length < min_block_len:
+                flag.iloc[run_start:end] = False
+            run_start = None
+
+    flag.name = "proceso_activo"
+    return flag
+
+def blocks_from_flag(df: pd.DataFrame, fecha_col: str, flag: pd.Series) -> pd.DataFrame:
+    df2 = df.copy()
+    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
+    df2 = df2.sort_values(fecha_col)
+    f = flag.reindex(df2.index).fillna(False).values
+
+    starts, ends = [], []
+    in_block = False
+    for i, v in enumerate(f):
+        if v and not in_block:
+            starts.append(df2[fecha_col].iloc[i])
+            in_block = True
+        if not v and in_block:
+            ends.append(df2[fecha_col].iloc[i-1])
+            in_block = False
+    if in_block:
+        ends.append(df2[fecha_col].iloc[-1])
+
+    return pd.DataFrame({"start": starts, "end": ends})
+
+def plot_with_active_blocks(
+    df: pd.DataFrame,
+    fecha_col: str,
+    col: str,
+    blocks: pd.DataFrame,
+    resample: str = "15min",
+    color: str = "tab:red",
+    alpha: float = 0.18,
+    show_points: bool = False
+):
+    df2 = df[[fecha_col, col]].dropna().copy()
+    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
+    df2 = df2.sort_values(fecha_col)
+
+    if resample is not None:
+        s = (df2.set_index(fecha_col)[col]
+                .resample(resample).median().dropna().reset_index())
+    else:
+        s = df2.rename(columns={col: "value"}).rename(columns={"value": col})
+
+    plt.figure(figsize=(12, 4))
+    if show_points:
+        plt.plot(s[fecha_col], s[col], marker='.', linestyle='None', markersize=2)
+    else:
+        plt.plot(s[fecha_col], s[col])
+
+    for _, r in blocks.iterrows():
+        plt.axvspan(pd.to_datetime(r["start"]), pd.to_datetime(r["end"]), color=color, alpha=alpha)
+
+    plt.title(f"Serie de tiempo – {col} (ventanas ACTIVAS sombreadas)")
+    plt.xlabel("Tiempo"); plt.ylabel(col); plt.tight_layout(); plt.show()
+#--------------------------------------------------------------------------------------------------------#
+#--------------------------------------------------------------------------------------------------------#
