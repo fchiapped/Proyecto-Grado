@@ -3,7 +3,6 @@ import seaborn as sns
 import pandas as pd
 import numpy as np
 
-from scipy.stats import ks_2samp
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Plots Análisis Exploratorio
@@ -91,7 +90,21 @@ def plot_all(df, columna: str,
              color_temporal='blue', marker_temporal='o',
              color_avg='skyblue', color_densidad='purple',
              agg_heatmap='mean',
-             warning_min=None, warning_max=None, critical_min=None, critical_max=None):
+             warning_min=None, warning_max=None, critical_min=None, critical_max=None,
+             desc_df=None):   # <-- NUEVO parámetro opcional
+    # --- NUEVO: si no me diste límites, los intento sacar de desc_df ---
+    if desc_df is not None:
+        row = desc_df[desc_df['name'] == columna]
+        if not row.empty:
+            def sg(col):
+                v = row.iloc[0][col] if col in row else None
+                return v if pd.notna(v) else None
+            if warning_min  is None: warning_min  = sg('warning_min_value')
+            if warning_max  is None: warning_max  = sg('warning_max_value')
+            if critical_min is None: critical_min = sg('critical_min_value')
+            if critical_max is None: critical_max = sg('critical_max_value')
+    # -------------------------------------------------------------------
+
     fig, axes = plt.subplots(2, 2, figsize=(16, 10))
     plt.subplots_adjust(hspace=0.35, wspace=0.25)
 
@@ -100,9 +113,7 @@ def plot_all(df, columna: str,
                   critical_min=critical_min, critical_max=critical_max)
 
     plot_avg_hora(df, columna, color_avg, ax=axes[0, 1])
-
     plot_densidad(df, columna, color_densidad, ax=axes[1, 0])
-
     heatmap_hour(df, columna, agg_heatmap, ax=axes[1, 1])
 
     plt.tight_layout()
@@ -122,132 +133,6 @@ def plot_all_timeseries(df):
     plt.xlabel('date_time')
     plt.show()
 #--------------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------------#
-# Limites pre-definidos
-def get_limits(desc_df, variable):
-    row = desc_df[desc_df['name'] == variable]
-    if row.empty:
-        return None, None, None, None
-    def safe_get(col):
-        v = row.iloc[0][col] if col in row else None
-        return v if pd.notna(v) else None
-    warning_min = safe_get('warning_min_value')
-    warning_max = safe_get('warning_max_value')
-    critical_min = safe_get('critical_min_value')
-    critical_max = safe_get('critical_max_value')
-    return warning_min, warning_max, critical_min, critical_max
-
-def evaluar_estados(df_datos, df_desc):
-
-    df_largo = df_datos.melt(
-        id_vars=['date_time'],
-        var_name='name',
-        value_name='valor'
-    )
-    
-    df_merged = df_largo.merge(df_desc, on='name', how='left')
-
-    def evaluar_estado(row):
-        v = row['valor']
-        cmax = row['critical_max_value']
-        wmax = row['warning_max_value']
-        wmin = row['warning_min_value']
-        cmin = row['critical_min_value']
-
-        if pd.isna(v):
-            return "sin_dato"
-        if not pd.isna(cmax) and v > cmax:
-            return "critico_max"
-        if not pd.isna(cmin) and v < cmin:
-            return "critico_min"
-        if not pd.isna(wmax) and v > wmax:
-            return "advertencia_max"
-        if not pd.isna(wmin) and v < wmin:
-            return "advertencia_min"
-        return "ok"
-
-    df_merged['estado'] = df_merged.apply(evaluar_estado, axis=1)
-
-    resumen = df_merged.groupby(['name','estado']).size().unstack(fill_value=0)
-    resumen['total'] = resumen.sum(axis=1)
-    for col in resumen.columns:
-        if col != 'total':
-            resumen[f'%_{col}'] = (resumen[col] / resumen['total'] * 100).round(2)
-
-    return df_merged, resumen
-
-def filtrar_por_estado(df_merged, variable=None, estados=None):
-    df_filtrado = df_merged.copy()
-    
-    if variable is not None:
-        if isinstance(variable, str):
-            variable = [variable]
-        df_filtrado = df_filtrado[df_filtrado['name'].isin(variable)]
-    
-    if estados is not None:
-        if isinstance(estados, str):
-            estados = [estados]
-        df_filtrado = df_filtrado[df_filtrado['estado'].isin(estados)]
-    
-    return df_filtrado.reset_index(drop=True)
-
-def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
-
-    d = df.copy()
-    d = d.dropna(subset=["date_time"])
-    d = d[~d[columna].isna()].copy()
-
-    if mes is not None:
-        d = d[d["date_time"].dt.month == mes]
-    if dia is not None:
-        d = d[d["date_time"].dt.day == dia]
-    
-    diff = d["date_time"].diff()
-    diff_v = d[columna].diff()
-
-    prom = diff.mean()
-    std = diff.std()
-    minimo = diff.min()
-    maximo = diff.max()
-
-    prom_v = float(diff_v.mean())
-    std_v = float(diff_v.std())
-
-    diccionario = {"n_intervalos": len(diff),
-                   "promedio": prom,
-                   "promedio_minutos": prom.total_seconds() / 60,
-                   "std_minutos": std.total_seconds() / 60, 
-                   "minimo": minimo.total_seconds() / 60, 
-                   "maximo": maximo.total_seconds() / 60,
-                   "diff": diff,
-                   "promedio valor": prom_v,
-                   "std_valor": std_v}
-    
-    return diccionario
-
-def plot_hist_intervalos(df, columna: str, dia: int=None, mes: int=None):
-    # Calcula periodicidad con tu función
-    stats = periocidad_data(df, columna, dia=dia, mes=mes)
-    diff = stats["diff"].dropna().dt.total_seconds() / 60  # en minutos
-    
-    prom = stats["promedio_minutos"]
-    std = stats["std_minutos"]
-
-    # Gráfico
-    plt.figure(figsize=(10,6))
-    sns.histplot(diff, kde=True, bins=50, color="skyblue")
-
-    plt.title(f"Distribución de intervalos (min) para {columna}", fontsize=16)
-    plt.xlabel("Intervalo (min)", fontsize=14)
-    plt.ylabel("Frecuencia", fontsize=14)
-    plt.tick_params(axis='both', labelsize=12)
-
-    # Leyenda con valores de promedio y std
-    plt.legend([f"Promedio = {prom:.2f} min,  Std = {std:.2f} min"])
-
-    plt.grid(axis="y", linestyle="--", alpha=0.7)
-    plt.tight_layout()
-    plt.show()
 #--------------------------------------------------------------------------------------------------------#
 # Fechas sin Datos
 def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=60):
@@ -328,182 +213,163 @@ def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=60):
         imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
-# Outliers
-def plot_outliers(df, columna: str, color: str='blue', marker: str='o',
-                  ax=None, ph: bool=False, z_thresh: float=3.5):
-    if ax is None:
-        fig, ax = plt.subplots(figsize=(12, 6))
-
-    d = df.copy()
-
-    s = pd.to_numeric(d[columna], errors='coerce')
-
-    # Outliers por naturaleza variables
-    if ph:
-        mask_ph_out = (s < 0) | (s > 14)
-    else:
-        mask_ph_out = pd.Series(False, index=d.index)
-
-    # z-score robusto
-    if ph:
-        base = s[(s >= 0) & (s <= 14)]
-    else:
-        base = s.copy()
-    base = base.dropna()
-
-    if len(base) >= 2:
-        med = base.mean()
-        mad = (base - med).abs().mean()
-        if mad and mad > 0:
-            z_rob = (s - med) / (3 * mad)
-            mask_rob_out = z_rob.abs() >= z_thresh
-        else:
-            mask_rob_out = pd.Series(False, index=d.index)
-    else:
-        mask_rob_out = pd.Series(False, index=d.index)
-
-    # 1) Puntos "normales"
-    mask_ok = (~mask_ph_out) & (~mask_rob_out)
-    ax.scatter(d.loc[mask_ok, 'date_time'], s.loc[mask_ok],
-               color=color, marker=marker, s=20, label=columna)
-
-    # 2) Outliers pH (rojo)
-    if mask_ph_out.any():
-        ax.scatter(d.loc[mask_ph_out, 'date_time'], s.loc[mask_ph_out],
-                   color='red', marker=marker, s=24, label='Outliers pH')
-
-    # 3) Outliers robustos (naranjo), excluyendo los ya rojos
-    mask_rob_only = mask_rob_out & (~mask_ph_out)
-    if mask_rob_only.any():
-        ax.scatter(d.loc[mask_rob_only, 'date_time'], s.loc[mask_rob_only],
-                   color='orange', marker=marker, s=24, label='Outliers robustos')
-
-    # Estética
-    ax.set_title(f'{columna}', fontsize=16)
-    ax.set_xlabel('fecha', fontsize=14)
-    ax.set_ylabel(columna, fontsize=14)
-    ax.tick_params(axis='both', labelsize=12)
-    ax.grid(True, linestyle='--', alpha=0.7)
-
-    if mask_ph_out.any() or mask_rob_out.any():
-        ax.legend()
-
-    if ax is None:
-        plt.tight_layout()
-        plt.show()
-
-#--------------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------------#
 # Ventanas Activas (Planta 1)
+def _bool_closing(x_bool: pd.Series, close_window: int) -> pd.Series:
+    if close_window <= 1:
+        return x_bool
+    dil = x_bool.rolling(close_window, center=True, min_periods=1).max().astype(bool)
+    ero = dil.rolling(close_window, center=True, min_periods=1).min().astype(bool)
+    return ero
+
+def _blocks_from_flag_indexed(active_flag: pd.Series) -> pd.DataFrame:
+    af = active_flag.fillna(False).astype(bool)
+    edge = af.astype(int).diff().fillna(af.astype(int))
+    starts = af.index[edge == 1]
+    ends   = af.index[edge == -1]
+
+    if len(starts) and len(ends):
+        if ends[0] < starts[0]:
+            ends = ends[1:]
+        if len(starts) > len(ends):
+            ends = ends.append(pd.Index([af.index[-1]]))
+    elif len(starts) and not len(ends):
+        ends = pd.Index([af.index[-1]])
+    elif len(ends) and not len(starts):
+        starts = pd.Index([af.index[0]])
+
+    return pd.DataFrame({'inicio': starts, 'fin': ends}).reset_index(drop=True)
+    
+def merge_blocks(blocks: pd.DataFrame, max_gap_minutes: int = 20) -> pd.DataFrame:
+    if blocks.empty:
+        return blocks
+    blocks = blocks.sort_values('inicio').reset_index(drop=True)
+    merged = []
+    cur_start = blocks.loc[0, 'inicio']
+    cur_end   = blocks.loc[0, 'fin']
+    max_gap = pd.to_timedelta(max_gap_minutes, unit='m')
+    for i in range(1, len(blocks)):
+        s, e = blocks.loc[i, 'inicio'], blocks.loc[i, 'fin']
+        if (s - cur_end) <= max_gap:
+            cur_end = max(cur_end, e)
+        else:
+            merged.append((cur_start, cur_end))
+            cur_start, cur_end = s, e
+    merged.append((cur_start, cur_end))
+    return pd.DataFrame(merged, columns=['inicio', 'fin'])
+
+def rasterize_blocks(index: pd.DatetimeIndex, blocks: pd.DataFrame) -> pd.Series:
+    out = pd.Series(False, index=index)
+    for _, row in blocks.iterrows():
+        out.loc[(index >= row['inicio']) & (index <= row['fin'])] = True
+    return out
+
+def _evaluate_rule(series: pd.Series, rule: dict, smooth_window: int) -> pd.Series:
+    s = series.copy()
+    s = s.rolling(smooth_window, center=True, min_periods=1).median()
+
+    op = rule.get("op")
+    thr = rule.get("thr")
+
+    if op == ">":
+        return (s >= thr)
+    elif op == "diff>":
+        # actividad por "movimiento"
+        diff = s.diff().abs().rolling(3, min_periods=1).mean()
+        return (diff >= thr)
+    else:
+        raise ValueError(f"Operación de regla no soportada: {op}")
+
 def build_active_flag(
     df: pd.DataFrame,
     fecha_col: str,
     rules: dict,
-    smooth_window: int = 15,       # ~15 min si tienes dato por minuto
-    min_block_len: int = 10        # descarta bloques < 10 muestras
+    smooth_window: int = 15,
+    min_block_len: int = 10,
+    close_window: int = 7,
+    max_gap_minutes: int = 25,
+    edge_buffer: int = 0
 ) -> pd.Series:
     """
-    rules: diccionario {nombre_variable: {"op": ">", "thr": valor}} o {"op": "diff>", "thr": valor}
-           Soporta:
-             - ">"  : variable > thr
-             - "<"  : variable < thr
-             - "diff>" : |diff(variable)| > thr  (movimiento)
+    Construye flag OR entre reglas sobre múltiples señales, estabiliza con closing,
+    filtra por duración mínima y fusiona bloques separados por gaps cortos.
     """
-    df2 = df.copy()
-    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
-    df2 = df2.sort_values(fecha_col)
+    d = df.copy()
+    d[fecha_col] = pd.to_datetime(d[fecha_col])
+    d = d.sort_values(fecha_col).set_index(fecha_col)
 
-    conds = []
-    for col, spec in rules.items():
-        op = spec.get("op", ">")
-        thr = spec.get("thr", 0)
-        if col not in df2.columns:
+    # asegurar frecuencia uniforme (por minuto si aplica)
+    freq = pd.infer_freq(d.index) or 'T'
+    d = d.asfreq(freq)
+
+    flags = []
+    for col, rule in rules.items():
+        if col not in d.columns:
             continue
-        s = df2[col]
-        if op == ">":
-            c = s > thr
-        elif op == "<":
-            c = s < thr
-        elif op == "diff>":
-            c = s.diff().abs() > thr
-        else:
-            raise ValueError(f"Operador no soportado: {op}")
-        conds.append(c.fillna(False))
+        flags.append(_evaluate_rule(d[col], rule, smooth_window))
+    if not flags:
+        return pd.Series(False, index=d.index)
 
-    if not conds:
-        return pd.Series(False, index=df2.index, name="proceso_activo")
+    # OR entre todas las reglas
+    active = flags[0].copy()
+    for f in flags[1:]:
+        active = (active | f)
 
-    raw = np.logical_or.reduce(conds)
+    # closing para tapar microcortes
+    active = _bool_closing(active, close_window=close_window)
 
-    # Suavizado para evitar parpadeos (cierre morfológico sencillo)
-    smooth = pd.Series(raw, index=df2.index).rolling(smooth_window, min_periods=1).max().astype(bool)
+    # pasar a bloques, aplicar buffer/min_len/merge y rasterizar de vuelta
+    blocks = _blocks_from_flag_indexed(active)
 
-    # Enforce min_block_len: elimina bloques muy cortos (ruido)
-    flag = smooth.copy()
-    run_start = None
-    for i, v in enumerate(flag.values):
-        if v and run_start is None:
-            run_start = i
-        if (not v or i == len(flag)-1) and run_start is not None:
-            end = i if not v else i  # cierre
-            length = end - run_start + (1 if v and i == len(flag)-1 else 0)
-            if length < min_block_len:
-                flag.iloc[run_start:end] = False
-            run_start = None
+    if edge_buffer > 0 and not blocks.empty:
+        blocks['inicio'] = blocks['inicio'] - pd.to_timedelta(edge_buffer, unit='m')
+        blocks['fin']    = blocks['fin']    + pd.to_timedelta(edge_buffer, unit='m')
 
-    flag.name = "proceso_activo"
-    return flag
+    # filtrar por duración mínima
+    if not blocks.empty:
+        blocks = blocks[(blocks['fin'] - blocks['inicio']).dt.total_seconds() >= (min_block_len*60)]
+
+    # merge por gaps cortos
+    blocks = merge_blocks(blocks, max_gap_minutes=max_gap_minutes)
+
+    # rasterizar nuevamente para obtener el flag final estable
+    active_final = rasterize_blocks(d.index, blocks)
+    return active_final
 
 def blocks_from_flag(df: pd.DataFrame, fecha_col: str, flag: pd.Series) -> pd.DataFrame:
-    df2 = df.copy()
-    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
-    df2 = df2.sort_values(fecha_col)
-    f = flag.reindex(df2.index).fillna(False).values
+    """
+    Versión compatible con tu firma: toma df+fecha para asegurar índice y
+    devuelve bloques [inicio, fin].
+    """
+    d = df.copy()
+    d[fecha_col] = pd.to_datetime(d[fecha_col])
+    d = d.sort_values(fecha_col).set_index(fecha_col)
 
-    starts, ends = [], []
-    in_block = False
-    for i, v in enumerate(f):
-        if v and not in_block:
-            starts.append(df2[fecha_col].iloc[i])
-            in_block = True
-        if not v and in_block:
-            ends.append(df2[fecha_col].iloc[i-1])
-            in_block = False
-    if in_block:
-        ends.append(df2[fecha_col].iloc[-1])
-
-    return pd.DataFrame({"start": starts, "end": ends})
+    # alinear flag a ese índice
+    flag = flag.reindex(d.index)
+    return _blocks_from_flag_indexed(flag)
 
 def plot_with_active_blocks(
     df: pd.DataFrame,
     fecha_col: str,
-    col: str,
+    y_col: str,
     blocks: pd.DataFrame,
-    resample: str = "15min",
-    color: str = "tab:red",
-    alpha: float = 0.18,
-    show_points: bool = False
+    resample: str | None = None,
+    title: str | None = None
 ):
-    df2 = df[[fecha_col, col]].dropna().copy()
-    df2[fecha_col] = pd.to_datetime(df2[fecha_col])
-    df2 = df2.sort_values(fecha_col)
+    s = df[[fecha_col, y_col]].dropna().copy()
+    s[fecha_col] = pd.to_datetime(s[fecha_col])
+    s = s.sort_values(fecha_col).set_index(fecha_col)[y_col]
 
-    if resample is not None:
-        s = (df2.set_index(fecha_col)[col]
-                .resample(resample).median().dropna().reset_index())
-    else:
-        s = df2.rename(columns={col: "value"}).rename(columns={"value": col})
+    if resample:
+        s = s.resample(resample).mean()
 
-    plt.figure(figsize=(12, 4))
-    if show_points:
-        plt.plot(s[fecha_col], s[col], marker='.', linestyle='None', markersize=2)
-    else:
-        plt.plot(s[fecha_col], s[col])
-
-    for _, r in blocks.iterrows():
-        plt.axvspan(pd.to_datetime(r["start"]), pd.to_datetime(r["end"]), color=color, alpha=alpha)
-
-    plt.title(f"Serie de tiempo – {col} (ventanas ACTIVAS sombreadas)")
-    plt.xlabel("Tiempo"); plt.ylabel(col); plt.tight_layout(); plt.show()
+    fig, ax = plt.subplots(figsize=(12, 5))
+    s.plot(ax=ax, lw=1)
+    for _, row in blocks.iterrows():
+        ax.axvspan(row['inicio'], row['fin'], alpha=0.15)
+    ax.set_xlabel("")
+    ax.set_title(title or f"{y_col} con ventanas activas (sombreado)")
+    ax.grid(True, alpha=0.3)
+    plt.show()
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
