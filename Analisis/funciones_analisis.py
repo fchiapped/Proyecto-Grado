@@ -1,143 +1,20 @@
 
 import matplotlib.pyplot as plt  
-import seaborn as sns 
 import pandas as pd
 import numpy as np
-
 from scipy.stats import ks_2samp
-#--------------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------------#
-# Limites pre-definidos
-def get_limits(desc_df, variable):
-    row = desc_df[desc_df['name'] == variable]
-    if row.empty:
-        return None, None, None, None
-    def safe_get(col):
-        v = row.iloc[0][col] if col in row else None
-        return v if pd.notna(v) else None
-    warning_min = safe_get('warning_min_value')
-    warning_max = safe_get('warning_max_value')
-    critical_min = safe_get('critical_min_value')
-    critical_max = safe_get('critical_max_value')
-    return warning_min, warning_max, critical_min, critical_max
-
-def evaluar_estados(df_datos, df_desc):
-
-    df_largo = df_datos.melt(
-        id_vars=['date_time'],
-        var_name='name',
-        value_name='valor'
-    )
-    
-    df_merged = df_largo.merge(df_desc, on='name', how='left')
-
-    def evaluar_estado(row):
-        v = row['valor']
-        cmax = row['critical_max_value']
-        wmax = row['warning_max_value']
-        wmin = row['warning_min_value']
-        cmin = row['critical_min_value']
-
-        if pd.isna(v):
-            return "sin_dato"
-        if not pd.isna(cmax) and v > cmax:
-            return "critico_max"
-        if not pd.isna(cmin) and v < cmin:
-            return "critico_min"
-        if not pd.isna(wmax) and v > wmax:
-            return "advertencia_max"
-        if not pd.isna(wmin) and v < wmin:
-            return "advertencia_min"
-        return "ok"
-
-    df_merged['estado'] = df_merged.apply(evaluar_estado, axis=1)
-
-    resumen = df_merged.groupby(['name','estado']).size().unstack(fill_value=0)
-    resumen['total'] = resumen.sum(axis=1)
-    for col in resumen.columns:
-        if col != 'total':
-            resumen[f'%_{col}'] = (resumen[col] / resumen['total'] * 100).round(2)
-
-    return df_merged, resumen
-
-def filtrar_por_estado(df_merged, variable=None, estados=None):
-    df_filtrado = df_merged.copy()
-    
-    if variable is not None:
-        if isinstance(variable, str):
-            variable = [variable]
-        df_filtrado = df_filtrado[df_filtrado['name'].isin(variable)]
-    
-    if estados is not None:
-        if isinstance(estados, str):
-            estados = [estados]
-        df_filtrado = df_filtrado[df_filtrado['estado'].isin(estados)]
-    
-    return df_filtrado.reset_index(drop=True)
-
-def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
-
-    d = df.copy()
-    d = d.dropna(subset=["date_time"])
-    d = d[~d[columna].isna()].copy()
-
-    if mes is not None:
-        d = d[d["date_time"].dt.month == mes]
-    if dia is not None:
-        d = d[d["date_time"].dt.day == dia]
-    
-    diff = d["date_time"].diff()
-    diff_v = d[columna].diff()
-
-    prom = diff.mean()
-    std = diff.std()
-    minimo = diff.min()
-    maximo = diff.max()
-
-    prom_v = float(diff_v.mean())
-    std_v = float(diff_v.std())
-
-    diccionario = {"n_intervalos": len(diff),
-                   "promedio": prom,
-                   "promedio_minutos": prom.total_seconds() / 60,
-                   "std_minutos": std.total_seconds() / 60, 
-                   "minimo": minimo.total_seconds() / 60, 
-                   "maximo": maximo.total_seconds() / 60,
-                   "diff": diff,
-                   "promedio valor": prom_v,
-                   "std_valor": std_v}
-    
-    return diccionario
-
-def plot_hist_intervalos(df, columna: str, dia: int=None, mes: int=None):
-    # Calcula periodicidad con tu función
-    stats = periocidad_data(df, columna, dia=dia, mes=mes)
-    diff = stats["diff"].dropna().dt.total_seconds() / 60  # en minutos
-    
-    prom = stats["promedio_minutos"]
-    std = stats["std_minutos"]
-
-    # Gráfico
-    plt.figure(figsize=(10,6))
-    sns.histplot(diff, kde=True, bins=50, color="skyblue")
-
-    plt.title(f"Distribución de intervalos (min) para {columna}", fontsize=16)
-    plt.xlabel("Intervalo (min)", fontsize=14)
-    plt.ylabel("Frecuencia", fontsize=14)
-    plt.tick_params(axis='both', labelsize=12)
-
-    # Leyenda con valores de promedio y std
-    plt.legend([f"Promedio = {prom:.2f} min,  Std = {std:.2f} min"])
-
-    plt.grid(axis="y", linestyle="--", alpha=0.7)
-    plt.tight_layout()
-    plt.show()
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Drift y tendencia
 
 def detectar_drift_ks(
     df, columnas=None, fecha_col="date_time",
+
+    # Ventanas Activas
+    flag_col=None,           # ej. "planta1_activa" o None para no filtrar
+    flag_value=None,         # True -> solo activos, False -> solo inactivos, None -> no filtra
+    estado_label=None, 
+
     # ventanas
     window_days=14, step_days=3, min_dias=10, min_points=5000,
     compare="adjacent",             # "adjacent" ó "baseline"
@@ -149,16 +26,25 @@ def detectar_drift_ks(
     # preproc
     winsor=None                     # (q_low, q_high) ej. (0.01, 0.99) o None
 ):
+
     df = df.copy()
     df[fecha_col] = pd.to_datetime(df[fecha_col])
     df = df.sort_values(fecha_col)
 
-    # columnas numéricas por defecto
+    # --- NUEVO: filtrar por flag si se pide ---
+    if flag_col is not None and flag_value is not None:
+        # aceptamos bool o 0/1; convertimos a bool para evitar sorpresas
+        df[flag_col] = df[flag_col].astype(bool)
+        df = df.loc[df[flag_col] == bool(flag_value)].copy()
+
+    # columnas numéricas por defecto (excluye flag_col si quedó en el DF)
     if columnas is None:
         columnas = df.select_dtypes(include=[np.number]).columns.tolist()
+        if flag_col in columnas:
+            columnas.remove(flag_col)
 
     # winsorize opcional
-    if winsor is not None:
+    if winsor is not None and len(df):
         ql, qh = winsor
         for c in columnas:
             q1, q2 = df[c].quantile(ql), df[c].quantile(qh)
@@ -166,10 +52,18 @@ def detectar_drift_ks(
                 df[c] = df[c].clip(q1, q2)
 
     # rango temporal (con burn-in opcional)
-    tmin = df[fecha_col].min().normalize()
+    tmin = df[fecha_col].min()
+    tmax = df[fecha_col].max()
+    if pd.isna(tmin) or pd.isna(tmax):
+        return pd.DataFrame(columns=[
+            "variable","window_start","window_end","ref_start","ref_end",
+            "n_ref","n_new","stat","pvalue","drift_detectado","detalle","estado"
+        ])
+
+    tmin = tmin.normalize()
     if skip_first_days and skip_first_days > 0:
         tmin = tmin + pd.Timedelta(days=skip_first_days)
-    tmax = df[fecha_col].max().normalize()
+    tmax = tmax.normalize()
 
     # generar ventanas
     wins = []
@@ -228,7 +122,8 @@ def detectar_drift_ks(
         for v in res["variable"].dropna().unique():
             mask = (res["variable"] == v) & (res["detalle"] == "ok")
             p = res.loc[mask, "pvalue"].values.astype(float)
-            if p.size == 0: continue
+            if p.size == 0:
+                continue
             order = np.argsort(p)
             ranked = np.arange(1, len(p)+1)
             thr = alpha * ranked / len(p)
@@ -239,7 +134,7 @@ def detectar_drift_ks(
             res.loc[mask, "drift_detectado"] = res.loc[mask, "drift_detectado"].values & passed
 
     # --- Persistencia: ≥ N consecutivas ---
-    if min_consecutive and min_consecutive > 1:
+    if min_consecutive and min_consecutive > 1 and not res.empty:
         for v in res["variable"].dropna().unique():
             m = (res["variable"] == v) & (res["detalle"] == "ok")
             flags = res.loc[m, "drift_detectado"].fillna(False).values.astype(bool)
@@ -248,7 +143,7 @@ def detectar_drift_ks(
             for i, f in enumerate(flags):
                 run = run + 1 if f else 0
                 hard[i] = run >= min_consecutive
-            # backfill dentro de cada bloque
+            # backfill dentro de cada racha
             i = len(hard) - 1
             while i >= 0:
                 if hard[i]:
@@ -258,6 +153,15 @@ def detectar_drift_ks(
                     i = j
                 i -= 1
             res.loc[m, "drift_detectado"] = hard
+
+    # --- NUEVO: etiqueta de estado en la salida ---
+    if flag_col is not None and flag_value is not None:
+        lbl = estado_label
+        if lbl is None:
+            lbl = "activa" if bool(flag_value) else "inactiva"
+        res["estado"] = lbl
+    else:
+        res["estado"] = "general"
 
     return res
 
@@ -340,18 +244,6 @@ def plot_ks_gallery(df, res, fecha_col, variables=None, resample="15min",
     for j in range(i+1, len(axes)):
         axes[j].axis("off")
     plt.tight_layout(); plt.show()
-
-# --- barra horizontal con conteos por variable (útil para elegir TOP-N)
-def plot_ks_counts(res, top=None):
-    counts = (res[(res["detalle"]=="ok") & (res["drift_detectado"]==True)]
-              .groupby("variable", as_index=False)
-              .size()
-              .sort_values("size", ascending=True))
-    if top: counts = counts.tail(top)
-    plt.figure(figsize=(8, max(2, 0.35*len(counts))))
-    plt.barh(counts["variable"], counts["size"])
-    plt.title("Ventanas con drift por variable")
-    plt.xlabel("# ventanas"); plt.tight_layout(); plt.show()
 
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
@@ -591,3 +483,37 @@ def plot_raw_with_drift(df, fecha_col, var, blocks, resample=None, color='tab:re
 
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
+
+def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
+
+    d = df.copy()
+    d = d.dropna(subset=["date_time"])
+    d = d[~d[columna].isna()].copy()
+
+    if mes is not None:
+        d = d[d["date_time"].dt.month == mes]
+    if dia is not None:
+        d = d[d["date_time"].dt.day == dia]
+    
+    diff = d["date_time"].diff()
+    diff_v = d[columna].diff()
+
+    prom = diff.mean()
+    std = diff.std()
+    minimo = diff.min()
+    maximo = diff.max()
+
+    prom_v = float(diff_v.mean())
+    std_v = float(diff_v.std())
+
+    diccionario = {"n_intervalos": len(diff),
+                   "promedio": prom,
+                   "promedio_minutos": prom.total_seconds() / 60,
+                   "std_minutos": std.total_seconds() / 60, 
+                   "minimo": minimo.total_seconds() / 60, 
+                   "maximo": maximo.total_seconds() / 60,
+                   "diff": diff,
+                   "promedio valor": prom_v,
+                   "std_valor": std_v}
+    
+    return diccionario

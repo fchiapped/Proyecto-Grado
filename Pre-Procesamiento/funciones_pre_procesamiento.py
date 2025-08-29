@@ -135,9 +135,16 @@ def plot_all_timeseries(df):
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Fechas sin Datos
-def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=60):
+def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=10, merge_gap_days=0):
+    """
+    merge_gap_days: si dos bloques de días SIN datos están separados por <= merge_gap_days días con datos,
+                    se concatenan en un solo bloque grande.
+    """
     df = df.copy()
     df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
+    df = df.dropna(subset=[dt_col])
+
+    # Conteo por día (filtrando los días con suficientes filas)
     fechas_validas = df.groupby(df[dt_col].dt.date).size()
     fechas_validas = fechas_validas[fechas_validas >= min_rows]
 
@@ -155,13 +162,19 @@ def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=60):
     rango_total = pd.date_range(min(fechas_con), max(fechas_con), freq='D').date
     fechas_sin = sorted(set(rango_total) - fechas_con)
 
-    def agrupar_en_rangos(lista_fechas):
+    def agrupar_en_rangos(lista_fechas, merge_gap_days=0):
+        """
+        Une rangos contiguos y también los que estén separados por
+        <= merge_gap_days días con datos entre medio.
+        """
         bloques = []
         if not lista_fechas:
             return bloques
         inicio = fin = lista_fechas[0]
         for fecha in lista_fechas[1:]:
-            if (fecha - fin).days == 1:
+            # Si hay continuidad normal (1 día) o separación pequeña (<= merge_gap_days + 1)
+            # Ej: si merge_gap_days=1, 2 y 4 se unen (separación 2 días en fechas => 1 día con datos al medio)
+            if (fecha - fin).days <= (merge_gap_days + 1):
                 fin = fecha
             else:
                 bloques.append((inicio.isoformat(), fin.isoformat()))
@@ -177,13 +190,80 @@ def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=60):
     porcentaje_sin = round(100 * total_sin / total_dias, 2)
 
     return {
-        "con_datos": agrupar_en_rangos(sorted(fechas_con)),
-        "sin_datos": agrupar_en_rangos(fechas_sin),
+        "con_datos": agrupar_en_rangos(sorted(fechas_con), merge_gap_days=0),   # días con datos no se suelen unir "saltando"
+        "sin_datos": agrupar_en_rangos(fechas_sin, merge_gap_days=merge_gap_days),
         "total_con": total_con,
         "total_sin": total_sin,
         "porcentaje_con": porcentaje_con,
         "porcentaje_sin": porcentaje_sin
     }
+
+def bloques_sin_datos_global(
+    df, columnas, dt_col="date_time", min_rows=60,
+    merge_gap_days=0, how="none"
+):
+    """
+    how:
+      - "none":   días sin datos si NINGUNA columna alcanza min_rows (intersección de faltantes)
+      - "all":    días con datos si TODAS las columnas alcanzan min_rows (útil si luego miras lo contrario)
+      - "any":    días con datos si AL MENOS una columna alcanza min_rows (complemento de "none")
+    Devuelve bloques de días SIN DATOS según 'how', usando 'merge_gap_days' para unir bloques cercanos.
+    """
+    df = df.copy()
+    df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
+    df = df.dropna(subset=[dt_col])
+    df["__date__"] = df[dt_col].dt.date
+
+    # Conteo de filas no nulas por día y por columna
+    counts = df.groupby("__date__")[columnas].agg(lambda s: s.notna().sum())
+
+    # Booleans de “esta columna tiene suficientes datos en el día”
+    has_data = counts >= min_rows
+
+    # Regla de combinación
+    if how == "none":
+        # Sin datos globales = ninguna columna alcanza min_rows
+        sin_datos_mask = ~has_data.any(axis=1)
+    elif how == "all":
+        # Sin datos (en sentido estricto) = no TODAS alcanzan min_rows
+        sin_datos_mask = ~has_data.all(axis=1)
+    elif how == "any":
+        # Sin datos si NO hay ni una columna con suficientes datos
+        sin_datos_mask = ~has_data.any(axis=1)
+    else:
+        raise ValueError("how debe ser 'none', 'all' o 'any'.")
+
+    fechas_sin = sorted(counts.index[sin_datos_mask])
+
+    if not fechas_sin:
+        return {"sin_datos": [], "total_sin": 0, "porcentaje_sin": 0.0}
+
+    rango_total = pd.date_range(min(counts.index), max(counts.index), freq="D").date
+
+    def agrupar_en_rangos(lista_fechas, merge_gap_days=0):
+        bloques = []
+        if not lista_fechas:
+            return bloques
+        inicio = fin = lista_fechas[0]
+        for fecha in lista_fechas[1:]:
+            if (fecha - fin).days <= (merge_gap_days + 1):
+                fin = fecha
+            else:
+                bloques.append((inicio.isoformat(), fin.isoformat()))
+                inicio = fin = fecha
+        bloques.append((inicio.isoformat(), fin.isoformat()))
+        return bloques
+
+    bloques = agrupar_en_rangos(fechas_sin, merge_gap_days=merge_gap_days)
+    total_sin = len(fechas_sin)
+    porcentaje_sin = round(100 * total_sin / len(rango_total), 2)
+
+    return {
+        "sin_datos": bloques,
+        "total_sin": total_sin,
+        "porcentaje_sin": porcentaje_sin
+    }
+
 
 def imprimir_bloques(nombre, bloques, total_dias, porcentaje):
     print(f"{nombre}:")
@@ -211,6 +291,91 @@ def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=60):
         resultados = fechas_con_y_sin_datos(df_col, dt_col=dt_col, min_rows=min_rows)
         imprimir_bloques("Fechas con datos", resultados["con_datos"], resultados["total_con"], resultados["porcentaje_con"])
         imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
+
+
+def _presence_by_minute(df, dt_col="date_time", value_col=None):
+    """
+    Devuelve una serie booleana (index: minuto) indicando si hay AL MENOS un dato no nulo
+    en ese minuto para 'value_col'. Si value_col es None, considera la fila como 'dato'.
+    """
+    d = df[[dt_col] + ([value_col] if value_col else [])].copy()
+    d[dt_col] = pd.to_datetime(d[dt_col], errors="coerce")
+    d = d.dropna(subset=[dt_col])
+
+    d["minute"] = d[dt_col].dt.floor("T")
+    if value_col:
+        has_data_min = d.groupby("minute")[value_col].apply(lambda s: s.notna().any())
+    else:
+        has_data_min = d.groupby("minute").size() > 0  # cualquier fila cuenta
+
+    # Rango completo minuto a minuto
+    full_idx = pd.date_range(has_data_min.index.min(), has_data_min.index.max(), freq="T")
+    presence = has_data_min.reindex(full_idx, fill_value=False)
+    presence.index.name = "minute"
+    return presence
+
+def _merge_intervals(intervals, merge_gap_minutes=0):
+    """
+    intervals: lista de tuplas (start_ts, end_ts) inclusivo por minuto.
+    Une intervalos si el 'gap' de datos entre ellos es <= merge_gap_minutes.
+    """
+    if not intervals:
+        return []
+    intervals = sorted(intervals, key=lambda x: x[0])
+    merged = [intervals[0]]
+    for s, e in intervals[1:]:
+        last_s, last_e = merged[-1]
+        # minutos de datos entre huecos = (s - last_e) - 1
+        gap = int((s - last_e).total_seconds() // 60) - 1
+        if gap <= merge_gap_minutes:
+            # unir
+            merged[-1] = (last_s, max(last_e, e))
+        else:
+            merged.append((s, e))
+    return merged
+
+def _find_gaps_from_presence(presence, min_gap_minutes=10, merge_gap_minutes=0):
+    """
+    presence: Serie booleana por minuto (True = hay datos, False = no hay).
+    Retorna lista de dicts con inicio, fin y duración (min) de cada bloque de no-datos (False).
+    """
+    mask = ~presence.values  # True donde NO hay datos
+    # detecta runs de True (no-datos)
+    diff = np.diff(np.r_[0, mask.view(np.int8), 0])
+    starts = np.where(diff == 1)[0]
+    ends   = np.where(diff == -1)[0] - 1
+
+    intervals = []
+    for i, j in zip(starts, ends):
+        dur = (j - i + 1)  # minutos
+        if dur >= min_gap_minutes:
+            intervals.append((presence.index[i], presence.index[j]))
+
+    # unir por islitas cortas de datos
+    intervals = _merge_intervals(intervals, merge_gap_minutes=merge_gap_minutes)
+
+    # armar salida
+    out = []
+    for s, e in intervals:
+        nmin = int((e - s).total_seconds() // 60) + 1
+        out.append({
+            "inicio": s.isoformat(),
+            "fin": e.isoformat(),
+            "minutos": nmin
+        })
+    return out
+
+def huecos_por_columna(df, col, dt_col="date_time",
+                       min_gap_minutes=10, merge_gap_minutes=0):
+    """
+    Bloques de minutos contiguos SIN datos en 'col', con duración mínima y posible merge de huecos.
+    """
+    presence = _presence_by_minute(df, dt_col=dt_col, value_col=col)
+    gaps = _find_gaps_from_presence(presence,
+                                    min_gap_minutes=min_gap_minutes,
+                                    merge_gap_minutes=merge_gap_minutes)
+    return {"columna": col, "huecos": gaps}
+
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Ventanas Activas (Planta 1)
