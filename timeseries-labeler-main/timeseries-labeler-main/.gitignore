@@ -1,0 +1,52 @@
+# Entornos virtuales
+/venv
+/env
+/.venv
+/ENV
+/env.bak
+/venv.bak
+
+# Archivos de caché de Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Archivos de distribución / empaquetado
+/dist
+/build
+*.egg-info/
+*.egg
+
+# Archivos de configuración de IDEs y editores
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Archivos de registro
+*.log
+
+# Archivos de bases de datos locales
+*.sqlite3
+*.db
+
+# Archivos de variables de entorno
+.env
+.env.*
+
+# Informes de pruebas y cobertura
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de datos
+*.csv
+*.json
+*.xml
