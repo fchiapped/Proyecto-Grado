@@ -1,0 +1,16 @@
+plant,run_time,strategy,current_window,resample,resample_agg,num_method,drifted_cols,total_cols,kpi_present,kpi_col,kpi_drifted,html_file
+planta1,2025-08-09 23:58:00,decay,3D,10min,mean,auto,0,0,False,,False,planta1_baseline_decay_resamp10min_20250809_235800.html
+planta1,2025-07-25 01:52:00,decay,3D,10min,mean,auto,0,0,False,,False,planta1_baseline_decay_resamp10min_20250725_015200.html
+planta2,2025-07-12 23:06:00,decay,3D,10min,mean,auto,0,0,False,,False,planta2_baseline_decay_resamp10min_20250712_230600.html
+planta3,2025-08-09 23:59:00,decay,3D,10min,mean,auto,0,0,False,,False,planta3_baseline_decay_resamp10min_20250809_235900.html
+planta1,2025-07-25 01:52:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250725_015200.html
+planta2,2025-07-12 23:06:00,decay,3D,raw,mean,auto,0,0,False,,False,planta2_baseline_decay_raw_20250712_230600.html
+planta3,2025-08-09 23:59:00,decay,3D,raw,mean,auto,0,0,False,,False,planta3_baseline_decay_raw_20250809_235900.html
+planta1,2025-07-25 01:52:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250725_015200.html
+planta2,2025-07-12 23:06:00,decay,3D,raw,mean,auto,0,0,False,,False,planta2_baseline_decay_raw_20250712_230600.html
+planta3,2025-08-09 23:59:00,decay,3D,raw,mean,auto,0,0,False,,False,planta3_baseline_decay_raw_20250809_235900.html
+planta1,2025-08-09 23:58:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250809_235800.html
+planta1,2025-08-09 23:58:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250809_235800.html
+planta1,2025-08-09 23:58:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250809_235800.html
+planta1,2025-08-09 23:58:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1_baseline_decay_raw_20250809_235800.html
+planta1,2025-08-09 23:58:00,decay,3D,raw,mean,auto,0,0,False,,False,planta1newtry_decay_raw_20250809_235800.html
