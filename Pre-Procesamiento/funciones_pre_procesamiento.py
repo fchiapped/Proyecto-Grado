@@ -376,6 +376,77 @@ def huecos_por_columna(df, col, dt_col="date_time",
                                     merge_gap_minutes=merge_gap_minutes)
     return {"columna": col, "huecos": gaps}
 
+def generar_flags_huecos(
+    df: pd.DataFrame,
+    columnas: list,
+    dt_col: str = "date_time",
+    freq: str = "min",                # usar 'min' (no 'T') para evitar FutureWarning
+    attach_to_df: bool = False,       # si True, retorna df original + flags
+    out_csv: str | None = None,       # ruta opcional para guardar CSV de flags
+    out_parquet: str | None = None    # o parquet (recomendado por tamaño/velocidad)
+):
+    """
+    Devuelve un DataFrame con flags por minuto indicando ausencia de datos por columna:
+      - nd_<col>: True si NO hay datos en ese minuto para <col>
+      - nd_any:   True si al menos una columna carece de datos
+      - nd_all:   True si todas las columnas carecen de datos
+      - valid_for_drift: True si todas las columnas tienen dato
+
+    Si attach_to_df=True, devuelve (df_con_flags, flags_minuto).
+    """
+
+    if not columnas:
+        raise ValueError("Debes especificar al menos una columna en 'columnas'.")
+
+    d = df[[dt_col] + columnas].copy()
+    d[dt_col] = pd.to_datetime(d[dt_col], errors="coerce")
+    d = d.dropna(subset=[dt_col]).sort_values(dt_col)
+
+    if d.empty:
+        raise ValueError("El DataFrame no tiene filas válidas con el dt_col indicado.")
+
+    # Índice minuto a minuto
+    start = d[dt_col].min().floor(freq)
+    end   = d[dt_col].max().ceil(freq)
+    full_idx = pd.date_range(start, end, freq=freq, name="minute")
+
+    # Construcción de flags: True = NO hay dato en ese minuto para la columna
+    flags = pd.DataFrame(index=full_idx)
+
+    for col in columnas:
+        # Minutos con al menos un valor NO nulo para la columna
+        tmp = d[[dt_col, col]].dropna(subset=[col]).copy()
+        if tmp.empty:
+            # nunca hay datos -> todo True (no hay datos) para esa columna
+            flags[f"nd_{col}"] = True
+            continue
+
+        tmp["minute"] = tmp[dt_col].dt.floor(freq)
+        present = (tmp.groupby("minute").size() > 0).reindex(full_idx, fill_value=False)
+        flags[f"nd_{col}"] = ~present  # invertimos: True = no hay datos
+
+    nd_cols = [f"nd_{c}" for c in columnas]
+    flags["nd_any"] = flags[nd_cols].any(axis=1)
+    flags["nd_all"] = flags[nd_cols].all(axis=1)
+    flags["valid_for_drift"] = ~flags["nd_any"]
+
+    # Asegurar booleanos puros (ahorra memoria / acelera filtros)
+    for c in nd_cols + ["nd_any", "nd_all", "valid_for_drift"]:
+        flags[c] = flags[c].astype("bool")
+
+    # Guardados opcionales
+    if out_csv:
+        flags.reset_index().rename(columns={"minute": "date_time"}).to_csv(out_csv, index=False)
+    if out_parquet:
+        flags.reset_index().rename(columns={"minute": "date_time"}).to_parquet(out_parquet, index=False)
+
+    if attach_to_df:
+        d["_minute"] = d[dt_col].dt.floor(freq)
+        out = d.merge(flags.reset_index().rename(columns={"minute": "_minute"}),
+                      on="_minute", how="left").drop(columns=["_minute"])
+        return out, flags
+
+    return flags
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Ventanas Activas (Planta 1)
