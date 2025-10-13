@@ -2,249 +2,303 @@
 import matplotlib.pyplot as plt  
 import pandas as pd
 import numpy as np
-from scipy.stats import ks_2samp
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # Drift y tendencia
 
-def detectar_drift_ks(
-    df, columnas=None, fecha_col="date_time",
+import json
+from pandas.api.types import is_numeric_dtype, is_bool_dtype
+from pathlib import Path
+from typing import Optional, Literal
 
-    # Ventanas Activas
-    flag_col=None,           # ej. "planta1_activa" o None para no filtrar
-    flag_value=None,         # True -> solo activos, False -> solo inactivos, None -> no filtra
-    estado_label=None, 
+from evidently import Report
+from evidently.presets import DataDriftPreset
+from evidently.metrics import ValueDrift, DriftedColumnsCount
+from evidently import DataDefinition, Dataset
+#--------------------------------------------------------------------------------------------------------#
 
-    # ventanas
-    window_days=14, step_days=3, min_dias=10, min_points=5000,
-    compare="adjacent",             # "adjacent" ó "baseline"
-    skip_first_days=0,              # ignora los primeros N días (calentamiento)
-    # sensibilidad
-    alpha=0.005, ks_min=0.15,       # p-valor y tamaño de efecto KS
-    fdr=True,                       # Benjamini–Hochberg por variable
-    min_consecutive=3,              # persistencia (N ventanas seguidas)
-    # preproc
-    winsor=None                     # (q_low, q_high) ej. (0.01, 0.99) o None
-):
+def strip_outliers(df: pd.DataFrame) -> pd.DataFrame:
+    """Si existe is_outlier, elimina filas marcadas como outlier (True/1/'true')."""
+    if "is_outlier" not in df.columns:
+        return df
+    s = df["is_outlier"]
+    # considerar 1/True/'true'/'True' como outlier
+    mask = ~(s.astype(str).str.lower().isin(["1","true","t","yes","y"]))
+    return df.loc[mask].drop(columns=["is_outlier"])
 
-    df = df.copy()
-    df[fecha_col] = pd.to_datetime(df[fecha_col])
-    df = df.sort_values(fecha_col)
-
-    # --- NUEVO: filtrar por flag si se pide ---
-    if flag_col is not None and flag_value is not None:
-        # aceptamos bool o 0/1; convertimos a bool para evitar sorpresas
-        df[flag_col] = df[flag_col].astype(bool)
-        df = df.loc[df[flag_col] == bool(flag_value)].copy()
-
-    # columnas numéricas por defecto (excluye flag_col si quedó en el DF)
-    if columnas is None:
-        columnas = df.select_dtypes(include=[np.number]).columns.tolist()
-        if flag_col in columnas:
-            columnas.remove(flag_col)
-
-    # winsorize opcional
-    if winsor is not None and len(df):
-        ql, qh = winsor
-        for c in columnas:
-            q1, q2 = df[c].quantile(ql), df[c].quantile(qh)
-            if pd.notna(q1) and pd.notna(q2):
-                df[c] = df[c].clip(q1, q2)
-
-    # rango temporal (con burn-in opcional)
-    tmin = df[fecha_col].min()
-    tmax = df[fecha_col].max()
-    if pd.isna(tmin) or pd.isna(tmax):
-        return pd.DataFrame(columns=[
-            "variable","window_start","window_end","ref_start","ref_end",
-            "n_ref","n_new","stat","pvalue","drift_detectado","detalle","estado"
-        ])
-
-    tmin = tmin.normalize()
-    if skip_first_days and skip_first_days > 0:
-        tmin = tmin + pd.Timedelta(days=skip_first_days)
-    tmax = tmax.normalize()
-
-    # generar ventanas
-    wins = []
-    step = pd.Timedelta(days=step_days)
-    span = pd.Timedelta(days=window_days) - pd.Timedelta(seconds=1)
-    t = tmin
-    while t <= tmax:
-        wins.append((t, min(t + span, tmax + pd.Timedelta(days=1) - pd.Timedelta(seconds=1))))
-        t = t + step
-
-    resultados = []
-    for col in columnas:
-        # cobertura & conteo por ventana
-        cov_dias, npts, series = [], [], []
-        for (ws, we) in wins:
-            s = df.loc[(df[fecha_col] >= ws) & (df[fecha_col] <= we) & (df[col].notna()), [fecha_col, col]]
-            cov_dias.append(s[fecha_col].dt.date.nunique())
-            npts.append(len(s))
-            series.append(s[col].values)
-
-        # ventanas válidas
-        valid = [i for i in range(len(wins)) if cov_dias[i] >= min_dias and npts[i] >= min_points]
-        if len(valid) < 2:
-            for i, (ws, we) in enumerate(wins):
-                resultados.append(dict(
-                    variable=col, window_start=ws, window_end=we,
-                    ref_start=None, ref_end=None,
-                    n_ref=None, n_new=npts[i],
-                    stat=np.nan, pvalue=np.nan,
-                    drift_detectado=None, detalle="pocos datos"
-                ))
-            continue
-
-        base_i = valid[0]
-        for k, i in enumerate(valid[1:]):
-            cur_i = i
-            ref_i = valid[k] if compare == "adjacent" else base_i
-            ws_ref, we_ref = wins[ref_i]
-            ws_cur, we_cur = wins[cur_i]
-            x, y = series[ref_i], series[cur_i]
-            stat, p = ks_2samp(x, y)
-            resultados.append(dict(
-                variable=col,
-                window_start=ws_cur, window_end=we_cur,
-                ref_start=ws_ref, ref_end=we_ref,
-                n_ref=len(x), n_new=len(y),
-                stat=float(stat), pvalue=float(p),
-                drift_detectado=(p < alpha and stat >= ks_min),
-                detalle="ok"
-            ))
-
-    res = pd.DataFrame(resultados).sort_values(["variable", "window_start"]).reset_index(drop=True)
-
-    # --- FDR por variable (opcional) ---
-    if fdr and not res.empty:
-        for v in res["variable"].dropna().unique():
-            mask = (res["variable"] == v) & (res["detalle"] == "ok")
-            p = res.loc[mask, "pvalue"].values.astype(float)
-            if p.size == 0:
-                continue
-            order = np.argsort(p)
-            ranked = np.arange(1, len(p)+1)
-            thr = alpha * ranked / len(p)
-            passed = np.zeros_like(p, dtype=bool)
-            ok = np.where(p[order] <= thr)[0]
-            if ok.size:
-                passed[order[:ok.max()+1]] = True
-            res.loc[mask, "drift_detectado"] = res.loc[mask, "drift_detectado"].values & passed
-
-    # --- Persistencia: ≥ N consecutivas ---
-    if min_consecutive and min_consecutive > 1 and not res.empty:
-        for v in res["variable"].dropna().unique():
-            m = (res["variable"] == v) & (res["detalle"] == "ok")
-            flags = res.loc[m, "drift_detectado"].fillna(False).values.astype(bool)
-            run = 0
-            hard = np.zeros_like(flags, dtype=bool)
-            for i, f in enumerate(flags):
-                run = run + 1 if f else 0
-                hard[i] = run >= min_consecutive
-            # backfill dentro de cada racha
-            i = len(hard) - 1
-            while i >= 0:
-                if hard[i]:
-                    j = i
-                    while j >= 0 and flags[j]:
-                        hard[j] = True; j -= 1
-                    i = j
-                i -= 1
-            res.loc[m, "drift_detectado"] = hard
-
-    # --- NUEVO: etiqueta de estado en la salida ---
-    if flag_col is not None and flag_value is not None:
-        lbl = estado_label
-        if lbl is None:
-            lbl = "activa" if bool(flag_value) else "inactiva"
-        res["estado"] = lbl
+def resample_mixed(df: pd.DataFrame, freq: str, agg: str) -> pd.DataFrame:
+    """Resample para mixto: numéricas por mean/median, categóricas por moda."""
+    if df.empty: return df
+    num = df.select_dtypes(include="number")
+    other_cols = [c for c in df.columns if c not in num.columns]
+    if agg == "median":
+        num_rs = num.resample(freq).median()
     else:
-        res["estado"] = "general"
+        num_rs = num.resample(freq).mean()
+    if other_cols:
+        # moda por bloque (si hay empate, toma la primera)
+        def _mode(s: pd.Series):
+            s = s.dropna()
+            if s.empty: return np.nan
+            counts = s.value_counts()
+            return counts.index[0]
+        other = df[other_cols]
+        other_rs = other.resample(freq).agg(_mode)
+        out = pd.concat([num_rs, other_rs], axis=1)
+    else:
+        out = num_rs
+    # reordenar columnas como original
+    out = out[[c for c in df.columns if c in out.columns]]
+    return out
 
-    return res
-
-def _drift_blocks(res, var):
-    sub = res[(res["variable"] == var) & (res["detalle"] == "ok")].copy()
-    if sub.empty: 
-        return []
-    sub = sub.sort_values("window_start")
-    blocks, open_s, open_e = [], None, None
-    for _, r in sub.iterrows():
-        if bool(r.get("drift_detectado", False)):
-            s, e = pd.to_datetime(r["window_start"]), pd.to_datetime(r["window_end"])
-            if open_s is None:
-                open_s, open_e = s, e
-            else:
-                if s <= open_e + pd.Timedelta(seconds=1):
-                    open_e = max(open_e, e)
-                else:
-                    blocks.append((open_s, open_e))
-                    open_s, open_e = s, e
+def build_types_keep_all(ref: pd.DataFrame, cur: pd.DataFrame, dt_col: str) -> tuple[list[str], list[str], list[str]]:
+    """
+    Devuelve (numeric_cols, categorical_cols, dropped_all_nan)
+    Incluye TODAS las columnas comunes salvo:
+      - dt_col, EXCLUDE_COLUMNS
+      - columnas 100% NaN en ref y cur
+    """
+    common = [c for c in ref.columns.intersection(cur.columns) if c != dt_col and c not in EXCLUDE_COLUMNS]
+    numeric_cols, categorical_cols, dropped_all_nan = [], [], []
+    for c in common:
+        r, k = ref[c], cur[c]
+        if r.dropna().empty and k.dropna().empty:
+            dropped_all_nan.append(c); continue
+        if is_bool_dtype(r) or is_bool_dtype(k):
+            categorical_cols.append(c)
+        elif is_numeric_dtype(r) or is_numeric_dtype(k):
+            numeric_cols.append(c)
         else:
-            if open_s is not None:
-                blocks.append((open_s, open_e)); open_s, open_e = None, None
-    if open_s is not None:
-        blocks.append((open_s, open_e))
-    return blocks
+            categorical_cols.append(c)
+    return numeric_cols, categorical_cols, dropped_all_nan
 
-# --- una figura para una variable
-def plot_ks_one(df, res, fecha_col, var, resample="15min",
-                shade_color="tab:red", shade_alpha=0.22,
-                line_kwargs=None):
-    d = df[[fecha_col, var]].dropna().sort_values(fecha_col)
-    s = d.set_index(fecha_col)[var].resample(resample).median().dropna().reset_index()
-    blocks = _drift_blocks(res, var)
+def window_starts(index: pd.DatetimeIndex, win: pd.Timedelta, step: pd.Timedelta):
+    if len(index) == 0: return []
+    t, tmax = index.min(), index.max()
+    out = []
+    while t + win <= tmax:
+        out.append(t); t = t + step
+    return out
 
-    plt.figure(figsize=(12, 4))
-    plt.plot(s[fecha_col], s[var], **(line_kwargs or {}))
-    for s0, s1 in blocks:
-        plt.axvspan(s0, s1, color=shade_color, alpha=shade_alpha)
-    n_blocks = len(blocks)
-    plt.title(f"Serie – {var}  (bloques con drift: {n_blocks})")
-    plt.xlabel("Tiempo"); plt.ylabel(var); plt.tight_layout(); plt.show()
+def ref_decay_prefix_mass(df_hist: pd.DataFrame, now: pd.Timestamp,
+                          half_life_hours=24*7, target_mass=0.95) -> pd.DataFrame:
+    """
+    Decay determinístico: calcula pesos w = exp(-Δt/τ), ordena por recencia,
+    y toma el prefijo más reciente cuya masa acumulada >= target_mass.
+    """
+    if df_hist.empty: return df_hist
+    tau = pd.Timedelta(hours=half_life_hours) / np.log(2)
+    dt = (now - df_hist.index)
+    w = np.exp(-dt / tau).astype(float)
+    order = np.argsort(-df_hist.index.view("i8"))  # descendente por tiempo
+    w_sorted = w.values[order]
+    cum = np.cumsum(w_sorted) / w_sorted.sum()
+    cut_idx = np.searchsorted(cum, target_mass, side="left")
+    # tomar hasta cut_idx (inclusive)
+    take_pos = order[: (cut_idx + 1)]
+    sel = df_hist.iloc[np.sort(take_pos)]
+    return sel
 
-# --- galería: muchas variables en grilla
-def plot_ks_gallery(df, res, fecha_col, variables=None, resample="15min",
-                    ncols=2, height_per_row=2.6, only_with_drift=True):
-    if variables is None:
-        variables = res["variable"].dropna().unique().tolist()
-    if only_with_drift:
-        have = res[(res["detalle"]=="ok") & (res["drift_detectado"]==True)]["variable"].unique().tolist()
-        variables = [v for v in variables if v in have]
+def ref_golden(df_hist: pd.DataFrame, win="30min", step="10min", k=40) -> pd.DataFrame:
+    """Elige K ventanas históricas más 'estables' (score robusto)."""
+    win_td, step_td = pd.to_timedelta(win), pd.to_timedelta(step)
+    starts = window_starts(df_hist.index, win_td, step_td)
+    if not starts: return df_hist.iloc[:0]
+    rows = []
+    for t0 in starts:
+        t1 = t0 + win_td - pd.Timedelta(nanoseconds=1)
+        sub = df_hist.loc[t0:t1]
+        if len(sub) < 3: continue
+        num = sub.select_dtypes(include="number")
+        if num.shape[1] == 0: continue
+        med = num.median()
+        iqr = num.quantile(0.75) - num.quantile(0.25)
+        rsd = (iqr / (med.abs() + 1e-12)).replace([np.inf, -np.inf], np.nan)
+        score = rsd.median(skipna=True)
+        rows.append((t0, t1, float(score)))
+    if not rows: return df_hist.iloc[:0]
+    stab = pd.DataFrame(rows, columns=["t0","t1","score"]).sort_values("score").head(k)
+    parts = [df_hist.loc[t0:t1] for t0, t1, _ in stab.itertuples(index=False)]
+    return pd.concat(parts, axis=0) if parts else df_hist.iloc[:0]
 
-    n = len(variables)
-    if n == 0:
-        print("No hay variables con drift para mostrar."); 
-        return
+def ref_seasonal(df_hist: pd.DataFrame, current_end: pd.Timestamp, weeks_back=12) -> pd.DataFrame:
+    """Referencia estacional: misma hora-del-día y día-de-semana, W semanas atrás."""
+    if df_hist.empty: return df_hist.iloc[:0]
+    slot = current_end.dayofweek * 24 + current_end.hour
+    dw, hh = df_hist.index.dayofweek, df_hist.index.hour
+    mask = (dw * 24 + hh) == slot
+    hist = df_hist.loc[mask].loc[:current_end]
+    if hist.empty: return df_hist.iloc[:0]
+    start_lim = current_end - pd.Timedelta(weeks=weeks_back)
+    return hist.loc[start_lim:]
 
-    nrows = int(np.ceil(n / ncols))
-    fig, axes = plt.subplots(nrows, ncols, figsize=(12, height_per_row*nrows), squeeze=False)
-    axes = axes.flatten()
 
-    # ordenar por # de ventanas con drift (desc)
-    counts = (res[(res["detalle"]=="ok") & (res["drift_detectado"]==True)]
-              .groupby("variable", as_index=False).size()
-              .sort_values("size", ascending=False))
-    order = counts["variable"].tolist()
-    variables = sorted(variables, key=lambda v: order.index(v) if v in order else 1e9)
 
-    for i, var in enumerate(variables):
-        ax = axes[i]
-        d = df[[fecha_col, var]].dropna().sort_values(fecha_col)
-        s = d.set_index(fecha_col)[var].resample(resample).median().dropna().reset_index()
-        ax.plot(s[fecha_col], s[var])
-        for s0, s1 in _drift_blocks(res, var):
-            ax.axvspan(pd.to_datetime(s0), pd.to_datetime(s1), color="tab:red", alpha=0.22)
-        n_blocks = len(_drift_blocks(res, var))
-        ax.set_title(f"{var}  (bloques: {n_blocks})", fontsize=10)
-        ax.set_xlabel("Tiempo"); ax.set_ylabel(var)
-    # apaga ejes sobrantes
-    for j in range(i+1, len(axes)):
-        axes[j].axis("off")
-    plt.tight_layout(); plt.show()
+def extract_value_drift_table(report, snap=None) -> pd.DataFrame:
+    """
+    Devuelve una tabla por columna con: col, drifted, score, method, threshold.
+    Soporta tanto Report como Snapshot según la versión de Evidently.
+    """
+    # 1) Obtenemos el dict del reporte de la forma que exista
+    d = None
+    if hasattr(report, "as_dict"):        # Evidently >=0.7 (usualmente en Report)
+        d = report.as_dict()
+    elif hasattr(report, "json"):         # Algunas versiones exponen .json() en Report
+        d = json.loads(report.json())
+    elif snap is not None and hasattr(snap, "json"):  # O en Snapshot
+        d = json.loads(snap.json())
+    else:
+        raise RuntimeError("No se pudo serializar el Report/Snapshot a dict (as_dict/json no disponibles).")
 
+    # 2) Parseamos métricas ValueDrift
+    rows = []
+    for m in d.get("metrics", []):
+        if m.get("metric") == "ValueDrift":
+            res = m.get("result", {}) or {}
+            rows.append({
+                "col":       res.get("column_name") or res.get("column"),
+                "drifted":   res.get("drift_detected"),
+                "score":     res.get("drift_score"),
+                "method":    res.get("stattest_name") or res.get("stattest"),
+                "threshold": res.get("drift_threshold") or res.get("threshold"),
+            })
+    return pd.DataFrame(rows)
+
+
+def make_report_for_plant(
+    df: pd.DataFrame,
+    strategy: Literal["decay","golden","seasonal"] = BASELINE_STRATEGY,
+    forced_dt_col: Optional[str] = "date_time",
+    out_prefix: str = "planta",
+) -> Path:
+
+    # --- índice temporal y limpieza de outliers (igual que antes)
+    dt = "date_time"
+    df = df.copy()
+    df[dt] = pd.to_datetime(df[dt], errors="coerce")
+    df = df.dropna(subset=[dt]).sort_values(dt).set_index(dt)
+    df = strip_outliers(df)
+
+    if df.empty:
+        raise ValueError("Dataset vacío tras filtrar/parsear fechas.")
+
+    # === agregado: integrar flags si existen ==========================
+    flag_path = flag_files.get(out_prefix)
+    if flag_path and flag_path.exists():
+        flags = pd.read_csv(flag_path, parse_dates=["date_time"])
+        flags["date_time"] = pd.to_datetime(flags["date_time"]).dt.floor("min")
+        df.index = df.index.floor("min")
+        df = df.merge(flags, left_index=True, right_on="date_time", how="left").set_index("date_time")
+
+        # --- filtro por columna: solo se eliminan datos faltantes de ESA variable
+        nd_cols = [c for c in df.columns if c.startswith("nd_")]
+        for nd_col in nd_cols:
+            var = nd_col.replace("nd_", "")
+            if var in df.columns:
+                mask = ~df[nd_col]  # True donde hay dato válido
+                df.loc[~mask, var] = np.nan  # marca como NaN solo esa columna
+
+        # eliminar columnas de control de los flags
+        drop_cols = ["valid_for_drift", "nd_any", "nd_all"] + nd_cols
+        df = df[[c for c in df.columns if c not in drop_cols]]
+
+        print(f"[{out_prefix}] Flags integrados (por columna) → {len(df)} filas totales, sin eliminar registros completos")
+    else:
+        print(f"[{out_prefix}] Sin flags o archivo no encontrado, se usa DF completo.")
+    # ================================================================
+
+    # --- split temporal (idéntico al tuyo)
+    now = df.index.max()
+    cur_start = now - pd.to_timedelta(CURRENT_WINDOW)
+    cur = df.loc[cur_start:now]
+    hist = df.loc[:cur_start - pd.Timedelta(nanoseconds=1)]
+
+    # --- baseline determinístico
+    if strategy == "decay":
+        ref_global = ref_decay_prefix_mass(hist, now, DECAY_HALF_LIFE_HOURS, DECAY_WEIGHT_MASS)
+    elif strategy == "golden":
+        ref_global = ref_golden(hist, GOLDEN_WIN, GOLDEN_STEP, GOLDEN_K)
+    elif strategy == "seasonal":
+        ref_global = ref_seasonal(hist, now, SEASONAL_WEEKS_BACK)
+    else:
+        raise ValueError("strategy inválida")
+
+    if ref_global.empty:
+        ref_global = hist
+
+    # --- columnas comunes menos dt/exclude
+    common_cols = sorted(set(ref_global.columns).intersection(cur.columns) - {dt} - set(EXCLUDE_COLUMNS))
+    if not common_cols:
+        raise ValueError("No hay columnas comunes para comparar.")
+    ref_final = ref_global[common_cols].copy()
+    cur_final = cur[common_cols].copy()
+
+    # --- RESAMPLE
+    if RESAMPLE:
+        ref_final = resample_mixed(ref_final, RESAMPLE, RESAMPLE_AGG).dropna(how="all")
+        cur_final = resample_mixed(cur_final, RESAMPLE, RESAMPLE_AGG).dropna(how="all")
+
+    # --- tipos y columnas 100% NaN (igual que antes)
+    numeric_cols, categorical_cols, dropped_all_nan = build_types_keep_all(ref_final, cur_final, dt_col=dt)
+
+    # --- (resto de make_report_for_plant sin tocar) -------------------
+    audit_rows = []
+    for c in common_cols:
+        reason = []
+        if c in EXCLUDE_COLUMNS: reason.append("in_EXCLUDE_COLUMNS")
+        if c in dropped_all_nan: reason.append("all_nan_ref_and_cur")
+        kept = (c not in dropped_all_nan) and (c not in EXCLUDE_COLUMNS)
+        audit_rows.append({"col": c, "kept": kept, "reason": ";".join(reason)})
+    audit_df = pd.DataFrame(audit_rows).sort_values(["kept","col"])
+    tag_base = f"{strategy}_{'resamp'+RESAMPLE if RESAMPLE else 'raw'}_{pd.Timestamp(now).strftime('%Y%m%d_%H%M%S')}"
+
+    if not numeric_cols and not categorical_cols:
+        raise ValueError("Todas las columnas quedaron 100% NaN en ref y cur tras el resample.")
+
+    definition = DataDefinition(
+        numerical_columns=numeric_cols if numeric_cols else None,
+        categorical_columns=categorical_cols if categorical_cols else None
+    )
+    preset_kwargs = {}
+    if NUM_METHOD != "auto":
+        preset_kwargs["num_method"] = NUM_METHOD
+        if NUM_THRESHOLD is not None:
+            preset_kwargs["num_threshold"] = NUM_THRESHOLD
+
+    metrics = [
+        DataDriftPreset(**preset_kwargs),
+        DriftedColumnsCount(**preset_kwargs),
+        *[
+            (ValueDrift(column=c) if NUM_METHOD == "auto"
+             else (ValueDrift(column=c, method=NUM_METHOD) if NUM_THRESHOLD is None
+                   else ValueDrift(column=c, method=NUM_METHOD, threshold=NUM_THRESHOLD)))
+            for c in (numeric_cols + categorical_cols)
+        ],
+    ]
+
+    report = Report(metrics=metrics)
+    ds_ref = Dataset.from_pandas(ref_final.reset_index(drop=True), data_definition=definition)
+    ds_cur = Dataset.from_pandas(cur_final.reset_index(drop=True), data_definition=definition)
+    snap = report.run(reference_data=ds_ref, current_data=ds_cur)
+
+    # (tu código original de guardado igual)
+    df_cols = extract_value_drift_table(report, snap)
+    drifted_count = int(df_cols.get("drifted", pd.Series(dtype=bool)).fillna(False).sum())
+    total_cols = int(df_cols.shape[0])
+
+    kpi_tag = ""
+    kpi_present = KPI_ENABLED and (KPI_COL in df_cols["col"].tolist())
+    kpi_drifted = bool(df_cols.query("col == @KPI_COL and drifted == True").shape[0]) if kpi_present else False
+    if KPI_ENABLED and KPI_IN_FILENAME:
+        kpi_tag = "_KPI-DRIFT" if kpi_drifted else "_KPI-OK" if kpi_present else "_KPI-N/A"
+
+    out_html = output_dir / f"{out_prefix}_{strategy}.html"
+    snap.save_html(str(out_html))
+
+
+    print(f"[{out_prefix}] cols={total_cols} | drifted={drifted_count} | KPI={'DRIFT' if kpi_drifted else 'OK' if kpi_present else 'N/A'}")
+    print(f"OK → {out_html.name} (carpeta: {output_dir})")
+    return out_html
 #--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # --- Outlier detection by threshold methods ---

@@ -4,7 +4,6 @@ import pandas as pd
 import numpy as np
 
 #--------------------------------------------------------------------------------------------------------#
-#--------------------------------------------------------------------------------------------------------#
 # Plots Análisis Exploratorio
 def plot_temporal(df, columna: str, color: str='blue', marker: str='o', ax=None,
                   warning_min=None, warning_max=None, critical_min=None, critical_max=None):
