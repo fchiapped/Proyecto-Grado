@@ -1,7 +1,7 @@
 poll_interval_seconds: 10
 plants:
   - name: planta_2
-    csv_path: ../df_procesados/df_planta_2.csv
+    csv_path: df_procesados/df_planta_2.csv
     datetime_col: date_time
     # columns: # 如果为空会自动选择所有数值列
     #  - Flujo Alimentación Digestor 3
