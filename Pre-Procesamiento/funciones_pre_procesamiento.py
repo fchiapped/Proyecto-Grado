@@ -135,15 +135,10 @@ def plot_all_timeseries(df):
 #--------------------------------------------------------------------------------------------------------#
 # Fechas sin Datos
 def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=10, merge_gap_days=0):
-    """
-    merge_gap_days: si dos bloques de días SIN datos están separados por <= merge_gap_days días con datos,
-                    se concatenan en un solo bloque grande.
-    """
     df = df.copy()
     df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
     df = df.dropna(subset=[dt_col])
 
-    # Conteo por día (filtrando los días con suficientes filas)
     fechas_validas = df.groupby(df[dt_col].dt.date).size()
     fechas_validas = fechas_validas[fechas_validas >= min_rows]
 
@@ -162,17 +157,11 @@ def fechas_con_y_sin_datos(df, dt_col="date_time", min_rows=10, merge_gap_days=0
     fechas_sin = sorted(set(rango_total) - fechas_con)
 
     def agrupar_en_rangos(lista_fechas, merge_gap_days=0):
-        """
-        Une rangos contiguos y también los que estén separados por
-        <= merge_gap_days días con datos entre medio.
-        """
         bloques = []
         if not lista_fechas:
             return bloques
         inicio = fin = lista_fechas[0]
         for fecha in lista_fechas[1:]:
-            # Si hay continuidad normal (1 día) o separación pequeña (<= merge_gap_days + 1)
-            # Ej: si merge_gap_days=1, 2 y 4 se unen (separación 2 días en fechas => 1 día con datos al medio)
             if (fecha - fin).days <= (merge_gap_days + 1):
                 fin = fecha
             else:
@@ -201,33 +190,20 @@ def bloques_sin_datos_global(
     df, columnas, dt_col="date_time", min_rows=60,
     merge_gap_days=0, how="none"
 ):
-    """
-    how:
-      - "none":   días sin datos si NINGUNA columna alcanza min_rows (intersección de faltantes)
-      - "all":    días con datos si TODAS las columnas alcanzan min_rows (útil si luego miras lo contrario)
-      - "any":    días con datos si AL MENOS una columna alcanza min_rows (complemento de "none")
-    Devuelve bloques de días SIN DATOS según 'how', usando 'merge_gap_days' para unir bloques cercanos.
-    """
     df = df.copy()
     df[dt_col] = pd.to_datetime(df[dt_col], errors="coerce")
     df = df.dropna(subset=[dt_col])
     df["__date__"] = df[dt_col].dt.date
 
-    # Conteo de filas no nulas por día y por columna
     counts = df.groupby("__date__")[columnas].agg(lambda s: s.notna().sum())
 
-    # Booleans de “esta columna tiene suficientes datos en el día”
     has_data = counts >= min_rows
 
-    # Regla de combinación
     if how == "none":
-        # Sin datos globales = ninguna columna alcanza min_rows
         sin_datos_mask = ~has_data.any(axis=1)
     elif how == "all":
-        # Sin datos (en sentido estricto) = no TODAS alcanzan min_rows
         sin_datos_mask = ~has_data.all(axis=1)
     elif how == "any":
-        # Sin datos si NO hay ni una columna con suficientes datos
         sin_datos_mask = ~has_data.any(axis=1)
     else:
         raise ValueError("how debe ser 'none', 'all' o 'any'.")
@@ -263,7 +239,6 @@ def bloques_sin_datos_global(
         "porcentaje_sin": porcentaje_sin
     }
 
-
 def imprimir_bloques(nombre, bloques, total_dias, porcentaje):
     print(f"{nombre}:")
     total = 0
@@ -291,12 +266,7 @@ def analizar_columnas_por_fecha(df, columnas, dt_col="date_time", min_rows=60):
         imprimir_bloques("Fechas con datos", resultados["con_datos"], resultados["total_con"], resultados["porcentaje_con"])
         imprimir_bloques("Fechas sin datos", resultados["sin_datos"], resultados["total_sin"], resultados["porcentaje_sin"])
 
-
 def _presence_by_minute(df, dt_col="date_time", value_col=None):
-    """
-    Devuelve una serie booleana (index: minuto) indicando si hay AL MENOS un dato no nulo
-    en ese minuto para 'value_col'. Si value_col es None, considera la fila como 'dato'.
-    """
     d = df[[dt_col] + ([value_col] if value_col else [])].copy()
     d[dt_col] = pd.to_datetime(d[dt_col], errors="coerce")
     d = d.dropna(subset=[dt_col])
@@ -305,7 +275,7 @@ def _presence_by_minute(df, dt_col="date_time", value_col=None):
     if value_col:
         has_data_min = d.groupby("minute")[value_col].apply(lambda s: s.notna().any())
     else:
-        has_data_min = d.groupby("minute").size() > 0  # cualquier fila cuenta
+        has_data_min = d.groupby("minute").size() > 0 
 
     # Rango completo minuto a minuto
     full_idx = pd.date_range(has_data_min.index.min(), has_data_min.index.max(), freq="T")
@@ -314,17 +284,12 @@ def _presence_by_minute(df, dt_col="date_time", value_col=None):
     return presence
 
 def _merge_intervals(intervals, merge_gap_minutes=0):
-    """
-    intervals: lista de tuplas (start_ts, end_ts) inclusivo por minuto.
-    Une intervalos si el 'gap' de datos entre ellos es <= merge_gap_minutes.
-    """
     if not intervals:
         return []
     intervals = sorted(intervals, key=lambda x: x[0])
     merged = [intervals[0]]
     for s, e in intervals[1:]:
         last_s, last_e = merged[-1]
-        # minutos de datos entre huecos = (s - last_e) - 1
         gap = int((s - last_e).total_seconds() // 60) - 1
         if gap <= merge_gap_minutes:
             # unir
@@ -334,12 +299,9 @@ def _merge_intervals(intervals, merge_gap_minutes=0):
     return merged
 
 def _find_gaps_from_presence(presence, min_gap_minutes=10, merge_gap_minutes=0):
-    """
-    presence: Serie booleana por minuto (True = hay datos, False = no hay).
-    Retorna lista de dicts con inicio, fin y duración (min) de cada bloque de no-datos (False).
-    """
-    mask = ~presence.values  # True donde NO hay datos
-    # detecta runs de True (no-datos)
+
+    mask = ~presence.values
+    # detecta runs no datos
     diff = np.diff(np.r_[0, mask.view(np.int8), 0])
     starts = np.where(diff == 1)[0]
     ends   = np.where(diff == -1)[0] - 1
@@ -350,7 +312,7 @@ def _find_gaps_from_presence(presence, min_gap_minutes=10, merge_gap_minutes=0):
         if dur >= min_gap_minutes:
             intervals.append((presence.index[i], presence.index[j]))
 
-    # unir por islitas cortas de datos
+    # unir por islas cortas de datos
     intervals = _merge_intervals(intervals, merge_gap_minutes=merge_gap_minutes)
 
     # armar salida
@@ -364,11 +326,7 @@ def _find_gaps_from_presence(presence, min_gap_minutes=10, merge_gap_minutes=0):
         })
     return out
 
-def huecos_por_columna(df, col, dt_col="date_time",
-                       min_gap_minutes=10, merge_gap_minutes=0):
-    """
-    Bloques de minutos contiguos SIN datos en 'col', con duración mínima y posible merge de huecos.
-    """
+def huecos_por_columna(df, col, dt_col="date_time", min_gap_minutes=10, merge_gap_minutes=0):
     presence = _presence_by_minute(df, dt_col=dt_col, value_col=col)
     gaps = _find_gaps_from_presence(presence,
                                     min_gap_minutes=min_gap_minutes,
@@ -379,20 +337,11 @@ def generar_flags_huecos(
     df: pd.DataFrame,
     columnas: list,
     dt_col: str = "date_time",
-    freq: str = "min",                # usar 'min' (no 'T') para evitar FutureWarning
-    attach_to_df: bool = False,       # si True, retorna df original + flags
-    out_csv: str | None = None,       # ruta opcional para guardar CSV de flags
-    out_parquet: str | None = None    # o parquet (recomendado por tamaño/velocidad)
+    freq: str = "min",
+    attach_to_df: bool = False,
+    out_csv: str | None = None,
+    out_parquet: str | None = None
 ):
-    """
-    Devuelve un DataFrame con flags por minuto indicando ausencia de datos por columna:
-      - nd_<col>: True si NO hay datos en ese minuto para <col>
-      - nd_any:   True si al menos una columna carece de datos
-      - nd_all:   True si todas las columnas carecen de datos
-      - valid_for_drift: True si todas las columnas tienen dato
-
-    Si attach_to_df=True, devuelve (df_con_flags, flags_minuto).
-    """
 
     if not columnas:
         raise ValueError("Debes especificar al menos una columna en 'columnas'.")
@@ -524,10 +473,7 @@ def build_active_flag(
     max_gap_minutes: int = 25,
     edge_buffer: int = 0
 ) -> pd.Series:
-    """
-    Construye flag OR entre reglas sobre múltiples señales, estabiliza con closing,
-    filtra por duración mínima y fusiona bloques separados por gaps cortos.
-    """
+
     d = df.copy()
     d[fecha_col] = pd.to_datetime(d[fecha_col])
     d = d.sort_values(fecha_col).set_index(fecha_col)
@@ -571,10 +517,6 @@ def build_active_flag(
     return active_final
 
 def blocks_from_flag(df: pd.DataFrame, fecha_col: str, flag: pd.Series) -> pd.DataFrame:
-    """
-    Versión compatible con tu firma: toma df+fecha para asegurar índice y
-    devuelve bloques [inicio, fin].
-    """
     d = df.copy()
     d[fecha_col] = pd.to_datetime(d[fecha_col])
     d = d.sort_values(fecha_col).set_index(fecha_col)
