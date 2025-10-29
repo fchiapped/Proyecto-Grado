@@ -17,6 +17,7 @@ warnings.filterwarnings("ignore")
 
 
 # ---------------------- Utilidades base ---------------------- #
+
 def strip_outliers(df: pd.DataFrame) -> pd.DataFrame:
     """Si existe una columna is_outlier booleana/1-0, quita outliers."""
     if "is_outlier" not in df.columns:
@@ -159,6 +160,7 @@ def psi_categorical(ref: pd.Series, cur: pd.Series) -> float | None:
     p_r = _safe_prop(r_counts)
     p_c = _safe_prop(c_counts)
     return _psi_from_props(p_r, p_c)
+
 
 def build_metrics_table(
     ref_final: pd.DataFrame,
@@ -435,5 +437,191 @@ def run_drift_batch(
                 print(f"[FAIL] {plant} · {strat}: {e}")
 
     return paths, errors
+
+
 #--------------------------------------------------------------------------------------------------------#
+# --- Metricas
+
+def list_supported_metrics() -> list[str]:
+    return ["psi", "ks", "wasserstein", "mannwhitney", "evidently_default"]
+
+def _score_numeric_series(a: pd.Series, b: pd.Series, metric: str) -> float | None:
+    a = pd.to_numeric(a, errors="coerce").dropna()
+    b = pd.to_numeric(b, errors="coerce").dropna()
+    if len(a) < 5 or len(b) < 5:
+        return None
+    if metric == "psi":
+        return psi_numeric(a, b, n_bins=10)
+    if metric == "ks":
+        if not _HAVE_SCIPY: return None
+        try:
+            return float(ks_2samp(a, b, alternative="two-sided", mode="auto").statistic)
+        except Exception:
+            return None
+    if metric == "wasserstein":
+        if not _HAVE_SCIPY: return None
+        try:
+            return float(wasserstein_distance(a, b))
+        except Exception:
+            return None
+    if metric == "mannwhitney":
+        if not _HAVE_SCIPY: return None
+        try:
+            res = mannwhitneyu(a, b, alternative="two-sided")
+            n, m = len(a), len(b); denom = n*m if n*m>0 else 1
+            return float(res.statistic / denom)
+        except Exception:
+            return None
+    return psi_numeric(a, b, n_bins=10)
+
+def _score_categorical_series(a: pd.Series, b: pd.Series, metric: str) -> float | None:
+    # fallback to PSI for categoricals
+    return psi_categorical(a, b)
+
+def _dispatch_build_metrics(
+    ref_final: pd.DataFrame,
+    cur_final: pd.DataFrame,
+    numeric_cols: list[str],
+    categorical_cols: list[str],
+    metric: str,
+    num_threshold: float | None = None
+) -> pd.DataFrame:
+    rows = []
+    default_thr = {"psi": 0.2, "ks": 0.15, "wasserstein": np.nan, "mannwhitney": 0.55}
+    thr = default_thr.get(metric, 0.2) if num_threshold is None else num_threshold
+
+    for col in numeric_cols:
+        if col not in ref_final.columns or col not in cur_final.columns: continue
+        r, c = ref_final[col], cur_final[col]
+        score = _score_numeric_series(r, c, metric)
+        eff_thr = thr
+        if metric == "wasserstein":
+            std_ref = pd.to_numeric(r, errors="coerce").dropna().std()
+            if np.isnan(thr) or thr is None:
+                eff_thr = float(std_ref) * 0.5 if pd.notna(std_ref) else 0.5
+        rows.append({
+            "col": col, "type": "numeric",
+            "score": score, "threshold": eff_thr, "method": metric,
+            "drift_detected": (False if score is None else (score >= eff_thr if metric in ["psi","ks","mannwhitney"] else score >= eff_thr))
+        })
+
+    for col in categorical_cols:
+        if col not in ref_final.columns or col not in cur_final.columns: continue
+        r, c = ref_final[col], cur_final[col]
+        score = _score_categorical_series(r, c, metric)
+        eff_thr = 0.2 if num_threshold is None else num_threshold
+        rows.append({
+            "col": col, "type": "categorical",
+            "score": score, "threshold": eff_thr, "method": (metric if metric!="evidently_default" else "psi(cat)"),
+            "drift_detected": (False if score is None else score >= eff_thr)
+        })
+
+    df = pd.DataFrame(rows)
+    if not df.empty:
+        def _stats(col):
+            rr = ref_final[col]; cc = cur_final[col]
+            return pd.Series({
+                "ref_count": int(rr.count()), "cur_count": int(cc.count()),
+                "ref_missing_pct": float(rr.isna().mean()*100.0),
+                "cur_missing_pct": float(cc.isna().mean()*100.0),
+                "ref_mean": (pd.to_numeric(rr, errors="coerce").mean() if col in numeric_cols else np.nan),
+                "cur_mean": (pd.to_numeric(cc, errors="coerce").mean() if col in numeric_cols else np.nan),
+            })
+        meta = pd.concat([_stats(c) for c in df["col"]], axis=1).T
+        df = df.merge(meta, left_on="col", right_index=True, how="left")
+    return df
+
+def _extract_drift_by_columns(report_obj) -> pd.DataFrame:
+    for attr in ("as_dict", "get_dict", "to_dict"):
+        if hasattr(report_obj, attr):
+            try:
+                d = getattr(report_obj, attr)()
+            except Exception:
+                d = None
+            if isinstance(d, dict):
+                metrics = d.get("metrics", [])
+                rows = []
+                for m in metrics:
+                    res = (m.get("result") or {}) if isinstance(m, dict) else {}
+                    dbc = res.get("drift_by_columns") or res.get("columns")
+                    if isinstance(dbc, dict):
+                        for col, info in dbc.items():
+                            if isinstance(info, dict):
+                                rows.append({
+                                    "col": col,
+                                    "score": info.get("drift_score"),
+                                    "drift_detected": info.get("drift_detected"),
+                                    "method": info.get("stattest_name") or info.get("stattest"),
+                                    "threshold": info.get("drift_threshold") or info.get("threshold"),
+                                })
+                if rows:
+                    return pd.DataFrame(rows)
+    return pd.DataFrame(columns=["col","score","drift_detected","method","threshold"])
+
+def compare_with_metric(
+    df: pd.DataFrame,
+    strategy: Literal["decay","golden","seasonal"],
+    CURRENT_WINDOW: str,
+    RESAMPLE: Optional[str],
+    RESAMPLE_AGG: Literal["mean","median"],
+    EXCLUDE_COLUMNS: list[str],
+    metric: Literal["psi","ks","wasserstein","mannwhitney","evidently_default"] = "psi",
+    num_threshold: float | None = None,
+    DECAY_HALF_LIFE_HOURS: int = 24*7,
+    DECAY_WEIGHT_MASS: float = 0.95,
+    GOLDEN_WIN: str = "30min",
+    GOLDEN_STEP: str = "10min",
+    GOLDEN_K: int = 40,
+    SEASONAL_WEEKS_BACK: int = 12,
+    save_html: bool = False
+) -> Tuple[pd.DataFrame, Dict]:
+    dt = "date_time"
+    _df = df.copy()
+    _df[dt] = pd.to_datetime(_df[dt], errors="coerce")
+    _df = _df.dropna(subset=[dt]).sort_values(dt).set_index(dt)
+    _df = strip_outliers(_df)
+
+    now = _df.index.max()
+    cur_start = now - pd.to_timedelta(CURRENT_WINDOW)
+    cur = _df.loc[cur_start:now]
+    hist = _df.loc[:cur_start - pd.Timedelta(nanoseconds=1)]
+
+    if strategy == "decay":
+        ref_global = ref_decay_prefix_mass(hist, now, DECAY_HALF_LIFE_HOURS, DECAY_WEIGHT_MASS)
+    elif strategy == "golden":
+        ref_global = ref_golden(hist, GOLDEN_WIN, GOLDEN_STEP, GOLDEN_K)
+    else:
+        ref_global = ref_seasonal(hist, now, SEASONAL_WEEKS_BACK)
+    if ref_global.empty:
+        ref_global = hist
+
+    common_cols = sorted(set(ref_global.columns).intersection(cur.columns) - {dt} - set(EXCLUDE_COLUMNS or []))
+    ref_final = ref_global[common_cols].copy()
+    cur_final = cur[common_cols].copy()
+
+    if RESAMPLE:
+        ref_final = resample_mixed(ref_final, RESAMPLE, RESAMPLE_AGG).dropna(how="all")
+        cur_final = resample_mixed(cur_final, RESAMPLE, RESAMPLE_AGG).dropna(how="all")
+
+    numeric_cols, categorical_cols, _ = build_types_keep_all(ref_final, cur_final, dt_col=dt, exclude=(EXCLUDE_COLUMNS or []))
+
+    if metric == "evidently_default":
+        definition = DataDefinition(
+            numerical_columns=numeric_cols if numeric_cols else None,
+            categorical_columns=categorical_cols if categorical_cols else None
+        )
+        report = Report(metrics=[DataDriftPreset()])
+        ds_ref = Dataset.from_pandas(ref_final.reset_index(drop=True), data_definition=definition)
+        ds_cur = Dataset.from_pandas(cur_final.reset_index(drop=True), data_definition=definition)
+        snap = report.run(reference_data=ds_ref, current_data=ds_cur)
+        dfm = _extract_drift_by_columns(report)
+        if "method" not in dfm.columns: dfm["method"] = "evidently_default"
+        if not dfm.empty:
+            dfm["type"] = dfm["col"].apply(lambda c: "numeric" if c in numeric_cols else ("categorical" if c in categorical_cols else "other"))
+        overall = summarize_overall(ref_final, cur_final, dfm.rename(columns={"drift_detected":"drift_detected"}), numeric_cols, categorical_cols)
+        return dfm, overall
+
+    dfm = _dispatch_build_metrics(ref_final, cur_final, numeric_cols, categorical_cols, metric=metric, num_threshold=num_threshold)
+    overall = summarize_overall(ref_final, cur_final, dfm.rename(columns={"drift_detected":"drift_detected"}), numeric_cols, categorical_cols)
+    return dfm, overall
 

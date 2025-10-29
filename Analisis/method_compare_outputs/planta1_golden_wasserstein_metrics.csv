@@ -1,0 +1,14 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Conductividad DAF,numeric,250.81844564560495,125.03744672469563,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,1.1032558119107703,1.5062502317975652,wasserstein,False,,,,,,,planta1,golden,wasserstein
+Flujo de envío a DAF,numeric,3.424124034434678,0.016774036823131708,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Clarificado DAF (Tk 80m3),numeric,26.99735244187893,8.919610496696102,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Ecualizador 1 (Tk 30m3),numeric,9.13434215896527,0.0,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),numeric,47.891006820416685,2.2294009236016286,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Turbidez salida DAF,numeric,809.720429125475,5.392974958327226,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH Clarificado DAF (Tk 80m3),numeric,1.990185670394578,0.1002837893837873,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH coagulación entrada DAF,numeric,1.1842819400485993,0.0678503838642386,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.2830856632746865,0.02981927654165713,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH salida a Parshall 02,numeric,0.8141558121625849,0.63950414781478,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH salida y control Ecualizador 1,numeric,1.9425212922857449,1.133143063849287,wasserstein,True,,,,,,,planta1,golden,wasserstein
+planta1_activa,categorical,8.54996236386657,0.2,wasserstein,True,,,,,,,planta1,golden,wasserstein

@@ -1,0 +1,12 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Flujo Afluente PTAR,numeric,0.19212511297302148,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Aire Reactor 2,numeric,0.7567233426349185,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Aire Reactor 3,numeric,0.11416201914108226,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 1,numeric,0.09313670516990018,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 2,numeric,0.025252245537928857,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 3,numeric,0.026146788732983373,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Cámara de contacto 1,numeric,0.1722870954146643,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Cámara de contacto 2,numeric,0.13436640563560098,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,0.7980889976816274,0.15,ks,True,,,,,,,planta2,decay,ks
+Nivel Pozo WAS,numeric,0.8649077692644374,0.15,ks,True,,,,,,,planta2,decay,ks
+OD Reactor 1,numeric,0.07021212121212121,0.15,ks,False,,,,,,,planta2,decay,ks

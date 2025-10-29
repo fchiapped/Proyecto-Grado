@@ -1,0 +1,33 @@
+col,strategy,score,metric
+planta1_activa,seasonal,4.405437658128626,ks
+planta1_activa,golden,4.405437658128626,ks
+Nivel Ecualizador 2 (Tk 250m3),golden,1.0,ks
+pH Clarificado DAF (Tk 80m3),golden,1.0,ks
+pH entrada a Ecualizador 2 (Tk 250m3),golden,0.988795518207283,ks
+pH coagulación entrada DAF,seasonal,0.9504201680672268,ks
+pH coagulación entrada DAF,golden,0.9462301799122552,ks
+pH salida y control Ecualizador 1,decay,0.7779834486662843,ks
+planta1_activa,seasonal,4.405437658128626,mannwhitney
+planta1_activa,golden,4.405437658128626,mannwhitney
+pH Clarificado DAF (Tk 80m3),golden,1.0,mannwhitney
+pH coagulación entrada DAF,seasonal,0.9560248878312388,mannwhitney
+pH coagulación entrada DAF,golden,0.9544997127707708,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),golden,0.8452380952380952,mannwhitney
+pH Clarificado DAF (Tk 80m3),seasonal,0.7610712426563546,mannwhitney
+pH salida a Parshall 02,seasonal,0.7506655759648992,mannwhitney
+pH Clarificado DAF (Tk 80m3),golden,inf,psi
+Nivel Ecualizador 2 (Tk 250m3),golden,inf,psi
+pH salida y control Ecualizador 1,golden,12.459983278741264,psi
+pH Clarificado DAF (Tk 80m3),seasonal,12.445212205836285,psi
+pH coagulación entrada DAF,golden,11.251540070959823,psi
+Nivel Ecualizador 2 (Tk 250m3),seasonal,10.126487344209686,psi
+pH salida y control Ecualizador 1,decay,9.59531115382246,psi
+pH salida y control Ecualizador 1,seasonal,9.025087734353706,psi
+Turbidez salida DAF,golden,373.6092326094879,wasserstein
+Turbidez salida DAF,seasonal,372.3201502701391,wasserstein
+Turbidez salida DAF,decay,327.3809797309098,wasserstein
+Conductividad DAF,golden,250.4833243164146,wasserstein
+Conductividad DAF,seasonal,63.33833488816247,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),golden,52.11297162846367,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),seasonal,39.60116117100046,wasserstein
+Nivel Clarificado DAF (Tk 80m3),seasonal,20.27554672447491,wasserstein

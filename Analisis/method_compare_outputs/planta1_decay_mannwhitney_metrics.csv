@@ -1,0 +1,16 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Conductividad DAF,numeric,0.45073170180047756,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.5519564796482092,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+Flujo de envío a DAF,numeric,0.3992322505405787,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Nivel Clarificado DAF (Tk 80m3),numeric,0.4936058642661984,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.3146294456720436,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.5171546357675005,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Temperatura DAF,numeric,0.5000322684737012,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Turbidez salida DAF,numeric,0.46937321901383905,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+pH Clarificado DAF (Tk 80m3),numeric,0.7000602504005344,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH coagulación entrada DAF,numeric,0.783915555800281,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH entrada a Ecualizador 1,numeric,0.5000322653502404,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.2683346283260842,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+pH salida a Parshall 02,numeric,0.5561085498265135,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH salida y control Ecualizador 1,numeric,0.07953362688300311,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+planta1_activa,categorical,0.2629390688767985,0.2,mannwhitney,True,,,,,,,planta1,decay,mannwhitney

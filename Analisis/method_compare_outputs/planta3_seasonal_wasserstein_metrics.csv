@@ -1,0 +1,6 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Energía Total Activa Bombas Elevadoras,numeric,3.274606156959098,0.7531446678801507,wasserstein,True,,,,,,,planta3,seasonal,wasserstein
+Nivel pozo,numeric,0.23234426940309302,0.017573375583870034,wasserstein,True,,,,,,,planta3,seasonal,wasserstein
+Presión pozo,numeric,3.395609432962374,0.01650481637539274,wasserstein,True,,,,,,,planta3,seasonal,wasserstein
+Falla Asimetría Pozo,categorical,0.0007137380857521613,0.2,wasserstein,False,,,,,,,planta3,seasonal,wasserstein
+Falla Pozo,categorical,0.0007137380857521613,0.2,wasserstein,False,,,,,,,planta3,seasonal,wasserstein

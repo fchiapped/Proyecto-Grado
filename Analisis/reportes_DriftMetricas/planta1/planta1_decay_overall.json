@@ -1,0 +1,9 @@
+{
+  "ref_rows": 31666,
+  "cur_rows": 3580,
+  "n_columns_total": 16,
+  "n_columns_drifted": 11,
+  "drift_rate_pct": 68.75,
+  "n_numeric": 15,
+  "n_categorical": 1
+}

@@ -1,0 +1,14 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Conductividad DAF,numeric,0.5874150540707072,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.44386754829906055,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Flujo de envío a DAF,numeric,0.25306951820729123,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Nivel Clarificado DAF (Tk 80m3),numeric,0.2121334323396492,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.7893888641703781,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.1523646934350777,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Turbidez salida DAF,numeric,0.1410888363434527,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+pH Clarificado DAF (Tk 80m3),numeric,0.761067527168454,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH coagulación entrada DAF,numeric,0.9736016225924873,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.09036961448547717,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+pH salida a Parshall 02,numeric,0.7934321387596334,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH salida y control Ecualizador 1,numeric,0.48045623509138985,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+planta1_activa,categorical,8.54996236386657,0.2,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney

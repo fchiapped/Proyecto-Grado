@@ -1,0 +1,164 @@
+plant,strategy,metric,col,score,pvalue,drifted
+planta1,decay,ks,Conductividad DAF,0.3303046788429817,6.35094584124e-313,1
+planta1,decay,mannwhitney,Conductividad DAF,0.39859995652370644,3.0575363087344647e-88,1
+planta1,decay,psi,Conductividad DAF,1.9169560533708498,,1
+planta1,decay,wasserstein,Conductividad DAF,0.7291137710666946,,0
+planta1,decay,ks,Flujo Parshall 01 entrada a Ecualizador 1,0.08671583216619982,1.7780712248704307e-21,1
+planta1,decay,mannwhitney,Flujo Parshall 01 entrada a Ecualizador 1,0.5573550557375728,1.972703300975255e-29,1
+planta1,decay,psi,Flujo Parshall 01 entrada a Ecualizador 1,0.05991240674023202,,0
+planta1,decay,wasserstein,Flujo Parshall 01 entrada a Ecualizador 1,0.48380910411166655,,0
+planta1,decay,ks,Flujo de envío a DAF,0.10350243389562408,1.973479233211582e-30,1
+planta1,decay,mannwhitney,Flujo de envío a DAF,0.5612590010894307,2.328187729989037e-33,1
+planta1,decay,psi,Flujo de envío a DAF,0.2012774205377333,,0
+planta1,decay,wasserstein,Flujo de envío a DAF,0.6197474083067265,,0
+planta1,decay,ks,Nivel Ecualizador 1 (Tk 30m3),0.5527636384663592,0.0,1
+planta1,decay,mannwhitney,Nivel Ecualizador 1 (Tk 30m3),0.24507602061344033,0.0,1
+planta1,decay,psi,Nivel Ecualizador 1 (Tk 30m3),9.705287506569553,,1
+planta1,decay,wasserstein,Nivel Ecualizador 1 (Tk 30m3),7.487390774430013,,0
+planta1,decay,ks,Nivel Ecualizador 2 (Tk 250m3),0.2385642940105896,1.94289988745744e-161,1
+planta1,decay,mannwhitney,Nivel Ecualizador 2 (Tk 250m3),0.3867846434938006,1.5822816401277408e-109,1
+planta1,decay,psi,Nivel Ecualizador 2 (Tk 250m3),0.4939498596728819,,1
+planta1,decay,wasserstein,Nivel Ecualizador 2 (Tk 250m3),6.378172935370138,,0
+planta1,decay,ks,Temperatura DAF,6.2000124000261e-05,1.0,0
+planta1,decay,mannwhitney,Temperatura DAF,0.5000310000620001,0.6380628384375877,0
+planta1,decay,psi,Temperatura DAF,0.0,,0
+planta1,decay,wasserstein,Temperatura DAF,0.1640625,,0
+planta1,decay,ks,pH Clarificado DAF (Tk 80m3),0.33488897496322234,6.4e-322,1
+planta1,decay,mannwhitney,pH Clarificado DAF (Tk 80m3),0.629331219794573,2.5301272247161857e-142,1
+planta1,decay,psi,pH Clarificado DAF (Tk 80m3),6.468152630218407,,1
+planta1,decay,wasserstein,pH Clarificado DAF (Tk 80m3),0.4660094489982607,,0
+planta1,decay,ks,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,decay,psi,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,decay,wasserstein,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,decay,ks,pH coagulación entrada DAF,0.5530510856132318,0.0,1
+planta1,decay,mannwhitney,pH coagulación entrada DAF,0.656419345050898,3.075041065079958e-207,1
+planta1,decay,psi,pH coagulación entrada DAF,5.289674787903865,,1
+planta1,decay,wasserstein,pH coagulación entrada DAF,0.7649627440686648,,0
+planta1,decay,ks,pH entrada a Ecualizador 2 (Tk 250m3),0.4234053227018909,0.0,1
+planta1,decay,mannwhitney,pH entrada a Ecualizador 2 (Tk 250m3),0.2517426343173808,0.0,1
+planta1,decay,psi,pH entrada a Ecualizador 2 (Tk 250m3),0.919451583018477,,1
+planta1,decay,wasserstein,pH entrada a Ecualizador 2 (Tk 250m3),0.15211313357394118,,0
+planta1,decay,ks,pH salida a Parshall 02,0.21633834402301885,1.575623342830717e-132,1
+planta1,decay,mannwhitney,pH salida a Parshall 02,0.5527644925488251,3.667402408600903e-25,1
+planta1,decay,psi,pH salida a Parshall 02,0.811648489444891,,1
+planta1,decay,wasserstein,pH salida a Parshall 02,1.0420373532720202,,0
+planta1,decay,ks,Nivel Clarificado DAF (Tk 80m3),0.3508267529185682,0.0,1
+planta1,decay,mannwhitney,Nivel Clarificado DAF (Tk 80m3),0.5908990369851564,2.519851663878059e-71,1
+planta1,decay,psi,Nivel Clarificado DAF (Tk 80m3),4.320726797219178,,1
+planta1,decay,wasserstein,Nivel Clarificado DAF (Tk 80m3),6.390197718694355,,0
+planta1,decay,ks,pH entrada a Ecualizador 1,6.198859409867197e-05,1.0,0
+planta1,decay,mannwhitney,pH entrada a Ecualizador 1,0.5000309942970493,0.6380940849201584,0
+planta1,decay,psi,pH entrada a Ecualizador 1,0.0,,0
+planta1,decay,wasserstein,pH entrada a Ecualizador 1,0.08203125,,0
+planta1,decay,ks,Turbidez salida DAF,0.255578142108956,1.3939391298200216e-185,1
+planta1,decay,mannwhitney,Turbidez salida DAF,0.6089940138976765,1.0576415433601113e-101,1
+planta1,decay,psi,Turbidez salida DAF,0.5844382577088196,,1
+planta1,decay,wasserstein,Turbidez salida DAF,282.18548049979205,,0
+planta1,decay,ks,pH salida y control Ecualizador 1,0.674682409000055,0.0,1
+planta1,decay,mannwhitney,pH salida y control Ecualizador 1,0.11613186704980513,0.0,1
+planta1,decay,psi,pH salida y control Ecualizador 1,12.052402901571748,,1
+planta1,decay,wasserstein,pH salida y control Ecualizador 1,0.7396223813587542,,0
+planta1,golden,ks,Conductividad DAF,1.0,3.13587462522378e-07,1
+planta1,golden,psi,Conductividad DAF,,,0
+planta1,golden,wasserstein,Conductividad DAF,41.05221326065241,,0
+planta1,golden,ks,Flujo Parshall 01 entrada a Ecualizador 1,1.0,3.13587462522378e-07,1
+planta1,golden,psi,Flujo Parshall 01 entrada a Ecualizador 1,,,0
+planta1,golden,wasserstein,Flujo Parshall 01 entrada a Ecualizador 1,37.088796227969524,,0
+planta1,golden,ks,Flujo de envío a DAF,1.0,3.13587462522378e-07,1
+planta1,golden,psi,Flujo de envío a DAF,,,0
+planta1,golden,wasserstein,Flujo de envío a DAF,40.521750952853914,,0
+planta1,golden,ks,Nivel Ecualizador 1 (Tk 30m3),1.0,3.13587462522378e-07,1
+planta1,golden,psi,Nivel Ecualizador 1 (Tk 30m3),,,0
+planta1,golden,wasserstein,Nivel Ecualizador 1 (Tk 30m3),31.4136765108389,,0
+planta1,golden,ks,Nivel Ecualizador 2 (Tk 250m3),1.0,3.13587462522378e-07,1
+planta1,golden,psi,Nivel Ecualizador 2 (Tk 250m3),,,0
+planta1,golden,wasserstein,Nivel Ecualizador 2 (Tk 250m3),35.91696517771366,,0
+planta1,golden,ks,Temperatura DAF,1.0,3.13587462522378e-07,1
+planta1,golden,psi,Temperatura DAF,,,0
+planta1,golden,wasserstein,Temperatura DAF,42.0,,0
+planta1,golden,ks,pH Clarificado DAF (Tk 80m3),1.0,0.0005600672080649676,1
+planta1,golden,psi,pH Clarificado DAF (Tk 80m3),,,0
+planta1,golden,wasserstein,pH Clarificado DAF (Tk 80m3),36.181586676134785,,0
+planta1,golden,ks,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,golden,psi,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,golden,wasserstein,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,golden,ks,pH coagulación entrada DAF,1.0,3.13587462522378e-07,1
+planta1,golden,psi,pH coagulación entrada DAF,,,0
+planta1,golden,wasserstein,pH coagulación entrada DAF,35.24670891742788,,0
+planta1,golden,ks,pH entrada a Ecualizador 2 (Tk 250m3),1.0,3.13587462522378e-07,1
+planta1,golden,psi,pH entrada a Ecualizador 2 (Tk 250m3),,,0
+planta1,golden,wasserstein,pH entrada a Ecualizador 2 (Tk 250m3),36.94312367647448,,0
+planta1,golden,ks,pH salida a Parshall 02,1.0,0.0005600672080649676,1
+planta1,golden,psi,pH salida a Parshall 02,,,0
+planta1,golden,wasserstein,pH salida a Parshall 02,35.88988208063404,,0
+planta1,golden,ks,Nivel Clarificado DAF (Tk 80m3),0.6742296918767507,0.21262170721404883,0
+planta1,golden,psi,Nivel Clarificado DAF (Tk 80m3),,,0
+planta1,golden,wasserstein,Nivel Clarificado DAF (Tk 80m3),28.21086108655932,,0
+planta1,golden,ks,pH entrada a Ecualizador 1,1.0,3.13587462522378e-07,1
+planta1,golden,psi,pH entrada a Ecualizador 1,,,0
+planta1,golden,wasserstein,pH entrada a Ecualizador 1,42.0,,0
+planta1,golden,ks,Turbidez salida DAF,0.6487394957983194,0.2471508227123875,0
+planta1,golden,psi,Turbidez salida DAF,,,0
+planta1,golden,wasserstein,Turbidez salida DAF,387.75895186442966,,0
+planta1,golden,ks,pH salida y control Ecualizador 1,1.0,3.13587462522378e-07,1
+planta1,golden,psi,pH salida y control Ecualizador 1,,,0
+planta1,golden,wasserstein,pH salida y control Ecualizador 1,34.430841283675505,,0
+planta1,seasonal,ks,Conductividad DAF,0.935017378556015,0.0,1
+planta1,seasonal,mannwhitney,Conductividad DAF,0.9559111799298269,0.0,1
+planta1,seasonal,psi,Conductividad DAF,8.7133089083019,,1
+planta1,seasonal,wasserstein,Conductividad DAF,0.9049184735153354,,0
+planta1,seasonal,ks,Flujo Parshall 01 entrada a Ecualizador 1,0.13019203201997484,8.229220427386623e-27,1
+planta1,seasonal,mannwhitney,Flujo Parshall 01 entrada a Ecualizador 1,0.5840270654734458,9.195556720456818e-35,1
+planta1,seasonal,psi,Flujo Parshall 01 entrada a Ecualizador 1,0.06951411554447946,,0
+planta1,seasonal,wasserstein,Flujo Parshall 01 entrada a Ecualizador 1,0.6699419767194081,,0
+planta1,seasonal,ks,Flujo de envío a DAF,0.2095286714909928,3.7528915515726955e-69,1
+planta1,seasonal,mannwhitney,Flujo de envío a DAF,0.39234385243459086,3.1085229867907454e-56,1
+planta1,seasonal,psi,Flujo de envío a DAF,0.03215337144885304,,0
+planta1,seasonal,wasserstein,Flujo de envío a DAF,1.3622470122828365,,0
+planta1,seasonal,ks,Nivel Ecualizador 1 (Tk 30m3),0.5092353850834846,0.0,1
+planta1,seasonal,mannwhitney,Nivel Ecualizador 1 (Tk 30m3),0.2894508251228823,8.954702793120862e-213,1
+planta1,seasonal,psi,Nivel Ecualizador 1 (Tk 30m3),8.394982233177446,,1
+planta1,seasonal,wasserstein,Nivel Ecualizador 1 (Tk 30m3),6.231840336030606,,0
+planta1,seasonal,ks,Nivel Ecualizador 2 (Tk 250m3),0.21657726920555456,7.45218193988058e-74,1
+planta1,seasonal,mannwhitney,Nivel Ecualizador 2 (Tk 250m3),0.6266322486441385,1.0848898954902365e-76,1
+planta1,seasonal,psi,Nivel Ecualizador 2 (Tk 250m3),0.8505018564645388,,1
+planta1,seasonal,wasserstein,Nivel Ecualizador 2 (Tk 250m3),3.2843249800158483,,0
+planta1,seasonal,ks,Temperatura DAF,0.0,1.0,0
+planta1,seasonal,mannwhitney,Temperatura DAF,0.5,1.0,0
+planta1,seasonal,psi,Temperatura DAF,,,0
+planta1,seasonal,wasserstein,Temperatura DAF,0.0,,0
+planta1,seasonal,ks,pH Clarificado DAF (Tk 80m3),0.6833700333436846,0.0,1
+planta1,seasonal,mannwhitney,pH Clarificado DAF (Tk 80m3),0.7826952393499393,0.0,1
+planta1,seasonal,psi,pH Clarificado DAF (Tk 80m3),12.663805034845591,,1
+planta1,seasonal,wasserstein,pH Clarificado DAF (Tk 80m3),0.7749983438162827,,0
+planta1,seasonal,ks,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,seasonal,psi,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,seasonal,wasserstein,pH Ecualizador 2 (Tk 250m3),,,0
+planta1,seasonal,ks,pH coagulación entrada DAF,0.9509803921568627,0.0,1
+planta1,seasonal,mannwhitney,pH coagulación entrada DAF,0.9538178205212656,0.0,1
+planta1,seasonal,psi,pH coagulación entrada DAF,4.047225144182336,,1
+planta1,seasonal,wasserstein,pH coagulación entrada DAF,0.8112756657907192,,0
+planta1,seasonal,ks,pH entrada a Ecualizador 2 (Tk 250m3),0.5314603781042092,0.0,1
+planta1,seasonal,mannwhitney,pH entrada a Ecualizador 2 (Tk 250m3),0.19752686628962896,0.0,1
+planta1,seasonal,psi,pH entrada a Ecualizador 2 (Tk 250m3),1.5030238990528881,,1
+planta1,seasonal,wasserstein,pH entrada a Ecualizador 2 (Tk 250m3),0.09119007727679086,,0
+planta1,seasonal,ks,pH salida a Parshall 02,0.6006803617303584,0.0,1
+planta1,seasonal,mannwhitney,pH salida a Parshall 02,0.8269573338854018,0.0,1
+planta1,seasonal,psi,pH salida a Parshall 02,1.9146825447937588,,1
+planta1,seasonal,wasserstein,pH salida a Parshall 02,2.32058710269356,,0
+planta1,seasonal,ks,Nivel Clarificado DAF (Tk 80m3),0.6448179271708684,0.0,1
+planta1,seasonal,mannwhitney,Nivel Clarificado DAF (Tk 80m3),0.6448390218349378,9.011464594339675e-100,1
+planta1,seasonal,psi,Nivel Clarificado DAF (Tk 80m3),18.63609486080075,,1
+planta1,seasonal,wasserstein,Nivel Clarificado DAF (Tk 80m3),21.776485487678734,,0
+planta1,seasonal,ks,pH entrada a Ecualizador 1,0.0,1.0,0
+planta1,seasonal,mannwhitney,pH entrada a Ecualizador 1,0.5,1.0,0
+planta1,seasonal,psi,pH entrada a Ecualizador 1,,,0
+planta1,seasonal,wasserstein,pH entrada a Ecualizador 1,0.0,,0
+planta1,seasonal,ks,Turbidez salida DAF,0.4204502181611726,1.784155758183117e-283,1
+planta1,seasonal,mannwhitney,Turbidez salida DAF,0.33160804075269523,2.1661631084193702e-134,1
+planta1,seasonal,psi,Turbidez salida DAF,0.07801476638668095,,0
+planta1,seasonal,wasserstein,Turbidez salida DAF,378.07166526155976,,0
+planta1,seasonal,ks,pH salida y control Ecualizador 1,0.6955842359340153,0.0,1
+planta1,seasonal,mannwhitney,pH salida y control Ecualizador 1,0.05994276209924059,0.0,1
+planta1,seasonal,psi,pH salida y control Ecualizador 1,6.579200715162378,,1
+planta1,seasonal,wasserstein,pH salida y control Ecualizador 1,0.25467195179240376,,0
