@@ -1,0 +1,12 @@
+plant,strategy,metric,n_cols,n_drifted,score_mean,drift_rate_pct
+planta1,decay,ks,15,12,0.29433899267348546,80.0
+planta1,decay,mannwhitney,14,12,0.46824423439009394,85.71428571428571
+planta1,decay,psi,15,10,3.0588484781411887,66.66666666666667
+planta1,decay,wasserstein,15,0,21.977482215931662,0.0
+planta1,golden,ks,15,12,0.951640656262505,80.0
+planta1,golden,psi,15,0,,0.0
+planta1,golden,wasserstein,15,0,61.761096979668864,0.0
+planta1,seasonal,ks,15,12,0.46627816306837094,80.0
+planta1,seasonal,mannwhitney,14,12,0.5461251611669995,85.71428571428571
+planta1,seasonal,psi,15,9,5.290208954180133,60.0
+planta1,seasonal,wasserstein,15,0,29.753867619226593,0.0

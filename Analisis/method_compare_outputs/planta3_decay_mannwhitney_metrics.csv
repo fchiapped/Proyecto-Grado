@@ -1,0 +1,6 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Energía Total Activa Bombas Elevadoras,numeric,0.016407149603103143,0.55,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Nivel pozo,numeric,0.26394902172346907,0.55,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Presión pozo,numeric,0.9902006239585858,0.55,mannwhitney,True,,,,,,,planta3,decay,mannwhitney
+Falla Asimetría Pozo,categorical,5.403277567977376e-05,0.2,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Falla Pozo,categorical,5.403277567977376e-05,0.2,mannwhitney,False,,,,,,,planta3,decay,mannwhitney

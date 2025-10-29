@@ -1,0 +1,16 @@
+ref_rows,cur_rows,n_columns_total,n_columns_drifted,drift_rate_pct,n_numeric,n_categorical,plant,strategy,metric
+16739,4044,5,0,0.0,3,2,planta3,decay,evidently_default
+16739,4044,5,3,60.0,3,2,planta3,decay,ks
+16739,4044,5,1,20.0,3,2,planta3,decay,mannwhitney
+16739,4044,5,3,60.0,3,2,planta3,decay,psi
+16739,4044,5,3,60.0,3,2,planta3,decay,wasserstein
+1200,4044,3,0,0.0,3,0,planta3,golden,evidently_default
+1200,4044,3,3,100.0,3,0,planta3,golden,ks
+1200,4044,3,1,33.333333333333336,3,0,planta3,golden,mannwhitney
+1200,4044,3,2,66.66666666666667,3,0,planta3,golden,psi
+1200,4044,3,2,66.66666666666667,3,0,planta3,golden,wasserstein
+120,4044,3,0,0.0,3,0,planta3,seasonal,evidently_default
+120,4044,3,3,100.0,3,0,planta3,seasonal,ks
+120,4044,3,1,33.333333333333336,3,0,planta3,seasonal,mannwhitney
+120,4044,3,3,100.0,3,0,planta3,seasonal,psi
+120,4044,3,3,100.0,3,0,planta3,seasonal,wasserstein

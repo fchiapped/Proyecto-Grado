@@ -1,0 +1,6 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Energía Total Activa Bombas Elevadoras,numeric,0.0,0.55,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney
+Nivel pozo,numeric,0.21101315218962277,0.55,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney
+Presión pozo,numeric,1.0,0.55,mannwhitney,True,,,,,,,planta3,seasonal,mannwhitney
+Falla Asimetría Pozo,categorical,0.0007137380857521613,0.2,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney
+Falla Pozo,categorical,0.0007137380857521613,0.2,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney

@@ -1,0 +1,12 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Flujo Afluente PTAR,numeric,1.7590005292057669,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Aire Reactor 2,numeric,0.8359555914891583,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Aire Reactor 3,numeric,0.13217505304014773,0.2,psi,False,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 1,numeric,0.536928050619385,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 2,numeric,0.1558656550321761,0.2,psi,False,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 3,numeric,0.31632806261525137,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Cámara de contacto 1,numeric,2.5539065325756267,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Cámara de contacto 2,numeric,2.089909679492287,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,11.533136566290176,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Nivel Pozo WAS,numeric,6.198600900329074,0.2,psi,True,,,,,,,planta2,seasonal,psi
+OD Reactor 1,numeric,0.11923895320651647,0.2,psi,False,,,,,,,planta2,seasonal,psi

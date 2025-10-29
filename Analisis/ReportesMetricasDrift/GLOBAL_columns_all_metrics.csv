@@ -1,0 +1,313 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.110098314183178,0.15,ks,False,,,,,,,planta1,decay,ks
+Flujo de envío a DAF,numeric,0.11370572989351524,0.15,ks,False,,,,,,,planta1,decay,ks
+Nivel Clarificado DAF (Tk 80m3),numeric,0.4089665115808907,0.15,ks,True,,,,,,,planta1,decay,ks
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.5987919719127085,0.15,ks,True,,,,,,,planta1,decay,ks
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.2602515262151461,0.15,ks,True,,,,,,,planta1,decay,ks
+Turbidez salida DAF,numeric,0.30748035611547814,0.15,ks,True,,,,,,,planta1,decay,ks
+pH Clarificado DAF (Tk 80m3),numeric,0.43365114952879125,0.15,ks,True,,,,,,,planta1,decay,ks
+pH coagulación entrada DAF,numeric,0.6420336177013221,0.15,ks,True,,,,,,,planta1,decay,ks
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.4874050664900338,0.15,ks,True,,,,,,,planta1,decay,ks
+pH salida a Parshall 02,numeric,0.23246905599846776,0.15,ks,True,,,,,,,planta1,decay,ks
+pH salida y control Ecualizador 1,numeric,0.7779834486662843,0.15,ks,True,,,,,,,planta1,decay,ks
+planta1_activa,categorical,0.0026610872656746155,0.2,ks,False,,,,,,,planta1,decay,ks
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.5737069431952642,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+Flujo de envío a DAF,numeric,0.5627234752305761,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+Nivel Clarificado DAF (Tk 80m3),numeric,0.6206748270691625,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.23093798382999636,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.37131304338881305,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Turbidez salida DAF,numeric,0.6315363932424487,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH Clarificado DAF (Tk 80m3),numeric,0.6779529102470074,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH coagulación entrada DAF,numeric,0.6938361518322194,0.55,mannwhitney,True,,,,,,,planta1,decay,mannwhitney
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.21314342197784464,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+pH salida a Parshall 02,numeric,0.5461745641593136,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+pH salida y control Ecualizador 1,numeric,0.06208996768265366,0.55,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+planta1_activa,categorical,0.0026610872656746155,0.2,mannwhitney,False,,,,,,,planta1,decay,mannwhitney
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.09069655456428824,0.2,psi,False,,,,,,,planta1,decay,psi
+Flujo de envío a DAF,numeric,0.31084476388891813,0.2,psi,True,,,,,,,planta1,decay,psi
+Nivel Clarificado DAF (Tk 80m3),numeric,2.1314393628801263,0.2,psi,True,,,,,,,planta1,decay,psi
+Nivel Ecualizador 1 (Tk 30m3),numeric,6.724964984325773,0.2,psi,True,,,,,,,planta1,decay,psi
+Nivel Ecualizador 2 (Tk 250m3),numeric,1.4833810967578636,0.2,psi,True,,,,,,,planta1,decay,psi
+Turbidez salida DAF,numeric,0.7706190420867185,0.2,psi,True,,,,,,,planta1,decay,psi
+pH Clarificado DAF (Tk 80m3),numeric,5.687027789863746,0.2,psi,True,,,,,,,planta1,decay,psi
+pH coagulación entrada DAF,numeric,4.4445991187501965,0.2,psi,True,,,,,,,planta1,decay,psi
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,1.2713639322609063,0.2,psi,True,,,,,,,planta1,decay,psi
+pH salida a Parshall 02,numeric,0.8554272847175635,0.2,psi,True,,,,,,,planta1,decay,psi
+pH salida y control Ecualizador 1,numeric,9.59531115382246,0.2,psi,True,,,,,,,planta1,decay,psi
+planta1_activa,categorical,0.0026610872656746155,0.2,psi,False,,,,,,,planta1,decay,psi
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.634690749396784,1.2729463432464327,wasserstein,False,,,,,,,planta1,decay,wasserstein
+Flujo de envío a DAF,numeric,0.563773672141942,1.5662016611159917,wasserstein,False,,,,,,,planta1,decay,wasserstein
+Nivel Clarificado DAF (Tk 80m3),numeric,8.758333415921232,14.058208975238749,wasserstein,False,,,,,,,planta1,decay,wasserstein
+Nivel Ecualizador 1 (Tk 30m3),numeric,7.97433763363872,4.32975522261025,wasserstein,True,,,,,,,planta1,decay,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),numeric,6.901106951408518,7.924148813133757,wasserstein,False,,,,,,,planta1,decay,wasserstein
+Turbidez salida DAF,numeric,327.3809797309098,650.9132213045203,wasserstein,False,,,,,,,planta1,decay,wasserstein
+pH Clarificado DAF (Tk 80m3),numeric,0.5234200429921217,0.3397019199664194,wasserstein,True,,,,,,,planta1,decay,wasserstein
+pH coagulación entrada DAF,numeric,0.7980790525665052,0.6476875949793879,wasserstein,True,,,,,,,planta1,decay,wasserstein
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.09550504006027002,0.08723830377982027,wasserstein,True,,,,,,,planta1,decay,wasserstein
+pH salida a Parshall 02,numeric,1.0766227314979997,0.671202715145907,wasserstein,True,,,,,,,planta1,decay,wasserstein
+pH salida y control Ecualizador 1,numeric,0.8477728208211418,0.33883197768154444,wasserstein,True,,,,,,,planta1,decay,wasserstein
+planta1_activa,categorical,0.0026610872656746155,0.2,wasserstein,False,,,,,,,planta1,decay,wasserstein
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.2903780750049566,0.15,ks,True,,,,,,,planta1,golden,ks
+Flujo de envío a DAF,numeric,0.3428368080444519,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Clarificado DAF (Tk 80m3),numeric,0.7148230617110728,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.6904761904761905,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Ecualizador 2 (Tk 250m3),numeric,1.0,0.15,ks,True,,,,,,,planta1,golden,ks
+Turbidez salida DAF,numeric,0.6950169541500811,0.15,ks,True,,,,,,,planta1,golden,ks
+pH Clarificado DAF (Tk 80m3),numeric,1.0,0.15,ks,True,,,,,,,planta1,golden,ks
+pH coagulación entrada DAF,numeric,0.9462301799122553,0.15,ks,True,,,,,,,planta1,golden,ks
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.988795518207283,0.15,ks,True,,,,,,,planta1,golden,ks
+pH salida a Parshall 02,numeric,0.29612876003395916,0.15,ks,True,,,,,,,planta1,golden,ks
+pH salida y control Ecualizador 1,numeric,0.7014519056261344,0.15,ks,True,,,,,,,planta1,golden,ks
+planta1_activa,categorical,4.405437658128626,0.2,ks,True,,,,,,,planta1,golden,ks
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.38172891661201686,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+Flujo de envío a DAF,numeric,0.3861502132613481,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+Nivel Clarificado DAF (Tk 80m3),numeric,0.22162874224099804,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.8452380952380952,0.55,mannwhitney,True,,,,,,,planta1,golden,mannwhitney
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.0,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+Turbidez salida DAF,numeric,0.09990658695420092,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+pH Clarificado DAF (Tk 80m3),numeric,1.0,0.55,mannwhitney,True,,,,,,,planta1,golden,mannwhitney
+pH coagulación entrada DAF,numeric,0.9544997127707707,0.55,mannwhitney,True,,,,,,,planta1,golden,mannwhitney
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.00693506077567143,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+pH salida a Parshall 02,numeric,0.6058153751518757,0.55,mannwhitney,True,,,,,,,planta1,golden,mannwhitney
+pH salida y control Ecualizador 1,numeric,0.2960293736369321,0.55,mannwhitney,False,,,,,,,planta1,golden,mannwhitney
+planta1_activa,categorical,4.405437658128626,0.2,mannwhitney,True,,,,,,,planta1,golden,mannwhitney
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,1.676273011518667,0.2,psi,True,,,,,,,planta1,golden,psi
+Flujo de envío a DAF,numeric,0.5188462588565835,0.2,psi,True,,,,,,,planta1,golden,psi
+Nivel Clarificado DAF (Tk 80m3),numeric,7.429764307620435,0.2,psi,True,,,,,,,planta1,golden,psi
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.0,0.2,psi,False,,,,,,,planta1,golden,psi
+Nivel Ecualizador 2 (Tk 250m3),numeric,inf,0.2,psi,True,,,,,,,planta1,golden,psi
+Turbidez salida DAF,numeric,2.2048672311333313,0.2,psi,True,,,,,,,planta1,golden,psi
+pH Clarificado DAF (Tk 80m3),numeric,inf,0.2,psi,True,,,,,,,planta1,golden,psi
+pH coagulación entrada DAF,numeric,11.251540070959823,0.2,psi,True,,,,,,,planta1,golden,psi
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,4.5577705612512,0.2,psi,True,,,,,,,planta1,golden,psi
+pH salida a Parshall 02,numeric,0.7016652279445765,0.2,psi,True,,,,,,,planta1,golden,psi
+pH salida y control Ecualizador 1,numeric,12.459983278741264,0.2,psi,True,,,,,,,planta1,golden,psi
+planta1_activa,categorical,4.405437658128626,0.2,psi,True,,,,,,,planta1,golden,psi
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.9954864221053732,1.5062502317975655,wasserstein,False,,,,,,,planta1,golden,wasserstein
+Flujo de envío a DAF,numeric,1.381131037545153,0.016774036823131708,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Clarificado DAF (Tk 80m3),numeric,18.44034727308561,8.919610496696102,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Ecualizador 1 (Tk 30m3),numeric,6.581443252349768,0.0,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),numeric,52.11297162846367,2.2294009236016286,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Turbidez salida DAF,numeric,373.6092326094879,5.392974958327226,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH Clarificado DAF (Tk 80m3),numeric,2.0124973868711886,0.1002837893837873,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH coagulación entrada DAF,numeric,1.011389839123595,0.0678503838642386,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.304595247652111,0.029819276541657135,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH salida a Parshall 02,numeric,1.0689102811164897,0.63950414781478,wasserstein,True,,,,,,,planta1,golden,wasserstein
+pH salida y control Ecualizador 1,numeric,1.9852989151491547,1.133143063849287,wasserstein,True,,,,,,,planta1,golden,wasserstein
+planta1_activa,categorical,4.405437658128626,0.2,wasserstein,True,,,,,,,planta1,golden,wasserstein
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.12368929872834089,0.15,ks,False,,,,,,,planta1,seasonal,ks
+Flujo de envío a DAF,numeric,0.3001859150739942,0.15,ks,True,,,,,,,planta1,seasonal,ks
+Nivel Clarificado DAF (Tk 80m3),numeric,0.38758830966014723,0.15,ks,True,,,,,,,planta1,seasonal,ks
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.559945217024863,0.15,ks,True,,,,,,,planta1,seasonal,ks
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.7627413797377358,0.15,ks,True,,,,,,,planta1,seasonal,ks
+Turbidez salida DAF,numeric,0.4285986961156144,0.15,ks,True,,,,,,,planta1,seasonal,ks
+pH Clarificado DAF (Tk 80m3),numeric,0.7610619469026548,0.15,ks,True,,,,,,,planta1,seasonal,ks
+pH coagulación entrada DAF,numeric,0.9504201680672268,0.15,ks,True,,,,,,,planta1,seasonal,ks
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.7440445204630525,0.15,ks,True,,,,,,,planta1,seasonal,ks
+pH salida a Parshall 02,numeric,0.47584715302050024,0.15,ks,True,,,,,,,planta1,seasonal,ks
+pH salida y control Ecualizador 1,numeric,0.41083017277707545,0.15,ks,True,,,,,,,planta1,seasonal,ks
+planta1_activa,categorical,4.405437658128626,0.2,ks,True,,,,,,,planta1,seasonal,ks
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.4707199251381969,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Flujo de envío a DAF,numeric,0.42129378299992565,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Nivel Clarificado DAF (Tk 80m3),numeric,0.3533774571775613,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.7349083438685209,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.12244676631714632,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+Turbidez salida DAF,numeric,0.23490493542549765,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+pH Clarificado DAF (Tk 80m3),numeric,0.7610712426563546,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH coagulación entrada DAF,numeric,0.9560248878312387,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.0594605983986515,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+pH salida a Parshall 02,numeric,0.7506655759648992,0.55,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+pH salida y control Ecualizador 1,numeric,0.4490109318063509,0.55,mannwhitney,False,,,,,,,planta1,seasonal,mannwhitney
+planta1_activa,categorical,4.405437658128626,0.2,mannwhitney,True,,,,,,,planta1,seasonal,mannwhitney
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.12387956173421455,0.2,psi,False,,,,,,,planta1,seasonal,psi
+Flujo de envío a DAF,numeric,1.1229277062739333,0.2,psi,True,,,,,,,planta1,seasonal,psi
+Nivel Clarificado DAF (Tk 80m3),numeric,6.720714194207176,0.2,psi,True,,,,,,,planta1,seasonal,psi
+Nivel Ecualizador 1 (Tk 30m3),numeric,1.1843661156711953,0.2,psi,True,,,,,,,planta1,seasonal,psi
+Nivel Ecualizador 2 (Tk 250m3),numeric,10.126487344209686,0.2,psi,True,,,,,,,planta1,seasonal,psi
+Turbidez salida DAF,numeric,1.1606474712093022,0.2,psi,True,,,,,,,planta1,seasonal,psi
+pH Clarificado DAF (Tk 80m3),numeric,12.445212205836283,0.2,psi,True,,,,,,,planta1,seasonal,psi
+pH coagulación entrada DAF,numeric,5.9455334101137485,0.2,psi,True,,,,,,,planta1,seasonal,psi
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,4.73662972799524,0.2,psi,True,,,,,,,planta1,seasonal,psi
+pH salida a Parshall 02,numeric,1.1737616166547447,0.2,psi,True,,,,,,,planta1,seasonal,psi
+pH salida y control Ecualizador 1,numeric,9.025087734353706,0.2,psi,True,,,,,,,planta1,seasonal,psi
+planta1_activa,categorical,4.405437658128626,0.2,psi,True,,,,,,,planta1,seasonal,psi
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.4840421126221031,1.1100186352166908,wasserstein,False,,,,,,,planta1,seasonal,wasserstein
+Flujo de envío a DAF,numeric,1.3658211246073821,0.037607410246759884,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+Nivel Clarificado DAF (Tk 80m3),numeric,20.27554672447491,1.8058476715559657,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+Nivel Ecualizador 1 (Tk 30m3),numeric,5.970030699166074,3.644920522789632,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+Nivel Ecualizador 2 (Tk 250m3),numeric,39.60116117100046,11.468172790610394,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+Turbidez salida DAF,numeric,372.3201502701391,3.378992988012976,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+pH Clarificado DAF (Tk 80m3),numeric,1.42776336426722,0.5179226762570808,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+pH coagulación entrada DAF,numeric,0.9468769166877427,0.09688127295779426,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.2278816441324038,0.05859491918838534,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+pH salida a Parshall 02,numeric,1.695876122178345,0.5906658305222114,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+pH salida y control Ecualizador 1,numeric,1.288550518275708,0.8533654275853945,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+planta1_activa,categorical,4.405437658128626,0.2,wasserstein,True,,,,,,,planta1,seasonal,wasserstein
+Flujo Afluente PTAR,numeric,0.13383494565118276,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Aire Reactor 2,numeric,0.7040096947429266,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Aire Reactor 3,numeric,0.14355458995105386,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 1,numeric,0.07569563338344376,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 2,numeric,0.02065799643781295,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Alimentación Digestor 3,numeric,0.03720458788757253,0.15,ks,False,,,,,,,planta2,decay,ks
+Flujo Cámara de contacto 1,numeric,0.19003476965443378,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Cámara de contacto 2,numeric,0.1877467401350783,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,0.7483098026497794,0.15,ks,True,,,,,,,planta2,decay,ks
+Nivel Pozo WAS,numeric,0.7946387612898909,0.15,ks,True,,,,,,,planta2,decay,ks
+Flujo Afluente PTAR,numeric,0.45730411291751777,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Aire Reactor 2,numeric,0.21344745574213955,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Aire Reactor 3,numeric,0.48828175531737783,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Alimentación Digestor 1,numeric,0.5295857037211371,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Alimentación Digestor 2,numeric,0.4896342037167725,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Alimentación Digestor 3,numeric,0.4962620878585073,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Cámara de contacto 1,numeric,0.5100932710100946,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Cámara de contacto 2,numeric,0.52882825732616,0.55,mannwhitney,False,,,,,,,planta2,decay,mannwhitney
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,0.8732675119501503,0.55,mannwhitney,True,,,,,,,planta2,decay,mannwhitney
+Nivel Pozo WAS,numeric,0.8857511264184015,0.55,mannwhitney,True,,,,,,,planta2,decay,mannwhitney
+Flujo Afluente PTAR,numeric,1.8957262398551034,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Aire Reactor 2,numeric,3.2161160028717006,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Aire Reactor 3,numeric,0.3113890494033683,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Alimentación Digestor 1,numeric,0.1391250512312175,0.2,psi,False,,,,,,,planta2,decay,psi
+Flujo Alimentación Digestor 2,numeric,7.95189759299054e-05,0.2,psi,False,,,,,,,planta2,decay,psi
+Flujo Alimentación Digestor 3,numeric,0.011254217532206926,0.2,psi,False,,,,,,,planta2,decay,psi
+Flujo Cámara de contacto 1,numeric,1.7483881624445314,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Cámara de contacto 2,numeric,1.6684729967322651,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,9.242441071339416,0.2,psi,True,,,,,,,planta2,decay,psi
+Nivel Pozo WAS,numeric,5.860370490053841,0.2,psi,True,,,,,,,planta2,decay,psi
+Flujo Afluente PTAR,numeric,250.61768367859085,487.10743716479266,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Aire Reactor 2,numeric,546.4028213791415,59.222090968884835,wasserstein,True,,,,,,,planta2,decay,wasserstein
+Flujo Aire Reactor 3,numeric,136.19584928800543,1128.0285931614806,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 1,numeric,0.10330124530965554,3.266309093793401,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 2,numeric,0.001412153810464035,0.00808175904731686,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 3,numeric,0.09783241126009205,3.2719560712553757,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Cámara de contacto 1,numeric,154.9634125265257,251.88192112225792,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Cámara de contacto 2,numeric,147.48410739187315,266.91278429356885,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,16.878055385756415,5.621714528875271,wasserstein,True,,,,,,,planta2,decay,wasserstein
+Nivel Pozo WAS,numeric,0.3498360440070183,0.12071464289424351,wasserstein,True,,,,,,,planta2,decay,wasserstein
+Flujo Afluente PTAR,numeric,0.8162978812232543,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Aire Reactor 2,numeric,0.8287108389047413,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Aire Reactor 3,numeric,0.6644434747055401,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Alimentación Digestor 1,numeric,0.7073057030648281,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Alimentación Digestor 2,numeric,0.8446909667194928,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Alimentación Digestor 3,numeric,0.5038805469339821,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Cámara de contacto 1,numeric,0.7307735300693047,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Cámara de contacto 2,numeric,0.5884244629576431,0.15,ks,True,,,,,,,planta2,golden,ks
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,1.0,0.15,ks,True,,,,,,,planta2,golden,ks
+Nivel Pozo WAS,numeric,0.9911297289887369,0.15,ks,True,,,,,,,planta2,golden,ks
+OD Reactor 2,categorical,0.9129187279622397,0.2,ks,True,,,,,,,planta2,golden,ks
+Flujo Afluente PTAR,numeric,0.12006879935984413,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Aire Reactor 2,numeric,0.1418539833614303,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Aire Reactor 3,numeric,0.3256022864870815,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Alimentación Digestor 1,numeric,0.19240183512927694,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Alimentación Digestor 2,numeric,0.8999683042789224,0.55,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
+Flujo Alimentación Digestor 3,numeric,0.48464357017028775,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Cámara de contacto 1,numeric,0.2502045238463749,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Cámara de contacto 2,numeric,0.38163798839610386,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,1.0,0.55,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
+Nivel Pozo WAS,numeric,0.9956866458171941,0.55,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
+OD Reactor 2,categorical,0.9129187279622397,0.2,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
+Flujo Afluente PTAR,numeric,2.4882987993443355,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Aire Reactor 2,numeric,2.983735344239709,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Aire Reactor 3,numeric,1.4775982287767213,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Alimentación Digestor 1,numeric,1.16654994578379,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Alimentación Digestor 2,numeric,12.704453224515419,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Alimentación Digestor 3,numeric,1.742639468612163,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Cámara de contacto 1,numeric,0.6890707329080155,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Cámara de contacto 2,numeric,2.0529562288070036,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,inf,0.2,psi,True,,,,,,,planta2,golden,psi
+Nivel Pozo WAS,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
+OD Reactor 2,categorical,0.9129187279622397,0.2,psi,True,,,,,,,planta2,golden,psi
+Flujo Afluente PTAR,numeric,1291.6504967619153,272.5303110442638,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Aire Reactor 2,numeric,709.7894704852627,17.11021625641451,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Aire Reactor 3,numeric,906.8024253082634,269.91387335124114,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Alimentación Digestor 1,numeric,7.974290219077806,2.6993955837894044,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Alimentación Digestor 2,numeric,9.337008864164522,2.0451740647620262,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Alimentación Digestor 3,numeric,4.807636700205607,0.7240312264174585,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Cámara de contacto 1,numeric,336.810225272787,77.26671019712482,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Cámara de contacto 2,numeric,286.4445960266892,75.64624032984344,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,5.319167514857738,0.40231606976628254,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Nivel Pozo WAS,numeric,1.0068836563663017,0.061752622140367704,wasserstein,True,,,,,,,planta2,golden,wasserstein
+OD Reactor 2,categorical,0.9129187279622397,0.2,wasserstein,True,,,,,,,planta2,golden,wasserstein
+Flujo Afluente PTAR,numeric,0.27211087420042646,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Aire Reactor 2,numeric,0.6144862570770804,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Aire Reactor 3,numeric,0.13116930350972905,0.15,ks,False,,,,,,,planta2,seasonal,ks
+Flujo Alimentación Digestor 1,numeric,0.2275006218009975,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Alimentación Digestor 2,numeric,0.12215320910973085,0.15,ks,False,,,,,,,planta2,seasonal,ks
+Flujo Alimentación Digestor 3,numeric,0.122412704252123,0.15,ks,False,,,,,,,planta2,seasonal,ks
+Flujo Cámara de contacto 1,numeric,0.2704280155642023,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Cámara de contacto 2,numeric,0.26990291262135924,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,0.8185328185328186,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Nivel Pozo WAS,numeric,0.728030283826375,0.15,ks,True,,,,,,,planta2,seasonal,ks
+Flujo Afluente PTAR,numeric,0.48323164397791263,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Aire Reactor 2,numeric,0.21713327460873388,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Aire Reactor 3,numeric,0.4581963766139298,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Alimentación Digestor 1,numeric,0.48448606511238235,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Alimentación Digestor 2,numeric,0.5664596273291925,0.55,mannwhitney,True,,,,,,,planta2,seasonal,mannwhitney
+Flujo Alimentación Digestor 3,numeric,0.5158652932340048,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Cámara de contacto 1,numeric,0.5149521363869711,0.55,mannwhitney,False,,,,,,,planta2,seasonal,mannwhitney
+Flujo Cámara de contacto 2,numeric,0.5532229049235378,0.55,mannwhitney,True,,,,,,,planta2,seasonal,mannwhitney
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,0.8189733300989845,0.55,mannwhitney,True,,,,,,,planta2,seasonal,mannwhitney
+Nivel Pozo WAS,numeric,0.8447069493382454,0.55,mannwhitney,True,,,,,,,planta2,seasonal,mannwhitney
+Flujo Afluente PTAR,numeric,3.1633841867972725,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Aire Reactor 2,numeric,1.7464124818165256,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Aire Reactor 3,numeric,0.2235425422904011,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 1,numeric,0.5405176750768187,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 2,numeric,0.1651529591475076,0.2,psi,False,,,,,,,planta2,seasonal,psi
+Flujo Alimentación Digestor 3,numeric,0.24334060111665431,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Cámara de contacto 1,numeric,3.4651706885310407,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Cámara de contacto 2,numeric,2.9936762813892894,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,11.708688239047715,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Nivel Pozo WAS,numeric,5.894247516209219,0.2,psi,True,,,,,,,planta2,seasonal,psi
+Flujo Afluente PTAR,numeric,483.6373879885589,440.5916107261406,wasserstein,True,,,,,,,planta2,seasonal,wasserstein
+Flujo Aire Reactor 2,numeric,533.4771642375473,43.51897729455707,wasserstein,True,,,,,,,planta2,seasonal,wasserstein
+Flujo Aire Reactor 3,numeric,174.80098730072132,1175.4593439414894,wasserstein,False,,,,,,,planta2,seasonal,wasserstein
+Flujo Alimentación Digestor 1,numeric,1.1718323137958797,3.324276721893232,wasserstein,False,,,,,,,planta2,seasonal,wasserstein
+Flujo Alimentación Digestor 2,numeric,0.003936480361482361,0.004322841304214796,wasserstein,False,,,,,,,planta2,seasonal,wasserstein
+Flujo Alimentación Digestor 3,numeric,0.41228712532064055,3.280115118660848,wasserstein,False,,,,,,,planta2,seasonal,wasserstein
+Flujo Cámara de contacto 1,numeric,252.03674799886895,232.64790454850612,wasserstein,True,,,,,,,planta2,seasonal,wasserstein
+Flujo Cámara de contacto 2,numeric,240.9593543082837,244.48285679564492,wasserstein,False,,,,,,,planta2,seasonal,wasserstein
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,19.620790121972874,6.493300374742781,wasserstein,True,,,,,,,planta2,seasonal,wasserstein
+Nivel Pozo WAS,numeric,0.6965011162255766,0.39330145984138654,wasserstein,True,,,,,,,planta2,seasonal,wasserstein
+Energía Total Activa Bombas Elevadoras,numeric,0.9717392603214435,0.15,ks,True,,,,,,,planta3,decay,ks
+Nivel pozo,numeric,0.4907155010603029,0.15,ks,True,,,,,,,planta3,decay,ks
+Presión pozo,numeric,0.8077313736033936,0.15,ks,True,,,,,,,planta3,decay,ks
+Falla Asimetría Pozo,categorical,0.0005667300310506351,0.2,ks,False,,,,,,,planta3,decay,ks
+Falla Pozo,categorical,0.0005667300310506351,0.2,ks,False,,,,,,,planta3,decay,ks
+Energía Total Activa Bombas Elevadoras,numeric,0.011188289867796474,0.55,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Nivel pozo,numeric,0.2039145178267592,0.55,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Presión pozo,numeric,0.9043704705608209,0.55,mannwhitney,True,,,,,,,planta3,decay,mannwhitney
+Falla Asimetría Pozo,categorical,0.0005667300310506351,0.2,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Falla Pozo,categorical,0.0005667300310506351,0.2,mannwhitney,False,,,,,,,planta3,decay,mannwhitney
+Energía Total Activa Bombas Elevadoras,numeric,10.32375312074595,0.2,psi,True,,,,,,,planta3,decay,psi
+Nivel pozo,numeric,6.024934616667858,0.2,psi,True,,,,,,,planta3,decay,psi
+Presión pozo,numeric,11.2451619037309,0.2,psi,True,,,,,,,planta3,decay,psi
+Falla Asimetría Pozo,categorical,0.0005667300310506351,0.2,psi,False,,,,,,,planta3,decay,psi
+Falla Pozo,categorical,0.0005667300310506351,0.2,psi,False,,,,,,,planta3,decay,psi
+Energía Total Activa Bombas Elevadoras,numeric,2.9500989208330157,0.7444320231860616,wasserstein,True,,,,,,,planta3,decay,wasserstein
+Nivel pozo,numeric,0.1972203538456434,0.16081046296003842,wasserstein,True,,,,,,,planta3,decay,wasserstein
+Presión pozo,numeric,2.7802332102149103,0.6827906395723465,wasserstein,True,,,,,,,planta3,decay,wasserstein
+Falla Asimetría Pozo,categorical,0.0005667300310506351,0.2,wasserstein,False,,,,,,,planta3,decay,wasserstein
+Falla Pozo,categorical,0.0005667300310506351,0.2,wasserstein,False,,,,,,,planta3,decay,wasserstein
+Energía Total Activa Bombas Elevadoras,numeric,1.0,0.15,ks,True,,,,,,,planta3,golden,ks
+Nivel pozo,numeric,0.7216666666666667,0.15,ks,True,,,,,,,planta3,golden,ks
+Presión pozo,numeric,1.0,0.15,ks,True,,,,,,,planta3,golden,ks
+Energía Total Activa Bombas Elevadoras,numeric,0.0,0.55,mannwhitney,False,,,,,,,planta3,golden,mannwhitney
+Nivel pozo,numeric,0.19776479558193208,0.55,mannwhitney,False,,,,,,,planta3,golden,mannwhitney
+Presión pozo,numeric,1.0,0.55,mannwhitney,True,,,,,,,planta3,golden,mannwhitney
+Energía Total Activa Bombas Elevadoras,numeric,inf,0.2,psi,True,,,,,,,planta3,golden,psi
+Nivel pozo,numeric,0.0,0.2,psi,False,,,,,,,planta3,golden,psi
+Presión pozo,numeric,inf,0.2,psi,True,,,,,,,planta3,golden,psi
+Energía Total Activa Bombas Elevadoras,numeric,2.233209693372898,0.07809502135411867,wasserstein,True,,,,,,,planta3,golden,wasserstein
+Nivel pozo,numeric,0.10763152818991045,0.15924605773789122,wasserstein,False,,,,,,,planta3,golden,wasserstein
+Presión pozo,numeric,3.4771409495548964,0.0807290160593894,wasserstein,True,,,,,,,planta3,golden,wasserstein
+Energía Total Activa Bombas Elevadoras,numeric,1.0,0.15,ks,True,,,,,,,planta3,seasonal,ks
+Nivel pozo,numeric,0.6362512363996043,0.15,ks,True,,,,,,,planta3,seasonal,ks
+Presión pozo,numeric,1.0,0.15,ks,True,,,,,,,planta3,seasonal,ks
+Energía Total Activa Bombas Elevadoras,numeric,0.0,0.55,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney
+Nivel pozo,numeric,0.10960682492581603,0.55,mannwhitney,False,,,,,,,planta3,seasonal,mannwhitney
+Presión pozo,numeric,1.0,0.55,mannwhitney,True,,,,,,,planta3,seasonal,mannwhitney
+Energía Total Activa Bombas Elevadoras,numeric,inf,0.2,psi,True,,,,,,,planta3,seasonal,psi
+Nivel pozo,numeric,0.39886625103068374,0.2,psi,True,,,,,,,planta3,seasonal,psi
+Presión pozo,numeric,inf,0.2,psi,True,,,,,,,planta3,seasonal,psi
+Energía Total Activa Bombas Elevadoras,numeric,3.708209693372898,0.7531446678801507,wasserstein,True,,,,,,,planta3,seasonal,wasserstein
+Nivel pozo,numeric,0.26607319485657743,0.017573375583870034,wasserstein,True,,,,,,,planta3,seasonal,wasserstein
+Presión pozo,numeric,3.39597428288823,0.01650481637539274,wasserstein,True,,,,,,,planta3,seasonal,wasserstein

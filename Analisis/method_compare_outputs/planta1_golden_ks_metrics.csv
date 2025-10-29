@@ -1,0 +1,14 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Conductividad DAF,numeric,0.5103166856212873,0.15,ks,True,,,,,,,planta1,golden,ks
+Flujo Parshall 01 entrada a Ecualizador 1,numeric,0.3195149104445591,0.15,ks,True,,,,,,,planta1,golden,ks
+Flujo de envío a DAF,numeric,0.5991690971396764,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Clarificado DAF (Tk 80m3),numeric,0.7968897676603097,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Ecualizador 1 (Tk 30m3),numeric,0.7975449806625189,0.15,ks,True,,,,,,,planta1,golden,ks
+Nivel Ecualizador 2 (Tk 250m3),numeric,0.9971414158399193,0.15,ks,True,,,,,,,planta1,golden,ks
+Turbidez salida DAF,numeric,0.7748444593912898,0.15,ks,True,,,,,,,planta1,golden,ks
+pH Clarificado DAF (Tk 80m3),numeric,1.0,0.15,ks,True,,,,,,,planta1,golden,ks
+pH coagulación entrada DAF,numeric,0.9662710262491085,0.15,ks,True,,,,,,,planta1,golden,ks
+pH entrada a Ecualizador 2 (Tk 250m3),numeric,0.9852026231713469,0.15,ks,True,,,,,,,planta1,golden,ks
+pH salida a Parshall 02,numeric,0.4280599316954941,0.15,ks,True,,,,,,,planta1,golden,ks
+pH salida y control Ecualizador 1,numeric,0.6996370235934665,0.15,ks,True,,,,,,,planta1,golden,ks
+planta1_activa,categorical,8.54996236386657,0.2,ks,True,,,,,,,planta1,golden,ks

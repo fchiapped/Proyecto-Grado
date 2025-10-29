@@ -1,0 +1,12 @@
+col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
+Flujo Afluente PTAR,numeric,372.6540472593869,485.40558852062816,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Aire Reactor 2,numeric,476.90864498947906,29.080009061719668,wasserstein,True,,,,,,,planta2,decay,wasserstein
+Flujo Aire Reactor 3,numeric,141.79002327482647,1116.2373436139667,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 1,numeric,0.20901792584398282,3.27041366241099,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 2,numeric,0.0015754914640861031,0.00793358575974858,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Alimentación Digestor 3,numeric,0.23842290671760868,3.272637601738388,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Cámara de contacto 1,numeric,174.71570280357508,254.6036962196206,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Cámara de contacto 2,numeric,168.79935465587016,269.44886180270015,wasserstein,False,,,,,,,planta2,decay,wasserstein
+Flujo Salida de Lodo Sedimentador Secundario 3,numeric,18.668277865609188,5.114215332372932,wasserstein,True,,,,,,,planta2,decay,wasserstein
+Nivel Pozo WAS,numeric,0.44058271181115277,0.10371482049540204,wasserstein,True,,,,,,,planta2,decay,wasserstein
+OD Reactor 1,numeric,0.49378282828282843,1.704936595703709,wasserstein,False,,,,,,,planta2,decay,wasserstein
