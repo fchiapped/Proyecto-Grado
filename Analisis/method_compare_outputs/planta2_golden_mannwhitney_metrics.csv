@@ -1,8 +1,0 @@
-col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
-Flujo Afluente PTAR,numeric,0.4998260264439805,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
-Flujo Aire Reactor 2,numeric,0.20905410379094588,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
-Flujo Alimentación Digestor 1,numeric,0.9993366421562295,0.55,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
-Flujo Alimentación Digestor 2,numeric,0.013755158184319119,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
-Flujo Cámara de contacto 1,numeric,0.6653351858284127,0.55,mannwhitney,True,,,,,,,planta2,golden,mannwhitney
-Flujo Cámara de contacto 2,numeric,0.5293657688966117,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney
-OD Reactor 1,numeric,0.0,0.55,mannwhitney,False,,,,,,,planta2,golden,mannwhitney

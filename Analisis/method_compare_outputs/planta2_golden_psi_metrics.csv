@@ -1,8 +1,0 @@
-col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
-Flujo Afluente PTAR,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-Flujo Aire Reactor 2,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-Flujo Alimentación Digestor 1,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-Flujo Alimentación Digestor 2,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-Flujo Cámara de contacto 1,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-Flujo Cámara de contacto 2,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi
-OD Reactor 1,numeric,0.0,0.2,psi,False,,,,,,,planta2,golden,psi

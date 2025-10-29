@@ -1,6 +1,0 @@
-col,type,drift_detected,psi,method,threshold,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,ref_std,cur_std,ref_median,cur_median,ref_min,ref_max,cur_min,cur_max,ref_n_distinct,cur_n_distinct,ref_top,ref_top_freq,cur_top,cur_top_freq
-Energía Total Activa Bombas Elevadoras,numeric,True,inf,PSI-quantiles,0.2,1200,4044,0.0,0.0,600.975,603.2082096933729,0.15619004270823733,0.40607781670255316,601.0,603.0,600.0,601.0,603.0,604.0,,,,,,
-Nivel pozo,numeric,False,0.0,PSI-quantiles,0.2,1200,4044,0.0,0.0,6.643441666666668,6.751073194856577,0.31849211547578243,0.33637526095805,6.45,6.56,6.45,7.19,6.48,7.34,,,,,,
-Presión pozo,numeric,True,inf,PSI-quantiles,0.2,1200,4044,0.0,0.0,3.8578333333333332,0.38069238377843717,0.1614580321187788,0.02522940174080541,3.8,0.38,3.7,4.25,0.29,0.435,,,,,,
-Falla Asimetría Pozo,categorical,False,0.0,PSI-categorical,0.2,1200,4044,0.0,0.0,,,,,,,,,,,1.0,1.0,False,1200.0,False,4044.0
-Falla Pozo,categorical,False,0.0,PSI-categorical,0.2,1200,4044,0.0,0.0,,,,,,,,,,,1.0,1.0,False,1200.0,False,4044.0

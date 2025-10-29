@@ -1,8 +1,0 @@
-col,type,score,threshold,method,drift_detected,ref_count,cur_count,ref_missing_pct,cur_missing_pct,ref_mean,cur_mean,plant,strategy,metric_name
-Flujo Afluente PTAR,numeric,662.4393526555546,2.274711561231416e-13,wasserstein,True,,,,,,,planta2,golden,wasserstein
-Flujo Aire Reactor 2,numeric,481.4627561035456,1.421694725769635e-14,wasserstein,True,,,,,,,planta2,golden,wasserstein
-Flujo Alimentación Digestor 1,numeric,6.561352805478641,0.2368327613513702,wasserstein,True,,,,,,,planta2,golden,wasserstein
-Flujo Alimentación Digestor 2,numeric,0.003348005585562008,2.1693339931787646e-19,wasserstein,True,,,,,,,planta2,golden,wasserstein
-Flujo Cámara de contacto 1,numeric,312.68928102062875,0.0,wasserstein,True,,,,,,,planta2,golden,wasserstein
-Flujo Cámara de contacto 2,numeric,326.3782365937596,0.0,wasserstein,True,,,,,,,planta2,golden,wasserstein
-OD Reactor 1,numeric,10.208909090909092,2.221398009015055e-16,wasserstein,True,,,,,,,planta2,golden,wasserstein
