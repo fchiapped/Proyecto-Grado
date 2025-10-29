@@ -1,0 +1,13 @@
+plant,strategy,metric,ref_rows,cur_rows,n_columns_total,n_columns_drifted,drift_rate_pct,n_numeric,n_categorical
+planta2,decay,ks,36160,3662,11,6,54.54545454545455,11,0
+planta2,decay,mannwhitney,36160,3662,11,2,18.181818181818183,11,0
+planta2,decay,psi,36160,3662,11,8,72.72727272727273,11,0
+planta2,decay,wasserstein,36160,3662,11,3,27.272727272727277,11,0
+planta2,golden,ks,477,3662,12,12,100.0,11,1
+planta2,golden,mannwhitney,477,3662,12,4,33.333333333333336,11,1
+planta2,golden,psi,477,3662,12,10,83.33333333333333,11,1
+planta2,golden,wasserstein,477,3662,12,12,100.0,11,1
+planta2,seasonal,ks,557,3662,11,7,63.63636363636363,11,0
+planta2,seasonal,mannwhitney,557,3662,11,4,36.36363636363637,11,0
+planta2,seasonal,psi,557,3662,11,9,81.81818181818181,11,0
+planta2,seasonal,wasserstein,557,3662,11,5,45.45454545454545,11,0
