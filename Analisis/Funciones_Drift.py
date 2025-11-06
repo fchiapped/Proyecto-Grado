@@ -343,12 +343,6 @@ def make_report_for_plant(
     metrics_path = output_dir / f"{plant_name}_{strategy}_metrics.csv"
     metrics_df.to_csv(metrics_path, index=False, encoding="utf-8")
 
-    # Resumen global -> JSON
-    overall = summarize_overall(ref_final, cur_final, metrics_df, numeric_cols, categorical_cols)
-    (output_dir / f"{plant_name}_{strategy}_overall.json").write_text(
-        json.dumps(overall, ensure_ascii=False, indent=2), encoding="utf-8"
-    )
-
     # HTML de Evidently (opcional)
     out_html = output_dir / f"{plant_name}_{strategy}.html"
     if SAVE_HTML:
@@ -370,6 +364,72 @@ def make_report_for_plant(
 
     return out_html
 
+def run_drift_batch(
+    plant_names: Iterable[str],
+    strategies: Iterable[Literal["decay","golden","seasonal"]],
+    plant_files: Dict[str, Path],
+    flag_files: Dict[str, Path],
+    output_root: Path,
+    *,
+    CURRENT_WINDOW: str,
+    RESAMPLE: Optional[str],
+    RESAMPLE_AGG: Literal["mean","median"],
+    EXCLUDE_COLUMNS: list[str],
+    NUM_METHOD: Literal["auto","ks","wasserstein","psi","anderson","cramer","mannwhitney"],  # compat
+    NUM_THRESHOLD: Optional[float],
+    DECAY_HALF_LIFE_HOURS: int = 24*7,
+    DECAY_WEIGHT_MASS: float = 0.95,
+    GOLDEN_WIN: str = "30min",
+    GOLDEN_STEP: str = "10min",
+    GOLDEN_K: int = 40,
+    SEASONAL_WEEKS_BACK: int = 12,
+    COMMON_LAST_Q: float = 0.25,  # compat (no usado)
+    SAVE_HTML: bool = True
+) -> Tuple[Dict[Tuple[str,str], Path], Dict[Tuple[str,str], str]]:
+
+    paths: Dict[Tuple[str,str], Path] = {}
+    errors: Dict[Tuple[str,str], str] = {}
+
+    for plant in plant_names:
+        try:
+            df = pd.read_csv(plant_files[plant])
+        except Exception as e:
+            for strat in strategies:
+                errors[(plant, strat)] = f"ERROR al leer CSV de {plant}: {e}"
+            continue
+
+        out_dir = output_root / plant
+        for strat in strategies:
+            key = (plant, strat)
+            try:
+                out_path = make_report_for_plant(
+                    df=df,
+                    output_dir=out_dir,
+                    strategy=strat,
+                    CURRENT_WINDOW=CURRENT_WINDOW,
+                    RESAMPLE=RESAMPLE,
+                    RESAMPLE_AGG=RESAMPLE_AGG,
+                    EXCLUDE_COLUMNS=EXCLUDE_COLUMNS,
+                    NUM_METHOD=NUM_METHOD,
+                    NUM_THRESHOLD=NUM_THRESHOLD,
+                    DECAY_HALF_LIFE_HOURS=DECAY_HALF_LIFE_HOURS,
+                    DECAY_WEIGHT_MASS=DECAY_WEIGHT_MASS,
+                    GOLDEN_WIN=GOLDEN_WIN,
+                    GOLDEN_STEP=GOLDEN_STEP,
+                    GOLDEN_K=GOLDEN_K,
+                    SEASONAL_WEEKS_BACK=SEASONAL_WEEKS_BACK,
+                    plant_name=plant,
+                    flag_csv=flag_files.get(plant),
+                    SAVE_HTML=SAVE_HTML
+                )
+                paths[key] = out_path
+                print(f"[OK] {plant} · {strat} → {out_path.name}")
+            except Exception as e:
+                errors[key] = str(e)
+                print(f"[FAIL] {plant} · {strat}: {e}")
+
+    return paths, errors
+#--------------------------------------------------------------------------------------------------------#
 #--------------------------------------------------------------------------------------------------------#
 # --- Metricas
 
