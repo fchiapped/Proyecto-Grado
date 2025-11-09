@@ -1,0 +1,53 @@
+# 数据源配置
+input:
+  data_dir: "../df_procesados/"
+  files:
+    - df_planta_1.csv
+    - df_planta_2.csv
+    - df_planta_3.csv
+  date_column: "date_time"
+
+# 数据质量指标配置
+quality_metrics:
+  completeness:
+    enabled: true
+    threshold: 0.8  # 完整性阈值
+  consistency:
+    enabled: true
+    # 一致性检查规则
+  valid_range:
+    enabled: true
+    # 各个参数的有效范围定义
+    parameters:
+      pH:
+        min: 0
+        max: 14
+      temperature:
+        min: 0
+        max: 50
+  variability:
+    enabled: true
+    window_size: "1D"  # 变异性检查的时间窗口
+
+# 异常检测配置
+anomaly_detection:
+  outliers:
+    enabled: true
+    method: "robust_zscore"
+    threshold: 3.5
+  drift:
+    enabled: true
+    window: "30D"
+    strategies:
+      - "decay"
+      - "golden"
+      - "seasonal"
+  gaps:
+    enabled: true
+    max_gap: "1H"  # 最大允许的数据间隔
+
+# 输出配置
+output:
+  flags_dir: "../output/flags/"
+  reports_dir: "../output/reports/"
+  alert_log: "../output/alerts.log"
