@@ -1,0 +1,18 @@
+异常值统计
+==================================================
+
+Conductividad DAF: 0 个异常值
+Flujo Parshall 01 entrada a Ecualizador 1: 209 个异常值
+Flujo de envío a DAF: 41 个异常值
+Nivel Ecualizador 1 (Tk 30m3): 3 个异常值
+Nivel Ecualizador 2 (Tk 250m3): 0 个异常值
+Temperatura DAF: 5 个异常值
+pH Clarificado DAF (Tk 80m3): 6 个异常值
+pH Ecualizador 2 (Tk 250m3): 3 个异常值
+pH coagulación entrada DAF: 1414 个异常值
+pH entrada a Ecualizador 2 (Tk 250m3): 91 个异常值
+pH salida a Parshall 02: 139 个异常值
+Nivel Clarificado DAF (Tk 80m3): 0 个异常值
+pH entrada a Ecualizador 1: 162 个异常值
+Turbidez salida DAF: 0 个异常值
+pH salida y control Ecualizador 1: 5 个异常值

@@ -1,0 +1,42 @@
+数据基本信息
+==================================================
+
+数据形状: (82286, 17)
+
+数据类型:
+date_time                                     object
+Conductividad DAF                            float64
+Flujo Parshall 01 entrada a Ecualizador 1    float64
+Flujo de envío a DAF                         float64
+Nivel Ecualizador 1 (Tk 30m3)                float64
+Nivel Ecualizador 2 (Tk 250m3)               float64
+Temperatura DAF                              float64
+pH Clarificado DAF (Tk 80m3)                 float64
+pH Ecualizador 2 (Tk 250m3)                  float64
+pH coagulación entrada DAF                   float64
+pH entrada a Ecualizador 2 (Tk 250m3)        float64
+pH salida a Parshall 02                      float64
+Nivel Clarificado DAF (Tk 80m3)              float64
+pH entrada a Ecualizador 1                   float64
+Turbidez salida DAF                          float64
+pH salida y control Ecualizador 1            float64
+planta1_activa                                  bool
+
+缺失值统计:
+date_time                                        0
+Conductividad DAF                              294
+Flujo Parshall 01 entrada a Ecualizador 1      292
+Flujo de envío a DAF                           290
+Nivel Ecualizador 1 (Tk 30m3)                  285
+Nivel Ecualizador 2 (Tk 250m3)                 281
+Temperatura DAF                                279
+pH Clarificado DAF (Tk 80m3)                   279
+pH Ecualizador 2 (Tk 250m3)                  14720
+pH coagulación entrada DAF                     275
+pH entrada a Ecualizador 2 (Tk 250m3)          277
+pH salida a Parshall 02                        277
+Nivel Clarificado DAF (Tk 80m3)                274
+pH entrada a Ecualizador 1                     273
+Turbidez salida DAF                            276
+pH salida y control Ecualizador 1              279
+planta1_activa                                   0

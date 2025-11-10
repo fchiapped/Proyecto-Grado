@@ -1,0 +1,2079 @@
+﻿date_time,variable,value,detection_method
+2025-05-22 20:31:00,Flujo Parshall 01 entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:41:00,Flujo Parshall 01 entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:47:00,Flujo Parshall 01 entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-24 14:28:00,Flujo Parshall 01 entrada a Ecualizador 1,17.99913215637207,zscore_3.5
+2025-05-24 14:29:00,Flujo Parshall 01 entrada a Ecualizador 1,21.64930534362793,zscore_3.5
+2025-05-24 14:30:00,Flujo Parshall 01 entrada a Ecualizador 1,24.34288215637207,zscore_3.5
+2025-05-24 14:31:00,Flujo Parshall 01 entrada a Ecualizador 1,26.63368034362793,zscore_3.5
+2025-05-24 14:32:00,Flujo Parshall 01 entrada a Ecualizador 1,28.546875,zscore_3.5
+2025-05-24 14:33:00,Flujo Parshall 01 entrada a Ecualizador 1,29.95659637451172,zscore_3.5
+2025-05-24 14:34:00,Flujo Parshall 01 entrada a Ecualizador 1,31.13975715637207,zscore_3.5
+2025-05-24 14:35:00,Flujo Parshall 01 entrada a Ecualizador 1,32.67534637451172,zscore_3.5
+2025-05-24 14:36:00,Flujo Parshall 01 entrada a Ecualizador 1,33.88368225097656,zscore_3.5
+2025-05-24 14:37:00,Flujo Parshall 01 entrada a Ecualizador 1,36.25,zscore_3.5
+2025-05-24 14:38:00,Flujo Parshall 01 entrada a Ecualizador 1,38.89323043823242,zscore_3.5
+2025-05-24 14:39:00,Flujo Parshall 01 entrada a Ecualizador 1,42.49305725097656,zscore_3.5
+2025-05-24 14:40:00,Flujo Parshall 01 entrada a Ecualizador 1,46.69704818725586,zscore_3.5
+2025-05-24 14:41:00,Flujo Parshall 01 entrada a Ecualizador 1,50.27169799804688,zscore_3.5
+2025-05-24 14:42:00,Flujo Parshall 01 entrada a Ecualizador 1,53.29253768920898,zscore_3.5
+2025-05-24 14:43:00,Flujo Parshall 01 entrada a Ecualizador 1,56.33853912353516,zscore_3.5
+2025-05-24 14:44:00,Flujo Parshall 01 entrada a Ecualizador 1,58.98176956176758,zscore_3.5
+2025-05-24 14:45:00,Flujo Parshall 01 entrada a Ecualizador 1,61.70051956176758,zscore_3.5
+2025-05-24 14:46:00,Flujo Parshall 01 entrada a Ecualizador 1,63.78993225097656,zscore_3.5
+2025-05-24 14:47:00,Flujo Parshall 01 entrada a Ecualizador 1,65.72830200195312,zscore_3.5
+2025-05-24 14:48:00,Flujo Parshall 01 entrada a Ecualizador 1,66.33246612548828,zscore_3.5
+2025-05-24 14:49:00,Flujo Parshall 01 entrada a Ecualizador 1,66.8359375,zscore_3.5
+2025-05-24 14:50:00,Flujo Parshall 01 entrada a Ecualizador 1,65.75347137451172,zscore_3.5
+2025-05-24 14:52:00,Flujo Parshall 01 entrada a Ecualizador 1,62.12847518920898,zscore_3.5
+2025-05-24 14:53:00,Flujo Parshall 01 entrada a Ecualizador 1,55.02951049804688,zscore_3.5
+2025-05-24 14:54:00,Flujo Parshall 01 entrada a Ecualizador 1,44.204864501953125,zscore_3.5
+2025-05-24 14:55:00,Flujo Parshall 01 entrada a Ecualizador 1,29.25173568725586,zscore_3.5
+2025-05-24 14:56:00,Flujo Parshall 01 entrada a Ecualizador 1,18.40190887451172,zscore_3.5
+2025-05-24 23:05:00,Flujo Parshall 01 entrada a Ecualizador 1,18.82986068725586,zscore_3.5
+2025-05-24 23:06:00,Flujo Parshall 01 entrada a Ecualizador 1,18.32638931274414,zscore_3.5
+2025-05-25 20:51:00,Flujo Parshall 01 entrada a Ecualizador 1,18.125,zscore_3.5
+2025-05-25 20:53:00,Flujo Parshall 01 entrada a Ecualizador 1,18.25086784362793,zscore_3.5
+2025-05-25 21:49:00,Flujo Parshall 01 entrada a Ecualizador 1,17.72222137451172,zscore_3.5
+2025-05-25 21:50:00,Flujo Parshall 01 entrada a Ecualizador 1,18.55295181274414,zscore_3.5
+2025-05-25 21:51:00,Flujo Parshall 01 entrada a Ecualizador 1,19.55989646911621,zscore_3.5
+2025-05-25 21:52:00,Flujo Parshall 01 entrada a Ecualizador 1,19.45920181274414,zscore_3.5
+2025-05-25 21:53:00,Flujo Parshall 01 entrada a Ecualizador 1,19.18229103088379,zscore_3.5
+2025-05-25 21:54:00,Flujo Parshall 01 entrada a Ecualizador 1,18.02430534362793,zscore_3.5
+2025-05-28 02:19:00,Flujo Parshall 01 entrada a Ecualizador 1,18.09982681274414,zscore_3.5
+2025-05-28 02:20:00,Flujo Parshall 01 entrada a Ecualizador 1,18.70399284362793,zscore_3.5
+2025-05-28 02:21:00,Flujo Parshall 01 entrada a Ecualizador 1,18.72916603088379,zscore_3.5
+2025-05-28 18:23:00,Flujo Parshall 01 entrada a Ecualizador 1,17.92361068725586,zscore_3.5
+2025-05-28 18:24:00,Flujo Parshall 01 entrada a Ecualizador 1,18.25086784362793,zscore_3.5
+2025-05-28 18:25:00,Flujo Parshall 01 entrada a Ecualizador 1,18.62847328186035,zscore_3.5
+2025-05-28 18:26:00,Flujo Parshall 01 entrada a Ecualizador 1,17.77256965637207,zscore_3.5
+2025-05-28 19:58:00,Flujo Parshall 01 entrada a Ecualizador 1,18.37673568725586,zscore_3.5
+2025-05-28 19:59:00,Flujo Parshall 01 entrada a Ecualizador 1,19.03125,zscore_3.5
+2025-05-28 20:00:00,Flujo Parshall 01 entrada a Ecualizador 1,18.77951431274414,zscore_3.5
+2025-05-28 21:04:00,Flujo Parshall 01 entrada a Ecualizador 1,18.93055534362793,zscore_3.5
+2025-05-28 21:05:00,Flujo Parshall 01 entrada a Ecualizador 1,19.35850715637207,zscore_3.5
+2025-05-28 21:06:00,Flujo Parshall 01 entrada a Ecualizador 1,18.75433921813965,zscore_3.5
+2025-05-31 01:29:00,Flujo Parshall 01 entrada a Ecualizador 1,17.8984375,zscore_3.5
+2025-05-31 01:30:00,Flujo Parshall 01 entrada a Ecualizador 1,18.70399284362793,zscore_3.5
+2025-05-31 01:31:00,Flujo Parshall 01 entrada a Ecualizador 1,19.03125,zscore_3.5
+2025-05-31 01:32:00,Flujo Parshall 01 entrada a Ecualizador 1,18.70399284362793,zscore_3.5
+2025-06-10 17:00:00,Flujo Parshall 01 entrada a Ecualizador 1,17.72222137451172,zscore_3.5
+2025-06-12 12:53:00,Flujo Parshall 01 entrada a Ecualizador 1,18.25086784362793,zscore_3.5
+2025-06-12 12:54:00,Flujo Parshall 01 entrada a Ecualizador 1,18.30121612548828,zscore_3.5
+2025-06-12 12:55:00,Flujo Parshall 01 entrada a Ecualizador 1,17.77256965637207,zscore_3.5
+2025-06-12 13:43:00,Flujo Parshall 01 entrada a Ecualizador 1,19.2578125,zscore_3.5
+2025-06-12 13:44:00,Flujo Parshall 01 entrada a Ecualizador 1,18.72916603088379,zscore_3.5
+2025-06-12 13:45:00,Flujo Parshall 01 entrada a Ecualizador 1,17.8984375,zscore_3.5
+2025-06-15 05:46:00,Flujo Parshall 01 entrada a Ecualizador 1,19.45920181274414,zscore_3.5
+2025-06-15 05:47:00,Flujo Parshall 01 entrada a Ecualizador 1,28.84895706176757,zscore_3.5
+2025-06-15 05:48:00,Flujo Parshall 01 entrada a Ecualizador 1,35.87239456176758,zscore_3.5
+2025-06-15 05:49:00,Flujo Parshall 01 entrada a Ecualizador 1,40.52951431274414,zscore_3.5
+2025-06-15 05:50:00,Flujo Parshall 01 entrada a Ecualizador 1,44.10416412353516,zscore_3.5
+2025-06-15 05:51:00,Flujo Parshall 01 entrada a Ecualizador 1,46.79774475097656,zscore_3.5
+2025-06-15 05:52:00,Flujo Parshall 01 entrada a Ecualizador 1,48.81163024902344,zscore_3.5
+2025-06-15 05:53:00,Flujo Parshall 01 entrada a Ecualizador 1,50.6241340637207,zscore_3.5
+2025-06-15 05:54:00,Flujo Parshall 01 entrada a Ecualizador 1,51.78211975097656,zscore_3.5
+2025-06-15 05:55:00,Flujo Parshall 01 entrada a Ecualizador 1,53.14149475097656,zscore_3.5
+2025-06-15 05:56:00,Flujo Parshall 01 entrada a Ecualizador 1,55.60850524902344,zscore_3.5
+2025-06-15 05:57:00,Flujo Parshall 01 entrada a Ecualizador 1,57.59722137451172,zscore_3.5
+2025-06-15 05:58:00,Flujo Parshall 01 entrada a Ecualizador 1,60.29079818725586,zscore_3.5
+2025-06-15 05:59:00,Flujo Parshall 01 entrada a Ecualizador 1,62.27951431274414,zscore_3.5
+2025-06-15 06:00:00,Flujo Parshall 01 entrada a Ecualizador 1,65.04861450195312,zscore_3.5
+2025-06-15 06:01:00,Flujo Parshall 01 entrada a Ecualizador 1,65.60243225097656,zscore_3.5
+2025-06-15 06:02:00,Flujo Parshall 01 entrada a Ecualizador 1,66.58419799804688,zscore_3.5
+2025-06-15 06:03:00,Flujo Parshall 01 entrada a Ecualizador 1,66.05555725097656,zscore_3.5
+2025-06-15 06:05:00,Flujo Parshall 01 entrada a Ecualizador 1,66.10590362548828,zscore_3.5
+2025-06-15 06:06:00,Flujo Parshall 01 entrada a Ecualizador 1,65.80381774902344,zscore_3.5
+2025-06-15 06:07:00,Flujo Parshall 01 entrada a Ecualizador 1,65.37586975097656,zscore_3.5
+2025-06-15 06:08:00,Flujo Parshall 01 entrada a Ecualizador 1,64.44444274902344,zscore_3.5
+2025-06-15 06:09:00,Flujo Parshall 01 entrada a Ecualizador 1,62.58159637451172,zscore_3.5
+2025-06-15 06:10:00,Flujo Parshall 01 entrada a Ecualizador 1,61.07118225097656,zscore_3.5
+2025-06-15 06:11:00,Flujo Parshall 01 entrada a Ecualizador 1,59.33420181274414,zscore_3.5
+2025-06-15 06:12:00,Flujo Parshall 01 entrada a Ecualizador 1,58.32725524902344,zscore_3.5
+2025-06-15 06:13:00,Flujo Parshall 01 entrada a Ecualizador 1,57.26996612548828,zscore_3.5
+2025-06-15 06:14:00,Flujo Parshall 01 entrada a Ecualizador 1,57.14409637451172,zscore_3.5
+2025-06-15 06:15:00,Flujo Parshall 01 entrada a Ecualizador 1,57.7734375,zscore_3.5
+2025-06-15 06:16:00,Flujo Parshall 01 entrada a Ecualizador 1,58.42794799804688,zscore_3.5
+2025-06-15 06:17:00,Flujo Parshall 01 entrada a Ecualizador 1,60.46701049804688,zscore_3.5
+2025-06-15 06:18:00,Flujo Parshall 01 entrada a Ecualizador 1,61.171875,zscore_3.5
+2025-06-15 06:19:00,Flujo Parshall 01 entrada a Ecualizador 1,62.02777862548828,zscore_3.5
+2025-06-15 06:20:00,Flujo Parshall 01 entrada a Ecualizador 1,62.48090362548828,zscore_3.5
+2025-06-15 06:21:00,Flujo Parshall 01 entrada a Ecualizador 1,63.13541412353516,zscore_3.5
+2025-06-15 06:22:00,Flujo Parshall 01 entrada a Ecualizador 1,64.01649475097656,zscore_3.5
+2025-06-15 06:23:00,Flujo Parshall 01 entrada a Ecualizador 1,64.26822662353516,zscore_3.5
+2025-06-15 06:24:00,Flujo Parshall 01 entrada a Ecualizador 1,64.41927337646484,zscore_3.5
+2025-06-15 06:25:00,Flujo Parshall 01 entrada a Ecualizador 1,63.5633659362793,zscore_3.5
+2025-06-15 06:26:00,Flujo Parshall 01 entrada a Ecualizador 1,62.68229293823242,zscore_3.5
+2025-06-15 06:28:00,Flujo Parshall 01 entrada a Ecualizador 1,62.078125,zscore_3.5
+2025-06-15 06:29:00,Flujo Parshall 01 entrada a Ecualizador 1,62.10329818725586,zscore_3.5
+2025-06-15 06:30:00,Flujo Parshall 01 entrada a Ecualizador 1,62.60677337646485,zscore_3.5
+2025-06-15 06:31:00,Flujo Parshall 01 entrada a Ecualizador 1,62.38020706176758,zscore_3.5
+2025-06-15 06:32:00,Flujo Parshall 01 entrada a Ecualizador 1,62.60677337646485,zscore_3.5
+2025-06-15 06:33:00,Flujo Parshall 01 entrada a Ecualizador 1,63.26128387451172,zscore_3.5
+2025-06-15 06:34:00,Flujo Parshall 01 entrada a Ecualizador 1,63.86544799804688,zscore_3.5
+2025-06-15 06:35:00,Flujo Parshall 01 entrada a Ecualizador 1,65.04861450195312,zscore_3.5
+2025-06-15 06:36:00,Flujo Parshall 01 entrada a Ecualizador 1,66.03038024902344,zscore_3.5
+2025-06-15 06:37:00,Flujo Parshall 01 entrada a Ecualizador 1,68.875,zscore_3.5
+2025-06-15 06:38:00,Flujo Parshall 01 entrada a Ecualizador 1,71.09027862548828,zscore_3.5
+2025-06-15 06:39:00,Flujo Parshall 01 entrada a Ecualizador 1,74.41319274902344,zscore_3.5
+2025-06-15 06:40:00,Flujo Parshall 01 entrada a Ecualizador 1,76.3515625,zscore_3.5
+2025-06-15 06:41:00,Flujo Parshall 01 entrada a Ecualizador 1,79.44791412353516,zscore_3.5
+2025-06-15 06:42:00,Flujo Parshall 01 entrada a Ecualizador 1,84.00434112548828,zscore_3.5
+2025-06-15 06:43:00,Flujo Parshall 01 entrada a Ecualizador 1,88.03211975097656,zscore_3.5
+2025-06-15 06:44:00,Flujo Parshall 01 entrada a Ecualizador 1,91.7829818725586,zscore_3.5
+2025-06-15 06:45:00,Flujo Parshall 01 entrada a Ecualizador 1,95.55902862548828,zscore_3.5
+2025-06-15 06:46:00,Flujo Parshall 01 entrada a Ecualizador 1,99.76301574707033,zscore_3.5
+2025-06-15 06:47:00,Flujo Parshall 01 entrada a Ecualizador 1,103.41319274902344,zscore_3.5
+2025-06-15 06:48:00,Flujo Parshall 01 entrada a Ecualizador 1,105.20051574707033,zscore_3.5
+2025-06-15 06:49:00,Flujo Parshall 01 entrada a Ecualizador 1,106.91232299804688,zscore_3.5
+2025-06-15 06:51:00,Flujo Parshall 01 entrada a Ecualizador 1,107.4157943725586,zscore_3.5
+2025-06-15 06:52:00,Flujo Parshall 01 entrada a Ecualizador 1,106.91232299804688,zscore_3.5
+2025-06-15 06:53:00,Flujo Parshall 01 entrada a Ecualizador 1,106.83679962158205,zscore_3.5
+2025-06-15 06:54:00,Flujo Parshall 01 entrada a Ecualizador 1,104.42013549804688,zscore_3.5
+2025-06-15 06:55:00,Flujo Parshall 01 entrada a Ecualizador 1,101.37413024902344,zscore_3.5
+2025-06-15 06:56:00,Flujo Parshall 01 entrada a Ecualizador 1,97.69878387451172,zscore_3.5
+2025-06-15 06:57:00,Flujo Parshall 01 entrada a Ecualizador 1,92.99132537841795,zscore_3.5
+2025-06-15 06:58:00,Flujo Parshall 01 entrada a Ecualizador 1,88.18315887451172,zscore_3.5
+2025-06-15 06:59:00,Flujo Parshall 01 entrada a Ecualizador 1,81.73871612548828,zscore_3.5
+2025-06-15 07:00:00,Flujo Parshall 01 entrada a Ecualizador 1,75.72222137451172,zscore_3.5
+2025-06-15 07:01:00,Flujo Parshall 01 entrada a Ecualizador 1,70.05815887451172,zscore_3.5
+2025-06-15 07:02:00,Flujo Parshall 01 entrada a Ecualizador 1,65.0234375,zscore_3.5
+2025-06-15 07:03:00,Flujo Parshall 01 entrada a Ecualizador 1,59.68663024902344,zscore_3.5
+2025-06-15 07:04:00,Flujo Parshall 01 entrada a Ecualizador 1,54.52604293823242,zscore_3.5
+2025-06-15 07:05:00,Flujo Parshall 01 entrada a Ecualizador 1,50.019962310791016,zscore_3.5
+2025-06-15 07:06:00,Flujo Parshall 01 entrada a Ecualizador 1,46.39496612548828,zscore_3.5
+2025-06-15 07:07:00,Flujo Parshall 01 entrada a Ecualizador 1,42.61892318725586,zscore_3.5
+2025-06-15 07:08:00,Flujo Parshall 01 entrada a Ecualizador 1,38.76736068725586,zscore_3.5
+2025-06-15 07:09:00,Flujo Parshall 01 entrada a Ecualizador 1,35.06684112548828,zscore_3.5
+2025-06-15 07:10:00,Flujo Parshall 01 entrada a Ecualizador 1,31.84461784362793,zscore_3.5
+2025-06-15 07:11:00,Flujo Parshall 01 entrada a Ecualizador 1,27.640625,zscore_3.5
+2025-06-15 07:12:00,Flujo Parshall 01 entrada a Ecualizador 1,23.76388931274414,zscore_3.5
+2025-06-15 07:14:00,Flujo Parshall 01 entrada a Ecualizador 1,19.33333396911621,zscore_3.5
+2025-06-18 20:19:00,Flujo Parshall 01 entrada a Ecualizador 1,17.94878578186035,zscore_3.5
+2025-06-18 20:20:00,Flujo Parshall 01 entrada a Ecualizador 1,18.20052146911621,zscore_3.5
+2025-06-18 20:21:00,Flujo Parshall 01 entrada a Ecualizador 1,18.40190887451172,zscore_3.5
+2025-06-18 20:22:00,Flujo Parshall 01 entrada a Ecualizador 1,18.22569465637207,zscore_3.5
+2025-06-18 20:23:00,Flujo Parshall 01 entrada a Ecualizador 1,18.07465171813965,zscore_3.5
+2025-06-18 20:24:00,Flujo Parshall 01 entrada a Ecualizador 1,17.69704818725586,zscore_3.5
+2025-07-05 09:25:00,Flujo Parshall 01 entrada a Ecualizador 1,18.27604103088379,zscore_3.5
+2025-07-05 09:26:00,Flujo Parshall 01 entrada a Ecualizador 1,19.00607681274414,zscore_3.5
+2025-07-05 09:28:00,Flujo Parshall 01 entrada a Ecualizador 1,19.33333396911621,zscore_3.5
+2025-07-05 09:29:00,Flujo Parshall 01 entrada a Ecualizador 1,18.37673568725586,zscore_3.5
+2025-07-05 15:23:00,Flujo Parshall 01 entrada a Ecualizador 1,17.8984375,zscore_3.5
+2025-07-05 15:24:00,Flujo Parshall 01 entrada a Ecualizador 1,18.25086784362793,zscore_3.5
+2025-07-05 15:25:00,Flujo Parshall 01 entrada a Ecualizador 1,17.94878578186035,zscore_3.5
+2025-07-05 15:26:00,Flujo Parshall 01 entrada a Ecualizador 1,18.09982681274414,zscore_3.5
+2025-07-10 17:50:00,Flujo Parshall 01 entrada a Ecualizador 1,19.14453125,zscore_3.5
+2025-07-10 17:51:00,Flujo Parshall 01 entrada a Ecualizador 1,19.89974021911621,zscore_3.5
+2025-07-10 17:52:00,Flujo Parshall 01 entrada a Ecualizador 1,20.54166603088379,zscore_3.5
+2025-07-10 17:53:00,Flujo Parshall 01 entrada a Ecualizador 1,19.15711784362793,zscore_3.5
+2025-07-10 17:54:00,Flujo Parshall 01 entrada a Ecualizador 1,17.84809112548828,zscore_3.5
+2025-07-10 19:01:00,Flujo Parshall 01 entrada a Ecualizador 1,17.948784828186035,zscore_3.5
+2025-07-10 19:02:00,Flujo Parshall 01 entrada a Ecualizador 1,18.03689193725586,zscore_3.5
+2025-07-10 19:03:00,Flujo Parshall 01 entrada a Ecualizador 1,17.97395896911621,zscore_3.5
+2025-07-12 00:38:00,Flujo Parshall 01 entrada a Ecualizador 1,18.955729484558105,zscore_3.5
+2025-07-12 00:39:00,Flujo Parshall 01 entrada a Ecualizador 1,20.89409637451172,zscore_3.5
+2025-07-12 00:41:00,Flujo Parshall 01 entrada a Ecualizador 1,22.240886688232425,zscore_3.5
+2025-07-12 00:42:00,Flujo Parshall 01 entrada a Ecualizador 1,22.51779556274414,zscore_3.5
+2025-07-12 00:43:00,Flujo Parshall 01 entrada a Ecualizador 1,23.23524284362793,zscore_3.5
+2025-07-12 00:44:00,Flujo Parshall 01 entrada a Ecualizador 1,22.83246612548828,zscore_3.5
+2025-07-12 00:45:00,Flujo Parshall 01 entrada a Ecualizador 1,21.35980987548828,zscore_3.5
+2025-07-12 00:46:00,Flujo Parshall 01 entrada a Ecualizador 1,20.20182228088379,zscore_3.5
+2025-07-12 00:47:00,Flujo Parshall 01 entrada a Ecualizador 1,18.27604103088379,zscore_3.5
+2025-07-12 03:58:00,Flujo Parshall 01 entrada a Ecualizador 1,18.3515625,zscore_3.5
+2025-07-12 03:59:00,Flujo Parshall 01 entrada a Ecualizador 1,20.49131965637207,zscore_3.5
+2025-07-12 04:00:00,Flujo Parshall 01 entrada a Ecualizador 1,19.88715362548828,zscore_3.5
+2025-07-15 15:57:00,Flujo Parshall 01 entrada a Ecualizador 1,17.98654556274414,zscore_3.5
+2025-07-15 15:58:00,Flujo Parshall 01 entrada a Ecualizador 1,18.54036426544189,zscore_3.5
+2025-07-15 15:59:00,Flujo Parshall 01 entrada a Ecualizador 1,18.3515625,zscore_3.5
+2025-07-15 16:00:00,Flujo Parshall 01 entrada a Ecualizador 1,18.389323234558105,zscore_3.5
+2025-07-15 16:01:00,Flujo Parshall 01 entrada a Ecualizador 1,18.50260353088379,zscore_3.5
+2025-07-15 22:09:00,Flujo Parshall 01 entrada a Ecualizador 1,18.15017318725586,zscore_3.5
+2025-07-15 22:10:00,Flujo Parshall 01 entrada a Ecualizador 1,18.02430534362793,zscore_3.5
+2025-07-28 22:05:00,Flujo Parshall 01 entrada a Ecualizador 1,23.215277671813965,zscore_3.5
+2025-07-28 22:14:00,Flujo Parshall 01 entrada a Ecualizador 1,22.321614623069763,zscore_3.5
+2025-08-01 15:57:00,Flujo Parshall 01 entrada a Ecualizador 1,17.72222137451172,zscore_3.5
+2025-08-01 15:58:00,Flujo Parshall 01 entrada a Ecualizador 1,18.93055534362793,zscore_3.5
+2025-08-01 16:00:00,Flujo Parshall 01 entrada a Ecualizador 1,19.78645896911621,zscore_3.5
+2025-08-01 16:01:00,Flujo Parshall 01 entrada a Ecualizador 1,19.20746612548828,zscore_3.5
+2025-08-08 13:39:00,Flujo Parshall 01 entrada a Ecualizador 1,18.578125,zscore_3.5
+2025-08-08 13:41:00,Flujo Parshall 01 entrada a Ecualizador 1,20.86892318725586,zscore_3.5
+2025-08-08 13:42:00,Flujo Parshall 01 entrada a Ecualizador 1,20.74305534362793,zscore_3.5
+2025-08-08 13:43:00,Flujo Parshall 01 entrada a Ecualizador 1,20.46614646911621,zscore_3.5
+2025-08-08 13:44:00,Flujo Parshall 01 entrada a Ecualizador 1,20.26475715637207,zscore_3.5
+2025-08-08 13:45:00,Flujo Parshall 01 entrada a Ecualizador 1,19.55989646911621,zscore_3.5
+2025-08-08 13:47:00,Flujo Parshall 01 entrada a Ecualizador 1,18.8046875,zscore_3.5
+2025-08-08 13:48:00,Flujo Parshall 01 entrada a Ecualizador 1,18.32638931274414,zscore_3.5
+2025-08-08 13:49:00,Flujo Parshall 01 entrada a Ecualizador 1,18.32638931274414,zscore_3.5
+2025-08-08 13:50:00,Flujo Parshall 01 entrada a Ecualizador 1,18.72916603088379,zscore_3.5
+2025-08-08 13:51:00,Flujo Parshall 01 entrada a Ecualizador 1,18.55295181274414,zscore_3.5
+2025-08-08 13:53:00,Flujo Parshall 01 entrada a Ecualizador 1,18.20052146911621,zscore_3.5
+2025-05-22 20:32:00,Flujo de envío a DAF,42.0,zscore_3.5
+2025-05-22 20:41:00,Flujo de envío a DAF,42.0,zscore_3.5
+2025-05-22 20:47:00,Flujo de envío a DAF,42.0,zscore_3.5
+2025-06-02 12:34:00,Flujo de envío a DAF,16.49305534362793,zscore_3.5
+2025-06-02 12:35:00,Flujo de envío a DAF,16.55816078186035,zscore_3.5
+2025-06-02 12:36:00,Flujo de envío a DAF,16.84027671813965,zscore_3.5
+2025-06-03 19:03:00,Flujo de envío a DAF,16.55816078186035,zscore_3.5
+2025-06-03 19:06:00,Flujo de envío a DAF,17.48046875,zscore_3.5
+2025-06-09 08:19:00,Flujo de envío a DAF,18.14236068725586,zscore_3.5
+2025-06-09 08:20:00,Flujo de envío a DAF,17.36111068725586,zscore_3.5
+2025-06-09 08:21:00,Flujo de envío a DAF,16.92708396911621,zscore_3.5
+2025-06-09 18:41:00,Flujo de envío a DAF,21.98350715637207,zscore_3.5
+2025-06-09 18:53:00,Flujo de envío a DAF,16.50390625,zscore_3.5
+2025-06-09 19:01:00,Flujo de envío a DAF,23.47005271911621,zscore_3.5
+2025-06-09 19:16:00,Flujo de envío a DAF,17.415363311767578,zscore_3.5
+2025-06-09 19:22:00,Flujo de envío a DAF,20.01953125,zscore_3.5
+2025-06-09 19:40:00,Flujo de envío a DAF,18.82595634460449,zscore_3.5
+2025-06-09 19:43:00,Flujo de envío a DAF,18.71744728088379,zscore_3.5
+2025-06-09 19:44:00,Flujo de envío a DAF,20.05208206176757,zscore_3.5
+2025-06-09 20:02:00,Flujo de envío a DAF,17.06814193725586,zscore_3.5
+2025-06-09 20:06:00,Flujo de envío a DAF,18.75,zscore_3.5
+2025-06-09 20:26:00,Flujo de envío a DAF,19.16232681274414,zscore_3.5
+2025-06-09 20:41:00,Flujo de envío a DAF,16.61241340637207,zscore_3.5
+2025-06-09 20:51:00,Flujo de envío a DAF,18.72829818725586,zscore_3.5
+2025-06-09 21:08:00,Flujo de envío a DAF,17.30685806274414,zscore_3.5
+2025-06-09 21:22:00,Flujo de envío a DAF,16.90538215637207,zscore_3.5
+2025-06-09 21:25:00,Flujo de envío a DAF,16.68836784362793,zscore_3.5
+2025-06-09 21:28:00,Flujo de envío a DAF,16.74262046813965,zscore_3.5
+2025-06-09 21:45:00,Flujo de envío a DAF,17.96875,zscore_3.5
+2025-06-10 00:09:00,Flujo de envío a DAF,18.28342056274414,zscore_3.5
+2025-06-10 06:08:00,Flujo de envío a DAF,21.97265625,zscore_3.5
+2025-06-11 08:20:00,Flujo de envío a DAF,26.69270896911621,zscore_3.5
+2025-06-11 09:54:00,Flujo de envío a DAF,16.76432228088379,zscore_3.5
+2025-06-11 10:16:00,Flujo de envío a DAF,16.6015625,zscore_3.5
+2025-07-08 17:06:00,Flujo de envío a DAF,19.81879234313965,zscore_3.5
+2025-07-08 17:44:00,Flujo de envío a DAF,29.600694179534912,zscore_3.5
+2025-07-08 18:16:00,Flujo de envío a DAF,27.02365493774414,zscore_3.5
+2025-07-09 18:20:00,Flujo de envío a DAF,21.771918296813965,zscore_3.5
+2025-07-10 09:22:00,Flujo de envío a DAF,17.681206703186035,zscore_3.5
+2025-07-28 22:05:00,Flujo de envío a DAF,25.079861164093018,zscore_3.5
+2025-07-28 22:14:00,Flujo de envío a DAF,25.123263835906982,zscore_3.5
+2025-05-22 20:32:00,Nivel Ecualizador 1 (Tk 30m3),42.0,zscore_3.5
+2025-05-22 20:41:00,Nivel Ecualizador 1 (Tk 30m3),42.0,zscore_3.5
+2025-05-22 20:47:00,Nivel Ecualizador 1 (Tk 30m3),42.0,zscore_3.5
+2025-05-22 20:32:00,Temperatura DAF,42.0,zscore_3.5
+2025-05-22 20:41:00,Temperatura DAF,42.0,zscore_3.5
+2025-05-22 20:47:00,Temperatura DAF,42.0,zscore_3.5
+2025-07-28 22:06:00,Temperatura DAF,42.0,zscore_3.5
+2025-07-28 22:14:00,Temperatura DAF,21.0,zscore_3.5
+2025-05-22 20:41:00,pH Clarificado DAF (Tk 80m3),42.0,zscore_3.5
+2025-05-22 20:47:00,pH Clarificado DAF (Tk 80m3),42.0,zscore_3.5
+2025-07-17 13:47:00,pH Clarificado DAF (Tk 80m3),11.68894624710083,zscore_3.5
+2025-07-17 13:48:00,pH Clarificado DAF (Tk 80m3),11.72920274734497,zscore_3.5
+2025-07-28 22:05:00,pH Clarificado DAF (Tk 80m3),23.95337820053101,zscore_3.5
+2025-07-28 22:14:00,pH Clarificado DAF (Tk 80m3),23.924262046813965,zscore_3.5
+2025-05-22 20:32:00,pH Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-22 20:41:00,pH Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-22 20:47:00,pH Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-22 20:32:00,pH coagulación entrada DAF,42.0,zscore_3.5
+2025-05-22 20:41:00,pH coagulación entrada DAF,42.0,zscore_3.5
+2025-05-22 20:47:00,pH coagulación entrada DAF,42.0,zscore_3.5
+2025-05-26 23:42:00,pH coagulación entrada DAF,2.440682888031006,zscore_3.5
+2025-05-26 23:43:00,pH coagulación entrada DAF,2.341941595077514,zscore_3.5
+2025-06-10 00:37:00,pH coagulación entrada DAF,2.6715855598449707,zscore_3.5
+2025-06-10 00:38:00,pH coagulación entrada DAF,2.795645236968994,zscore_3.5
+2025-06-11 06:26:00,pH coagulación entrada DAF,2.3627026081085205,zscore_3.5
+2025-06-11 06:27:00,pH coagulación entrada DAF,2.112051486968994,zscore_3.5
+2025-06-11 06:55:00,pH coagulación entrada DAF,2.5080294609069824,zscore_3.5
+2025-06-11 06:56:00,pH coagulación entrada DAF,2.4158709049224854,zscore_3.5
+2025-06-11 06:57:00,pH coagulación entrada DAF,2.3935909271240234,zscore_3.5
+2025-06-11 06:58:00,pH coagulación entrada DAF,2.385995388031006,zscore_3.5
+2025-06-11 09:04:00,pH coagulación entrada DAF,2.560185194015503,zscore_3.5
+2025-06-11 09:05:00,pH coagulación entrada DAF,2.119140625,zscore_3.5
+2025-06-11 09:06:00,pH coagulación entrada DAF,1.8791232109069824,zscore_3.5
+2025-06-11 09:07:00,pH coagulación entrada DAF,2.150028944015503,zscore_3.5
+2025-06-11 09:08:00,pH coagulación entrada DAF,2.186487197875977,zscore_3.5
+2025-06-11 09:09:00,pH coagulación entrada DAF,2.1966147422790527,zscore_3.5
+2025-06-11 09:10:00,pH coagulación entrada DAF,2.1981334686279297,zscore_3.5
+2025-06-11 12:00:00,pH coagulación entrada DAF,2.935908555984497,zscore_3.5
+2025-06-11 20:42:00,pH coagulación entrada DAF,10.75368881225586,zscore_3.5
+2025-06-11 20:50:00,pH coagulación entrada DAF,2.964771509170532,zscore_3.5
+2025-06-11 20:51:00,pH coagulación entrada DAF,2.897424697875977,zscore_3.5
+2025-06-11 22:51:00,pH coagulación entrada DAF,10.464554786682127,zscore_3.5
+2025-06-11 22:52:00,pH coagulación entrada DAF,10.388599395751951,zscore_3.5
+2025-07-07 08:32:00,pH coagulación entrada DAF,2.580186605453491,zscore_3.5
+2025-07-07 08:33:00,pH coagulación entrada DAF,2.384729504585266,zscore_3.5
+2025-07-07 08:34:00,pH coagulación entrada DAF,2.3087745904922485,zscore_3.5
+2025-07-07 08:35:00,pH coagulación entrada DAF,2.282443642616272,zscore_3.5
+2025-07-07 08:36:00,pH coagulación entrada DAF,2.285228490829468,zscore_3.5
+2025-07-07 08:37:00,pH coagulación entrada DAF,2.280924439430237,zscore_3.5
+2025-07-07 08:38:00,pH coagulación entrada DAF,2.2892794609069824,zscore_3.5
+2025-07-07 08:39:00,pH coagulación entrada DAF,2.2880135774612427,zscore_3.5
+2025-07-07 08:40:00,pH coagulación entrada DAF,2.59208619594574,zscore_3.5
+2025-07-07 08:41:00,pH coagulación entrada DAF,2.294596314430237,zscore_3.5
+2025-07-07 08:43:00,pH coagulación entrada DAF,2.3059895038604736,zscore_3.5
+2025-07-07 08:44:00,pH coagulación entrada DAF,2.303457856178284,zscore_3.5
+2025-07-07 08:45:00,pH coagulación entrada DAF,2.291051745414734,zscore_3.5
+2025-07-07 08:46:00,pH coagulación entrada DAF,2.283962607383728,zscore_3.5
+2025-07-07 08:47:00,pH coagulación entrada DAF,2.295355796813965,zscore_3.5
+2025-07-07 08:48:00,pH coagulación entrada DAF,2.2796584367752075,zscore_3.5
+2025-07-07 08:49:00,pH coagulación entrada DAF,2.2776331901550293,zscore_3.5
+2025-07-07 08:50:00,pH coagulación entrada DAF,2.280671238899231,zscore_3.5
+2025-07-07 08:51:00,pH coagulación entrada DAF,2.2723162174224854,zscore_3.5
+2025-07-07 08:52:00,pH coagulación entrada DAF,2.273075819015503,zscore_3.5
+2025-07-07 08:53:00,pH coagulación entrada DAF,2.2766205072402954,zscore_3.5
+2025-07-07 08:54:00,pH coagulación entrada DAF,2.272822618484497,zscore_3.5
+2025-07-07 08:55:00,pH coagulación entrada DAF,2.272316336631775,zscore_3.5
+2025-07-07 08:56:00,pH coagulación entrada DAF,2.272316336631775,zscore_3.5
+2025-07-07 08:57:00,pH coagulación entrada DAF,2.2766205072402954,zscore_3.5
+2025-07-07 08:58:00,pH coagulación entrada DAF,2.2756075859069824,zscore_3.5
+2025-07-07 08:59:00,pH coagulación entrada DAF,2.283203125,zscore_3.5
+2025-07-07 09:01:00,pH coagulación entrada DAF,2.27763307094574,zscore_3.5
+2025-07-07 09:02:00,pH coagulación entrada DAF,2.229528307914734,zscore_3.5
+2025-07-07 09:03:00,pH coagulación entrada DAF,2.3305482864379883,zscore_3.5
+2025-07-07 09:04:00,pH coagulación entrada DAF,2.397894859313965,zscore_3.5
+2025-07-07 09:05:00,pH coagulación entrada DAF,2.3634620904922485,zscore_3.5
+2025-07-07 09:06:00,pH coagulación entrada DAF,2.3543474674224854,zscore_3.5
+2025-07-07 09:07:00,pH coagulación entrada DAF,2.34346079826355,zscore_3.5
+2025-07-07 09:08:00,pH coagulación entrada DAF,2.3508028984069824,zscore_3.5
+2025-07-07 09:09:00,pH coagulación entrada DAF,2.346245765686035,zscore_3.5
+2025-07-07 09:10:00,pH coagulación entrada DAF,2.301179051399231,zscore_3.5
+2025-07-07 09:11:00,pH coagulación entrada DAF,2.2839627265930176,zscore_3.5
+2025-07-07 09:12:00,pH coagulación entrada DAF,2.2824435234069824,zscore_3.5
+2025-07-07 09:13:00,pH coagulación entrada DAF,2.2771265506744385,zscore_3.5
+2025-07-07 09:14:00,pH coagulación entrada DAF,2.270543932914734,zscore_3.5
+2025-07-07 09:15:00,pH coagulación entrada DAF,2.2756075859069824,zscore_3.5
+2025-07-07 09:16:00,pH coagulación entrada DAF,2.2743417024612427,zscore_3.5
+2025-07-07 09:17:00,pH coagulación entrada DAF,2.27079713344574,zscore_3.5
+2025-07-07 09:18:00,pH coagulación entrada DAF,2.2682652473449707,zscore_3.5
+2025-07-07 09:20:00,pH coagulación entrada DAF,2.2713035345077515,zscore_3.5
+2025-07-07 09:21:00,pH coagulación entrada DAF,2.269784450531006,zscore_3.5
+2025-07-07 09:22:00,pH coagulación entrada DAF,2.2662397623062134,zscore_3.5
+2025-07-07 09:23:00,pH coagulación entrada DAF,2.2642143964767456,zscore_3.5
+2025-07-07 09:24:00,pH coagulación entrada DAF,2.265986680984497,zscore_3.5
+2025-07-07 09:25:00,pH coagulación entrada DAF,2.2611762285232544,zscore_3.5
+2025-07-07 09:26:00,pH coagulación entrada DAF,2.2611762285232544,zscore_3.5
+2025-07-07 09:27:00,pH coagulación entrada DAF,2.260923147201538,zscore_3.5
+2025-07-07 09:28:00,pH coagulación entrada DAF,2.259910464286804,zscore_3.5
+2025-07-07 09:29:00,pH coagulación entrada DAF,2.2626953125,zscore_3.5
+2025-07-07 09:30:00,pH coagulación entrada DAF,2.2581381797790527,zscore_3.5
+2025-07-07 09:31:00,pH coagulación entrada DAF,2.262948513031006,zscore_3.5
+2025-07-07 09:32:00,pH coagulación entrada DAF,2.2614294290542603,zscore_3.5
+2025-07-07 09:33:00,pH coagulación entrada DAF,2.2609230279922485,zscore_3.5
+2025-07-07 09:34:00,pH coagulación entrada DAF,2.259657144546509,zscore_3.5
+2025-07-07 09:35:00,pH coagulación entrada DAF,2.2604167461395264,zscore_3.5
+2025-07-07 09:36:00,pH coagulación entrada DAF,2.260923147201538,zscore_3.5
+2025-07-07 09:37:00,pH coagulación entrada DAF,2.262442111968994,zscore_3.5
+2025-07-07 09:38:00,pH coagulación entrada DAF,2.2614293098449707,zscore_3.5
+2025-07-07 09:40:00,pH coagulación entrada DAF,2.261682510375977,zscore_3.5
+2025-07-07 09:41:00,pH coagulación entrada DAF,2.2626953125,zscore_3.5
+2025-07-07 09:42:00,pH coagulación entrada DAF,2.2619357109069824,zscore_3.5
+2025-07-07 09:43:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 09:44:00,pH coagulación entrada DAF,2.259910345077514,zscore_3.5
+2025-07-07 09:45:00,pH coagulación entrada DAF,2.261682629585266,zscore_3.5
+2025-07-07 09:46:00,pH coagulación entrada DAF,2.261682510375977,zscore_3.5
+2025-07-07 09:47:00,pH coagulación entrada DAF,2.2601635456085205,zscore_3.5
+2025-07-07 09:48:00,pH coagulación entrada DAF,2.262948513031006,zscore_3.5
+2025-07-07 09:49:00,pH coagulación entrada DAF,2.2619357109069824,zscore_3.5
+2025-07-07 09:50:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 09:51:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 09:52:00,pH coagulación entrada DAF,2.260416626930237,zscore_3.5
+2025-07-07 09:53:00,pH coagulación entrada DAF,2.262442231178284,zscore_3.5
+2025-07-07 09:54:00,pH coagulación entrada DAF,2.2614294290542603,zscore_3.5
+2025-07-07 09:55:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 09:56:00,pH coagulación entrada DAF,2.2619357109069824,zscore_3.5
+2025-07-07 09:57:00,pH coagulación entrada DAF,2.2626953125,zscore_3.5
+2025-07-07 09:59:00,pH coagulación entrada DAF,2.258897542953491,zscore_3.5
+2025-07-07 10:00:00,pH coagulación entrada DAF,2.259910225868225,zscore_3.5
+2025-07-07 10:01:00,pH coagulación entrada DAF,2.259910345077514,zscore_3.5
+2025-07-07 10:02:00,pH coagulación entrada DAF,2.259910345077514,zscore_3.5
+2025-07-07 10:03:00,pH coagulación entrada DAF,2.2604167461395264,zscore_3.5
+2025-07-07 10:04:00,pH coagulación entrada DAF,2.260923147201538,zscore_3.5
+2025-07-07 10:05:00,pH coagulación entrada DAF,2.260923147201538,zscore_3.5
+2025-07-07 10:06:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 10:07:00,pH coagulación entrada DAF,2.2639613151550293,zscore_3.5
+2025-07-07 10:08:00,pH coagulación entrada DAF,2.259403944015503,zscore_3.5
+2025-07-07 10:09:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-07 10:10:00,pH coagulación entrada DAF,2.2639613151550293,zscore_3.5
+2025-07-07 10:11:00,pH coagulación entrada DAF,2.261682510375977,zscore_3.5
+2025-07-07 10:12:00,pH coagulación entrada DAF,2.2611762285232544,zscore_3.5
+2025-07-07 10:13:00,pH coagulación entrada DAF,2.2611762285232544,zscore_3.5
+2025-07-07 10:14:00,pH coagulación entrada DAF,2.259910345077514,zscore_3.5
+2025-07-07 10:15:00,pH coagulación entrada DAF,2.2614293098449707,zscore_3.5
+2025-07-07 10:17:00,pH coagulación entrada DAF,2.259910345077514,zscore_3.5
+2025-07-07 10:18:00,pH coagulación entrada DAF,2.2611762285232544,zscore_3.5
+2025-07-07 10:19:00,pH coagulación entrada DAF,2.2619357109069824,zscore_3.5
+2025-07-07 10:20:00,pH coagulación entrada DAF,2.2583911418914795,zscore_3.5
+2025-07-07 10:21:00,pH coagulación entrada DAF,2.2545933723449707,zscore_3.5
+2025-07-07 10:22:00,pH coagulación entrada DAF,2.243706703186035,zscore_3.5
+2025-07-07 10:23:00,pH coagulación entrada DAF,2.234338760375977,zscore_3.5
+2025-07-07 10:24:00,pH coagulación entrada DAF,2.228768825531006,zscore_3.5
+2025-07-07 10:25:00,pH coagulación entrada DAF,2.2211732864379883,zscore_3.5
+2025-07-07 10:26:00,pH coagulación entrada DAF,2.218641519546509,zscore_3.5
+2025-07-07 10:27:00,pH coagulación entrada DAF,2.2171225547790527,zscore_3.5
+2025-07-07 10:28:00,pH coagulación entrada DAF,2.212058782577514,zscore_3.5
+2025-07-07 10:29:00,pH coagulación entrada DAF,2.2135777473449707,zscore_3.5
+2025-07-07 10:30:00,pH coagulación entrada DAF,2.214590549468994,zscore_3.5
+2025-07-07 10:31:00,pH coagulación entrada DAF,2.212058782577514,zscore_3.5
+2025-07-07 10:32:00,pH coagulación entrada DAF,2.2115522623062134,zscore_3.5
+2025-07-07 10:33:00,pH coagulación entrada DAF,2.210286498069763,zscore_3.5
+2025-07-07 10:35:00,pH coagulación entrada DAF,2.212311863899231,zscore_3.5
+2025-07-07 10:36:00,pH coagulación entrada DAF,2.2090206146240234,zscore_3.5
+2025-07-07 10:37:00,pH coagulación entrada DAF,2.2087674140930176,zscore_3.5
+2025-07-07 10:38:00,pH coagulación entrada DAF,2.2128182649612427,zscore_3.5
+2025-07-07 10:39:00,pH coagulación entrada DAF,2.215350151062012,zscore_3.5
+2025-07-07 10:40:00,pH coagulación entrada DAF,2.2181352376937866,zscore_3.5
+2025-07-07 10:41:00,pH coagulación entrada DAF,2.222186088562012,zscore_3.5
+2025-07-07 10:42:00,pH coagulación entrada DAF,2.225730538368225,zscore_3.5
+2025-07-07 10:43:00,pH coagulación entrada DAF,2.227502822875977,zscore_3.5
+2025-07-07 10:44:00,pH coagulación entrada DAF,2.218894720077514,zscore_3.5
+2025-07-07 10:45:00,pH coagulación entrada DAF,2.191551089286804,zscore_3.5
+2025-07-07 10:46:00,pH coagulación entrada DAF,2.1616753339767456,zscore_3.5
+2025-07-07 10:47:00,pH coagulación entrada DAF,2.362702488899231,zscore_3.5
+2025-07-07 10:48:00,pH coagulación entrada DAF,2.63310182094574,zscore_3.5
+2025-07-08 10:00:00,pH coagulación entrada DAF,2.9154006242752075,zscore_3.5
+2025-07-08 10:01:00,pH coagulación entrada DAF,2.5492982864379883,zscore_3.5
+2025-07-08 18:17:00,pH coagulación entrada DAF,3.0085721015930176,zscore_3.5
+2025-07-08 18:18:00,pH coagulación entrada DAF,2.321180582046509,zscore_3.5
+2025-07-08 18:19:00,pH coagulación entrada DAF,2.190791368484497,zscore_3.5
+2025-07-08 18:20:00,pH coagulación entrada DAF,2.283203125,zscore_3.5
+2025-07-08 18:21:00,pH coagulación entrada DAF,2.4216941595077515,zscore_3.5
+2025-07-08 18:22:00,pH coagulación entrada DAF,2.5920863151550293,zscore_3.5
+2025-07-08 18:23:00,pH coagulación entrada DAF,2.729058265686035,zscore_3.5
+2025-07-08 18:24:00,pH coagulación entrada DAF,2.8121020793914795,zscore_3.5
+2025-07-09 03:30:00,pH coagulación entrada DAF,2.7460213899612427,zscore_3.5
+2025-07-09 06:08:00,pH coagulación entrada DAF,10.8119215965271,zscore_3.5
+2025-07-09 06:22:00,pH coagulación entrada DAF,2.819191098213196,zscore_3.5
+2025-07-09 09:40:00,pH coagulación entrada DAF,2.3596643805503845,zscore_3.5
+2025-07-09 10:41:00,pH coagulación entrada DAF,10.753942489624023,zscore_3.5
+2025-07-10 00:40:00,pH coagulación entrada DAF,2.768048405647278,zscore_3.5
+2025-07-10 01:08:00,pH coagulación entrada DAF,2.7186776399612427,zscore_3.5
+2025-07-10 01:09:00,pH coagulación entrada DAF,2.2930773496627808,zscore_3.5
+2025-07-10 01:40:00,pH coagulación entrada DAF,2.676649332046509,zscore_3.5
+2025-07-10 01:46:00,pH coagulación entrada DAF,2.860460042953491,zscore_3.5
+2025-07-10 01:47:00,pH coagulación entrada DAF,2.558159828186035,zscore_3.5
+2025-07-10 01:48:00,pH coagulación entrada DAF,2.474356293678284,zscore_3.5
+2025-07-10 01:53:00,pH coagulación entrada DAF,2.1766130924224854,zscore_3.5
+2025-07-10 01:54:00,pH coagulación entrada DAF,2.1014177799224854,zscore_3.5
+2025-07-10 01:55:00,pH coagulación entrada DAF,1.9606480598449707,zscore_3.5
+2025-07-10 02:29:00,pH coagulación entrada DAF,2.608036756515503,zscore_3.5
+2025-07-10 03:22:00,pH coagulación entrada DAF,2.553855657577514,zscore_3.5
+2025-07-10 03:30:00,pH coagulación entrada DAF,3.007306218147278,zscore_3.5
+2025-07-10 03:57:00,pH coagulación entrada DAF,2.3697917461395264,zscore_3.5
+2025-07-10 05:14:00,pH coagulación entrada DAF,2.380931615829468,zscore_3.5
+2025-07-10 07:14:00,pH coagulación entrada DAF,1.5765697360038755,zscore_3.5
+2025-07-10 07:15:00,pH coagulación entrada DAF,1.4598524570465088,zscore_3.5
+2025-07-10 07:16:00,pH coagulación entrada DAF,2.372576594352722,zscore_3.5
+2025-07-10 07:32:00,pH coagulación entrada DAF,1.845703125,zscore_3.5
+2025-07-10 07:33:00,pH coagulación entrada DAF,1.4618778228759766,zscore_3.5
+2025-07-10 07:34:00,pH coagulación entrada DAF,1.9826750755310056,zscore_3.5
+2025-07-10 07:42:00,pH coagulación entrada DAF,1.64467591047287,zscore_3.5
+2025-07-10 07:43:00,pH coagulación entrada DAF,2.9242621660232544,zscore_3.5
+2025-07-10 07:52:00,pH coagulación entrada DAF,2.068757176399231,zscore_3.5
+2025-07-10 08:03:00,pH coagulación entrada DAF,1.891782522201538,zscore_3.5
+2025-07-10 08:11:00,pH coagulación entrada DAF,1.631763577461243,zscore_3.5
+2025-07-10 08:29:00,pH coagulación entrada DAF,2.2606698274612427,zscore_3.5
+2025-07-10 08:37:00,pH coagulación entrada DAF,1.9084925055503843,zscore_3.5
+2025-07-10 08:46:00,pH coagulación entrada DAF,1.7218967080116272,zscore_3.5
+2025-07-10 08:55:00,pH coagulación entrada DAF,1.7150607705116272,zscore_3.5
+2025-07-10 09:04:00,pH coagulación entrada DAF,2.6462671756744385,zscore_3.5
+2025-07-10 09:13:00,pH coagulación entrada DAF,1.6292316913604736,zscore_3.5
+2025-07-10 09:23:00,pH coagulación entrada DAF,1.7277199029922483,zscore_3.5
+2025-07-10 09:24:00,pH coagulación entrada DAF,1.693287014961243,zscore_3.5
+2025-07-10 09:25:00,pH coagulación entrada DAF,1.8715277314186096,zscore_3.5
+2025-07-10 13:34:00,pH coagulación entrada DAF,10.415184020996094,zscore_3.5
+2025-07-10 13:35:00,pH coagulación entrada DAF,10.442020893096924,zscore_3.5
+2025-07-10 13:37:00,pH coagulación entrada DAF,10.426070213317873,zscore_3.5
+2025-07-10 13:38:00,pH coagulación entrada DAF,10.476707458496094,zscore_3.5
+2025-07-14 17:20:00,pH coagulación entrada DAF,2.7141202688217163,zscore_3.5
+2025-07-24 08:03:00,pH coagulación entrada DAF,10.38454818725586,zscore_3.5
+2025-07-24 08:04:00,pH coagulación entrada DAF,10.388599395751951,zscore_3.5
+2025-07-24 08:05:00,pH coagulación entrada DAF,10.398980140686035,zscore_3.5
+2025-07-24 08:06:00,pH coagulación entrada DAF,10.41239881515503,zscore_3.5
+2025-07-24 08:07:00,pH coagulación entrada DAF,10.421513557434082,zscore_3.5
+2025-07-24 08:08:00,pH coagulación entrada DAF,10.431893825531006,zscore_3.5
+2025-07-24 08:09:00,pH coagulación entrada DAF,10.44379425048828,zscore_3.5
+2025-07-24 08:10:00,pH coagulación entrada DAF,10.459237575531006,zscore_3.5
+2025-07-24 08:11:00,pH coagulación entrada DAF,10.470377445220947,zscore_3.5
+2025-07-24 08:12:00,pH coagulación entrada DAF,10.48075819015503,zscore_3.5
+2025-07-24 08:13:00,pH coagulación entrada DAF,10.493416786193848,zscore_3.5
+2025-07-24 08:14:00,pH coagulación entrada DAF,10.50379753112793,zscore_3.5
+2025-07-24 08:15:00,pH coagulación entrada DAF,10.52177381515503,zscore_3.5
+2025-07-24 08:16:00,pH coagulación entrada DAF,10.53848361968994,zscore_3.5
+2025-07-24 08:17:00,pH coagulación entrada DAF,10.551395893096924,zscore_3.5
+2025-07-24 08:18:00,pH coagulación entrada DAF,10.565068244934082,zscore_3.5
+2025-07-24 08:19:00,pH coagulación entrada DAF,10.58076524734497,zscore_3.5
+2025-07-24 08:20:00,pH coagulación entrada DAF,10.591652393341064,zscore_3.5
+2025-07-24 08:21:00,pH coagulación entrada DAF,10.604058265686035,zscore_3.5
+2025-07-24 08:22:00,pH coagulación entrada DAF,10.62051486968994,zscore_3.5
+2025-07-24 08:23:00,pH coagulación entrada DAF,10.623553276062012,zscore_3.5
+2025-07-24 08:24:00,pH coagulación entrada DAF,10.645073890686035,zscore_3.5
+2025-07-24 08:25:00,pH coagulación entrada DAF,10.662796974182127,zscore_3.5
+2025-07-24 08:26:00,pH coagulación entrada DAF,10.677987575531006,zscore_3.5
+2025-07-24 08:27:00,pH coagulación entrada DAF,10.69191312789917,zscore_3.5
+2025-07-24 08:28:00,pH coagulación entrada DAF,10.70761013031006,zscore_3.5
+2025-07-24 08:29:00,pH coagulación entrada DAF,10.721028804779053,zscore_3.5
+2025-07-24 08:30:00,pH coagulación entrada DAF,10.739511013031006,zscore_3.5
+2025-07-24 08:31:00,pH coagulación entrada DAF,10.760018825531006,zscore_3.5
+2025-07-24 08:32:00,pH coagulación entrada DAF,10.780779838562012,zscore_3.5
+2025-07-24 08:33:00,pH coagulación entrada DAF,10.79824924468994,zscore_3.5
+2025-07-24 08:34:00,pH coagulación entrada DAF,10.816478729248049,zscore_3.5
+2025-07-24 08:35:00,pH coagulación entrada DAF,10.839771270751951,zscore_3.5
+2025-07-24 08:36:00,pH coagulación entrada DAF,10.85724115371704,zscore_3.5
+2025-07-24 08:37:00,pH coagulación entrada DAF,10.882306098937988,zscore_3.5
+2025-07-24 08:38:00,pH coagulación entrada DAF,10.904333114624023,zscore_3.5
+2025-07-24 08:39:00,pH coagulación entrada DAF,10.92939805984497,zscore_3.5
+2025-07-24 08:40:00,pH coagulación entrada DAF,10.95421028137207,zscore_3.5
+2025-07-24 08:41:00,pH coagulación entrada DAF,10.98155403137207,zscore_3.5
+2025-07-24 08:42:00,pH coagulación entrada DAF,11.00763177871704,zscore_3.5
+2025-07-24 08:43:00,pH coagulación entrada DAF,11.036494731903076,zscore_3.5
+2025-07-24 08:44:00,pH coagulación entrada DAF,11.056495666503906,zscore_3.5
+2025-07-24 08:45:00,pH coagulación entrada DAF,11.083333492279053,zscore_3.5
+2025-07-24 08:46:00,pH coagulación entrada DAF,11.098271369934082,zscore_3.5
+2025-07-24 08:47:00,pH coagulación entrada DAF,11.124602794647217,zscore_3.5
+2025-07-24 08:48:00,pH coagulación entrada DAF,11.139033317565918,zscore_3.5
+2025-07-24 08:49:00,pH coagulación entrada DAF,11.164857864379885,zscore_3.5
+2025-07-24 08:50:00,pH coagulación entrada DAF,11.19422721862793,zscore_3.5
+2025-07-24 08:51:00,pH coagulación entrada DAF,11.218786239624023,zscore_3.5
+2025-07-24 08:52:00,pH coagulación entrada DAF,11.239041328430176,zscore_3.5
+2025-07-24 08:53:00,pH coagulación entrada DAF,11.267144203186035,zscore_3.5
+2025-07-24 08:54:00,pH coagulación entrada DAF,11.296260356903076,zscore_3.5
+2025-07-24 08:55:00,pH coagulación entrada DAF,11.319299697875977,zscore_3.5
+2025-07-24 08:56:00,pH coagulación entrada DAF,11.336009502410889,zscore_3.5
+2025-07-24 08:57:00,pH coagulación entrada DAF,11.361834526062012,zscore_3.5
+2025-07-24 08:58:00,pH coagulación entrada DAF,11.388165950775146,zscore_3.5
+2025-07-24 08:59:00,pH coagulación entrada DAF,11.41778802871704,zscore_3.5
+2025-07-24 09:00:00,pH coagulación entrada DAF,11.441080570220947,zscore_3.5
+2025-07-24 09:01:00,pH coagulación entrada DAF,11.476779460906982,zscore_3.5
+2025-07-24 09:02:00,pH coagulación entrada DAF,11.498553276062012,zscore_3.5
+2025-07-24 09:03:00,pH coagulación entrada DAF,11.533238887786863,zscore_3.5
+2025-07-24 09:04:00,pH coagulación entrada DAF,11.556279182434082,zscore_3.5
+2025-07-24 09:05:00,pH coagulación entrada DAF,11.57703971862793,zscore_3.5
+2025-07-24 09:06:00,pH coagulación entrada DAF,11.60488986968994,zscore_3.5
+2025-07-24 09:07:00,pH coagulación entrada DAF,11.634512424468994,zscore_3.5
+2025-07-24 09:08:00,pH coagulación entrada DAF,11.655020713806152,zscore_3.5
+2025-07-24 09:09:00,pH coagulación entrada DAF,11.68135118484497,zscore_3.5
+2025-07-24 09:10:00,pH coagulación entrada DAF,11.716037273406982,zscore_3.5
+2025-07-24 09:11:00,pH coagulación entrada DAF,11.74464750289917,zscore_3.5
+2025-07-24 09:12:00,pH coagulación entrada DAF,11.76895236968994,zscore_3.5
+2025-07-24 09:13:00,pH coagulación entrada DAF,11.792245388031006,zscore_3.5
+2025-07-24 09:14:00,pH coagulación entrada DAF,11.815791130065918,zscore_3.5
+2025-07-24 09:15:00,pH coagulación entrada DAF,11.845160484313965,zscore_3.5
+2025-07-24 09:16:00,pH coagulación entrada DAF,11.863896369934082,zscore_3.5
+2025-07-24 09:17:00,pH coagulación entrada DAF,11.889214515686035,zscore_3.5
+2025-07-24 09:18:00,pH coagulación entrada DAF,11.904911518096924,zscore_3.5
+2025-07-24 09:19:00,pH coagulación entrada DAF,11.930229663848875,zscore_3.5
+2025-07-24 09:20:00,pH coagulación entrada DAF,11.9560546875,zscore_3.5
+2025-07-24 09:21:00,pH coagulación entrada DAF,11.97225856781006,zscore_3.5
+2025-07-24 09:22:00,pH coagulación entrada DAF,11.994285106658936,zscore_3.5
+2025-07-24 09:23:00,pH coagulación entrada DAF,12.01378059387207,zscore_3.5
+2025-07-24 09:24:00,pH coagulación entrada DAF,12.03935194015503,zscore_3.5
+2025-07-24 09:25:00,pH coagulación entrada DAF,12.0517578125,zscore_3.5
+2025-07-24 09:26:00,pH coagulación entrada DAF,12.06922721862793,zscore_3.5
+2025-07-24 09:27:00,pH coagulación entrada DAF,12.0791015625,zscore_3.5
+2025-07-24 09:28:00,pH coagulación entrada DAF,12.079354286193848,zscore_3.5
+2025-07-24 09:29:00,pH coagulación entrada DAF,12.092267036437988,zscore_3.5
+2025-07-24 09:30:00,pH coagulación entrada DAF,12.112521648406982,zscore_3.5
+2025-07-24 09:31:00,pH coagulación entrada DAF,12.126193523406982,zscore_3.5
+2025-07-24 09:32:00,pH coagulación entrada DAF,12.137080192565918,zscore_3.5
+2025-07-24 09:33:00,pH coagulación entrada DAF,12.154296875,zscore_3.5
+2025-07-24 09:34:00,pH coagulación entrada DAF,12.16796875,zscore_3.5
+2025-07-24 09:35:00,pH coagulación entrada DAF,12.188223361968994,zscore_3.5
+2025-07-24 09:36:00,pH coagulación entrada DAF,12.200123310089111,zscore_3.5
+2025-07-24 09:37:00,pH coagulación entrada DAF,12.21075677871704,zscore_3.5
+2025-07-24 09:38:00,pH coagulación entrada DAF,12.22189712524414,zscore_3.5
+2025-07-24 09:39:00,pH coagulación entrada DAF,12.234049320220947,zscore_3.5
+2025-07-24 09:40:00,pH coagulación entrada DAF,12.242911338806152,zscore_3.5
+2025-07-24 09:41:00,pH coagulación entrada DAF,12.25860834121704,zscore_3.5
+2025-07-24 09:42:00,pH coagulación entrada DAF,12.26873540878296,zscore_3.5
+2025-07-24 09:43:00,pH coagulación entrada DAF,12.279369354248049,zscore_3.5
+2025-07-24 09:44:00,pH coagulación entrada DAF,12.292281150817873,zscore_3.5
+2025-07-24 09:45:00,pH coagulación entrada DAF,12.304434299468994,zscore_3.5
+2025-07-24 09:46:00,pH coagulación entrada DAF,12.30772590637207,zscore_3.5
+2025-07-24 09:47:00,pH coagulación entrada DAF,12.30721950531006,zscore_3.5
+2025-07-24 09:48:00,pH coagulación entrada DAF,12.302662372589111,zscore_3.5
+2025-07-24 09:49:00,pH coagulación entrada DAF,12.317346572875977,zscore_3.5
+2025-07-24 09:50:00,pH coagulación entrada DAF,12.321650505065918,zscore_3.5
+2025-07-24 09:51:00,pH coagulación entrada DAF,12.327473640441896,zscore_3.5
+2025-07-24 09:52:00,pH coagulación entrada DAF,12.33810806274414,zscore_3.5
+2025-07-24 09:53:00,pH coagulación entrada DAF,12.343677997589111,zscore_3.5
+2025-07-24 09:54:00,pH coagulación entrada DAF,12.352285385131836,zscore_3.5
+2025-07-24 09:55:00,pH coagulación entrada DAF,12.353804588317873,zscore_3.5
+2025-07-24 09:56:00,pH coagulación entrada DAF,12.362666130065918,zscore_3.5
+2025-07-24 09:57:00,pH coagulación entrada DAF,12.370514392852783,zscore_3.5
+2025-07-24 09:58:00,pH coagulación entrada DAF,12.373299598693848,zscore_3.5
+2025-07-24 09:59:00,pH coagulación entrada DAF,12.377856731414797,zscore_3.5
+2025-07-24 10:00:00,pH coagulación entrada DAF,12.390263080596924,zscore_3.5
+2025-07-24 10:01:00,pH coagulación entrada DAF,12.393807411193848,zscore_3.5
+2025-07-24 10:02:00,pH coagulación entrada DAF,12.398618698120115,zscore_3.5
+2025-07-24 10:03:00,pH coagulación entrada DAF,12.40292263031006,zscore_3.5
+2025-07-24 10:04:00,pH coagulación entrada DAF,12.410518169403076,zscore_3.5
+2025-07-24 10:05:00,pH coagulación entrada DAF,12.4165940284729,zscore_3.5
+2025-07-24 10:06:00,pH coagulación entrada DAF,12.42621612548828,zscore_3.5
+2025-07-24 10:07:00,pH coagulación entrada DAF,12.42013931274414,zscore_3.5
+2025-07-24 10:08:00,pH coagulación entrada DAF,12.42697525024414,zscore_3.5
+2025-07-24 10:09:00,pH coagulación entrada DAF,12.431279182434082,zscore_3.5
+2025-07-24 10:10:00,pH coagulación entrada DAF,12.437355041503906,zscore_3.5
+2025-07-24 10:11:00,pH coagulación entrada DAF,12.44393825531006,zscore_3.5
+2025-07-24 10:12:00,pH coagulación entrada DAF,12.445963859558104,zscore_3.5
+2025-07-24 10:13:00,pH coagulación entrada DAF,12.452799797058104,zscore_3.5
+2025-07-24 10:14:00,pH coagulación entrada DAF,12.45685052871704,zscore_3.5
+2025-07-24 10:15:00,pH coagulación entrada DAF,12.460900783538818,zscore_3.5
+2025-07-24 10:16:00,pH coagulación entrada DAF,12.469762802124023,zscore_3.5
+2025-07-24 10:17:00,pH coagulación entrada DAF,12.47634506225586,zscore_3.5
+2025-07-24 10:18:00,pH coagulación entrada DAF,12.479130268096924,zscore_3.5
+2025-07-24 10:19:00,pH coagulación entrada DAF,12.486472606658936,zscore_3.5
+2025-07-24 10:20:00,pH coagulación entrada DAF,12.48875093460083,zscore_3.5
+2025-07-24 10:21:00,pH coagulación entrada DAF,12.49103021621704,zscore_3.5
+2025-07-24 10:22:00,pH coagulación entrada DAF,12.498119354248049,zscore_3.5
+2025-07-24 10:23:00,pH coagulación entrada DAF,12.496853351593018,zscore_3.5
+2025-07-24 10:24:00,pH coagulación entrada DAF,12.503182411193848,zscore_3.5
+2025-07-24 10:25:00,pH coagulación entrada DAF,12.503182411193848,zscore_3.5
+2025-07-24 10:26:00,pH coagulación entrada DAF,12.507740020751951,zscore_3.5
+2025-07-24 10:27:00,pH coagulación entrada DAF,12.509259223937988,zscore_3.5
+2025-07-24 10:28:00,pH coagulación entrada DAF,12.51153802871704,zscore_3.5
+2025-07-24 10:29:00,pH coagulación entrada DAF,12.50849962234497,zscore_3.5
+2025-07-24 10:30:00,pH coagulación entrada DAF,12.521918296813965,zscore_3.5
+2025-07-24 10:31:00,pH coagulación entrada DAF,12.522424221038818,zscore_3.5
+2025-07-24 10:32:00,pH coagulación entrada DAF,12.529260158538818,zscore_3.5
+2025-07-24 10:33:00,pH coagulación entrada DAF,12.532551765441896,zscore_3.5
+2025-07-24 10:34:00,pH coagulación entrada DAF,12.541666507720947,zscore_3.5
+2025-07-24 10:35:00,pH coagulación entrada DAF,12.53786849975586,zscore_3.5
+2025-07-24 10:36:00,pH coagulación entrada DAF,12.541160106658936,zscore_3.5
+2025-07-24 10:37:00,pH coagulación entrada DAF,12.54445219039917,zscore_3.5
+2025-07-24 10:38:00,pH coagulación entrada DAF,12.558123588562012,zscore_3.5
+2025-07-24 10:39:00,pH coagulación entrada DAF,12.558882713317873,zscore_3.5
+2025-07-24 10:41:00,pH coagulación entrada DAF,12.560908317565918,zscore_3.5
+2025-07-24 10:42:00,pH coagulación entrada DAF,12.570023536682127,zscore_3.5
+2025-07-24 10:43:00,pH coagulación entrada DAF,12.570782661437988,zscore_3.5
+2025-07-24 10:44:00,pH coagulación entrada DAF,12.570023536682127,zscore_3.5
+2025-07-24 10:45:00,pH coagulación entrada DAF,12.580909729003906,zscore_3.5
+2025-07-24 10:46:00,pH coagulación entrada DAF,12.579644203186035,zscore_3.5
+2025-07-24 10:47:00,pH coagulación entrada DAF,12.581416606903076,zscore_3.5
+2025-07-24 10:48:00,pH coagulación entrada DAF,12.591290473937988,zscore_3.5
+2025-07-24 10:49:00,pH coagulación entrada DAF,12.58572006225586,zscore_3.5
+2025-07-24 10:50:00,pH coagulación entrada DAF,12.587746143341064,zscore_3.5
+2025-07-24 10:51:00,pH coagulación entrada DAF,12.590784072875977,zscore_3.5
+2025-07-24 10:52:00,pH coagulación entrada DAF,12.602430820465088,zscore_3.5
+2025-07-24 10:53:00,pH coagulación entrada DAF,12.6011643409729,zscore_3.5
+2025-07-24 10:54:00,pH coagulación entrada DAF,12.60293674468994,zscore_3.5
+2025-07-24 10:55:00,pH coagulación entrada DAF,12.607747554779053,zscore_3.5
+2025-07-24 10:56:00,pH coagulación entrada DAF,12.611292362213137,zscore_3.5
+2025-07-24 10:57:00,pH coagulación entrada DAF,12.611798763275146,zscore_3.5
+2025-07-24 10:58:00,pH coagulación entrada DAF,12.62040662765503,zscore_3.5
+2025-07-24 10:59:00,pH coagulación entrada DAF,12.62040662765503,zscore_3.5
+2025-07-24 11:00:00,pH coagulación entrada DAF,12.623697280883787,zscore_3.5
+2025-07-24 11:01:00,pH coagulación entrada DAF,12.625723361968994,zscore_3.5
+2025-07-24 11:02:00,pH coagulación entrada DAF,12.627495288848875,zscore_3.5
+2025-07-24 11:03:00,pH coagulación entrada DAF,12.631293296813965,zscore_3.5
+2025-07-24 11:04:00,pH coagulación entrada DAF,12.633825302124023,zscore_3.5
+2025-07-24 11:05:00,pH coagulación entrada DAF,12.637622833251951,zscore_3.5
+2025-07-24 11:06:00,pH coagulación entrada DAF,12.641674041748049,zscore_3.5
+2025-07-24 11:07:00,pH coagulación entrada DAF,12.647497177124023,zscore_3.5
+2025-07-24 11:08:00,pH coagulación entrada DAF,12.650535583496094,zscore_3.5
+2025-07-24 11:09:00,pH coagulación entrada DAF,12.647497653961182,zscore_3.5
+2025-07-24 11:10:00,pH coagulación entrada DAF,12.6558518409729,zscore_3.5
+2025-07-24 11:11:00,pH coagulación entrada DAF,12.656864643096924,zscore_3.5
+2025-07-24 11:12:00,pH coagulación entrada DAF,12.6626877784729,zscore_3.5
+2025-07-24 11:13:00,pH coagulación entrada DAF,12.664967060089111,zscore_3.5
+2025-07-24 11:14:00,pH coagulación entrada DAF,12.669270515441896,zscore_3.5
+2025-07-24 11:15:00,pH coagulación entrada DAF,12.674081325531006,zscore_3.5
+2025-07-24 11:16:00,pH coagulación entrada DAF,12.67889165878296,zscore_3.5
+2025-07-24 11:17:00,pH coagulación entrada DAF,12.680916786193848,zscore_3.5
+2025-07-24 11:18:00,pH coagulación entrada DAF,12.677372932434082,zscore_3.5
+2025-07-24 11:19:00,pH coagulación entrada DAF,12.682689666748049,zscore_3.5
+2025-07-24 11:20:00,pH coagulación entrada DAF,12.689525604248049,zscore_3.5
+2025-07-24 11:21:00,pH coagulación entrada DAF,12.69509506225586,zscore_3.5
+2025-07-24 11:22:00,pH coagulación entrada DAF,12.701425075531006,zscore_3.5
+2025-07-24 11:23:00,pH coagulación entrada DAF,12.7029447555542,zscore_3.5
+2025-07-24 11:24:00,pH coagulación entrada DAF,12.712565422058104,zscore_3.5
+2025-07-24 11:25:00,pH coagulación entrada DAF,12.69357681274414,zscore_3.5
+2025-07-24 11:26:00,pH coagulación entrada DAF,12.71180534362793,zscore_3.5
+2025-07-24 11:27:00,pH coagulación entrada DAF,12.719400405883787,zscore_3.5
+2025-07-24 11:28:00,pH coagulación entrada DAF,12.718388080596924,zscore_3.5
+2025-07-24 11:29:00,pH coagulación entrada DAF,12.716362476348875,zscore_3.5
+2025-07-24 11:30:00,pH coagulación entrada DAF,12.736364364624023,zscore_3.5
+2025-07-24 11:31:00,pH coagulación entrada DAF,12.736364841461182,zscore_3.5
+2025-07-24 11:32:00,pH coagulación entrada DAF,12.739908695220947,zscore_3.5
+2025-07-24 11:33:00,pH coagulación entrada DAF,12.7421875,zscore_3.5
+2025-07-24 11:34:00,pH coagulación entrada DAF,12.74826431274414,zscore_3.5
+2025-07-24 11:35:00,pH coagulación entrada DAF,12.745732307434082,zscore_3.5
+2025-07-24 11:36:00,pH coagulación entrada DAF,12.74775743484497,zscore_3.5
+2025-07-24 11:37:00,pH coagulación entrada DAF,12.757378578186035,zscore_3.5
+2025-07-24 11:38:00,pH coagulación entrada DAF,12.757378578186035,zscore_3.5
+2025-07-24 11:39:00,pH coagulación entrada DAF,12.762442111968994,zscore_3.5
+2025-07-24 11:40:00,pH coagulación entrada DAF,12.764973640441896,zscore_3.5
+2025-07-24 11:41:00,pH coagulación entrada DAF,12.768012046813965,zscore_3.5
+2025-07-24 11:42:00,pH coagulación entrada DAF,12.771303176879885,zscore_3.5
+2025-07-24 11:43:00,pH coagulación entrada DAF,12.776619911193848,zscore_3.5
+2025-07-24 11:44:00,pH coagulación entrada DAF,12.770796775817873,zscore_3.5
+2025-07-24 11:45:00,pH coagulación entrada DAF,12.777886390686035,zscore_3.5
+2025-07-24 11:46:00,pH coagulación entrada DAF,12.778392314910889,zscore_3.5
+2025-07-24 11:47:00,pH coagulación entrada DAF,12.784722328186035,zscore_3.5
+2025-07-24 11:48:00,pH coagulación entrada DAF,12.785481452941896,zscore_3.5
+2025-07-24 11:49:00,pH coagulación entrada DAF,12.787760734558104,zscore_3.5
+2025-07-24 11:50:00,pH coagulación entrada DAF,12.79130506515503,zscore_3.5
+2025-07-24 11:51:00,pH coagulación entrada DAF,12.793583869934082,zscore_3.5
+2025-07-24 11:52:00,pH coagulación entrada DAF,12.79510259628296,zscore_3.5
+2025-07-24 11:53:00,pH coagulación entrada DAF,12.79839324951172,zscore_3.5
+2025-07-24 11:54:00,pH coagulación entrada DAF,12.80193853378296,zscore_3.5
+2025-07-24 11:55:00,pH coagulación entrada DAF,12.7994065284729,zscore_3.5
+2025-07-24 11:56:00,pH coagulación entrada DAF,12.80548334121704,zscore_3.5
+2025-07-24 11:57:00,pH coagulación entrada DAF,12.812065601348875,zscore_3.5
+2025-07-24 11:58:00,pH coagulación entrada DAF,12.811559200286863,zscore_3.5
+2025-07-24 11:59:00,pH coagulación entrada DAF,12.81358528137207,zscore_3.5
+2025-07-24 12:00:00,pH coagulación entrada DAF,12.816117286682127,zscore_3.5
+2025-07-24 12:01:00,pH coagulación entrada DAF,12.815357685089111,zscore_3.5
+2025-07-24 12:02:00,pH coagulación entrada DAF,12.820674419403076,zscore_3.5
+2025-07-24 12:03:00,pH coagulación entrada DAF,12.82421875,zscore_3.5
+2025-07-24 12:04:00,pH coagulación entrada DAF,12.8267502784729,zscore_3.5
+2025-07-24 12:05:00,pH coagulación entrada DAF,12.830801486968994,zscore_3.5
+2025-07-24 12:06:00,pH coagulación entrada DAF,12.828016757965088,zscore_3.5
+2025-07-24 12:07:00,pH coagulación entrada DAF,12.829535961151125,zscore_3.5
+2025-07-24 12:08:00,pH coagulación entrada DAF,12.827763557434082,zscore_3.5
+2025-07-24 12:09:00,pH coagulación entrada DAF,12.831307888031006,zscore_3.5
+2025-07-24 12:10:00,pH coagulación entrada DAF,12.825737476348875,zscore_3.5
+2025-07-24 12:11:00,pH coagulación entrada DAF,12.832826614379885,zscore_3.5
+2025-07-24 12:12:00,pH coagulación entrada DAF,12.839409828186035,zscore_3.5
+2025-07-24 12:13:00,pH coagulación entrada DAF,12.83535861968994,zscore_3.5
+2025-07-24 12:14:00,pH coagulación entrada DAF,12.834599018096924,zscore_3.5
+2025-07-24 12:15:00,pH coagulación entrada DAF,12.836878299713137,zscore_3.5
+2025-07-24 12:16:00,pH coagulación entrada DAF,12.836877822875977,zscore_3.5
+2025-07-24 12:17:00,pH coagulación entrada DAF,12.833839416503906,zscore_3.5
+2025-07-24 12:18:00,pH coagulación entrada DAF,12.835611820220947,zscore_3.5
+2025-07-24 12:19:00,pH coagulación entrada DAF,12.835865020751951,zscore_3.5
+2025-07-24 12:20:00,pH coagulación entrada DAF,12.8267502784729,zscore_3.5
+2025-07-24 12:21:00,pH coagulación entrada DAF,12.8310546875,zscore_3.5
+2025-07-24 12:22:00,pH coagulación entrada DAF,12.828016757965088,zscore_3.5
+2025-07-24 12:23:00,pH coagulación entrada DAF,12.82725715637207,zscore_3.5
+2025-07-24 12:24:00,pH coagulación entrada DAF,12.82295274734497,zscore_3.5
+2025-07-24 12:25:00,pH coagulación entrada DAF,12.820927143096924,zscore_3.5
+2025-07-24 12:26:00,pH coagulación entrada DAF,12.81788969039917,zscore_3.5
+2025-07-24 12:27:00,pH coagulación entrada DAF,12.81358528137207,zscore_3.5
+2025-07-24 12:28:00,pH coagulación entrada DAF,12.809533596038818,zscore_3.5
+2025-07-24 12:29:00,pH coagulación entrada DAF,12.801939010620115,zscore_3.5
+2025-07-24 12:30:00,pH coagulación entrada DAF,12.786747932434082,zscore_3.5
+2025-07-24 12:31:00,pH coagulación entrada DAF,12.798140525817873,zscore_3.5
+2025-07-24 12:32:00,pH coagulación entrada DAF,12.791558265686035,zscore_3.5
+2025-07-24 12:33:00,pH coagulación entrada DAF,12.783203125,zscore_3.5
+2025-07-24 12:34:00,pH coagulación entrada DAF,12.778139114379885,zscore_3.5
+2025-07-24 12:35:00,pH coagulación entrada DAF,12.7720627784729,zscore_3.5
+2025-07-24 12:36:00,pH coagulación entrada DAF,12.766239643096924,zscore_3.5
+2025-07-24 12:37:00,pH coagulación entrada DAF,12.755605697631836,zscore_3.5
+2025-07-24 12:38:00,pH coagulación entrada DAF,12.739908695220947,zscore_3.5
+2025-07-24 12:39:00,pH coagulación entrada DAF,12.734339237213137,zscore_3.5
+2025-07-24 12:40:00,pH coagulación entrada DAF,12.721932888031006,zscore_3.5
+2025-07-24 12:41:00,pH coagulación entrada DAF,12.694589138031006,zscore_3.5
+2025-07-24 12:42:00,pH coagulación entrada DAF,12.675853729248049,zscore_3.5
+2025-07-24 12:43:00,pH coagulación entrada DAF,12.654839038848875,zscore_3.5
+2025-07-24 12:44:00,pH coagulación entrada DAF,12.62850856781006,zscore_3.5
+2025-07-24 12:45:00,pH coagulación entrada DAF,12.5943284034729,zscore_3.5
+2025-07-24 12:46:00,pH coagulación entrada DAF,12.557364463806152,zscore_3.5
+2025-07-24 12:47:00,pH coagulación entrada DAF,12.505714893341064,zscore_3.5
+2025-07-24 12:48:00,pH coagulación entrada DAF,12.435583114624023,zscore_3.5
+2025-07-24 12:49:00,pH coagulación entrada DAF,12.352791786193848,zscore_3.5
+2025-07-24 12:50:00,pH coagulación entrada DAF,12.277596473693848,zscore_3.5
+2025-07-24 12:51:00,pH coagulación entrada DAF,11.498300075531006,zscore_3.5
+2025-07-24 12:53:00,pH coagulación entrada DAF,1.5535300374031067,zscore_3.5
+2025-07-24 12:54:00,pH coagulación entrada DAF,0.8086660802364349,zscore_3.5
+2025-07-24 12:55:00,pH coagulación entrada DAF,0.4934534132480621,zscore_3.5
+2025-07-24 12:56:00,pH coagulación entrada DAF,0.3326822966337204,zscore_3.5
+2025-07-24 12:57:00,pH coagulación entrada DAF,0.2326750680804252,zscore_3.5
+2025-07-24 12:58:00,pH coagulación entrada DAF,0.1807725727558136,zscore_3.5
+2025-07-24 12:59:00,pH coagulación entrada DAF,0.1539351865649223,zscore_3.5
+2025-07-24 13:00:00,pH coagulación entrada DAF,0.1397569477558136,zscore_3.5
+2025-07-24 13:01:00,pH coagulación entrada DAF,0.1460865139961242,zscore_3.5
+2025-07-24 13:02:00,pH coagulación entrada DAF,0.1478587985038757,zscore_3.5
+2025-07-24 13:03:00,pH coagulación entrada DAF,0.1627965793013572,zscore_3.5
+2025-07-24 13:04:00,pH coagulación entrada DAF,0.1729239001870155,zscore_3.5
+2025-07-24 13:05:00,pH coagulación entrada DAF,0.1800130158662796,zscore_3.5
+2025-07-24 13:06:00,pH coagulación entrada DAF,0.1908998787403106,zscore_3.5
+2025-07-24 13:07:00,pH coagulación entrada DAF,0.1997612789273262,zscore_3.5
+2025-07-24 13:08:00,pH coagulación entrada DAF,0.2093822360038757,zscore_3.5
+2025-07-24 13:09:00,pH coagulación entrada DAF,0.2179904580116272,zscore_3.5
+2025-07-24 13:10:00,pH coagulación entrada DAF,0.2291304990649223,zscore_3.5
+2025-07-24 13:11:00,pH coagulación entrada DAF,0.2379918992519378,zscore_3.5
+2025-07-24 13:12:00,pH coagulación entrada DAF,0.2410300970077514,zscore_3.5
+2025-07-24 13:13:00,pH coagulación entrada DAF,0.2481192052364349,zscore_3.5
+2025-07-24 13:14:00,pH coagulación entrada DAF,0.2579933553934097,zscore_3.5
+2025-07-24 13:15:00,pH coagulación entrada DAF,0.2653356343507767,zscore_3.5
+2025-07-24 13:16:00,pH coagulación entrada DAF,0.2724247723817825,zscore_3.5
+2025-07-24 13:17:00,pH coagulación entrada DAF,0.2795138955116272,zscore_3.5
+2025-07-24 13:18:00,pH coagulación entrada DAF,0.2881221175193786,zscore_3.5
+2025-07-24 13:19:00,pH coagulación entrada DAF,0.2896412163972854,zscore_3.5
+2025-07-24 13:20:00,pH coagulación entrada DAF,0.2969835102558136,zscore_3.5
+2025-07-24 13:21:00,pH coagulación entrada DAF,0.301540806889534,zscore_3.5
+2025-07-24 13:22:00,pH coagulación entrada DAF,0.3071108311414718,zscore_3.5
+2025-07-24 13:23:00,pH coagulación entrada DAF,0.3126808553934097,zscore_3.5
+2025-07-24 13:24:00,pH coagulación entrada DAF,0.3197699636220932,zscore_3.5
+2025-07-24 13:25:00,pH coagulación entrada DAF,0.3230613470077514,zscore_3.5
+2025-07-24 13:26:00,pH coagulación entrada DAF,0.3268590867519378,zscore_3.5
+2025-07-24 13:27:00,pH coagulación entrada DAF,0.3306568264961242,zscore_3.5
+2025-07-24 13:28:00,pH coagulación entrada DAF,0.3301504552364349,zscore_3.5
+2025-07-24 13:29:00,pH coagulación entrada DAF,0.3367332071065902,zscore_3.5
+2025-07-24 13:30:00,pH coagulación entrada DAF,0.3410373330116272,zscore_3.5
+2025-07-24 13:31:00,pH coagulación entrada DAF,0.347113698720932,zscore_3.5
+2025-07-24 13:32:00,pH coagulación entrada DAF,0.3559751063585281,zscore_3.5
+2025-07-24 13:33:00,pH coagulación entrada DAF,0.3514178246259689,zscore_3.5
+2025-07-24 13:34:00,pH coagulación entrada DAF,0.3585069179534912,zscore_3.5
+2025-07-24 13:35:00,pH coagulación entrada DAF,0.3597728759050369,zscore_3.5
+2025-07-24 13:36:00,pH coagulación entrada DAF,0.3661024570465088,zscore_3.5
+2025-07-24 13:37:00,pH coagulación entrada DAF,0.368381068110466,zscore_3.5
+2025-07-24 13:38:00,pH coagulación entrada DAF,0.3734447509050369,zscore_3.5
+2025-07-24 13:39:00,pH coagulación entrada DAF,0.3749638348817825,zscore_3.5
+2025-07-24 13:40:00,pH coagulación entrada DAF,0.3772424757480621,zscore_3.5
+2025-07-24 13:41:00,pH coagulación entrada DAF,0.3817997723817825,zscore_3.5
+2025-07-24 13:42:00,pH coagulación entrada DAF,0.3830656856298446,zscore_3.5
+2025-07-24 13:43:00,pH coagulación entrada DAF,0.3863570690155029,zscore_3.5
+2025-07-24 13:44:00,pH coagulación entrada DAF,0.3906611651182174,zscore_3.5
+2025-07-24 13:45:00,pH coagulación entrada DAF,0.3888888955116272,zscore_3.5
+2025-07-24 13:46:00,pH coagulación entrada DAF,0.3942057490348816,zscore_3.5
+2025-07-24 13:47:00,pH coagulación entrada DAF,0.3914207220077514,zscore_3.5
+2025-07-24 13:48:00,pH coagulación entrada DAF,0.3985098302364349,zscore_3.5
+2025-07-24 13:49:00,pH coagulación entrada DAF,0.4023075848817825,zscore_3.5
+2025-07-24 13:50:00,pH coagulación entrada DAF,0.4033203125,zscore_3.5
+2025-07-24 13:51:00,pH coagulación entrada DAF,0.4058521389961242,zscore_3.5
+2025-07-24 13:52:00,pH coagulación entrada DAF,0.4119285196065902,zscore_3.5
+2025-07-24 13:53:00,pH coagulación entrada DAF,0.4172453731298446,zscore_3.5
+2025-07-24 13:54:00,pH coagulación entrada DAF,0.4129412621259689,zscore_3.5
+2025-07-24 13:55:00,pH coagulación entrada DAF,0.4167390018701553,zscore_3.5
+2025-07-24 13:56:00,pH coagulación entrada DAF,0.4215494692325592,zscore_3.5
+2025-07-24 13:57:00,pH coagulación entrada DAF,0.4205367565155029,zscore_3.5
+2025-07-24 13:58:00,pH coagulación entrada DAF,0.4273726791143417,zscore_3.5
+2025-07-24 13:59:00,pH coagulación entrada DAF,0.4276258647441864,zscore_3.5
+2025-07-24 14:00:00,pH coagulación entrada DAF,0.4331959038972854,zscore_3.5
+2025-07-24 14:01:00,pH coagulación entrada DAF,0.4344618320465088,zscore_3.5
+2025-07-24 14:02:00,pH coagulación entrada DAF,0.4364872574806213,zscore_3.5
+2025-07-24 14:03:00,pH coagulación entrada DAF,0.4329427033662796,zscore_3.5
+2025-07-24 14:04:00,pH coagulación entrada DAF,0.435980886220932,zscore_3.5
+2025-07-24 14:05:00,pH coagulación entrada DAF,0.4380063712596893,zscore_3.5
+2025-07-24 14:06:00,pH coagulación entrada DAF,0.4410445392131805,zscore_3.5
+2025-07-24 14:07:00,pH coagulación entrada DAF,0.4430700242519378,zscore_3.5
+2025-07-24 14:08:00,pH coagulación entrada DAF,0.443576380610466,zscore_3.5
+2025-07-24 14:09:00,pH coagulación entrada DAF,0.4481336921453476,zscore_3.5
+2025-07-24 14:10:00,pH coagulación entrada DAF,0.4483868777751922,zscore_3.5
+2025-07-24 14:11:00,pH coagulación entrada DAF,0.4506655186414718,zscore_3.5
+2025-07-24 14:12:00,pH coagulación entrada DAF,0.4542100429534912,zscore_3.5
+2025-07-24 14:13:00,pH coagulación entrada DAF,0.4547164291143417,zscore_3.5
+2025-07-24 14:14:00,pH coagulación entrada DAF,0.4585141986608505,zscore_3.5
+2025-07-24 14:15:00,pH coagulación entrada DAF,0.4590205699205398,zscore_3.5
+2025-07-24 14:16:00,pH coagulación entrada DAF,0.460286483168602,zscore_3.5
+2025-07-24 14:18:00,pH coagulación entrada DAF,0.4638310223817825,zscore_3.5
+2025-07-24 14:19:00,pH coagulación entrada DAF,0.4645905643701553,zscore_3.5
+2025-07-24 14:20:00,pH coagulación entrada DAF,0.4630714803934097,zscore_3.5
+2025-07-24 14:21:00,pH coagulación entrada DAF,0.4683883041143417,zscore_3.5
+2025-07-24 14:22:00,pH coagulación entrada DAF,0.470160573720932,zscore_3.5
+2025-07-24 14:23:00,pH coagulación entrada DAF,0.4767433553934097,zscore_3.5
+2025-07-24 14:24:00,pH coagulación entrada DAF,0.4729456156492233,zscore_3.5
+2025-07-24 14:25:00,pH coagulación entrada DAF,0.4767433553934097,zscore_3.5
+2025-07-24 14:26:00,pH coagulación entrada DAF,0.4800347238779068,zscore_3.5
+2025-07-24 14:27:00,pH coagulación entrada DAF,0.478515625,zscore_3.5
+2025-07-24 14:28:00,pH coagulación entrada DAF,0.4805410802364349,zscore_3.5
+2025-07-24 14:29:00,pH coagulación entrada DAF,0.4828197211027145,zscore_3.5
+2025-07-24 14:30:00,pH coagulación entrada DAF,0.483832448720932,zscore_3.5
+2025-07-24 14:31:00,pH coagulación entrada DAF,0.4858579188585281,zscore_3.5
+2025-07-24 14:32:00,pH coagulación entrada DAF,0.4876302182674408,zscore_3.5
+2025-07-24 14:33:00,pH coagulación entrada DAF,0.4937065988779068,zscore_3.5
+2025-07-24 14:34:00,pH coagulación entrada DAF,0.4876302182674408,zscore_3.5
+2025-07-24 14:35:00,pH coagulación entrada DAF,0.4921875,zscore_3.5
+2025-07-24 14:36:00,pH coagulación entrada DAF,0.4919343143701553,zscore_3.5
+2025-07-24 14:37:00,pH coagulación entrada DAF,0.4919343143701553,zscore_3.5
+2025-07-24 14:38:00,pH coagulación entrada DAF,0.4980107098817825,zscore_3.5
+2025-07-24 14:39:00,pH coagulación entrada DAF,0.4982638955116272,zscore_3.5
+2025-07-24 14:40:00,pH coagulación entrada DAF,0.5005425661802292,zscore_3.5
+2025-07-24 14:41:00,pH coagulación entrada DAF,0.5025680065155029,zscore_3.5
+2025-07-24 14:42:00,pH coagulación entrada DAF,0.5033275485038757,zscore_3.5
+2025-07-24 14:43:00,pH coagulación entrada DAF,0.4982638955116272,zscore_3.5
+2025-07-24 14:44:00,pH coagulación entrada DAF,0.5033275485038757,zscore_3.5
+2025-07-24 14:45:00,pH coagulación entrada DAF,0.5088975429534912,zscore_3.5
+2025-07-24 14:46:00,pH coagulación entrada DAF,0.5078848302364349,zscore_3.5
+2025-07-24 14:47:00,pH coagulación entrada DAF,0.5056061744689941,zscore_3.5
+2025-07-24 14:48:00,pH coagulación entrada DAF,0.5099102854728699,zscore_3.5
+2025-07-24 14:49:00,pH coagulación entrada DAF,0.5106698274612427,zscore_3.5
+2025-07-24 14:50:00,pH coagulación entrada DAF,0.5187716782093048,zscore_3.5
+2025-07-24 14:51:00,pH coagulación entrada DAF,0.5164930820465088,zscore_3.5
+2025-07-24 14:52:00,pH coagulación entrada DAF,0.5175057947635651,zscore_3.5
+2025-07-24 14:53:00,pH coagulación entrada DAF,0.51953125,zscore_3.5
+2025-07-24 14:54:00,pH coagulación entrada DAF,0.5197844207286835,zscore_3.5
+2025-07-24 14:55:00,pH coagulación entrada DAF,0.5223162472248077,zscore_3.5
+2025-07-24 14:56:00,pH coagulación entrada DAF,0.5271267294883728,zscore_3.5
+2025-07-24 14:57:00,pH coagulación entrada DAF,0.524848073720932,zscore_3.5
+2025-07-24 14:58:00,pH coagulación entrada DAF,0.5268735885620117,zscore_3.5
+2025-07-24 14:59:00,pH coagulación entrada DAF,0.5261139869689941,zscore_3.5
+2025-07-24 15:00:00,pH coagulación entrada DAF,0.5294053852558136,zscore_3.5
+2025-07-24 15:01:00,pH coagulación entrada DAF,0.5263671875,zscore_3.5
+2025-07-24 15:02:00,pH coagulación entrada DAF,0.5359881520271301,zscore_3.5
+2025-07-24 15:03:00,pH coagulación entrada DAF,0.5321904122829437,zscore_3.5
+2025-07-24 15:04:00,pH coagulación entrada DAF,0.5349754095077515,zscore_3.5
+2025-07-24 15:05:00,pH coagulación entrada DAF,0.5359881520271301,zscore_3.5
+2025-07-24 15:06:00,pH coagulación entrada DAF,0.5347222089767456,zscore_3.5
+2025-07-24 15:07:00,pH coagulación entrada DAF,0.5352286100387573,zscore_3.5
+2025-07-24 15:08:00,pH coagulación entrada DAF,0.5428240895271301,zscore_3.5
+2025-07-24 15:09:00,pH coagulación entrada DAF,0.5392794609069824,zscore_3.5
+2025-07-24 15:10:00,pH coagulación entrada DAF,0.5418113470077515,zscore_3.5
+2025-07-24 15:11:00,pH coagulación entrada DAF,0.5402922630310059,zscore_3.5
+2025-07-24 15:12:00,pH coagulación entrada DAF,0.5433304309844971,zscore_3.5
+2025-07-24 15:13:00,pH coagulación entrada DAF,0.5433304309844971,zscore_3.5
+2025-07-24 15:14:00,pH coagulación entrada DAF,0.5458622574806213,zscore_3.5
+2025-07-24 15:16:00,pH coagulación entrada DAF,0.5453559160232544,zscore_3.5
+2025-07-24 15:17:00,pH coagulación entrada DAF,0.5494068264961243,zscore_3.5
+2025-07-24 15:18:00,pH coagulación entrada DAF,0.5509259104728699,zscore_3.5
+2025-07-24 15:19:00,pH coagulación entrada DAF,0.5534577369689941,zscore_3.5
+2025-07-24 15:22:00,pH coagulación entrada DAF,0.5549768805503845,zscore_3.5
+2025-07-24 15:23:00,pH coagulación entrada DAF,0.5534577369689941,zscore_3.5
+2025-07-24 15:24:00,pH coagulación entrada DAF,0.5544704794883728,zscore_3.5
+2025-07-24 15:26:00,pH coagulación entrada DAF,0.5582682192325592,zscore_3.5
+2025-07-24 15:30:00,pH coagulación entrada DAF,0.5633318722248077,zscore_3.5
+2025-07-24 15:32:00,pH coagulación entrada DAF,0.5625723302364349,zscore_3.5
+2025-07-24 15:34:00,pH coagulación entrada DAF,0.5658637285232544,zscore_3.5
+2025-07-24 15:38:00,pH coagulación entrada DAF,0.5721932649612427,zscore_3.5
+2025-07-24 15:40:00,pH coagulación entrada DAF,0.5737123787403107,zscore_3.5
+2025-07-24 15:41:00,pH coagulación entrada DAF,0.5772569179534912,zscore_3.5
+2025-07-24 15:42:00,pH coagulación entrada DAF,0.5762442350387573,zscore_3.5
+2025-07-24 15:43:00,pH coagulación entrada DAF,0.5795356035232544,zscore_3.5
+2025-07-24 15:44:00,pH coagulación entrada DAF,0.5762442350387573,zscore_3.5
+2025-07-24 15:45:00,pH coagulación entrada DAF,0.5759910345077515,zscore_3.5
+2025-07-24 15:46:00,pH coagulación entrada DAF,0.5795355439186096,zscore_3.5
+2025-07-24 15:47:00,pH coagulación entrada DAF,0.5848524272441864,zscore_3.5
+2025-07-24 15:48:00,pH coagulación entrada DAF,0.5813078880310059,zscore_3.5
+2025-07-24 15:49:00,pH coagulación entrada DAF,0.5828270018100739,zscore_3.5
+2025-07-24 15:50:00,pH coagulación entrada DAF,0.5828270018100739,zscore_3.5
+2025-07-24 15:51:00,pH coagulación entrada DAF,0.5861183404922485,zscore_3.5
+2025-07-24 15:52:00,pH coagulación entrada DAF,0.5851056277751923,zscore_3.5
+2025-07-24 15:53:00,pH coagulación entrada DAF,0.5863715410232544,zscore_3.5
+2025-07-24 15:54:00,pH coagulación entrada DAF,0.587890625,zscore_3.5
+2025-07-24 15:55:00,pH coagulación entrada DAF,0.5866247117519379,zscore_3.5
+2025-07-24 15:56:00,pH coagulación entrada DAF,0.5904224514961243,zscore_3.5
+2025-07-24 15:57:00,pH coagulación entrada DAF,0.5904224514961243,zscore_3.5
+2025-07-24 15:58:00,pH coagulación entrada DAF,0.5924479365348816,zscore_3.5
+2025-07-24 15:59:00,pH coagulación entrada DAF,0.5977647602558136,zscore_3.5
+2025-07-24 16:00:00,pH coagulación entrada DAF,0.5964988768100739,zscore_3.5
+2025-07-24 16:01:00,pH coagulación entrada DAF,0.5942201912403107,zscore_3.5
+2025-07-24 16:02:00,pH coagulación entrada DAF,0.5967520475387573,zscore_3.5
+2025-07-24 16:03:00,pH coagulación entrada DAF,0.596245676279068,zscore_3.5
+2025-07-24 16:04:00,pH coagulación entrada DAF,0.5899161100387573,zscore_3.5
+2025-07-24 16:05:00,pH coagulación entrada DAF,0.6002965867519379,zscore_3.5
+2025-07-24 16:06:00,pH coagulación entrada DAF,0.603081613779068,zscore_3.5
+2025-07-24 16:07:00,pH coagulación entrada DAF,0.6018156707286835,zscore_3.5
+2025-07-24 16:08:00,pH coagulación entrada DAF,0.6020688712596893,zscore_3.5
+2025-07-24 16:09:00,pH coagulación entrada DAF,0.603081613779068,zscore_3.5
+2025-07-24 16:10:00,pH coagulación entrada DAF,0.6061197817325592,zscore_3.5
+2025-07-24 16:11:00,pH coagulación entrada DAF,0.6063729524612427,zscore_3.5
+2025-07-24 16:12:00,pH coagulación entrada DAF,0.6073856949806213,zscore_3.5
+2025-07-24 16:13:00,pH coagulación entrada DAF,0.6238425970077515,zscore_3.5
+2025-07-24 16:14:00,pH coagulación entrada DAF,0.6091580390930176,zscore_3.5
+2025-07-24 16:15:00,pH coagulación entrada DAF,0.6111834645271301,zscore_3.5
+2025-07-24 16:16:00,pH coagulación entrada DAF,0.6083984375,zscore_3.5
+2025-07-24 16:17:00,pH coagulación entrada DAF,0.6114366352558136,zscore_3.5
+2025-07-24 16:18:00,pH coagulación entrada DAF,0.6101707220077515,zscore_3.5
+2025-07-24 16:19:00,pH coagulación entrada DAF,0.6154875457286835,zscore_3.5
+2025-07-24 16:20:00,pH coagulación entrada DAF,0.613715261220932,zscore_3.5
+2025-07-24 16:21:00,pH coagulación entrada DAF,0.6172598302364349,zscore_3.5
+2025-07-24 16:22:00,pH coagulación entrada DAF,0.6142216324806213,zscore_3.5
+2025-07-24 16:23:00,pH coagulación entrada DAF,0.6202980279922485,zscore_3.5
+2025-07-24 16:24:00,pH coagulación entrada DAF,0.6165002882480621,zscore_3.5
+2025-07-24 16:25:00,pH coagulación entrada DAF,0.6190321445465088,zscore_3.5
+2025-07-24 16:26:00,pH coagulación entrada DAF,0.6162470877170563,zscore_3.5
+2025-07-24 16:27:00,pH coagulación entrada DAF,0.6218171119689941,zscore_3.5
+2025-07-24 16:28:00,pH coagulación entrada DAF,0.620551198720932,zscore_3.5
+2025-07-24 16:29:00,pH coagulación entrada DAF,0.6167534589767456,zscore_3.5
+2025-07-24 16:30:00,pH coagulación entrada DAF,0.6213107109069824,zscore_3.5
+2025-07-24 16:31:00,pH coagulación entrada DAF,0.6233362555503845,zscore_3.5
+2025-07-24 16:32:00,pH coagulación entrada DAF,0.6258680522441864,zscore_3.5
+2025-07-24 16:33:00,pH coagulación entrada DAF,0.62890625,zscore_3.5
+2025-07-24 16:34:00,pH coagulación entrada DAF,0.6268807947635651,zscore_3.5
+2025-07-24 16:35:00,pH coagulación entrada DAF,0.625108540058136,zscore_3.5
+2025-07-24 16:36:00,pH coagulación entrada DAF,0.6273871660232544,zscore_3.5
+2025-07-24 16:37:00,pH coagulación entrada DAF,0.6278935074806213,zscore_3.5
+2025-07-24 16:38:00,pH coagulación entrada DAF,0.6291594207286835,zscore_3.5
+2025-07-24 16:39:00,pH coagulación entrada DAF,0.6304253339767456,zscore_3.5
+2025-07-24 16:40:00,pH coagulación entrada DAF,0.6286530494689941,zscore_3.5
+2025-07-24 16:41:00,pH coagulación entrada DAF,0.6344762742519379,zscore_3.5
+2025-07-24 16:42:00,pH coagulación entrada DAF,0.6349826157093048,zscore_3.5
+2025-07-24 16:43:00,pH coagulación entrada DAF,0.6319444477558136,zscore_3.5
+2025-07-24 16:44:00,pH coagulación entrada DAF,0.6370081305503845,zscore_3.5
+2025-07-24 16:45:00,pH coagulación entrada DAF,0.6329571604728699,zscore_3.5
+2025-07-24 16:46:00,pH coagulación entrada DAF,0.6344762742519379,zscore_3.5
+2025-07-24 16:47:00,pH coagulación entrada DAF,0.6347294449806213,zscore_3.5
+2025-07-24 16:48:00,pH coagulación entrada DAF,0.6329571604728699,zscore_3.5
+2025-07-24 16:49:00,pH coagulación entrada DAF,0.6359953880310059,zscore_3.5
+2025-07-24 16:50:00,pH coagulación entrada DAF,0.6380208134651184,zscore_3.5
+2025-07-24 16:51:00,pH coagulación entrada DAF,0.6370081305503845,zscore_3.5
+2025-07-24 16:52:00,pH coagulación entrada DAF,0.6390335857868195,zscore_3.5
+2025-07-24 16:53:00,pH coagulación entrada DAF,0.6377676725387573,zscore_3.5
+2025-07-24 16:54:00,pH coagulación entrada DAF,0.6344762444496155,zscore_3.5
+2025-07-24 16:55:00,pH coagulación entrada DAF,0.6375144720077515,zscore_3.5
+2025-07-24 16:56:00,pH coagulación entrada DAF,0.6380208730697632,zscore_3.5
+2025-07-24 16:57:00,pH coagulación entrada DAF,0.6385272145271301,zscore_3.5
+2025-07-24 16:58:00,pH coagulación entrada DAF,0.6362485289573669,zscore_3.5
+2025-07-24 16:59:00,pH coagulación entrada DAF,0.6387803852558136,zscore_3.5
+2025-07-24 17:00:00,pH coagulación entrada DAF,0.6385272145271301,zscore_3.5
+2025-07-24 17:01:00,pH coagulación entrada DAF,0.6395399570465088,zscore_3.5
+2025-07-24 17:02:00,pH coagulación entrada DAF,0.6405526399612427,zscore_3.5
+2025-07-24 17:03:00,pH coagulación entrada DAF,0.6377676725387573,zscore_3.5
+2025-07-24 17:04:00,pH coagulación entrada DAF,0.6387803852558136,zscore_3.5
+2025-07-24 17:05:00,pH coagulación entrada DAF,0.6367549300193787,zscore_3.5
+2025-07-24 17:06:00,pH coagulación entrada DAF,0.6337167322635651,zscore_3.5
+2025-07-24 17:07:00,pH coagulación entrada DAF,0.6377676725387573,zscore_3.5
+2025-07-24 17:08:00,pH coagulación entrada DAF,0.6395399570465088,zscore_3.5
+2025-07-24 17:09:00,pH coagulación entrada DAF,0.6357421875,zscore_3.5
+2025-07-24 17:10:00,pH coagulación entrada DAF,0.6377676725387573,zscore_3.5
+2025-07-24 17:11:00,pH coagulación entrada DAF,0.6387803852558136,zscore_3.5
+2025-07-24 17:12:00,pH coagulación entrada DAF,0.6352358162403107,zscore_3.5
+2025-07-24 17:13:00,pH coagulación entrada DAF,0.6347294747829437,zscore_3.5
+2025-07-24 17:14:00,pH coagulación entrada DAF,0.6359953880310059,zscore_3.5
+2025-07-24 17:15:00,pH coagulación entrada DAF,0.6365017592906952,zscore_3.5
+2025-07-24 17:16:00,pH coagulación entrada DAF,0.6359953880310059,zscore_3.5
+2025-07-24 17:17:00,pH coagulación entrada DAF,0.6365017890930176,zscore_3.5
+2025-07-24 17:18:00,pH coagulación entrada DAF,0.6377676725387573,zscore_3.5
+2025-07-24 17:19:00,pH coagulación entrada DAF,0.6334635615348816,zscore_3.5
+2025-07-24 17:20:00,pH coagulación entrada DAF,0.6334635317325592,zscore_3.5
+2025-07-24 17:21:00,pH coagulación entrada DAF,0.6380208730697632,zscore_3.5
+2025-07-24 17:22:00,pH coagulación entrada DAF,0.6395399570465088,zscore_3.5
+2025-07-24 17:23:00,pH coagulación entrada DAF,0.6375145018100739,zscore_3.5
+2025-07-24 17:24:00,pH coagulación entrada DAF,0.636754959821701,zscore_3.5
+2025-07-24 17:25:00,pH coagulación entrada DAF,0.6372613310813904,zscore_3.5
+2025-07-24 17:26:00,pH coagulación entrada DAF,0.6375145018100739,zscore_3.5
+2025-07-24 17:27:00,pH coagulación entrada DAF,0.6382740437984467,zscore_3.5
+2025-07-24 17:28:00,pH coagulación entrada DAF,0.6402994990348816,zscore_3.5
+2025-07-24 17:29:00,pH coagulación entrada DAF,0.6387803852558136,zscore_3.5
+2025-07-24 17:30:00,pH coagulación entrada DAF,0.6382740139961243,zscore_3.5
+2025-07-24 17:31:00,pH coagulación entrada DAF,0.6418185830116272,zscore_3.5
+2025-07-24 17:32:00,pH coagulación entrada DAF,0.6466290354728699,zscore_3.5
+2025-07-24 17:33:00,pH coagulación entrada DAF,0.6428313255310059,zscore_3.5
+2025-07-24 17:34:00,pH coagulación entrada DAF,0.6435908675193787,zscore_3.5
+2025-07-24 17:35:00,pH coagulación entrada DAF,0.6453631520271301,zscore_3.5
+2025-07-24 17:36:00,pH coagulación entrada DAF,0.6456162929534912,zscore_3.5
+2025-07-24 17:37:00,pH coagulación entrada DAF,0.6471353769302368,zscore_3.5
+2025-07-24 17:38:00,pH coagulación entrada DAF,0.6494140625,zscore_3.5
+2025-07-24 17:39:00,pH coagulación entrada DAF,0.6516927480697632,zscore_3.5
+2025-07-24 17:40:00,pH coagulación entrada DAF,0.6521990895271301,zscore_3.5
+2025-07-24 17:41:00,pH coagulación entrada DAF,0.6549840867519379,zscore_3.5
+2025-07-24 17:42:00,pH coagulación entrada DAF,0.6559968292713165,zscore_3.5
+2025-07-24 17:43:00,pH coagulación entrada DAF,0.6597945690155029,zscore_3.5
+2025-07-24 17:44:00,pH coagulación entrada DAF,0.664098709821701,zscore_3.5
+2025-07-24 17:45:00,pH coagulación entrada DAF,0.6656177639961243,zscore_3.5
+2025-07-24 17:46:00,pH coagulación entrada DAF,0.6706814467906952,zscore_3.5
+2025-07-24 17:47:00,pH coagulación entrada DAF,0.6716941595077515,zscore_3.5
+2025-07-24 17:48:00,pH coagulación entrada DAF,0.6795428395271301,zscore_3.5
+2025-07-24 17:49:00,pH coagulación entrada DAF,0.678276926279068,zscore_3.5
+2025-07-24 17:50:00,pH coagulación entrada DAF,0.68359375,zscore_3.5
+2025-07-24 17:51:00,pH coagulación entrada DAF,0.6873915195465088,zscore_3.5
+2025-07-24 17:52:00,pH coagulación entrada DAF,0.6937210857868195,zscore_3.5
+2025-07-24 17:53:00,pH coagulación entrada DAF,0.6952401399612427,zscore_3.5
+2025-07-24 17:54:00,pH coagulación entrada DAF,0.7018228769302368,zscore_3.5
+2025-07-24 17:55:00,pH coagulación entrada DAF,0.7033420205116272,zscore_3.5
+2025-07-24 17:56:00,pH coagulación entrada DAF,0.7099247872829437,zscore_3.5
+2025-07-24 17:57:00,pH coagulación entrada DAF,0.7114438414573669,zscore_3.5
+2025-07-24 17:58:00,pH coagulación entrada DAF,0.7197989225387573,zscore_3.5
+2025-07-24 17:59:00,pH coagulación entrada DAF,0.7256221175193787,zscore_3.5
+2025-07-24 18:00:00,pH coagulación entrada DAF,0.7367621064186096,zscore_3.5
+2025-07-24 18:01:00,pH coagulación entrada DAF,0.7367621660232544,zscore_3.5
+2025-07-24 18:02:00,pH coagulación entrada DAF,0.7403067052364349,zscore_3.5
+2025-07-24 18:03:00,pH coagulación entrada DAF,0.7451171875,zscore_3.5
+2025-07-24 18:04:00,pH coagulación entrada DAF,0.7542317807674408,zscore_3.5
+2025-07-24 18:05:00,pH coagulación entrada DAF,0.7633463442325592,zscore_3.5
+2025-07-24 18:06:00,pH coagulación entrada DAF,0.7666377127170563,zscore_3.5
+2025-07-24 18:07:00,pH coagulación entrada DAF,0.7729673087596893,zscore_3.5
+2025-07-24 18:08:00,pH coagulación entrada DAF,0.7752459645271301,zscore_3.5
+2025-07-24 18:09:00,pH coagulación entrada DAF,0.7810691595077515,zscore_3.5
+2025-07-24 18:10:00,pH coagulación entrada DAF,0.7901837527751923,zscore_3.5
+2025-07-24 18:11:00,pH coagulación entrada DAF,0.7932219207286835,zscore_3.5
+2025-07-24 18:12:00,pH coagulación entrada DAF,0.8036024272441864,zscore_3.5
+2025-07-24 18:13:00,pH coagulación entrada DAF,0.8111979067325592,zscore_3.5
+2025-07-24 18:14:00,pH coagulación entrada DAF,0.8160083889961243,zscore_3.5
+2025-07-24 18:15:00,pH coagulación entrada DAF,0.8236038684844971,zscore_3.5
+2025-07-24 18:16:00,pH coagulación entrada DAF,0.8344907164573669,zscore_3.5
+2025-07-24 18:17:00,pH coagulación entrada DAF,0.8360098302364349,zscore_3.5
+2025-07-24 18:18:00,pH coagulación entrada DAF,0.8494285047054291,zscore_3.5
+2025-07-24 18:19:00,pH coagulación entrada DAF,0.8509475886821747,zscore_3.5
+2025-07-24 18:20:00,pH coagulación entrada DAF,0.8562644422054291,zscore_3.5
+2025-07-24 18:21:00,pH coagulación entrada DAF,0.8648726642131805,zscore_3.5
+2025-07-24 18:22:00,pH coagulación entrada DAF,0.8674044609069824,zscore_3.5
+2025-07-24 18:23:00,pH coagulación entrada DAF,0.8752532005310059,zscore_3.5
+2025-07-24 18:24:00,pH coagulación entrada DAF,0.878038227558136,zscore_3.5
+2025-07-24 18:25:00,pH coagulación entrada DAF,0.8861400187015533,zscore_3.5
+2025-07-24 18:26:00,pH coagulación entrada DAF,0.8919632732868195,zscore_3.5
+2025-07-24 18:27:00,pH coagulación entrada DAF,0.9018373489379884,zscore_3.5
+2025-07-24 18:28:00,pH coagulación entrada DAF,0.9013310074806212,zscore_3.5
+2025-07-24 18:29:00,pH coagulación entrada DAF,0.9084201157093048,zscore_3.5
+2025-07-24 18:30:00,pH coagulación entrada DAF,0.914243310689926,zscore_3.5
+2025-07-24 18:31:00,pH coagulación entrada DAF,0.9175347089767456,zscore_3.5
+2025-07-24 18:32:00,pH coagulación entrada DAF,0.9241174459457396,zscore_3.5
+2025-07-24 18:33:00,pH coagulación entrada DAF,0.9301938712596892,zscore_3.5
+2025-07-24 18:34:00,pH coagulación entrada DAF,0.9317129552364348,zscore_3.5
+2025-07-24 18:35:00,pH coagulación entrada DAF,0.93930846452713,zscore_3.5
+2025-07-24 18:36:00,pH coagulación entrada DAF,0.940321147441864,zscore_3.5
+2025-07-24 18:37:00,pH coagulación entrada DAF,0.9491825699806212,zscore_3.5
+2025-07-24 18:38:00,pH coagulación entrada DAF,0.9527271389961244,zscore_3.5
+2025-07-24 18:39:00,pH coagulación entrada DAF,0.9605758190155028,zscore_3.5
+2025-07-24 18:40:00,pH coagulación entrada DAF,0.95703125,zscore_3.5
+2025-07-24 18:41:00,pH coagulación entrada DAF,0.9618417024612428,zscore_3.5
+2025-07-24 18:42:00,pH coagulación entrada DAF,0.971969038248062,zscore_3.5
+2025-07-24 18:43:00,pH coagulación entrada DAF,0.9717158675193788,zscore_3.5
+2025-07-24 18:44:00,pH coagulación entrada DAF,0.9737412929534912,zscore_3.5
+2025-07-24 18:45:00,pH coagulación entrada DAF,0.979311376810074,zscore_3.5
+2025-07-24 18:46:00,pH coagulación entrada DAF,0.9838686287403108,zscore_3.5
+2025-07-24 18:47:00,pH coagulación entrada DAF,0.9881727695465088,zscore_3.5
+2025-07-24 18:48:00,pH coagulación entrada DAF,0.9894386529922484,zscore_3.5
+2025-07-24 18:49:00,pH coagulación entrada DAF,0.9965277314186096,zscore_3.5
+2025-07-24 18:50:00,pH coagulación entrada DAF,0.9990596175193788,zscore_3.5
+2025-07-24 18:51:00,pH coagulación entrada DAF,1.0026041269302368,zscore_3.5
+2025-07-24 18:52:00,pH coagulación entrada DAF,1.0101996660232544,zscore_3.5
+2025-07-24 18:53:00,pH coagulación entrada DAF,1.0160228610038755,zscore_3.5
+2025-07-24 18:54:00,pH coagulación entrada DAF,1.0160228610038755,zscore_3.5
+2025-07-24 18:55:00,pH coagulación entrada DAF,1.018301486968994,zscore_3.5
+2025-07-24 18:56:00,pH coagulación entrada DAF,1.028175711631775,zscore_3.5
+2025-07-24 18:57:00,pH coagulación entrada DAF,1.025137484073639,zscore_3.5
+2025-07-24 18:58:00,pH coagulación entrada DAF,1.0271629095077517,zscore_3.5
+2025-07-24 18:59:00,pH coagulación entrada DAF,1.0334925055503843,zscore_3.5
+2025-07-24 19:00:00,pH coagulación entrada DAF,1.0339987874031067,zscore_3.5
+2025-07-24 19:01:00,pH coagulación entrada DAF,1.036530613899231,zscore_3.5
+2025-07-24 19:02:00,pH coagulación entrada DAF,1.04311341047287,zscore_3.5
+2025-07-24 19:03:00,pH coagulación entrada DAF,1.0446324944496157,zscore_3.5
+2025-07-24 19:04:00,pH coagulación entrada DAF,1.049696147441864,zscore_3.5
+2025-07-24 19:05:00,pH coagulación entrada DAF,1.0509620904922483,zscore_3.5
+2025-07-24 19:06:00,pH coagulación entrada DAF,1.052734375,zscore_3.5
+2025-07-24 19:07:00,pH coagulación entrada DAF,1.059063971042633,zscore_3.5
+2025-07-24 19:08:00,pH coagulación entrada DAF,1.0610893964767456,zscore_3.5
+2025-07-24 19:09:00,pH coagulación entrada DAF,1.0674189925193789,zscore_3.5
+2025-07-24 19:10:00,pH coagulación entrada DAF,1.0684316754341123,zscore_3.5
+2025-07-24 19:11:00,pH coagulación entrada DAF,1.0724825859069824,zscore_3.5
+2025-07-24 19:12:00,pH coagulación entrada DAF,1.0742549300193789,zscore_3.5
+2025-07-24 19:13:00,pH coagulación entrada DAF,1.080331265926361,zscore_3.5
+2025-07-24 19:14:00,pH coagulación entrada DAF,1.082103669643402,zscore_3.5
+2025-07-24 19:15:00,pH coagulación entrada DAF,1.0833695530891418,zscore_3.5
+2025-07-24 19:16:00,pH coagulación entrada DAF,1.0869140625,zscore_3.5
+2025-07-24 19:17:00,pH coagulación entrada DAF,1.092737317085266,zscore_3.5
+2025-07-24 19:18:00,pH coagulación entrada DAF,1.09096497297287,zscore_3.5
+2025-07-24 19:19:00,pH coagulación entrada DAF,1.09375,zscore_3.5
+2025-07-24 19:20:00,pH coagulación entrada DAF,1.101092278957367,zscore_3.5
+2025-07-24 19:21:00,pH coagulación entrada DAF,1.10463684797287,zscore_3.5
+2025-07-24 19:22:00,pH coagulación entrada DAF,1.10463684797287,zscore_3.5
+2025-07-24 19:23:00,pH coagulación entrada DAF,1.11020690202713,zscore_3.5
+2025-07-24 19:24:00,pH coagulación entrada DAF,1.1142578125,zscore_3.5
+2025-07-24 19:25:00,pH coagulación entrada DAF,1.117549180984497,zscore_3.5
+2025-07-24 19:26:00,pH coagulación entrada DAF,1.1183087825775146,zscore_3.5
+2025-07-24 19:27:00,pH coagulación entrada DAF,1.1226128339767456,zscore_3.5
+2025-07-24 19:28:00,pH coagulación entrada DAF,1.11830872297287,zscore_3.5
+2025-07-24 19:29:00,pH coagulación entrada DAF,1.1286892294883728,zscore_3.5
+2025-07-24 19:30:00,pH coagulación entrada DAF,1.1302082538604736,zscore_3.5
+2025-07-24 19:31:00,pH coagulación entrada DAF,1.136791110038757,zscore_3.5
+2025-07-24 19:32:00,pH coagulación entrada DAF,1.1362847685813904,zscore_3.5
+2025-07-24 19:33:00,pH coagulación entrada DAF,1.142107903957367,zscore_3.5
+2025-07-24 19:34:00,pH coagulación entrada DAF,1.145652413368225,zscore_3.5
+2025-07-24 19:35:00,pH coagulación entrada DAF,1.1474246978759766,zscore_3.5
+2025-07-24 19:36:00,pH coagulación entrada DAF,1.1529948711395264,zscore_3.5
+2025-07-24 19:37:00,pH coagulación entrada DAF,1.1519821286201477,zscore_3.5
+2025-07-24 19:38:00,pH coagulación entrada DAF,1.1570457220077517,zscore_3.5
+2025-07-24 19:39:00,pH coagulación entrada DAF,1.1603370308876038,zscore_3.5
+2025-07-24 19:40:00,pH coagulación entrada DAF,1.164134919643402,zscore_3.5
+2025-07-24 19:41:00,pH coagulación entrada DAF,1.1603370904922483,zscore_3.5
+2025-07-24 19:42:00,pH coagulación entrada DAF,1.168692171573639,zscore_3.5
+2025-07-24 19:43:00,pH coagulación entrada DAF,1.1707175970077517,zscore_3.5
+2025-07-24 19:44:00,pH coagulación entrada DAF,1.1727430820465088,zscore_3.5
+2025-07-24 19:45:00,pH coagulación entrada DAF,1.17578125,zscore_3.5
+2025-07-24 19:46:00,pH coagulación entrada DAF,1.1795790195465088,zscore_3.5
+2025-07-24 19:47:00,pH coagulación entrada DAF,1.182110846042633,zscore_3.5
+2025-07-24 19:48:00,pH coagulación entrada DAF,1.1838830709457395,zscore_3.5
+2025-07-24 19:49:00,pH coagulación entrada DAF,1.1871744394302368,zscore_3.5
+2025-07-24 19:50:00,pH coagulación entrada DAF,1.189199984073639,zscore_3.5
+2025-07-24 19:51:00,pH coagulación entrada DAF,1.19223815202713,zscore_3.5
+2025-07-24 19:52:00,pH coagulación entrada DAF,1.1978081464767456,zscore_3.5
+2025-07-24 19:53:00,pH coagulación entrada DAF,1.2005931735038755,zscore_3.5
+2025-07-24 19:54:00,pH coagulación entrada DAF,1.2026185989379885,zscore_3.5
+2025-07-24 19:55:00,pH coagulación entrada DAF,1.2127459049224854,zscore_3.5
+2025-07-24 19:56:00,pH coagulación entrada DAF,1.2084418535232544,zscore_3.5
+2025-07-24 19:57:00,pH coagulación entrada DAF,1.209201455116272,zscore_3.5
+2025-07-24 19:58:00,pH coagulación entrada DAF,1.213252305984497,zscore_3.5
+2025-07-24 19:59:00,pH coagulación entrada DAF,1.210214078426361,zscore_3.5
+2025-07-24 20:00:00,pH coagulación entrada DAF,1.2183160185813904,zscore_3.5
+2025-07-24 20:01:00,pH coagulación entrada DAF,1.2200883030891418,zscore_3.5
+2025-07-24 20:02:00,pH coagulación entrada DAF,1.2221137285232544,zscore_3.5
+2025-07-24 20:03:00,pH coagulación entrada DAF,1.2261645793914795,zscore_3.5
+2025-07-24 20:04:00,pH coagulación entrada DAF,1.2271773219108582,zscore_3.5
+2025-07-24 20:05:00,pH coagulación entrada DAF,1.231481432914734,zscore_3.5
+2025-07-24 20:06:00,pH coagulación entrada DAF,1.233000636100769,zscore_3.5
+2025-07-24 20:07:00,pH coagulación entrada DAF,1.234013319015503,zscore_3.5
+2025-07-24 20:08:00,pH coagulación entrada DAF,1.2350260019302368,zscore_3.5
+2025-07-24 20:09:00,pH coagulación entrada DAF,1.2395832538604736,zscore_3.5
+2025-07-24 20:11:00,pH coagulación entrada DAF,1.2403428554534912,zscore_3.5
+2025-07-24 20:12:00,pH coagulación entrada DAF,1.244393825531006,zscore_3.5
+2025-07-24 20:13:00,pH coagulación entrada DAF,1.246672511100769,zscore_3.5
+2025-07-24 20:14:00,pH coagulación entrada DAF,1.250723421573639,zscore_3.5
+2025-07-24 20:15:00,pH coagulación entrada DAF,1.2517361044883728,zscore_3.5
+2025-07-24 20:16:00,pH coagulación entrada DAF,1.254521131515503,zscore_3.5
+2025-07-24 20:17:00,pH coagulación entrada DAF,1.2588252425193789,zscore_3.5
+2025-07-24 20:18:00,pH coagulación entrada DAF,1.2598379254341123,zscore_3.5
+2025-07-24 20:19:00,pH coagulación entrada DAF,1.2593315839767456,zscore_3.5
+2025-07-24 20:20:00,pH coagulación entrada DAF,1.264395236968994,zscore_3.5
+2025-07-24 20:21:00,pH coagulación entrada DAF,1.2633825540542605,zscore_3.5
+2025-07-24 20:22:00,pH coagulación entrada DAF,1.264395236968994,zscore_3.5
+2025-07-24 20:23:00,pH coagulación entrada DAF,1.265154778957367,zscore_3.5
+2025-07-24 20:25:00,pH coagulación entrada DAF,1.268699288368225,zscore_3.5
+2025-07-24 20:27:00,pH coagulación entrada DAF,1.271231174468994,zscore_3.5
+2025-07-24 20:28:00,pH coagulación entrada DAF,1.2793330550193789,zscore_3.5
+2025-07-24 20:29:00,pH coagulación entrada DAF,1.278573453426361,zscore_3.5
+2025-07-24 20:30:00,pH coagulación entrada DAF,1.2765480279922483,zscore_3.5
+2025-07-24 20:31:00,pH coagulación entrada DAF,1.2826244235038755,zscore_3.5
+2025-07-24 20:32:00,pH coagulación entrada DAF,1.2846498489379885,zscore_3.5
+2025-07-24 20:33:00,pH coagulación entrada DAF,1.28515625,zscore_3.5
+2025-07-24 20:34:00,pH coagulación entrada DAF,1.287181735038757,zscore_3.5
+2025-07-24 20:35:00,pH coagulación entrada DAF,1.2904731035232544,zscore_3.5
+2025-07-24 20:36:00,pH coagulación entrada DAF,1.288700819015503,zscore_3.5
+2025-07-24 20:37:00,pH coagulación entrada DAF,1.2940176129341123,zscore_3.5
+2025-07-24 20:38:00,pH coagulación entrada DAF,1.2942708134651184,zscore_3.5
+2025-07-24 20:39:00,pH coagulación entrada DAF,1.2947771549224854,zscore_3.5
+2025-07-24 20:40:00,pH coagulación entrada DAF,1.300853610038757,zscore_3.5
+2025-07-24 20:41:00,pH coagulación entrada DAF,1.2975621819496157,zscore_3.5
+2025-07-24 20:42:00,pH coagulación entrada DAF,1.3003472089767456,zscore_3.5
+2025-07-24 20:43:00,pH coagulación entrada DAF,1.301613211631775,zscore_3.5
+2025-07-24 20:44:00,pH coagulación entrada DAF,1.302119493484497,zscore_3.5
+2025-07-24 20:45:00,pH coagulación entrada DAF,1.3043981194496157,zscore_3.5
+2025-07-24 20:46:00,pH coagulación entrada DAF,1.3051576614379885,zscore_3.5
+2025-07-24 20:47:00,pH coagulación entrada DAF,1.312246799468994,zscore_3.5
+2025-07-24 20:48:00,pH coagulación entrada DAF,1.3094618320465088,zscore_3.5
+2025-07-24 20:49:00,pH coagulación entrada DAF,1.3092086911201477,zscore_3.5
+2025-07-24 20:50:00,pH coagulación entrada DAF,1.3135127425193789,zscore_3.5
+2025-07-24 20:51:00,pH coagulación entrada DAF,1.309968113899231,zscore_3.5
+2025-07-24 20:52:00,pH coagulación entrada DAF,1.312246799468994,zscore_3.5
+2025-07-24 20:53:00,pH coagulación entrada DAF,1.3155381679534912,zscore_3.5
+2025-07-24 20:54:00,pH coagulación entrada DAF,1.3178168535232544,zscore_3.5
+2025-07-24 20:55:00,pH coagulación entrada DAF,1.3140190839767456,zscore_3.5
+2025-07-24 20:56:00,pH coagulación entrada DAF,1.319589078426361,zscore_3.5
+2025-07-24 20:57:00,pH coagulación entrada DAF,1.324146389961243,zscore_3.5
+2025-07-24 20:58:00,pH coagulación entrada DAF,1.3249059319496157,zscore_3.5
+2025-07-24 20:59:00,pH coagulación entrada DAF,1.3243995904922483,zscore_3.5
+2025-07-24 21:00:00,pH coagulación entrada DAF,1.3269314169883728,zscore_3.5
+2025-07-24 21:01:00,pH coagulación entrada DAF,1.3281973004341123,zscore_3.5
+2025-07-24 21:02:00,pH coagulación entrada DAF,1.324146389961243,zscore_3.5
+2025-07-24 21:03:00,pH coagulación entrada DAF,1.3304759860038755,zscore_3.5
+2025-07-24 21:04:00,pH coagulación entrada DAF,1.3347800970077517,zscore_3.5
+2025-07-24 21:05:00,pH coagulación entrada DAF,1.333261013031006,zscore_3.5
+2025-07-24 21:06:00,pH coagulación entrada DAF,1.3368055820465088,zscore_3.5
+2025-07-24 21:07:00,pH coagulación entrada DAF,1.33579283952713,zscore_3.5
+2025-07-24 21:08:00,pH coagulación entrada DAF,1.336805522441864,zscore_3.5
+2025-07-24 21:09:00,pH coagulación entrada DAF,1.3352864384651184,zscore_3.5
+2025-07-24 21:10:00,pH coagulación entrada DAF,1.33984375,zscore_3.5
+2025-07-24 21:11:00,pH coagulación entrada DAF,1.340096950531006,zscore_3.5
+2025-07-24 21:12:00,pH coagulación entrada DAF,1.33705872297287,zscore_3.5
+2025-07-24 21:13:00,pH coagulación entrada DAF,1.34262877702713,zscore_3.5
+2025-07-24 21:14:00,pH coagulación entrada DAF,1.343388319015503,zscore_3.5
+2025-07-24 21:15:00,pH coagulación entrada DAF,1.340350091457367,zscore_3.5
+2025-07-24 21:16:00,pH coagulación entrada DAF,1.3449074625968933,zscore_3.5
+2025-07-24 21:17:00,pH coagulación entrada DAF,1.3444011211395264,zscore_3.5
+2025-07-24 21:18:00,pH coagulación entrada DAF,1.3497178554534912,zscore_3.5
+2025-07-24 21:19:00,pH coagulación entrada DAF,1.3484519124031067,zscore_3.5
+2025-07-24 21:20:00,pH coagulación entrada DAF,1.350983738899231,zscore_3.5
+2025-07-24 21:21:00,pH coagulación entrada DAF,1.3489583134651184,zscore_3.5
+2025-07-24 21:22:00,pH coagulación entrada DAF,1.3492115139961245,zscore_3.5
+2025-07-24 21:23:00,pH coagulación entrada DAF,1.3519964814186096,zscore_3.5
+2025-07-24 21:24:00,pH coagulación entrada DAF,1.3517433404922483,zscore_3.5
+2025-07-24 21:25:00,pH coagulación entrada DAF,1.3552879691123962,zscore_3.5
+2025-07-24 21:26:00,pH coagulación entrada DAF,1.3552879095077517,zscore_3.5
+2025-07-24 21:27:00,pH coagulación entrada DAF,1.353515625,zscore_3.5
+2025-07-24 21:28:00,pH coagulación entrada DAF,1.3580729961395264,zscore_3.5
+2025-07-24 21:29:00,pH coagulación entrada DAF,1.3593388199806211,zscore_3.5
+2025-07-24 21:30:00,pH coagulación entrada DAF,1.3613643050193789,zscore_3.5
+2025-07-24 21:31:00,pH coagulación entrada DAF,1.360098361968994,zscore_3.5
+2025-07-24 21:32:00,pH coagulación entrada DAF,1.3618706464767456,zscore_3.5
+2025-07-24 21:33:00,pH coagulación entrada DAF,1.363642930984497,zscore_3.5
+2025-07-24 21:34:00,pH coagulación entrada DAF,1.3659215569496157,zscore_3.5
+2025-07-24 21:35:00,pH coagulación entrada DAF,1.366934359073639,zscore_3.5
+2025-07-24 21:36:00,pH coagulación entrada DAF,1.366174817085266,zscore_3.5
+2025-07-24 21:37:00,pH coagulación entrada DAF,1.3684534430503843,zscore_3.5
+2025-07-24 21:38:00,pH coagulación entrada DAF,1.3684534430503843,zscore_3.5
+2025-07-24 21:39:00,pH coagulación entrada DAF,1.3712384700775146,zscore_3.5
+2025-07-24 21:40:00,pH coagulación entrada DAF,1.3697193264961245,zscore_3.5
+2025-07-24 21:41:00,pH coagulación entrada DAF,1.374276638031006,zscore_3.5
+2025-07-24 21:42:00,pH coagulación entrada DAF,1.3727575540542605,zscore_3.5
+2025-07-24 21:43:00,pH coagulación entrada DAF,1.3740234375,zscore_3.5
+2025-07-24 21:44:00,pH coagulación entrada DAF,1.3725043535232544,zscore_3.5
+2025-07-24 21:45:00,pH coagulación entrada DAF,1.3783275485038755,zscore_3.5
+2025-07-24 21:46:00,pH coagulación entrada DAF,1.3763021230697632,zscore_3.5
+2025-07-24 21:47:00,pH coagulación entrada DAF,1.380859375,zscore_3.5
+2025-07-24 21:48:00,pH coagulación entrada DAF,1.3838975429534912,zscore_3.5
+2025-07-24 21:49:00,pH coagulación entrada DAF,1.378327488899231,zscore_3.5
+2025-07-24 21:50:00,pH coagulación entrada DAF,1.3785806894302368,zscore_3.5
+2025-07-24 21:51:00,pH coagulación entrada DAF,1.3813657760620115,zscore_3.5
+2025-07-24 21:52:00,pH coagulación entrada DAF,1.380859375,zscore_3.5
+2025-07-24 21:53:00,pH coagulación entrada DAF,1.3813657760620115,zscore_3.5
+2025-07-24 21:54:00,pH coagulación entrada DAF,1.3821252584457395,zscore_3.5
+2025-07-24 21:55:00,pH coagulación entrada DAF,1.3856698870658877,zscore_3.5
+2025-07-24 21:56:00,pH coagulación entrada DAF,1.382884860038757,zscore_3.5
+2025-07-24 21:57:00,pH coagulación entrada DAF,1.3861762285232544,zscore_3.5
+2025-07-24 21:58:00,pH coagulación entrada DAF,1.3894675970077517,zscore_3.5
+2025-07-24 21:59:00,pH coagulación entrada DAF,1.3892143964767456,zscore_3.5
+2025-07-24 22:00:00,pH coagulación entrada DAF,1.3902271389961245,zscore_3.5
+2025-07-24 22:01:00,pH coagulación entrada DAF,1.391493022441864,zscore_3.5
+2025-07-24 22:02:00,pH coagulación entrada DAF,1.3876953125,zscore_3.5
+2025-07-24 22:03:00,pH coagulación entrada DAF,1.3930120468139648,zscore_3.5
+2025-07-24 22:04:00,pH coagulación entrada DAF,1.392505764961243,zscore_3.5
+2025-07-24 22:05:00,pH coagulación entrada DAF,1.3952907919883728,zscore_3.5
+2025-07-24 22:06:00,pH coagulación entrada DAF,1.39453125,zscore_3.5
+2025-07-24 22:07:00,pH coagulación entrada DAF,1.3963035941123962,zscore_3.5
+2025-07-24 22:08:00,pH coagulación entrada DAF,1.395543932914734,zscore_3.5
+2025-07-24 22:09:00,pH coagulación entrada DAF,1.3975694179534912,zscore_3.5
+2025-07-24 22:10:00,pH coagulación entrada DAF,1.397822618484497,zscore_3.5
+2025-07-24 22:11:00,pH coagulación entrada DAF,1.396556735038757,zscore_3.5
+2025-07-24 22:12:00,pH coagulación entrada DAF,1.401873528957367,zscore_3.5
+2025-07-24 22:13:00,pH coagulación entrada DAF,1.4023799300193789,zscore_3.5
+2025-07-24 22:14:00,pH coagulación entrada DAF,1.405671238899231,zscore_3.5
+2025-07-24 22:15:00,pH coagulación entrada DAF,1.4038989543914795,zscore_3.5
+2025-07-24 22:16:00,pH coagulación entrada DAF,1.4038990139961245,zscore_3.5
+2025-07-24 22:17:00,pH coagulación entrada DAF,1.4038989543914795,zscore_3.5
+2025-07-24 22:18:00,pH coagulación entrada DAF,1.4049116969108582,zscore_3.5
+2025-07-24 22:19:00,pH coagulación entrada DAF,1.406177639961243,zscore_3.5
+2025-07-24 22:20:00,pH coagulación entrada DAF,1.4071903228759766,zscore_3.5
+2025-07-24 22:21:00,pH coagulación entrada DAF,1.4074435234069824,zscore_3.5
+2025-07-24 22:22:00,pH coagulación entrada DAF,1.4137731790542605,zscore_3.5
+2025-07-24 22:23:00,pH coagulación entrada DAF,1.411747694015503,zscore_3.5
+2025-07-24 22:24:00,pH coagulación entrada DAF,1.411241352558136,zscore_3.5
+2025-07-24 22:25:00,pH coagulación entrada DAF,1.4127604961395264,zscore_3.5
+2025-07-24 22:26:00,pH coagulación entrada DAF,1.409215807914734,zscore_3.5
+2025-07-24 22:27:00,pH coagulación entrada DAF,1.414532721042633,zscore_3.5
+2025-07-24 22:28:00,pH coagulación entrada DAF,1.415292263031006,zscore_3.5
+2025-07-24 22:29:00,pH coagulación entrada DAF,1.4157986044883728,zscore_3.5
+2025-07-24 22:30:00,pH coagulación entrada DAF,1.415292263031006,zscore_3.5
+2025-07-24 22:31:00,pH coagulación entrada DAF,1.415292203426361,zscore_3.5
+2025-07-24 22:32:00,pH coagulación entrada DAF,1.4185835719108582,zscore_3.5
+2025-07-24 22:33:00,pH coagulación entrada DAF,1.4175708889961245,zscore_3.5
+2025-07-24 22:34:00,pH coagulación entrada DAF,1.4165581464767456,zscore_3.5
+2025-07-24 22:35:00,pH coagulación entrada DAF,1.4236472249031067,zscore_3.5
+2025-07-24 22:36:00,pH coagulación entrada DAF,1.419343113899231,zscore_3.5
+2025-07-24 22:37:00,pH coagulación entrada DAF,1.420862317085266,zscore_3.5
+2025-07-24 22:38:00,pH coagulación entrada DAF,1.4241536855697632,zscore_3.5
+2025-07-24 22:39:00,pH coagulación entrada DAF,1.425419569015503,zscore_3.5
+2025-07-24 22:40:00,pH coagulación entrada DAF,1.422381341457367,zscore_3.5
+2025-07-24 22:41:00,pH coagulación entrada DAF,1.4254196286201477,zscore_3.5
+2025-07-24 22:42:00,pH coagulación entrada DAF,1.424406886100769,zscore_3.5
+2025-07-24 22:43:00,pH coagulación entrada DAF,1.426685452461243,zscore_3.5
+2025-07-24 22:44:00,pH coagulación entrada DAF,1.429217278957367,zscore_3.5
+2025-07-24 22:45:00,pH coagulación entrada DAF,1.4266855120658877,zscore_3.5
+2025-07-24 22:46:00,pH coagulación entrada DAF,1.4279513955116272,zscore_3.5
+2025-07-24 22:47:00,pH coagulación entrada DAF,1.4304832220077517,zscore_3.5
+2025-07-24 22:48:00,pH coagulación entrada DAF,1.428964138031006,zscore_3.5
+2025-07-24 22:49:00,pH coagulación entrada DAF,1.4287109375,zscore_3.5
+2025-07-24 22:50:00,pH coagulación entrada DAF,1.4337745308876038,zscore_3.5
+2025-07-24 22:51:00,pH coagulación entrada DAF,1.4368127584457395,zscore_3.5
+2025-07-24 22:52:00,pH coagulación entrada DAF,1.436559557914734,zscore_3.5
+2025-07-24 22:53:00,pH coagulación entrada DAF,1.42592591047287,zscore_3.5
+2025-07-24 22:54:00,pH coagulación entrada DAF,1.4342809319496157,zscore_3.5
+2025-07-24 22:55:00,pH coagulación entrada DAF,1.435546875,zscore_3.5
+2025-07-24 22:56:00,pH coagulación entrada DAF,1.436559557914734,zscore_3.5
+2025-07-24 22:57:00,pH coagulación entrada DAF,1.433014988899231,zscore_3.5
+2025-07-24 22:58:00,pH coagulación entrada DAF,1.433521389961243,zscore_3.5
+2025-07-24 22:59:00,pH coagulación entrada DAF,1.439091444015503,zscore_3.5
+2025-07-24 23:00:00,pH coagulación entrada DAF,1.4378255605697632,zscore_3.5
+2025-07-24 23:01:00,pH coagulación entrada DAF,1.436559557914734,zscore_3.5
+2025-07-24 23:02:00,pH coagulación entrada DAF,1.4451677799224854,zscore_3.5
+2025-07-24 23:03:00,pH coagulación entrada DAF,1.4401041865348816,zscore_3.5
+2025-07-24 23:04:00,pH coagulación entrada DAF,1.4411169290542605,zscore_3.5
+2025-07-24 23:05:00,pH coagulación entrada DAF,1.4418764114379885,zscore_3.5
+2025-07-24 23:06:00,pH coagulación entrada DAF,1.4441550374031067,zscore_3.5
+2025-07-24 23:07:00,pH coagulación entrada DAF,1.4446614384651184,zscore_3.5
+2025-07-24 23:08:00,pH coagulación entrada DAF,1.442636013031006,zscore_3.5
+2025-07-24 23:10:00,pH coagulación entrada DAF,1.4466869235038755,zscore_3.5
+2025-07-24 23:11:00,pH coagulación entrada DAF,1.4439018964767456,zscore_3.5
+2025-07-24 23:12:00,pH coagulación entrada DAF,1.448965549468994,zscore_3.5
+2025-07-24 23:13:00,pH coagulación entrada DAF,1.448712408542633,zscore_3.5
+2025-07-24 23:14:00,pH coagulación entrada DAF,1.44921875,zscore_3.5
+2025-07-24 23:15:00,pH coagulación entrada DAF,1.4484592080116272,zscore_3.5
+2025-07-24 23:16:00,pH coagulación entrada DAF,1.4525101780891418,zscore_3.5
+2025-07-24 23:17:00,pH coagulación entrada DAF,1.4507379531860352,zscore_3.5
+2025-07-24 23:18:00,pH coagulación entrada DAF,1.44921875,zscore_3.5
+2025-07-24 23:19:00,pH coagulación entrada DAF,1.451750636100769,zscore_3.5
+2025-07-24 23:20:00,pH coagulación entrada DAF,1.4522569179534912,zscore_3.5
+2025-07-24 23:21:00,pH coagulación entrada DAF,1.4535228610038755,zscore_3.5
+2025-07-24 23:22:00,pH coagulación entrada DAF,1.455548346042633,zscore_3.5
+2025-07-24 23:23:00,pH coagulación entrada DAF,1.455801486968994,zscore_3.5
+2025-07-24 23:24:00,pH coagulación entrada DAF,1.452510118484497,zscore_3.5
+2025-07-24 23:25:00,pH coagulación entrada DAF,1.4575737714767456,zscore_3.5
+2025-07-24 23:26:00,pH coagulación entrada DAF,1.459852397441864,zscore_3.5
+2025-07-24 23:27:00,pH coagulación entrada DAF,1.4583333134651184,zscore_3.5
+2025-07-24 23:28:00,pH coagulación entrada DAF,1.460358738899231,zscore_3.5
+2025-07-24 23:29:00,pH coagulación entrada DAF,1.4585865139961245,zscore_3.5
+2025-07-24 23:30:00,pH coagulación entrada DAF,1.46010559797287,zscore_3.5
+2025-07-24 23:31:00,pH coagulación entrada DAF,1.4613714218139648,zscore_3.5
+2025-07-24 23:32:00,pH coagulación entrada DAF,1.4646629095077517,zscore_3.5
+2025-07-24 23:33:00,pH coagulación entrada DAF,1.4669415950775146,zscore_3.5
+2025-07-24 23:34:00,pH coagulación entrada DAF,1.4613715410232544,zscore_3.5
+2025-07-24 23:35:00,pH coagulación entrada DAF,1.4644097685813904,zscore_3.5
+2025-07-24 23:36:00,pH coagulación entrada DAF,1.462890625,zscore_3.5
+2025-07-24 23:37:00,pH coagulación entrada DAF,1.4684606790542605,zscore_3.5
+2025-07-24 23:38:00,pH coagulación entrada DAF,1.463143765926361,zscore_3.5
+2025-07-24 23:39:00,pH coagulación entrada DAF,1.4644098281860352,zscore_3.5
+2025-07-24 23:40:00,pH coagulación entrada DAF,1.4651692509651184,zscore_3.5
+2025-07-24 23:41:00,pH coagulación entrada DAF,1.4671947360038755,zscore_3.5
+2025-07-24 23:42:00,pH coagulación entrada DAF,1.470486044883728,zscore_3.5
+2025-07-24 23:43:00,pH coagulación entrada DAF,1.4664352536201477,zscore_3.5
+2025-07-24 23:44:00,pH coagulación entrada DAF,1.4692201614379885,zscore_3.5
+2025-07-24 23:45:00,pH coagulación entrada DAF,1.4674479961395264,zscore_3.5
+2025-07-24 23:46:00,pH coagulación entrada DAF,1.4666883945465088,zscore_3.5
+2025-07-24 23:47:00,pH coagulación entrada DAF,1.4707393050193789,zscore_3.5
+2025-07-24 23:48:00,pH coagulación entrada DAF,1.4689669609069824,zscore_3.5
+2025-07-24 23:49:00,pH coagulación entrada DAF,1.469220221042633,zscore_3.5
+2025-07-24 23:50:00,pH coagulación entrada DAF,1.4742838144302368,zscore_3.5
+2025-07-24 23:51:00,pH coagulación entrada DAF,1.4720051884651184,zscore_3.5
+2025-07-24 23:52:00,pH coagulación entrada DAF,1.4821324944496157,zscore_3.5
+2025-07-24 23:53:00,pH coagulación entrada DAF,1.4623842239379885,zscore_3.5
+2025-07-24 23:54:00,pH coagulación entrada DAF,1.4742838144302368,zscore_3.5
+2025-07-24 23:55:00,pH coagulación entrada DAF,1.474030613899231,zscore_3.5
+2025-07-24 23:56:00,pH coagulación entrada DAF,1.4750432968139648,zscore_3.5
+2025-07-24 23:57:00,pH coagulación entrada DAF,1.4755496978759766,zscore_3.5
+2025-07-24 23:58:00,pH coagulación entrada DAF,1.4755497574806211,zscore_3.5
+2025-07-24 23:59:00,pH coagulación entrada DAF,1.478587985038757,zscore_3.5
+2025-07-25 00:00:00,pH coagulación entrada DAF,1.476815640926361,zscore_3.5
+2025-07-25 00:01:00,pH coagulación entrada DAF,1.479094386100769,zscore_3.5
+2025-07-25 00:02:00,pH coagulación entrada DAF,1.4778284430503843,zscore_3.5
+2025-07-25 00:03:00,pH coagulación entrada DAF,1.4813730120658877,zscore_3.5
+2025-07-25 00:04:00,pH coagulación entrada DAF,1.4773220419883728,zscore_3.5
+2025-07-25 00:06:00,pH coagulación entrada DAF,1.47934752702713,zscore_3.5
+2025-07-25 00:07:00,pH coagulación entrada DAF,1.4841579794883728,zscore_3.5
+2025-07-25 00:08:00,pH coagulación entrada DAF,1.4851706624031067,zscore_3.5
+2025-07-25 00:09:00,pH coagulación entrada DAF,1.4861834049224854,zscore_3.5
+2025-07-25 00:10:00,pH coagulación entrada DAF,1.4844111800193789,zscore_3.5
+2025-07-25 00:11:00,pH coagulación entrada DAF,1.4884620904922483,zscore_3.5
+2025-07-25 00:12:00,pH coagulación entrada DAF,1.4861834049224854,zscore_3.5
+2025-07-25 00:13:00,pH coagulación entrada DAF,1.486689805984497,zscore_3.5
+2025-07-25 00:14:00,pH coagulación entrada DAF,1.4871962070465088,zscore_3.5
+2025-07-25 00:15:00,pH coagulación entrada DAF,1.4879556894302368,zscore_3.5
+2025-07-25 00:16:00,pH coagulación entrada DAF,1.487702488899231,zscore_3.5
+2025-07-25 00:17:00,pH coagulación entrada DAF,1.4871962070465088,zscore_3.5
+2025-07-25 00:18:00,pH coagulación entrada DAF,1.490487515926361,zscore_3.5
+2025-07-25 00:19:00,pH coagulación entrada DAF,1.4947916865348816,zscore_3.5
+2025-07-25 00:20:00,pH coagulación entrada DAF,1.4909939169883728,zscore_3.5
+2025-07-25 00:21:00,pH coagulación entrada DAF,1.4917535781860352,zscore_3.5
+2025-07-25 00:22:00,pH coagulación entrada DAF,1.4917534589767456,zscore_3.5
+2025-07-25 00:23:00,pH coagulación entrada DAF,1.489221692085266,zscore_3.5
+2025-07-25 00:24:00,pH coagulación entrada DAF,1.492259919643402,zscore_3.5
+2025-07-25 00:25:00,pH coagulación entrada DAF,1.4937790036201477,zscore_3.5
+2025-07-25 00:26:00,pH coagulación entrada DAF,1.49301940202713,zscore_3.5
+2025-07-25 00:27:00,pH coagulación entrada DAF,1.4945384860038755,zscore_3.5
+2025-07-25 00:28:00,pH coagulación entrada DAF,1.4945385456085205,zscore_3.5
+2025-07-25 00:29:00,pH coagulación entrada DAF,1.4947916865348816,zscore_3.5
+2025-07-25 00:30:00,pH coagulación entrada DAF,1.4970703125,zscore_3.5
+2025-07-25 00:31:00,pH coagulación entrada DAF,1.4958044290542605,zscore_3.5
+2025-07-25 00:32:00,pH coagulación entrada DAF,1.493778944015503,zscore_3.5
+2025-07-25 00:33:00,pH coagulación entrada DAF,1.4985893964767456,zscore_3.5
+2025-07-25 00:34:00,pH coagulación entrada DAF,1.4993488788604736,zscore_3.5
+2025-07-25 00:35:00,pH coagulación entrada DAF,1.497323513031006,zscore_3.5
+2025-07-25 00:36:00,pH coagulación entrada DAF,1.4947916865348816,zscore_3.5
+2025-07-25 00:37:00,pH coagulación entrada DAF,1.5001084804534912,zscore_3.5
+2025-07-25 00:38:00,pH coagulación entrada DAF,1.5016276240348816,zscore_3.5
+2025-07-25 00:39:00,pH coagulación entrada DAF,1.5033998489379885,zscore_3.5
+2025-07-25 00:40:00,pH coagulación entrada DAF,1.504159450531006,zscore_3.5
+2025-07-25 00:41:00,pH coagulación entrada DAF,1.500361680984497,zscore_3.5
+2025-07-25 00:42:00,pH coagulación entrada DAF,1.50390625,zscore_3.5
+2025-07-25 00:43:00,pH coagulación entrada DAF,1.5031466484069824,zscore_3.5
+2025-07-25 00:44:00,pH coagulación entrada DAF,1.507450819015503,zscore_3.5
+2025-07-25 00:45:00,pH coagulación entrada DAF,1.4996020793914795,zscore_3.5
+2025-07-25 00:46:00,pH coagulación entrada DAF,1.506438136100769,zscore_3.5
+2025-07-25 00:47:00,pH coagulación entrada DAF,1.4983362555503843,zscore_3.5
+2025-07-25 00:48:00,pH coagulación entrada DAF,1.5130208134651184,zscore_3.5
+2025-07-25 00:49:00,pH coagulación entrada DAF,1.5084635019302368,zscore_3.5
+2025-07-25 00:50:00,pH coagulación entrada DAF,1.5016276240348816,zscore_3.5
+2025-07-25 00:51:00,pH coagulación entrada DAF,1.503399908542633,zscore_3.5
+2025-07-25 00:52:00,pH coagulación entrada DAF,1.5011212825775146,zscore_3.5
+2025-07-25 00:53:00,pH coagulación entrada DAF,1.507450819015503,zscore_3.5
+2025-07-25 00:54:00,pH coagulación entrada DAF,1.5046658515930176,zscore_3.5
+2025-07-25 00:55:00,pH coagulación entrada DAF,1.5054254531860352,zscore_3.5
+2025-07-25 00:56:00,pH coagulación entrada DAF,1.5079572200775146,zscore_3.5
+2025-07-25 00:57:00,pH coagulación entrada DAF,1.517831265926361,zscore_3.5
+2025-07-25 00:58:00,pH coagulación entrada DAF,1.5084635019302368,zscore_3.5
+2025-07-25 00:59:00,pH coagulación entrada DAF,1.5102357864379885,zscore_3.5
+2025-07-25 01:00:00,pH coagulación entrada DAF,1.514033555984497,zscore_3.5
+2025-07-25 01:01:00,pH coagulación entrada DAF,1.5051721334457395,zscore_3.5
+2025-07-25 01:02:00,pH coagulación entrada DAF,1.5115017294883728,zscore_3.5
+2025-07-25 01:03:00,pH coagulación entrada DAF,1.5127676129341123,zscore_3.5
+2025-07-25 01:04:00,pH coagulación entrada DAF,1.5145399570465088,zscore_3.5
+2025-07-25 01:06:00,pH coagulación entrada DAF,1.5122612714767456,zscore_3.5
+2025-07-25 01:07:00,pH coagulación entrada DAF,1.5137803554534912,zscore_3.5
+2025-07-25 01:08:00,pH coagulación entrada DAF,1.5158058404922483,zscore_3.5
+2025-07-25 01:09:00,pH coagulación entrada DAF,1.514286756515503,zscore_3.5
+2025-07-25 01:10:00,pH coagulación entrada DAF,1.5152994394302368,zscore_3.5
+2025-07-25 01:11:00,pH coagulación entrada DAF,1.517071783542633,zscore_3.5
+2025-07-25 01:12:00,pH coagulación entrada DAF,1.515552639961243,zscore_3.5
+2025-07-25 01:13:00,pH coagulación entrada DAF,1.5163121819496157,zscore_3.5
+2025-07-25 01:14:00,pH coagulación entrada DAF,1.5152994394302368,zscore_3.5
+2025-07-25 01:15:00,pH coagulación entrada DAF,1.5160590410232544,zscore_3.5
+2025-07-25 01:16:00,pH coagulación entrada DAF,1.516565442085266,zscore_3.5
+2025-07-25 01:17:00,pH coagulación entrada DAF,1.5132740139961245,zscore_3.5
+2025-07-25 01:18:00,pH coagulación entrada DAF,1.514033555984497,zscore_3.5
+2025-07-25 01:19:00,pH coagulación entrada DAF,1.5168185830116272,zscore_3.5
+2025-07-25 01:20:00,pH coagulación entrada DAF,1.5208695530891418,zscore_3.5
+2025-07-25 01:21:00,pH coagulación entrada DAF,1.510995328426361,zscore_3.5
+2025-07-25 01:22:00,pH coagulación entrada DAF,1.520110011100769,zscore_3.5
+2025-07-25 01:23:00,pH coagulación entrada DAF,1.519603610038757,zscore_3.5
+2025-07-25 01:24:00,pH coagulación entrada DAF,1.5226417779922483,zscore_3.5
+2025-07-25 01:25:00,pH coagulación entrada DAF,1.5208695530891418,zscore_3.5
+2025-07-25 01:26:00,pH coagulación entrada DAF,1.5251736044883728,zscore_3.5
+2025-07-25 01:27:00,pH coagulación entrada DAF,1.523401379585266,zscore_3.5
+2025-07-25 01:28:00,pH coagulación entrada DAF,1.5228949785232544,zscore_3.5
+2025-07-25 01:29:00,pH coagulación entrada DAF,1.529224514961243,zscore_3.5
+2025-07-25 01:30:00,pH coagulación entrada DAF,1.5221354961395264,zscore_3.5
+2025-07-25 01:31:00,pH coagulación entrada DAF,1.5254268050193789,zscore_3.5
+2025-07-25 01:32:00,pH coagulación entrada DAF,1.5226418375968933,zscore_3.5
+2025-07-25 01:33:00,pH coagulación entrada DAF,1.5271990299224854,zscore_3.5
+2025-07-25 01:34:00,pH coagulación entrada DAF,1.5213757753372192,zscore_3.5
+2025-07-25 01:35:00,pH coagulación entrada DAF,1.5322627425193789,zscore_3.5
+2025-07-25 01:36:00,pH coagulación entrada DAF,1.523401379585266,zscore_3.5
+2025-07-25 01:37:00,pH coagulación entrada DAF,1.5244140625,zscore_3.5
+2025-07-25 01:38:00,pH coagulación entrada DAF,1.528718113899231,zscore_3.5
+2025-07-25 01:39:00,pH coagulación entrada DAF,1.5251736640930176,zscore_3.5
+2025-07-25 01:40:00,pH coagulación entrada DAF,1.5256799459457395,zscore_3.5
+2025-07-25 01:41:00,pH coagulación entrada DAF,1.5271990299224854,zscore_3.5
+2025-07-25 01:42:00,pH coagulación entrada DAF,1.5297309160232544,zscore_3.5
+2025-07-25 01:43:00,pH coagulación entrada DAF,1.527958631515503,zscore_3.5
+2025-07-25 01:44:00,pH coagulación entrada DAF,1.5264394879341123,zscore_3.5
+2025-07-25 01:45:00,pH coagulación entrada DAF,1.5297309160232544,zscore_3.5
+2025-07-25 01:46:00,pH coagulación entrada DAF,1.530490517616272,zscore_3.5
+2025-07-25 01:47:00,pH coagulación entrada DAF,1.5322628021240234,zscore_3.5
+2025-07-25 01:48:00,pH coagulación entrada DAF,1.5307435989379885,zscore_3.5
+2025-07-25 01:49:00,pH coagulación entrada DAF,1.5304904580116272,zscore_3.5
+2025-07-25 01:50:00,pH coagulación entrada DAF,1.53125,zscore_3.5
+2025-07-25 01:51:00,pH coagulación entrada DAF,1.5294777154922483,zscore_3.5
+2025-07-25 01:52:00,pH coagulación entrada DAF,1.5201098918914795,zscore_3.5
+2025-07-28 22:05:00,pH coagulación entrada DAF,23.901982069015503,zscore_3.5
+2025-07-28 22:14:00,pH coagulación entrada DAF,23.90552663803101,zscore_3.5
+2025-08-04 02:25:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-04 02:26:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-04 02:27:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-04 02:28:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 08:59:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:00:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:01:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:02:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:04:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:05:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:06:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:07:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:09:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:10:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:11:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:12:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:13:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:15:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:16:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:17:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:18:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:19:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:21:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:22:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:23:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:24:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:25:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:27:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:28:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:29:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:30:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:32:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:33:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:34:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:35:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:36:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:38:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:39:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:40:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:41:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:42:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:44:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:45:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:46:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:47:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:49:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:50:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:51:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:52:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:53:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:55:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:56:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:57:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 09:58:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:00:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:01:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:02:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:03:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:04:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:06:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:07:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:08:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:09:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:10:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:12:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:13:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:14:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:15:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:16:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:18:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:19:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:20:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:21:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:23:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:24:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:25:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:26:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:27:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:29:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:30:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:31:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:32:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:33:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:35:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:36:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:37:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:38:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:39:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:41:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:42:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:43:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:44:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:45:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-08 10:49:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:35:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:37:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:38:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:39:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:40:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:41:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:43:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:44:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:45:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:46:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:47:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:49:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:50:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:51:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:52:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:53:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:55:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:56:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:57:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:58:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 09:59:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:01:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:02:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:03:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:04:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:06:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:07:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:08:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:09:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:10:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:12:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:13:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:14:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:15:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:16:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:18:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:19:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:20:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:21:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:22:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:24:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:25:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:26:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:27:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:28:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:30:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:31:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:33:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:34:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:36:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:37:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:38:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:39:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:41:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:42:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:43:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:44:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:45:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-08-09 10:47:00,pH coagulación entrada DAF,14.0,zscore_3.5
+2025-05-22 20:32:00,pH entrada a Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-22 20:41:00,pH entrada a Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-22 20:47:00,pH entrada a Ecualizador 2 (Tk 250m3),42.0,zscore_3.5
+2025-05-29 00:42:00,pH entrada a Ecualizador 2 (Tk 250m3),3.053385257720948,zscore_3.5
+2025-05-29 00:45:00,pH entrada a Ecualizador 2 (Tk 250m3),2.8943865299224854,zscore_3.5
+2025-05-29 00:49:00,pH entrada a Ecualizador 2 (Tk 250m3),2.7146267890930176,zscore_3.5
+2025-05-29 00:54:00,pH entrada a Ecualizador 2 (Tk 250m3),3.638237953186035,zscore_3.5
+2025-05-29 01:03:00,pH entrada a Ecualizador 2 (Tk 250m3),2.697410345077514,zscore_3.5
+2025-05-29 01:11:00,pH entrada a Ecualizador 2 (Tk 250m3),2.8634982109069824,zscore_3.5
+2025-05-29 01:30:00,pH entrada a Ecualizador 2 (Tk 250m3),3.621527671813965,zscore_3.5
+2025-05-29 01:34:00,pH entrada a Ecualizador 2 (Tk 250m3),3.077691078186035,zscore_3.5
+2025-05-29 01:41:00,pH entrada a Ecualizador 2 (Tk 250m3),3.2868199348449707,zscore_3.5
+2025-05-29 02:07:00,pH entrada a Ecualizador 2 (Tk 250m3),2.7201967239379883,zscore_3.5
+2025-05-29 02:17:00,pH entrada a Ecualizador 2 (Tk 250m3),2.765769720077514,zscore_3.5
+2025-05-29 02:25:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3830294609069824,zscore_3.5
+2025-05-29 03:00:00,pH entrada a Ecualizador 2 (Tk 250m3),3.105540990829468,zscore_3.5
+2025-05-29 03:11:00,pH entrada a Ecualizador 2 (Tk 250m3),3.602792263031006,zscore_3.5
+2025-05-29 03:41:00,pH entrada a Ecualizador 2 (Tk 250m3),3.137948513031006,zscore_3.5
+2025-05-29 03:52:00,pH entrada a Ecualizador 2 (Tk 250m3),2.669560194015503,zscore_3.5
+2025-05-29 04:01:00,pH entrada a Ecualizador 2 (Tk 250m3),2.927806615829468,zscore_3.5
+2025-05-29 04:07:00,pH entrada a Ecualizador 2 (Tk 250m3),2.9354021549224854,zscore_3.5
+2025-05-29 04:10:00,pH entrada a Ecualizador 2 (Tk 250m3),3.0498409271240234,zscore_3.5
+2025-05-29 04:14:00,pH entrada a Ecualizador 2 (Tk 250m3),2.817925453186035,zscore_3.5
+2025-05-29 04:24:00,pH entrada a Ecualizador 2 (Tk 250m3),2.806278944015503,zscore_3.5
+2025-05-29 04:37:00,pH entrada a Ecualizador 2 (Tk 250m3),3.339988470077514,zscore_3.5
+2025-05-29 04:41:00,pH entrada a Ecualizador 2 (Tk 250m3),3.1688365936279297,zscore_3.5
+2025-05-29 04:50:00,pH entrada a Ecualizador 2 (Tk 250m3),3.819516658782959,zscore_3.5
+2025-05-29 04:53:00,pH entrada a Ecualizador 2 (Tk 250m3),2.9936342239379883,zscore_3.5
+2025-05-29 04:58:00,pH entrada a Ecualizador 2 (Tk 250m3),3.737485408782959,zscore_3.5
+2025-05-29 05:02:00,pH entrada a Ecualizador 2 (Tk 250m3),3.094907522201538,zscore_3.5
+2025-05-29 05:26:00,pH entrada a Ecualizador 2 (Tk 250m3),3.5916521549224854,zscore_3.5
+2025-05-29 05:29:00,pH entrada a Ecualizador 2 (Tk 250m3),3.2458043098449707,zscore_3.5
+2025-05-29 05:30:00,pH entrada a Ecualizador 2 (Tk 250m3),2.9916088581085205,zscore_3.5
+2025-05-29 05:42:00,pH entrada a Ecualizador 2 (Tk 250m3),3.0103442668914795,zscore_3.5
+2025-05-29 05:58:00,pH entrada a Ecualizador 2 (Tk 250m3),2.998697757720948,zscore_3.5
+2025-05-29 06:07:00,pH entrada a Ecualizador 2 (Tk 250m3),3.1131365299224854,zscore_3.5
+2025-05-29 06:18:00,pH entrada a Ecualizador 2 (Tk 250m3),3.190610647201538,zscore_3.5
+2025-05-29 10:25:00,pH entrada a Ecualizador 2 (Tk 250m3),3.600766658782959,zscore_3.5
+2025-05-29 10:29:00,pH entrada a Ecualizador 2 (Tk 250m3),3.500506401062012,zscore_3.5
+2025-05-29 10:31:00,pH entrada a Ecualizador 2 (Tk 250m3),3.751157283782959,zscore_3.5
+2025-05-29 10:38:00,pH entrada a Ecualizador 2 (Tk 250m3),3.7096354961395264,zscore_3.5
+2025-05-29 10:46:00,pH entrada a Ecualizador 2 (Tk 250m3),3.149595022201538,zscore_3.5
+2025-05-29 10:55:00,pH entrada a Ecualizador 2 (Tk 250m3),2.964771509170532,zscore_3.5
+2025-05-29 11:13:00,pH entrada a Ecualizador 2 (Tk 250m3),2.896918296813965,zscore_3.5
+2025-05-29 11:24:00,pH entrada a Ecualizador 2 (Tk 250m3),3.4270834922790527,zscore_3.5
+2025-06-02 19:21:00,pH entrada a Ecualizador 2 (Tk 250m3),6.255136013031006,zscore_3.5
+2025-06-03 15:12:00,pH entrada a Ecualizador 2 (Tk 250m3),6.321976184844971,zscore_3.5
+2025-06-05 11:28:00,pH entrada a Ecualizador 2 (Tk 250m3),3.697735786437988,zscore_3.5
+2025-06-05 12:00:00,pH entrada a Ecualizador 2 (Tk 250m3),3.5931713581085205,zscore_3.5
+2025-06-05 12:23:00,pH entrada a Ecualizador 2 (Tk 250m3),3.862811088562012,zscore_3.5
+2025-06-05 12:34:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3055554628372192,zscore_3.5
+2025-06-05 12:39:00,pH entrada a Ecualizador 2 (Tk 250m3),0.9332320690155028,zscore_3.5
+2025-06-05 12:45:00,pH entrada a Ecualizador 2 (Tk 250m3),2.6209490299224854,zscore_3.5
+2025-06-05 13:14:00,pH entrada a Ecualizador 2 (Tk 250m3),3.764829158782959,zscore_3.5
+2025-06-06 11:23:00,pH entrada a Ecualizador 2 (Tk 250m3),2.9252748489379883,zscore_3.5
+2025-06-06 11:33:00,pH entrada a Ecualizador 2 (Tk 250m3),3.206307888031006,zscore_3.5
+2025-06-06 11:37:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3587241172790527,zscore_3.5
+2025-06-06 11:41:00,pH entrada a Ecualizador 2 (Tk 250m3),3.6534290313720703,zscore_3.5
+2025-06-06 11:46:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3916378021240234,zscore_3.5
+2025-06-06 11:58:00,pH entrada a Ecualizador 2 (Tk 250m3),2.8634982109069824,zscore_3.5
+2025-06-06 12:13:00,pH entrada a Ecualizador 2 (Tk 250m3),3.558738470077514,zscore_3.5
+2025-06-06 12:26:00,pH entrada a Ecualizador 2 (Tk 250m3),2.793113470077514,zscore_3.5
+2025-06-06 12:31:00,pH entrada a Ecualizador 2 (Tk 250m3),3.500506401062012,zscore_3.5
+2025-06-06 12:35:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3025174140930176,zscore_3.5
+2025-06-06 12:51:00,pH entrada a Ecualizador 2 (Tk 250m3),2.9662904739379883,zscore_3.5
+2025-06-06 12:53:00,pH entrada a Ecualizador 2 (Tk 250m3),2.886284828186035,zscore_3.5
+2025-06-06 13:13:00,pH entrada a Ecualizador 2 (Tk 250m3),3.5243053436279297,zscore_3.5
+2025-06-18 17:47:00,pH entrada a Ecualizador 2 (Tk 250m3),3.69140625,zscore_3.5
+2025-06-18 18:21:00,pH entrada a Ecualizador 2 (Tk 250m3),3.295428276062012,zscore_3.5
+2025-07-03 17:42:00,pH entrada a Ecualizador 2 (Tk 250m3),3.790400743484497,zscore_3.5
+2025-07-03 18:33:00,pH entrada a Ecualizador 2 (Tk 250m3),3.674949288368225,zscore_3.5
+2025-07-03 18:53:00,pH entrada a Ecualizador 2 (Tk 250m3),3.768373966217041,zscore_3.5
+2025-07-03 22:11:00,pH entrada a Ecualizador 2 (Tk 250m3),3.5827908515930176,zscore_3.5
+2025-07-12 02:31:00,pH entrada a Ecualizador 2 (Tk 250m3),3.5736762285232544,zscore_3.5
+2025-07-12 08:14:00,pH entrada a Ecualizador 2 (Tk 250m3),3.527850151062012,zscore_3.5
+2025-07-12 08:59:00,pH entrada a Ecualizador 2 (Tk 250m3),3.525064945220948,zscore_3.5
+2025-07-12 09:29:00,pH entrada a Ecualizador 2 (Tk 250m3),2.8250144720077515,zscore_3.5
+2025-07-12 10:39:00,pH entrada a Ecualizador 2 (Tk 250m3),3.1060473918914795,zscore_3.5
+2025-07-12 10:53:00,pH entrada a Ecualizador 2 (Tk 250m3),3.0619935989379883,zscore_3.5
+2025-07-12 11:03:00,pH entrada a Ecualizador 2 (Tk 250m3),3.3298611640930176,zscore_3.5
+2025-07-12 11:09:00,pH entrada a Ecualizador 2 (Tk 250m3),3.472403168678284,zscore_3.5
+2025-07-12 11:43:00,pH entrada a Ecualizador 2 (Tk 250m3),3.239221572875977,zscore_3.5
+2025-07-12 11:47:00,pH entrada a Ecualizador 2 (Tk 250m3),2.854383707046509,zscore_3.5
+2025-07-12 11:57:00,pH entrada a Ecualizador 2 (Tk 250m3),3.4053096771240234,zscore_3.5
+2025-07-12 12:54:00,pH entrada a Ecualizador 2 (Tk 250m3),3.8987629413604736,zscore_3.5
+2025-07-28 22:05:00,pH entrada a Ecualizador 2 (Tk 250m3),23.469292640686035,zscore_3.5
+2025-07-28 22:14:00,pH entrada a Ecualizador 2 (Tk 250m3),23.4677734375,zscore_3.5
+2025-08-08 19:37:00,pH entrada a Ecualizador 2 (Tk 250m3),3.4696178436279297,zscore_3.5
+2025-08-08 20:09:00,pH entrada a Ecualizador 2 (Tk 250m3),3.744574546813965,zscore_3.5
+2025-08-08 21:18:00,pH entrada a Ecualizador 2 (Tk 250m3),3.809389591217041,zscore_3.5
+2025-08-08 23:20:00,pH entrada a Ecualizador 2 (Tk 250m3),3.605830669403076,zscore_3.5
+2025-05-22 20:41:00,pH salida a Parshall 02,42.0,zscore_3.5
+2025-05-22 20:47:00,pH salida a Parshall 02,42.0,zscore_3.5
+2025-05-23 16:31:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:33:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:34:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:35:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:36:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:37:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:38:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:39:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:41:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:42:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:43:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:44:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:45:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:46:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:47:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:48:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:49:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:50:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:51:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:52:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:53:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:54:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:55:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-05-23 16:56:00,pH salida a Parshall 02,0.0,zscore_3.5
+2025-07-28 22:05:00,pH salida a Parshall 02,24.301504611969,zscore_3.5
+2025-07-28 22:14:00,pH salida a Parshall 02,24.296441078186035,zscore_3.5
+2025-08-08 16:51:00,pH salida a Parshall 02,1.6223957538604736,zscore_3.5
+2025-08-08 16:52:00,pH salida a Parshall 02,1.6041667461395264,zscore_3.5
+2025-08-08 16:54:00,pH salida a Parshall 02,1.4684606790542605,zscore_3.5
+2025-08-08 16:55:00,pH salida a Parshall 02,1.346932888031006,zscore_3.5
+2025-08-08 16:56:00,pH salida a Parshall 02,1.168692111968994,zscore_3.5
+2025-08-08 16:57:00,pH salida a Parshall 02,0.9762731790542604,zscore_3.5
+2025-08-08 16:59:00,pH salida a Parshall 02,0.8000578880310059,zscore_3.5
+2025-08-08 17:00:00,pH salida a Parshall 02,0.7291666269302368,zscore_3.5
+2025-08-08 17:01:00,pH salida a Parshall 02,0.6501736640930176,zscore_3.5
+2025-08-08 17:02:00,pH salida a Parshall 02,0.5772569179534912,zscore_3.5
+2025-08-08 17:03:00,pH salida a Parshall 02,0.5772569179534912,zscore_3.5
+2025-08-08 17:05:00,pH salida a Parshall 02,0.5630787014961243,zscore_3.5
+2025-08-08 17:06:00,pH salida a Parshall 02,0.5367476940155029,zscore_3.5
+2025-08-08 17:07:00,pH salida a Parshall 02,0.5387731194496155,zscore_3.5
+2025-08-08 17:08:00,pH salida a Parshall 02,0.5124421119689941,zscore_3.5
+2025-08-08 17:10:00,pH salida a Parshall 02,0.5164930820465088,zscore_3.5
+2025-08-08 17:11:00,pH salida a Parshall 02,0.5266203880310059,zscore_3.5
+2025-08-08 17:12:00,pH salida a Parshall 02,0.5428240895271301,zscore_3.5
+2025-08-08 17:13:00,pH salida a Parshall 02,0.5549768805503845,zscore_3.5
+2025-08-08 17:14:00,pH salida a Parshall 02,0.6096643805503845,zscore_3.5
+2025-08-08 17:16:00,pH salida a Parshall 02,0.6258680820465088,zscore_3.5
+2025-08-08 17:17:00,pH salida a Parshall 02,0.6481481194496155,zscore_3.5
+2025-08-08 17:18:00,pH salida a Parshall 02,0.6623263359069824,zscore_3.5
+2025-08-08 17:19:00,pH salida a Parshall 02,0.6359953880310059,zscore_3.5
+2025-08-08 17:20:00,pH salida a Parshall 02,0.5752314925193787,zscore_3.5
+2025-08-08 17:22:00,pH salida a Parshall 02,0.5428240895271301,zscore_3.5
+2025-08-08 17:23:00,pH salida a Parshall 02,0.5144675970077515,zscore_3.5
+2025-08-08 17:24:00,pH salida a Parshall 02,0.5043402910232544,zscore_3.5
+2025-08-08 17:25:00,pH salida a Parshall 02,0.5225694179534912,zscore_3.5
+2025-08-08 17:26:00,pH salida a Parshall 02,0.5104166269302368,zscore_3.5
+2025-08-08 17:28:00,pH salida a Parshall 02,0.5286458730697632,zscore_3.5
+2025-08-08 17:29:00,pH salida a Parshall 02,0.5590277910232544,zscore_3.5
+2025-08-08 17:30:00,pH salida a Parshall 02,0.5651041269302368,zscore_3.5
+2025-08-08 17:31:00,pH salida a Parshall 02,0.5610532164573669,zscore_3.5
+2025-08-08 17:32:00,pH salida a Parshall 02,0.5448495149612427,zscore_3.5
+2025-08-08 17:34:00,pH salida a Parshall 02,0.5266203880310059,zscore_3.5
+2025-08-08 17:35:00,pH salida a Parshall 02,0.5104166269302368,zscore_3.5
+2025-08-08 17:36:00,pH salida a Parshall 02,0.4800347089767456,zscore_3.5
+2025-08-08 17:37:00,pH salida a Parshall 02,0.4800347089767456,zscore_3.5
+2025-08-08 17:38:00,pH salida a Parshall 02,0.4780092537403106,zscore_3.5
+2025-08-08 17:40:00,pH salida a Parshall 02,0.4780092537403106,zscore_3.5
+2025-08-08 17:41:00,pH salida a Parshall 02,0.4719328880310058,zscore_3.5
+2025-08-08 17:42:00,pH salida a Parshall 02,0.4840856194496155,zscore_3.5
+2025-08-08 17:43:00,pH salida a Parshall 02,0.4962384104728699,zscore_3.5
+2025-08-08 17:45:00,pH salida a Parshall 02,0.5023148059844971,zscore_3.5
+2025-08-08 17:46:00,pH salida a Parshall 02,0.4962384104728699,zscore_3.5
+2025-08-08 17:47:00,pH salida a Parshall 02,0.4739583432674408,zscore_3.5
+2025-08-08 17:48:00,pH salida a Parshall 02,0.4678819179534912,zscore_3.5
+2025-08-08 17:49:00,pH salida a Parshall 02,0.4577546119689941,zscore_3.5
+2025-08-08 17:51:00,pH salida a Parshall 02,0.4435763657093048,zscore_3.5
+2025-08-08 17:52:00,pH salida a Parshall 02,0.4375,zscore_3.5
+2025-08-08 17:53:00,pH salida a Parshall 02,0.4314236044883728,zscore_3.5
+2025-08-08 17:54:00,pH salida a Parshall 02,0.4334490597248077,zscore_3.5
+2025-08-08 17:55:00,pH salida a Parshall 02,0.4435763657093048,zscore_3.5
+2025-08-08 17:57:00,pH salida a Parshall 02,0.4435763657093048,zscore_3.5
+2025-08-08 17:58:00,pH salida a Parshall 02,0.4618055820465088,zscore_3.5
+2025-08-08 17:59:00,pH salida a Parshall 02,0.4739583432674408,zscore_3.5
+2025-08-08 18:00:00,pH salida a Parshall 02,0.4962384104728699,zscore_3.5
+2025-08-08 18:01:00,pH salida a Parshall 02,0.5043402910232544,zscore_3.5
+2025-08-08 18:03:00,pH salida a Parshall 02,0.5144675970077515,zscore_3.5
+2025-08-08 18:04:00,pH salida a Parshall 02,0.5185185074806213,zscore_3.5
+2025-08-08 18:05:00,pH salida a Parshall 02,0.5185185074806213,zscore_3.5
+2025-08-08 18:06:00,pH salida a Parshall 02,0.5144675970077515,zscore_3.5
+2025-08-08 18:07:00,pH salida a Parshall 02,0.5185185074806213,zscore_3.5
+2025-08-08 18:09:00,pH salida a Parshall 02,0.5124421119689941,zscore_3.5
+2025-08-08 18:10:00,pH salida a Parshall 02,0.5124421119689941,zscore_3.5
+2025-08-08 18:11:00,pH salida a Parshall 02,0.5144675970077515,zscore_3.5
+2025-08-08 18:12:00,pH salida a Parshall 02,0.5104166269302368,zscore_3.5
+2025-08-08 18:13:00,pH salida a Parshall 02,0.5063657164573669,zscore_3.5
+2025-08-08 18:15:00,pH salida a Parshall 02,0.5043402910232544,zscore_3.5
+2025-08-08 18:16:00,pH salida a Parshall 02,0.4881365895271301,zscore_3.5
+2025-08-08 18:17:00,pH salida a Parshall 02,0.4557291567325592,zscore_3.5
+2025-08-08 18:18:00,pH salida a Parshall 02,0.4293981492519378,zscore_3.5
+2025-08-08 18:20:00,pH salida a Parshall 02,0.4152199029922485,zscore_3.5
+2025-08-08 18:21:00,pH salida a Parshall 02,0.4050925970077514,zscore_3.5
+2025-08-08 18:22:00,pH salida a Parshall 02,0.3990162014961242,zscore_3.5
+2025-08-08 18:23:00,pH salida a Parshall 02,0.4010416865348816,zscore_3.5
+2025-08-08 18:24:00,pH salida a Parshall 02,0.4030671417713165,zscore_3.5
+2025-08-08 18:26:00,pH salida a Parshall 02,0.4030671417713165,zscore_3.5
+2025-08-08 18:27:00,pH salida a Parshall 02,0.4010416865348816,zscore_3.5
+2025-08-08 18:28:00,pH salida a Parshall 02,0.4030671417713165,zscore_3.5
+2025-08-08 18:29:00,pH salida a Parshall 02,0.3990162014961242,zscore_3.5
+2025-08-08 18:30:00,pH salida a Parshall 02,0.4030671417713165,zscore_3.5
+2025-08-08 18:32:00,pH salida a Parshall 02,0.4071180820465088,zscore_3.5
+2025-08-08 18:33:00,pH salida a Parshall 02,0.4131944179534912,zscore_3.5
+2025-08-08 18:34:00,pH salida a Parshall 02,0.4192708134651184,zscore_3.5
+2025-08-08 18:35:00,pH salida a Parshall 02,0.4293981492519378,zscore_3.5
+2025-08-08 18:36:00,pH salida a Parshall 02,0.4456018805503845,zscore_3.5
+2025-08-08 18:38:00,pH salida a Parshall 02,0.4699074029922485,zscore_3.5
+2025-08-08 18:39:00,pH salida a Parshall 02,0.4861111342906952,zscore_3.5
+2025-08-08 18:40:00,pH salida a Parshall 02,0.5144675970077515,zscore_3.5
+2025-08-08 18:41:00,pH salida a Parshall 02,0.5266203880310059,zscore_3.5
+2025-08-08 18:42:00,pH salida a Parshall 02,0.5651041269302368,zscore_3.5
+2025-08-08 18:44:00,pH salida a Parshall 02,0.5853587985038757,zscore_3.5
+2025-08-08 18:45:00,pH salida a Parshall 02,0.6157407164573669,zscore_3.5
+2025-08-08 18:46:00,pH salida a Parshall 02,0.6319444179534912,zscore_3.5
+2025-08-08 18:47:00,pH salida a Parshall 02,0.6440972089767456,zscore_3.5
+2025-08-08 18:49:00,pH salida a Parshall 02,0.6582754850387573,zscore_3.5
+2025-08-08 18:50:00,pH salida a Parshall 02,0.6704282164573669,zscore_3.5
+2025-08-08 18:51:00,pH salida a Parshall 02,0.6967592835426331,zscore_3.5
+2025-08-08 18:52:00,pH salida a Parshall 02,0.7068865895271301,zscore_3.5
+2025-08-08 18:53:00,pH salida a Parshall 02,0.7190393805503845,zscore_3.5
+2025-08-08 18:55:00,pH salida a Parshall 02,0.7129629850387573,zscore_3.5
+2025-08-08 18:56:00,pH salida a Parshall 02,0.7170138359069824,zscore_3.5
+2025-08-08 18:57:00,pH salida a Parshall 02,0.7554976940155029,zscore_3.5
+2025-08-08 18:58:00,pH salida a Parshall 02,0.8810763359069824,zscore_3.5
+2025-08-08 18:59:00,pH salida a Parshall 02,0.9418402314186096,zscore_3.5
+2025-08-08 19:01:00,pH salida a Parshall 02,1.073495388031006,zscore_3.5
+2025-08-08 19:02:00,pH salida a Parshall 02,1.201099514961243,zscore_3.5
+2025-08-08 19:03:00,pH salida a Parshall 02,1.456307888031006,zscore_3.5
+2025-08-08 19:04:00,pH salida a Parshall 02,1.5130207538604736,zscore_3.5
+2025-05-22 20:32:00,pH entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:41:00,pH entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:47:00,pH entrada a Ecualizador 1,42.0,zscore_3.5
+2025-05-23 13:33:00,pH entrada a Ecualizador 1,1.5616319179534912,zscore_3.5
+2025-05-23 13:35:00,pH entrada a Ecualizador 1,1.606192111968994,zscore_3.5
+2025-05-23 13:36:00,pH entrada a Ecualizador 1,1.6467013359069824,zscore_3.5
+2025-05-23 13:37:00,pH entrada a Ecualizador 1,1.6892361640930176,zscore_3.5
+2025-05-23 13:38:00,pH entrada a Ecualizador 1,1.729745388031006,zscore_3.5
+2025-05-23 13:39:00,pH entrada a Ecualizador 1,1.770254611968994,zscore_3.5
+2025-05-23 13:40:00,pH entrada a Ecualizador 1,1.806712985038757,zscore_3.5
+2025-05-23 13:41:00,pH entrada a Ecualizador 1,1.8411458730697632,zscore_3.5
+2025-05-23 13:42:00,pH entrada a Ecualizador 1,1.8755786418914795,zscore_3.5
+2025-05-23 13:43:00,pH entrada a Ecualizador 1,1.910011529922485,zscore_3.5
+2025-05-23 13:44:00,pH entrada a Ecualizador 1,1.946470022201538,zscore_3.5
+2025-05-23 13:45:00,pH entrada a Ecualizador 1,1.9809026718139648,zscore_3.5
+2025-05-23 13:46:00,pH entrada a Ecualizador 1,2.011284828186035,zscore_3.5
+2025-05-23 13:47:00,pH entrada a Ecualizador 1,2.043692111968994,zscore_3.5
+2025-05-23 13:48:00,pH entrada a Ecualizador 1,2.076099634170532,zscore_3.5
+2025-05-23 13:49:00,pH entrada a Ecualizador 1,2.104455947875977,zscore_3.5
+2025-05-23 13:50:00,pH entrada a Ecualizador 1,2.1328125,zscore_3.5
+2025-05-23 13:51:00,pH entrada a Ecualizador 1,2.1631946563720703,zscore_3.5
+2025-05-23 13:52:00,pH entrada a Ecualizador 1,2.191550970077514,zscore_3.5
+2025-05-23 13:53:00,pH entrada a Ecualizador 1,2.2178821563720703,zscore_3.5
+2025-05-23 13:54:00,pH entrada a Ecualizador 1,2.246238470077514,zscore_3.5
+2025-05-23 13:55:00,pH entrada a Ecualizador 1,2.274595022201538,zscore_3.5
+2025-05-23 13:56:00,pH entrada a Ecualizador 1,2.300925970077514,zscore_3.5
+2025-05-23 13:57:00,pH entrada a Ecualizador 1,2.3252315521240234,zscore_3.5
+2025-05-23 13:59:00,pH entrada a Ecualizador 1,2.3515625,zscore_3.5
+2025-05-23 14:00:00,pH entrada a Ecualizador 1,2.3799190521240234,zscore_3.5
+2025-05-23 14:01:00,pH entrada a Ecualizador 1,2.408275365829468,zscore_3.5
+2025-05-23 14:02:00,pH entrada a Ecualizador 1,2.4346065521240234,zscore_3.5
+2025-05-23 14:03:00,pH entrada a Ecualizador 1,2.464988470077514,zscore_3.5
+2025-05-23 14:04:00,pH entrada a Ecualizador 1,2.5014467239379883,zscore_3.5
+2025-05-23 14:05:00,pH entrada a Ecualizador 1,2.541955947875977,zscore_3.5
+2025-05-23 14:06:00,pH entrada a Ecualizador 1,2.584490776062012,zscore_3.5
+2025-05-23 14:07:00,pH entrada a Ecualizador 1,2.629050970077514,zscore_3.5
+2025-05-23 14:08:00,pH entrada a Ecualizador 1,2.677662134170532,zscore_3.5
+2025-05-23 14:09:00,pH entrada a Ecualizador 1,2.7181713581085205,zscore_3.5
+2025-05-23 14:10:00,pH entrada a Ecualizador 1,2.7647571563720703,zscore_3.5
+2025-05-23 14:11:00,pH entrada a Ecualizador 1,2.815393447875977,zscore_3.5
+2025-05-23 14:12:00,pH entrada a Ecualizador 1,2.8721065521240234,zscore_3.5
+2025-05-23 14:13:00,pH entrada a Ecualizador 1,2.932870388031006,zscore_3.5
+2025-05-23 14:14:00,pH entrada a Ecualizador 1,3.0037615299224854,zscore_3.5
+2025-05-23 14:15:00,pH entrada a Ecualizador 1,3.0787036418914795,zscore_3.5
+2025-05-23 14:16:00,pH entrada a Ecualizador 1,3.1556713581085205,zscore_3.5
+2025-05-23 14:17:00,pH entrada a Ecualizador 1,3.2326388359069824,zscore_3.5
+2025-05-23 14:18:00,pH entrada a Ecualizador 1,3.3055553436279297,zscore_3.5
+2025-05-23 14:19:00,pH entrada a Ecualizador 1,3.3744213581085205,zscore_3.5
+2025-05-23 14:20:00,pH entrada a Ecualizador 1,3.4453125,zscore_3.5
+2025-05-23 14:22:00,pH entrada a Ecualizador 1,3.522280216217041,zscore_3.5
+2025-05-23 14:23:00,pH entrada a Ecualizador 1,3.5850696563720703,zscore_3.5
+2025-05-23 14:24:00,pH entrada a Ecualizador 1,3.641782283782959,zscore_3.5
+2025-05-23 14:25:00,pH entrada a Ecualizador 1,3.696469783782959,zscore_3.5
+2025-05-23 14:26:00,pH entrada a Ecualizador 1,3.7430553436279297,zscore_3.5
+2025-05-23 14:27:00,pH entrada a Ecualizador 1,3.783565044403076,zscore_3.5
+2025-05-23 14:28:00,pH entrada a Ecualizador 1,3.815972328186035,zscore_3.5
+2025-05-23 14:29:00,pH entrada a Ecualizador 1,3.840277671813965,zscore_3.5
+2025-05-23 14:30:00,pH entrada a Ecualizador 1,3.8645832538604736,zscore_3.5
+2025-05-23 14:31:00,pH entrada a Ecualizador 1,3.896990776062012,zscore_3.5
+2025-05-23 14:32:00,pH entrada a Ecualizador 1,3.93142342567444,zscore_3.5
+2025-05-23 14:33:00,pH entrada a Ecualizador 1,3.5384838581085205,zscore_3.5
+2025-05-23 14:34:00,pH entrada a Ecualizador 1,3.8645832538604736,zscore_3.5
+2025-05-23 14:35:00,pH entrada a Ecualizador 1,3.9192707538604736,zscore_3.5
+2025-05-23 14:36:00,pH entrada a Ecualizador 1,3.9557292461395264,zscore_3.5
+2025-05-23 14:37:00,pH entrada a Ecualizador 1,3.969907283782959,zscore_3.5
+2025-05-23 14:38:00,pH entrada a Ecualizador 1,3.969907283782959,zscore_3.5
+2025-05-23 14:39:00,pH entrada a Ecualizador 1,3.9618053436279297,zscore_3.5
+2025-05-23 14:40:00,pH entrada a Ecualizador 1,3.949652671813965,zscore_3.5
+2025-05-23 14:41:00,pH entrada a Ecualizador 1,3.93142342567444,zscore_3.5
+2025-05-23 14:42:00,pH entrada a Ecualizador 1,3.905092716217041,zscore_3.5
+2025-05-23 14:44:00,pH entrada a Ecualizador 1,3.8828125,zscore_3.5
+2025-05-23 14:45:00,pH entrada a Ecualizador 1,3.856481313705444,zscore_3.5
+2025-05-23 14:46:00,pH entrada a Ecualizador 1,3.832175970077514,zscore_3.5
+2025-05-23 14:47:00,pH entrada a Ecualizador 1,3.805844783782959,zscore_3.5
+2025-05-23 14:48:00,pH entrada a Ecualizador 1,3.76533555984497,zscore_3.5
+2025-05-23 14:49:00,pH entrada a Ecualizador 1,3.720775604248047,zscore_3.5
+2025-05-23 14:50:00,pH entrada a Ecualizador 1,3.666088104248047,zscore_3.5
+2025-05-23 14:51:00,pH entrada a Ecualizador 1,3.607349395751953,zscore_3.5
+2025-05-23 14:52:00,pH entrada a Ecualizador 1,3.544559955596924,zscore_3.5
+2025-05-23 14:53:00,pH entrada a Ecualizador 1,3.479745388031006,zscore_3.5
+2025-05-23 14:54:00,pH entrada a Ecualizador 1,3.410879611968994,zscore_3.5
+2025-05-23 14:55:00,pH entrada a Ecualizador 1,3.337962865829468,zscore_3.5
+2025-05-23 14:56:00,pH entrada a Ecualizador 1,3.2630209922790527,zscore_3.5
+2025-05-23 14:57:00,pH entrada a Ecualizador 1,3.186053276062012,zscore_3.5
+2025-05-23 14:58:00,pH entrada a Ecualizador 1,3.1090855598449707,zscore_3.5
+2025-05-23 14:59:00,pH entrada a Ecualizador 1,3.034143447875977,zscore_3.5
+2025-05-23 15:00:00,pH entrada a Ecualizador 1,2.957175970077514,zscore_3.5
+2025-05-23 15:01:00,pH entrada a Ecualizador 1,2.886284828186035,zscore_3.5
+2025-05-23 15:02:00,pH entrada a Ecualizador 1,2.8194446563720703,zscore_3.5
+2025-05-23 15:03:00,pH entrada a Ecualizador 1,2.752604007720948,zscore_3.5
+2025-05-23 15:04:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:06:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:07:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:08:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:09:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:10:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:11:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:12:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:13:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:14:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:15:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:16:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:17:00,pH entrada a Ecualizador 1,14.0,zscore_3.5
+2025-05-23 15:18:00,pH entrada a Ecualizador 1,13.90277862548828,zscore_3.5
+2025-05-23 15:19:00,pH entrada a Ecualizador 1,13.366029739379885,zscore_3.5
+2025-05-23 15:20:00,pH entrada a Ecualizador 1,12.75434112548828,zscore_3.5
+2025-05-23 15:21:00,pH entrada a Ecualizador 1,12.268228530883787,zscore_3.5
+2025-05-23 15:22:00,pH entrada a Ecualizador 1,11.77401638031006,zscore_3.5
+2025-05-23 15:23:00,pH entrada a Ecualizador 1,11.293981552124023,zscore_3.5
+2025-05-23 15:24:00,pH entrada a Ecualizador 1,10.836226463317873,zscore_3.5
+2025-05-23 15:25:00,pH entrada a Ecualizador 1,10.246817588806152,zscore_3.5
+2025-05-23 15:26:00,pH entrada a Ecualizador 1,9.864005088806152,zscore_3.5
+2025-05-23 15:27:00,pH entrada a Ecualizador 1,9.456886291503906,zscore_3.5
+2025-05-23 15:28:00,pH entrada a Ecualizador 1,9.06192111968994,zscore_3.5
+2025-05-23 15:30:00,pH entrada a Ecualizador 1,8.713541030883789,zscore_3.5
+2025-05-23 15:31:00,pH entrada a Ecualizador 1,8.357060432434082,zscore_3.5
+2025-05-23 15:32:00,pH entrada a Ecualizador 1,8.04513931274414,zscore_3.5
+2025-05-23 15:33:00,pH entrada a Ecualizador 1,7.812210559844971,zscore_3.5
+2025-05-23 15:34:00,pH entrada a Ecualizador 1,7.599537372589111,zscore_3.5
+2025-05-23 15:35:00,pH entrada a Ecualizador 1,7.3828125,zscore_3.5
+2025-05-23 15:36:00,pH entrada a Ecualizador 1,7.170139312744141,zscore_3.5
+2025-05-23 15:37:00,pH entrada a Ecualizador 1,7.004051208496094,zscore_3.5
+2025-05-23 15:38:00,pH entrada a Ecualizador 1,6.823784828186035,zscore_3.5
+2025-05-23 15:39:00,pH entrada a Ecualizador 1,6.659722328186035,zscore_3.5
+2025-05-23 15:40:00,pH entrada a Ecualizador 1,6.463252544403076,zscore_3.5
+2025-05-23 15:41:00,pH entrada a Ecualizador 1,6.301215171813965,zscore_3.5
+2025-05-23 15:42:00,pH entrada a Ecualizador 1,6.228298187255859,zscore_3.5
+2025-05-23 15:43:00,pH entrada a Ecualizador 1,6.114872455596924,zscore_3.5
+2025-05-23 15:44:00,pH entrada a Ecualizador 1,6.15538215637207,zscore_3.5
+2025-05-23 15:45:00,pH entrada a Ecualizador 1,6.262731552124023,zscore_3.5
+2025-05-23 15:46:00,pH entrada a Ecualizador 1,6.163483619689941,zscore_3.5
+2025-05-23 15:47:00,pH entrada a Ecualizador 1,6.169559955596924,zscore_3.5
+2025-05-23 15:48:00,pH entrada a Ecualizador 1,6.1209492683410645,zscore_3.5
+2025-05-23 15:49:00,pH entrada a Ecualizador 1,6.023726940155029,zscore_3.5
+2025-05-23 15:50:00,pH entrada a Ecualizador 1,5.971065044403076,zscore_3.5
+2025-05-23 15:51:00,pH entrada a Ecualizador 1,5.975115776062012,zscore_3.5
+2025-05-23 15:53:00,pH entrada a Ecualizador 1,5.942708015441895,zscore_3.5
+2025-05-23 15:54:00,pH entrada a Ecualizador 1,5.946759223937988,zscore_3.5
+2025-05-23 15:55:00,pH entrada a Ecualizador 1,5.298610687255859,zscore_3.5
+2025-05-23 16:35:00,pH entrada a Ecualizador 1,11.583622932434082,zscore_3.5
+2025-05-23 16:36:00,pH entrada a Ecualizador 1,11.614005088806152,zscore_3.5
+2025-05-23 16:37:00,pH entrada a Ecualizador 1,11.63628387451172,zscore_3.5
+2025-05-23 16:38:00,pH entrada a Ecualizador 1,11.6484375,zscore_3.5
+2025-05-23 16:39:00,pH entrada a Ecualizador 1,11.650463104248049,zscore_3.5
+2025-05-23 16:41:00,pH entrada a Ecualizador 1,11.66059112548828,zscore_3.5
+2025-05-23 16:42:00,pH entrada a Ecualizador 1,11.66464138031006,zscore_3.5
+2025-05-23 16:43:00,pH entrada a Ecualizador 1,11.670717239379885,zscore_3.5
+2025-05-23 16:44:00,pH entrada a Ecualizador 1,11.676794052124023,zscore_3.5
+2025-05-23 16:45:00,pH entrada a Ecualizador 1,11.680845260620115,zscore_3.5
+2025-05-23 16:46:00,pH entrada a Ecualizador 1,11.682869911193848,zscore_3.5
+2025-05-23 16:47:00,pH entrada a Ecualizador 1,11.701099395751951,zscore_3.5
+2025-05-23 16:48:00,pH entrada a Ecualizador 1,11.69097137451172,zscore_3.5
+2025-05-23 16:49:00,pH entrada a Ecualizador 1,11.695023536682127,zscore_3.5
+2025-05-23 16:50:00,pH entrada a Ecualizador 1,11.707176208496094,zscore_3.5
+2025-05-23 16:51:00,pH entrada a Ecualizador 1,11.707176208496094,zscore_3.5
+2025-05-23 16:52:00,pH entrada a Ecualizador 1,11.707176208496094,zscore_3.5
+2025-05-23 16:53:00,pH entrada a Ecualizador 1,11.711226463317873,zscore_3.5
+2025-05-23 16:54:00,pH entrada a Ecualizador 1,11.713252067565918,zscore_3.5
+2025-05-23 16:55:00,pH entrada a Ecualizador 1,11.71527862548828,zscore_3.5
+2025-05-23 16:56:00,pH entrada a Ecualizador 1,11.721353530883787,zscore_3.5
+2025-07-28 22:05:00,pH entrada a Ecualizador 1,21.0,zscore_3.5
+2025-07-28 22:14:00,pH entrada a Ecualizador 1,21.0,zscore_3.5
+2025-05-22 20:32:00,pH salida y control Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:41:00,pH salida y control Ecualizador 1,42.0,zscore_3.5
+2025-05-22 20:47:00,pH salida y control Ecualizador 1,42.0,zscore_3.5
+2025-07-28 22:05:00,pH salida y control Ecualizador 1,24.600737810134888,zscore_3.5
+2025-07-28 22:14:00,pH salida y control Ecualizador 1,24.60872387886048,zscore_3.5
