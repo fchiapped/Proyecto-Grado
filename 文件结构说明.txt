@@ -1,0 +1,7 @@
+new_pipeline/
+    ├── config.yaml          # 配置文件
+    ├── data_loader.py      # 数据加载模块
+    ├── quality_analyzer.py # 数据质量分析模块
+    ├── anomaly_detector.py # 异常检测模块
+    ├── alert_generator.py  # 警报生成模块
+    └── run_pipeline.py     # 主运行脚本

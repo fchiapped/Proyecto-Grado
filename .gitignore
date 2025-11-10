@@ -1,2 +1,7 @@
 /Proyecto Herramienta para monitoreo de la calidad de datos
 **/__pycache__/
+__pycache__/
+*.pyc
+resultados_analisis/
+*.txt
+*.png
