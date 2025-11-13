@@ -92,48 +92,48 @@ class AutoAnalyzer:
         print(f"Informe guardado en: {report_dir.absolute()}")
         
     def _save_basic_info(self, df: pd.DataFrame, report_dir: Path):
-        """保存基本数据信息"""
+        """Guardar información básica de los datos"""
         info = self.pipeline.generate_basic_info(df)
         
-        with open(report_dir / "1_基本信息.txt", "w", encoding='utf-8') as f:
-            f.write("数据基本信息\n")
+        with open(report_dir / "1_informacion_basica.txt", "w", encoding='utf-8') as f:
+            f.write("Información básica de los datos\n")
             f.write("=" * 50 + "\n\n")
-            f.write(f"数据形状: {info['shape']}\n\n")
-            f.write("数据类型:\n")
+            f.write(f"Forma de los datos: {info['shape']}\n\n")
+            f.write("Tipos de datos:\n")
             for col, dtype in info['dtypes'].items():
                 f.write(f"  {col}: {dtype}\n")
-            f.write("\n缺失值统计:\n")
+            f.write("\nValores faltantes:\n")
             for col, missing in info['missing_values'].items():
                 if missing > 0:
                     f.write(f"  {col}: {missing}\n")
             
     def _analyze_data_quality(self, df: pd.DataFrame, report_dir: Path):
-        """分析数据质量"""
+        """Analizar la calidad de los datos"""
         quality_report = self.pipeline.generate_data_quality_report(df)
         
-        with open(report_dir / "2_数据质量报告.txt", "w", encoding='utf-8') as f:
-            f.write("数据质量报告\n")
+        with open(report_dir / "2_reporte_calidad_datos.txt", "w", encoding='utf-8') as f:
+            f.write("Reporte de calidad de datos\n")
             f.write("=" * 50 + "\n\n")
             
-            f.write("时间覆盖范围:\n")
-            f.write(f"起始时间: {quality_report['time_range']['start']}\n")
-            f.write(f"结束时间: {quality_report['time_range']['end']}\n\n")
+            f.write("Cobertura temporal:\n")
+            f.write(f"Inicio: {quality_report['time_range']['start']}\n")
+            f.write(f"Fin: {quality_report['time_range']['end']}\n\n")
             
-            f.write("数据完整性:\n")
+            f.write("Integridad de datos:\n")
             comp = quality_report['completeness']
-            f.write(f"有数据的日期数: {comp['dates_with_data']}\n")
-            f.write(f"无数据的日期数: {comp['dates_without_data']}\n")
-            f.write(f"有数据占比: {comp['percentage_with_data']}%\n")
-            f.write(f"无数据占比: {comp['percentage_without_data']}%\n\n")
+            f.write(f"Días con datos: {comp['dates_with_data']}\n")
+            f.write(f"Días sin datos: {comp['dates_without_data']}\n")
+            f.write(f"Porcentaje con datos: {comp['percentage_with_data']}%\n")
+            f.write(f"Porcentaje sin datos: {comp['percentage_without_data']}%\n\n")
             
             # 显示缺失数据的日期范围（lagunas）
             lagunas = quality_report['lagunas']
             if lagunas:
-                f.write("缺失数据的时间段（Lagunas）:\n")
+                f.write("Periodos sin datos (Lagunas):\n")
                 for inicio, fin in lagunas[:10]:
-                    f.write(f"  从 {inicio} 到 {fin}\n")
+                    f.write(f"  De {inicio} a {fin}\n")
                 if len(lagunas) > 10:
-                    f.write(f"  ... 还有 {len(lagunas) - 10} 个时间段\n")
+                    f.write(f"  ... {len(lagunas) - 10} periodos más\n")
                     
     def _analyze_outliers(self, df: pd.DataFrame, report_dir: Path):
         """分析异常值"""
@@ -165,7 +165,7 @@ class AutoAnalyzer:
             
             # 保存图表
             fig.tight_layout()
-            fig.savefig(report_dir / f"3_异常值分析_{col}.png", dpi=120, bbox_inches="tight")
+            fig.savefig(report_dir / f"3_analisis_atipicos_{col}.png", dpi=120, bbox_inches="tight")
             plt.close(fig)
             gc.collect()
             
@@ -175,17 +175,17 @@ class AutoAnalyzer:
         # 保存异常值CSV
         if outlier_results['all_outliers']:
             all_outliers_df = pd.concat(outlier_results['all_outliers'], ignore_index=True)
-            all_outliers_df.to_csv(report_dir / "3_异常值数据.csv", index=False, encoding='utf-8-sig')
-            print(f"\nDatos de atípicos exportados a: 3_异常值数据.csv (total {len(all_outliers_df)} filas)")
+            all_outliers_df.to_csv(report_dir / "3_atipicos.csv", index=False, encoding='utf-8-sig')
+            print(f"\nDatos de atípicos exportados a: 3_atipicos.csv (total {len(all_outliers_df)} filas)")
         else:
             print("\nNo se detectaron atípicos")
         
         # 保存统计
-        with open(report_dir / "3_异常值统计.txt", "w", encoding='utf-8') as f:
-            f.write("异常值统计\n")
+        with open(report_dir / "3_resumen_atipicos.txt", "w", encoding='utf-8') as f:
+            f.write("Resumen de atípicos\n")
             f.write("=" * 50 + "\n\n")
             for col, count in outlier_results['summary'].items():
-                f.write(f"{col}: {count} 个异常值\n")
+                f.write(f"{col}: {count} atípicos\n")
     
     def _analyze_ar(self, df: pd.DataFrame, report_dir: Path):
         """AR 模型分析（预留接口）"""
@@ -194,13 +194,13 @@ class AutoAnalyzer:
         
         result = self.pipeline.run_ar_analysis()
         
-        with open(report_dir / "4_AR分析报告.txt", "w", encoding='utf-8') as f:
-            f.write("AR 模型分析报告\n")
+        with open(report_dir / "4_reporte_AR.txt", "w", encoding='utf-8') as f:
+            f.write("Reporte de modelo AR\n")
             f.write("=" * 50 + "\n\n")
             
             if result.get('status') == 'not_implemented':
-                f.write("⚠️  AR 模型分析功能尚未实现\n")
-                f.write("等待在 Modelos/AR_model.ipynb 中完成后集成\n")
+                f.write("⚠️  La funcionalidad de análisis del modelo AR aún no está implementada\n")
+                f.write("A la espera de completarlo en Modelos/AR_model.ipynb para integrarlo\n")
             else:
                 f.write(str(result))
     
@@ -211,13 +211,13 @@ class AutoAnalyzer:
         
         result = self.pipeline.run_diff_analysis()
         
-        with open(report_dir / "5_差分分析报告.txt", "w", encoding='utf-8') as f:
-            f.write("差分分析报告\n")
+        with open(report_dir / "5_reporte_diferencias.txt", "w", encoding='utf-8') as f:
+            f.write("Reporte de diferencias\n")
             f.write("=" * 50 + "\n\n")
             
             if result.get('status') == 'not_implemented':
-                f.write("⚠️  差分分析功能尚未实现\n")
-                f.write("等待在 Modelos/DIFF_model.ipynb 中完成后集成\n")
+                f.write("⚠️  La funcionalidad de análisis de diferencias aún no está implementada\n")
+                f.write("A la espera de completarlo en Modelos/DIFF_model.ipynb para integrarlo\n")
             else:
                 f.write(str(result))
     
@@ -228,18 +228,18 @@ class AutoAnalyzer:
         
         drift_result = self.pipeline.run_drift_analysis()
         
-        with open(report_dir / "6_Drift分析报告.txt", "w", encoding='utf-8') as f:
-            f.write("数据漂移分析报告\n")
+        with open(report_dir / "6_reporte_drift.txt", "w", encoding='utf-8') as f:
+            f.write("Reporte de deriva de datos\n")
             f.write("=" * 50 + "\n\n")
             
             if drift_result.get('status') == 'not_implemented':
-                f.write("⚠️  Drift 分析功能尚未实现\n")
-                f.write("等待在 funciones_analisis.py 中添加相关函数\n")
+                f.write("⚠️  La funcionalidad de análisis de deriva (drift) aún no está implementada\n")
+                f.write("A la espera de añadir la función correspondiente en funciones_analisis.py\n")
             else:
-                f.write(f"漂移检测: {'是' if drift_result.get('drift_detected') else '否'}\n")
-                f.write(f"漂移分数: {drift_result.get('drift_score', 0):.4f}\n")
+                f.write(f"Deriva detectada: {'Sí' if drift_result.get('drift_detected') else 'No'}\n")
+                f.write(f"Puntaje de deriva: {drift_result.get('drift_score', 0):.4f}\n")
                 if drift_result.get('drift_features'):
-                    f.write("\n发生漂移的特征:\n")
+                    f.write("\nCaracterísticas con deriva:\n")
                     for feat in drift_result['drift_features']:
                         f.write(f"  - {feat}\n")
 

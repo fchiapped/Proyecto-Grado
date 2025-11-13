@@ -194,38 +194,38 @@ class PipelineManager:
     def run_drift_analysis(self, reference_data: Optional[pd.DataFrame] = None, 
                           method: str = 'auto', **kwargs):
         """
-        运行数据漂移分析
+        Ejecutar análisis de deriva de datos (drift)
         
-        接口说明：
-        此方法会调用 Analisis/funciones_analisis.py 中的 drift 分析函数。
-        当你的同事完成 drift 分析代码后，只需在 funciones_analisis.py 中添加对应函数，
-        然后在此处调用即可，无需修改 pipeline 其他部分。
+        Descripción de la interfaz:
+        Este método invoca la función de análisis de deriva en Analisis/funciones_analisis.py.
+        Cuando el equipo complete el código de drift, basta con añadir la función correspondiente
+        en funciones_analisis.py y llamarla aquí; no es necesario modificar otras partes del pipeline.
         
         Args:
-            reference_data: 参考数据集（可选，用于对比分析）
-            method: drift 检测方法，默认 'auto'
-                   可选: 'statistical', 'model_based', 'distance_based' 等
-            **kwargs: 其他参数传递给 drift 分析函数
+            reference_data: DataFrame de referencia (opcional, para comparación)
+            method: método de detección de drift, por defecto 'auto'
+                    Opciones: 'statistical', 'model_based', 'distance_based', etc.
+            **kwargs: parámetros adicionales a pasar a la función de drift
             
         Returns:
-            drift 分析结果字典，包含：
-            - drift_detected: bool, 是否检测到漂移
-            - drift_score: float, 漂移分数
-            - drift_features: list, 发生漂移的特征列表
-            - report: dict, 详细报告
+            Diccionario con resultados del análisis de drift, que incluye:
+            - drift_detected: bool, si se detectó deriva
+            - drift_score: float, puntaje de deriva
+            - drift_features: list, características con deriva
+            - report: dict, informe detallado
             
-        示例用法：
+        Ejemplo de uso:
             pm = PipelineManager()
             pm.load_data("data.csv")
             result = pm.run_drift_analysis()
             if result['drift_detected']:
-                print(f"检测到漂移，分数: {result['drift_score']}")
+                print(f"Se detectó deriva, puntaje: {result['drift_score']}")
         """
         if self.df is None:
             raise ValueError("请先加载数据")
         
-        # TODO: 等待同事实现 drift 分析函数
-        # 预期在 funciones_analisis.py 中有类似函数：
+        # TODO: A la espera de que el equipo implemente la función de drift
+        # Se espera una función en funciones_analisis.py con la forma:
         # def analizar_drift(df, reference_df=None, method='auto', **kwargs):
         #     ...
         #     return {
@@ -235,7 +235,7 @@ class PipelineManager:
         #         'report': {...}
         #     }
         
-        # 当函数准备好后，取消下面的注释：
+        # Cuando la función esté lista, descomenta lo siguiente:
         # return self.analysis_funcs.analizar_drift(
         #     self.df, 
         #     reference_data=reference_data,
@@ -243,8 +243,8 @@ class PipelineManager:
         #     **kwargs
         # )
         
-        # 临时返回占位结果
-        print("⚠️  Drift 分析功能尚未实现，等待 funciones_analisis.py 中添加相关函数")
+        # Resultado provisional como marcador de posición
+        print("⚠️  La funcionalidad de análisis de deriva (drift) aún no está implementada; a la espera de añadir la función correspondiente en funciones_analisis.py")
         return {
             'drift_detected': False,
             'drift_score': 0.0,
@@ -358,32 +358,32 @@ class PipelineManager:
     
     def run_ar_analysis(self) -> dict:
         """
-        AR模型分析（预留接口）
+        Análisis de modelo AR (reserva)
         
         Returns:
-            AR分析结果字典
+            Diccionario con resultados del análisis AR
         """
         if self.df is None:
             raise ValueError("请先加载数据")
         
-        print("⚠️  AR 模型分析功能尚未实现")
+        print("⚠️  La funcionalidad de análisis del modelo AR aún no está implementada")
         return {
             'status': 'not_implemented',
-            'message': 'AR 模型分析等待实现'
+            'message': 'Análisis de modelo AR pendiente de implementación'
         }
     
     def run_diff_analysis(self) -> dict:
         """
-        差分分析（预留接口）
+        Análisis de diferencias (reserva)
         
         Returns:
-            差分分析结果字典
+            Diccionario con resultados del análisis de diferencias
         """
         if self.df is None:
             raise ValueError("请先加载数据")
         
-        print("⚠️  差分分析功能尚未实现")
+        print("⚠️  La funcionalidad de análisis de diferencias aún no está implementada")
         return {
             'status': 'not_implemented',
-            'message': '差分分析等待实现'
+            'message': 'Análisis de diferencias pendiente de implementación'
         }
