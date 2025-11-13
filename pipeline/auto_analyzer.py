@@ -51,14 +51,14 @@ class AutoAnalyzer:
         # 重新加载分析函数
         try:
             self.pipeline.reload_analysis_functions()
-            print("已重新加载 Analisis/funciones_analisis.py（运行时热重载）")
+            print("Funciones de análisis recargadas (hot-reload) desde Analisis/funciones_analisis.py")
         except Exception as e:
-            print(f"警告：重新加载分析函数失败。错误: {e}")
+            print(f"Advertencia: no se pudieron recargar las funciones de análisis. Error: {e}")
         
         # 提取工厂名称
         plant_name = Path(data_file).stem.split('_')[1]
         print(f"\n{'='*50}")
-        print(f"开始分析 {plant_name} 的数据...")
+        print(f"Iniciando análisis de datos para {plant_name}...")
         
         # 创建报告目录
         report_dir = self.create_report_dir(plant_name)
@@ -88,8 +88,8 @@ class AutoAnalyzer:
             self._analyze_drift(df, report_dir)
         
         end_time = time()
-        print(f"\n分析完成！用时: {end_time - start_time:.2f}秒")
-        print(f"报告保存在: {report_dir.absolute()}")
+        print(f"\n¡Análisis finalizado! Tiempo: {end_time - start_time:.2f} s")
+        print(f"Informe guardado en: {report_dir.absolute()}")
         
     def _save_basic_info(self, df: pd.DataFrame, report_dir: Path):
         """保存基本数据信息"""
@@ -143,7 +143,7 @@ class AutoAnalyzer:
         numeric_cols = df.select_dtypes(include=['float64', 'int64']).columns
         numeric_cols = [col for col in numeric_cols if col != 'date_time']
         
-        print(f"\n开始异常值分析，共 {len(numeric_cols)} 个变量需要处理...")
+        print(f"\nIniciando análisis de atípicos; total de variables: {len(numeric_cols)}")
         print("-" * 50)
         
         # 使用 pipeline 批量分析
@@ -152,7 +152,7 @@ class AutoAnalyzer:
         # 生成图表
         for i, col in enumerate(numeric_cols, 1):
             start_time = time()
-            print(f"[{i}/{len(numeric_cols)}] 分析 {col} 的异常值...", end=' ')
+            print(f"[{i}/{len(numeric_cols)}] Analizando atípicos de {col}...", end=' ')
             
             # 创建图表
             fig, ax = plt.subplots(figsize=(15, 5))
@@ -170,15 +170,15 @@ class AutoAnalyzer:
             gc.collect()
             
             outlier_count = outlier_results['summary'][col]
-            print(f"完成! ({time() - start_time:.2f}秒, 发现 {outlier_count} 个异常值)")
+            print(f"Listo! ({time() - start_time:.2f}s, {outlier_count} atípicos)")
         
         # 保存异常值CSV
         if outlier_results['all_outliers']:
             all_outliers_df = pd.concat(outlier_results['all_outliers'], ignore_index=True)
             all_outliers_df.to_csv(report_dir / "3_异常值数据.csv", index=False, encoding='utf-8-sig')
-            print(f"\n异常值数据已导出到: 3_异常值数据.csv (共 {len(all_outliers_df)} 行)")
+            print(f"\nDatos de atípicos exportados a: 3_异常值数据.csv (total {len(all_outliers_df)} filas)")
         else:
-            print("\n未检测到异常值")
+            print("\nNo se detectaron atípicos")
         
         # 保存统计
         with open(report_dir / "3_异常值统计.txt", "w", encoding='utf-8') as f:
@@ -189,7 +189,7 @@ class AutoAnalyzer:
     
     def _analyze_ar(self, df: pd.DataFrame, report_dir: Path):
         """AR 模型分析（预留接口）"""
-        print(f"\n开始 AR 模型分析...")
+        print(f"\nIniciando análisis AR...")
         print("-" * 50)
         
         result = self.pipeline.run_ar_analysis()
@@ -206,7 +206,7 @@ class AutoAnalyzer:
     
     def _analyze_diff(self, df: pd.DataFrame, report_dir: Path):
         """差分分析（预留接口）"""
-        print(f"\n开始差分分析...")
+        print(f"\nIniciando análisis de diferencias...")
         print("-" * 50)
         
         result = self.pipeline.run_diff_analysis()
@@ -223,7 +223,7 @@ class AutoAnalyzer:
     
     def _analyze_drift(self, df: pd.DataFrame, report_dir: Path):
         """Drift 分析（预留接口）"""
-        print(f"\n开始数据漂移分析...")
+        print(f"\nIniciando análisis de deriva (drift)...")
         print("-" * 50)
         
         drift_result = self.pipeline.run_drift_analysis()
@@ -247,7 +247,7 @@ class AutoAnalyzer:
 def main():
     """主交互界面"""
     print("="*70)
-    print("水处理厂数据自动分析系统")
+    print("Sistema automático de análisis de plantas de tratamiento de agua")
     print("="*70)
     
     analyzer = AutoAnalyzer()
@@ -263,35 +263,35 @@ def main():
     
     while True:
         print("\n" + "="*70)
-        print("🏠 主菜单")
+        print("🏠 Menú principal")
         print("="*70)
-        print("  [1] 分析文件")
-        print("  [2] 分析设置")
-        print("  [0] 退出")
+        print("  [1] Analizar archivo")
+        print("  [2] Configuración de análisis")
+        print("  [0] Salir")
         print("-"*70)
         
-        main_choice = input("请选择操作（输入编号）: ").strip()
+        main_choice = input("Seleccione una opción (número): ").strip()
         
         if main_choice == '0':
-            print("\n👋 再见！")
+            print("\n👋 ¡Hasta luego!")
             break
-            
+        
         elif main_choice == '1':
             # ===== 文件选择和分析 =====
             data_dir = analyzer.project_root / "df_procesados"
             csv_files = list(data_dir.glob("df_planta_*.csv"))
             
             if not csv_files:
-                print(f"❌ 未在 {data_dir} 找到符合格式的数据文件")
-                input("\n按 Enter 返回主菜单...")
+                print(f"❌ No se encontraron archivos de datos válidos en {data_dir}")
+                input("\nPulse Enter para volver al menú principal...")
                 continue
             
-            print("\n可用的数据文件:")
+            print("\nArchivos disponibles:")
             for i, file in enumerate(csv_files, 1):
                 print(f"  [{i}] {file.name}")
-            print(f"  [0] 返回主菜单")
+            print(f"  [0] Volver al menú principal")
             
-            file_choice = input("\n请选择要分析的文件（输入编号）: ").strip()
+            file_choice = input("\nSeleccione el archivo a analizar (número): ").strip()
             
             if file_choice == '0':
                 continue
@@ -301,17 +301,17 @@ def main():
                 if 0 <= file_idx < len(csv_files):
                     chosen_path = csv_files[file_idx]
                 else:
-                    print("❌ 无效的文件编号")
-                    input("\n按 Enter 继续...")
+                    print("❌ Número de archivo inválido")
+                    input("\nPulse Enter para continuar...")
                     continue
             except ValueError:
-                print("❌ 请输入有效的数字")
-                input("\n按 Enter 继续...")
+                print("❌ Ingrese un número válido")
+                input("\nPulse Enter para continuar...")
                 continue
             
             print(f"\n{'='*70}")
-            print(f"开始分析: {chosen_path.name}")
-            print(f"当前配置: 异常值={config['outliers']}, 空档={config['lagunas']}, "
+            print(f"Iniciando análisis: {chosen_path.name}")
+            print(f"Configuración actual: Atípicos={config['outliers']}, Lagunas={config['lagunas']}, "
                   f"AR={config['ar']}, DIFF={config['diff']}, Drift={config['drift']}")
             print(f"{'='*70}")
 
@@ -325,50 +325,50 @@ def main():
                     do_drift=config['drift']
                 )
             except Exception as e:
-                print(f"分析 {chosen_path.name} 时出错: {str(e)}")
+                print(f"Error analizando {chosen_path.name}: {str(e)}")
                 import traceback
                 print(traceback.format_exc())
             finally:
-                input("\n按 Enter 返回主菜单...")
+                input("\nPulse Enter para volver al menú principal...")
         
         elif main_choice == '2':
             # ===== 进入分析设置子菜单 =====
             while True:
                 print("\n" + "="*70)
-                print("⚙️  分析设置菜单")
+                print("⚙️  Menú de configuración de análisis")
                 print("="*70)
-                print(f"  [1] 异常值分析     : {'✓ 开启' if config['outliers'] else '✗ 关闭'} (含图像)")
-                print(f"  [2] 空档分析       : {'✓ 开启' if config['lagunas'] else '✗ 关闭'} (Lagunas)")
-                print(f"  [3] AR模型分析     : {'✓ 开启' if config['ar'] else '✗ 关闭'} (预留)")
-                print(f"  [4] 差分分析       : {'✓ 开启' if config['diff'] else '✗ 关闭'} (预留)")
-                print(f"  [5] Drift分析      : {'✓ 开启' if config['drift'] else '✗ 关闭'} (预留)")
-                print("  [0] 返回主菜单")
+                print(f"  [1] Análisis de atípicos : {'✓ Activado' if config['outliers'] else '✗ Desactivado'} (con gráficos)")
+                print(f"  [2] Análisis de lagunas  : {'✓ Activado' if config['lagunas'] else '✗ Desactivado'}")
+                print(f"  [3] Análisis AR          : {'✓ Activado' if config['ar'] else '✗ Desactivado'} (reserva)")
+                print(f"  [4] Análisis de diferencias : {'✓ Activado' if config['diff'] else '✗ Desactivado'} (reserva)")
+                print(f"  [5] Análisis de deriva (drift) : {'✓ Activado' if config['drift'] else '✗ Desactivado'} (reserva)")
+                print("  [0] Volver al menú principal")
                 print("-"*70)
                 
-                setting_choice = input("请选择要切换的选项（输入编号）: ").strip()
+                setting_choice = input("Seleccione una opción para alternar (número): ").strip()
                 
                 if setting_choice == '0':
                     break
                 elif setting_choice == '1':
                     config['outliers'] = not config['outliers']
-                    print(f"✓ 异常值分析已{'开启' if config['outliers'] else '关闭'}")
+                    print(f"✓ Análisis de atípicos {'Activado' if config['outliers'] else 'Desactivado'}")
                 elif setting_choice == '2':
                     config['lagunas'] = not config['lagunas']
-                    print(f"✓ 空档分析已{'开启' if config['lagunas'] else '关闭'}")
+                    print(f"✓ Análisis de lagunas {'Activado' if config['lagunas'] else 'Desactivado'}")
                 elif setting_choice == '3':
                     config['ar'] = not config['ar']
-                    print(f"✓ AR模型分析已{'开启' if config['ar'] else '关闭'}")
+                    print(f"✓ Análisis AR {'Activado' if config['ar'] else 'Desactivado'}")
                 elif setting_choice == '4':
                     config['diff'] = not config['diff']
-                    print(f"✓ 差分分析已{'开启' if config['diff'] else '关闭'}")
+                    print(f"✓ Análisis de diferencias {'Activado' if config['diff'] else 'Desactivado'}")
                 elif setting_choice == '5':
                     config['drift'] = not config['drift']
-                    print(f"✓ Drift分析已{'开启' if config['drift'] else '关闭'}")
+                    print(f"✓ Análisis de deriva (drift) {'Activado' if config['drift'] else 'Desactivado'}")
                 else:
-                    print("❌ 无效选项，请重试。")
+                    print("❌ Opción no válida, inténtelo de nuevo.")
         
         else:
-            print("❌ 无效选项，请输入 0、1 或 2。")
+            print("❌ Opción no válida. Ingrese 0, 1 o 2.")
 
 if __name__ == "__main__":
     main()
