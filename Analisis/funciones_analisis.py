@@ -237,3 +237,204 @@ def periocidad_data(df, columna: str, dia: int = None, mes: int = None):
                    "std_valor": std_v}
     
     return diccionario
+
+
+# ============================================================================
+# Análisis de diferencias centradas (diff)
+# ============================================================================
+
+def calcular_diff_centrada(serie: pd.Series) -> pd.Series:
+    """
+    Calcula la diferencia centrada mínima para cada punto.
+    
+    Para cada valor, compara con el anterior y el siguiente,
+    tomando la menor de las dos diferencias absolutas.
+    
+    Args:
+        serie: Serie temporal con índice datetime
+        
+    Returns:
+        Serie con las diferencias centradas
+    """
+    val_prev = serie.shift(1).fillna(serie.shift(2))
+    val_sig = serie.shift(-1).fillna(serie.shift(-2))
+    
+    diff_prev = abs(val_prev - serie)
+    diff_sig = abs(val_sig - serie)
+    
+    diff_centrada = pd.Series(
+        data=[min(p, s) if pd.notna(p) and pd.notna(s) else float('nan') 
+              for p, s in zip(diff_prev, diff_sig)],
+        index=serie.index
+    )
+    
+    return diff_centrada
+
+
+def analizar_diferencias(df: pd.DataFrame, columnas: list = None,
+                        fecha_inicio: str = None, fecha_fin: str = None,
+                        null_threshold: float = 0.5,
+                        std_multiplier: float = 12.0,
+                        diff_absolute_threshold: float = 4.0) -> dict:
+    """
+    Detecta valores atípicos usando análisis de diferencias centradas.
+    
+    Algoritmo:
+    1. Para cada punto, calcula la diferencia mínima con vecinos (diff_centrada)
+    2. Agrupa por día y compara std diaria vs std global
+    3. Marca como atípico si:
+       - diff_centrada >= std_usado * std_multiplier, o
+       - diff simple >= diff_absolute_threshold
+    
+    Args:
+        df: DataFrame con columna 'date_time' y variables numéricas
+        columnas: Lista de columnas a analizar (None = todas las numéricas)
+        fecha_inicio: Fecha inicial del análisis (formato 'YYYY-MM-DD')
+        fecha_fin: Fecha final del análisis (formato 'YYYY-MM-DD')
+        null_threshold: Umbral de datos faltantes por día (0.5 = 50%)
+        std_multiplier: Multiplicador de std para detección (default 12)
+        diff_absolute_threshold: Umbral absoluto de diferencia simple (default 4)
+        
+    Returns:
+        Diccionario con resultados por columna:
+        {
+            'columna_1': {
+                'resultados': DataFrame con ['Datos', 'Etiqueta', 'Diff_centrada'],
+                'n_outliers': int,
+                'n_normales': int,
+                'n_insuficientes': int
+            },
+            ...
+        }
+    """
+    import numpy as np
+    
+    # Validar y preparar datos
+    if 'date_time' not in df.columns:
+        raise ValueError("El DataFrame debe tener columna 'date_time'")
+    
+    df_work = df.copy()
+    df_work['date_time'] = pd.to_datetime(df_work['date_time'])
+    
+    # Seleccionar columnas
+    if columnas is None:
+        columnas = df_work.select_dtypes(include=['float64', 'int64']).columns
+        columnas = [col for col in columnas if col != 'date_time']
+    
+    resultados = {}
+    
+    for columna in columnas:
+        # Crear serie temporal
+        serie = df_work.set_index('date_time')[columna]
+        
+        # Aplicar filtro de fechas si se especifica
+        if fecha_inicio and fecha_fin:
+            serie = serie[fecha_inicio:fecha_fin]
+            rango_dias = pd.date_range(start=fecha_inicio, end=fecha_fin, freq='D')
+        elif fecha_inicio:
+            serie = serie[fecha_inicio:]
+            rango_dias = pd.date_range(start=fecha_inicio, end=serie.index[-1], freq='D')
+        elif fecha_fin:
+            serie = serie[:fecha_fin]
+            rango_dias = pd.date_range(start=serie.index[0], end=fecha_fin, freq='D')
+        else:
+            rango_dias = pd.date_range(start=serie.index[0], end=serie.index[-1], freq='D')
+        
+        # Calcular diferencias
+        diff_centrada = calcular_diff_centrada(serie)
+        diff_simple = serie.diff()
+        std_global = diff_centrada.std()
+        
+        # Si std_global es 0 o NaN, no hay variación real -> todos son normales
+        if pd.isna(std_global) or std_global == 0:
+            labels = ["Normal" if pd.notna(v) else None for v in serie]
+            
+            resultados_df = pd.DataFrame({
+                'Datos': serie,
+                'Etiqueta': labels,
+                'Diff_centrada': diff_centrada
+            })
+            
+            n_outliers = 0
+            n_normales = sum(1 for x in labels if x == "Normal")
+            n_insuficientes = 0
+            
+            resultados[columna] = {
+                'resultados': resultados_df,
+                'n_outliers': n_outliers,
+                'n_normales': n_normales,
+                'n_insuficientes': n_insuficientes,
+                'std_global': std_global if pd.notna(std_global) else 0.0,
+                'parametros': {
+                    'null_threshold': null_threshold,
+                    'std_multiplier': std_multiplier,
+                    'diff_absolute_threshold': diff_absolute_threshold
+                }
+            }
+            continue
+        
+        # Vectorizar etiquetado en lugar de iterar por día (mucho más rápido)
+        labels = []
+        
+        # Agregar columna de fecha para agrupar
+        serie_con_fecha = serie.to_frame(name='valor')
+        serie_con_fecha['fecha'] = serie_con_fecha.index.date
+        serie_con_fecha['diff_centrada'] = diff_centrada
+        serie_con_fecha['diff_simple'] = diff_simple
+        
+        # Procesar por día
+        for fecha, grupo in serie_con_fecha.groupby('fecha'):
+            n = len(grupo)
+            
+            # Si hay demasiados nulos, marcar todo el día como insuficiente
+            if grupo['valor'].isnull().sum() >= n * null_threshold:
+                labels.extend(["No hay data suf"] * n)
+                continue
+            
+            # Calcular std del día
+            std_dia = grupo['diff_centrada'].std()
+            std_usado = std_dia if std_dia > std_global else std_global
+            
+            # Etiquetar vectorialmente
+            es_nan = grupo['diff_centrada'].isna()
+            es_outlier_diff = grupo['diff_centrada'] >= std_usado * std_multiplier
+            es_outlier_simple = grupo['diff_simple'].abs() >= diff_absolute_threshold
+            es_outlier = es_outlier_diff | es_outlier_simple
+            
+            etiquetas_dia = []
+            for i in range(n):
+                if es_nan.iloc[i]:
+                    etiquetas_dia.append(None)
+                elif es_outlier.iloc[i]:
+                    etiquetas_dia.append("Outlier")
+                else:
+                    etiquetas_dia.append("Normal")
+            
+            labels.extend(etiquetas_dia)
+        
+        # Crear DataFrame de resultados
+        resultados_df = pd.DataFrame({
+            'Datos': serie,
+            'Etiqueta': labels,
+            'Diff_centrada': diff_centrada
+        })
+        
+        # Calcular estadísticas
+        n_outliers = sum(1 for x in labels if x == "Outlier")
+        n_normales = sum(1 for x in labels if x == "Normal")
+        n_insuficientes = sum(1 for x in labels if x == "No hay data suf")
+        
+        resultados[columna] = {
+            'resultados': resultados_df,
+            'n_outliers': n_outliers,
+            'n_normales': n_normales,
+            'n_insuficientes': n_insuficientes,
+            'std_global': std_global,
+            'parametros': {
+                'null_threshold': null_threshold,
+                'std_multiplier': std_multiplier,
+                'diff_absolute_threshold': diff_absolute_threshold
+            }
+        }
+    
+    return resultados

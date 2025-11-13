@@ -372,18 +372,60 @@ class PipelineManager:
             'message': 'Análisis de modelo AR pendiente de implementación'
         }
     
-    def run_diff_analysis(self) -> dict:
+    def run_diff_analysis(self, columnas: list = None,
+                         fecha_inicio: str = None, fecha_fin: str = None,
+                         null_threshold: float = 0.5,
+                         std_multiplier: float = 12.0,
+                         diff_absolute_threshold: float = 4.0) -> dict:
         """
-        Análisis de diferencias (reserva)
+        Análisis de diferencias centradas
         
+        Detecta valores atípicos usando el método de diferencias centradas implementado
+        en Modelos/DIFF_model.ipynb. Para cada punto, calcula la diferencia mínima con
+        sus vecinos y compara con umbrales adaptativos por día.
+        
+        Args:
+            columnas: Lista de columnas a analizar (None = todas las numéricas)
+            fecha_inicio: Fecha inicial 'YYYY-MM-DD' (None = desde el inicio)
+            fecha_fin: Fecha final 'YYYY-MM-DD' (None = hasta el final)
+            null_threshold: Umbral de datos faltantes por día (0.5 = 50%)
+            std_multiplier: Multiplicador de desviación estándar (default 12)
+            diff_absolute_threshold: Umbral absoluto de diferencia simple (default 4)
+            
         Returns:
-            Diccionario con resultados del análisis de diferencias
+            Diccionario con resultados del análisis de diferencias, incluyendo:
+            - resultados: DataFrame con etiquetas por cada variable
+            - estadísticas: conteo de outliers, normales, datos insuficientes
+            - parámetros utilizados
+            
+        Ejemplo de uso:
+            pm = PipelineManager()
+            pm.load_data("data.csv")
+            result = pm.run_diff_analysis(
+                fecha_inicio='2025-06-01',
+                fecha_fin='2025-08-09',
+                std_multiplier=12
+            )
+            print(f"Outliers detectados en columna_X: {result['columna_X']['n_outliers']}")
         """
         if self.df is None:
-            raise ValueError("请先加载数据")
+            raise ValueError("Por favor, cargue los datos primero con load_data()")
         
-        print("⚠️  La funcionalidad de análisis de diferencias aún no está implementada")
+        # Llamar a la función de análisis de diferencias
+        resultados = self.analysis_funcs.analizar_diferencias(
+            self.df,
+            columnas=columnas,
+            fecha_inicio=fecha_inicio,
+            fecha_fin=fecha_fin,
+            null_threshold=null_threshold,
+            std_multiplier=std_multiplier,
+            diff_absolute_threshold=diff_absolute_threshold
+        )
+        
+        # Formatear resultado para el pipeline
         return {
-            'status': 'not_implemented',
-            'message': 'Análisis de diferencias pendiente de implementación'
+            'status': 'success',
+            'message': 'Análisis de diferencias completado exitosamente',
+            'resultados': resultados,
+            'n_columnas_analizadas': len(resultados)
         }

@@ -205,21 +205,54 @@ class AutoAnalyzer:
                 f.write(str(result))
     
     def _analyze_diff(self, df: pd.DataFrame, report_dir: Path):
-        """差分分析（预留接口）"""
+        """Análisis de diferencias centradas"""
+        from time import time
+        start_time = time()
+        
         print(f"\nIniciando análisis de diferencias...")
         print("-" * 50)
         
+        # Ejecutar análisis con parámetros por defecto
         result = self.pipeline.run_diff_analysis()
         
+        # Guardar reporte
         with open(report_dir / "5_reporte_diferencias.txt", "w", encoding='utf-8') as f:
-            f.write("Reporte de diferencias\n")
+            f.write("Reporte de análisis de diferencias centradas\n")
             f.write("=" * 50 + "\n\n")
             
-            if result.get('status') == 'not_implemented':
+            if result.get('status') == 'success':
+                f.write(f"✓ Análisis completado exitosamente\n")
+                f.write(f"Columnas analizadas: {result['n_columnas_analizadas']}\n\n")
+                
+                # Resumen por columna
+                for col, datos in result['resultados'].items():
+                    f.write(f"\n{col}:\n")
+                    f.write(f"  • Outliers detectados: {datos['n_outliers']}\n")
+                    f.write(f"  • Valores normales: {datos['n_normales']}\n")
+                    f.write(f"  • Datos insuficientes: {datos['n_insuficientes']}\n")
+                    f.write(f"  • Desviación estándar global: {datos['std_global']:.4f}\n")
+                
+                f.write(f"\nParámetros utilizados:\n")
+                if result['resultados']:
+                    primer_col = list(result['resultados'].keys())[0]
+                    params = result['resultados'][primer_col]['parametros']
+                    f.write(f"  • Umbral de nulos por día: {params['null_threshold']}\n")
+                    f.write(f"  • Multiplicador de std: {params['std_multiplier']}\n")
+                    f.write(f"  • Umbral de diferencia absoluta: {params['diff_absolute_threshold']}\n")
+                
+                # Guardar CSVs detallados
+                for col, datos in result['resultados'].items():
+                    csv_filename = report_dir / f"5_diff_{col}.csv"
+                    datos['resultados'].to_csv(csv_filename, index=True, encoding='utf-8-sig')
+                
+                print(f"✓ Análisis completado en {time() - start_time:.2f}s")
+                print(f"  → {result['n_columnas_analizadas']} columnas analizadas")
+                
+            else:
                 f.write("⚠️  La funcionalidad de análisis de diferencias aún no está implementada\n")
                 f.write("A la espera de completarlo en Modelos/DIFF_model.ipynb para integrarlo\n")
-            else:
-                f.write(str(result))
+                print(f"⚠️ {result.get('message', 'Error desconocido')}")
+
     
     def _analyze_drift(self, df: pd.DataFrame, report_dir: Path):
         """Drift 分析（预留接口）"""
