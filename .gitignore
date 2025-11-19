@@ -5,3 +5,4 @@ __pycache__/
 resultados_analisis/
 *.txt
 *.png
+drift_eval_plots_min_png/
