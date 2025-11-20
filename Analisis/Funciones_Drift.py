@@ -17,14 +17,6 @@ warnings.filterwarnings("ignore")
 
 
 # ---------------------- Utilidades base ---------------------- #
-def strip_outliers(df: pd.DataFrame) -> pd.DataFrame:
-    """Si existe una columna is_outlier booleana/1-0, quita outliers."""
-    if "is_outlier" not in df.columns:
-        return df
-    s = df["is_outlier"].astype(str).str.lower()
-    return df.loc[~s.isin(["1","true","t","yes","y"])].drop(columns=["is_outlier"])
-
-
 def resample_mixed(df: pd.DataFrame, freq: str, agg: Literal["mean","median"]) -> pd.DataFrame:
     """Resamplea numéricas con mean/median y el resto por moda."""
     if df.empty: 
@@ -266,7 +258,7 @@ def make_report_for_plant(
     RESAMPLE: Optional[str],
     RESAMPLE_AGG: Literal["mean","median"],
     EXCLUDE_COLUMNS: list[str],
-    NUM_METHOD: Literal["auto","ks","wasserstein","psi","anderson","cramer","mannwhitney"],
+    NUM_METHOD: Literal["ks","wasserstein","psi"],
     NUM_THRESHOLD: Optional[float],
     DECAY_HALF_LIFE_HOURS: int = 24*7,
     DECAY_WEIGHT_MASS: float = 0.95,
@@ -283,7 +275,7 @@ def make_report_for_plant(
     df = df.copy()
     df[dt] = pd.to_datetime(df[dt], errors="coerce")
     df = df.dropna(subset=[dt]).sort_values(dt).set_index(dt)
-    df = strip_outliers(df)
+    df = df
 
     # Aplicar flags (si existen)
     if flag_csv and Path(flag_csv).exists():
@@ -336,8 +328,8 @@ def make_report_for_plant(
         ref_final, cur_final,
         numeric_cols=numeric_cols,
         categorical_cols=categorical_cols,
-        psi_threshold_numeric=(NUM_THRESHOLD if (NUM_THRESHOLD is not None and NUM_METHOD in ["psi","auto"]) else 0.2),
-        psi_threshold_categorical=(NUM_THRESHOLD if (NUM_THRESHOLD is not None and NUM_METHOD in ["psi","auto"]) else 0.2),
+        psi_threshold_numeric=(NUM_THRESHOLD if (NUM_THRESHOLD is not None and NUM_METHOD in ["psi"]) else 0.2),
+        psi_threshold_categorical=(NUM_THRESHOLD if (NUM_THRESHOLD is not None and NUM_METHOD in ["psi"]) else 0.2),
         n_bins_numeric=10,
     )
     metrics_path = output_dir / f"{plant_name}_{strategy}_metrics.csv"
@@ -375,7 +367,7 @@ def run_drift_batch(
     RESAMPLE: Optional[str],
     RESAMPLE_AGG: Literal["mean","median"],
     EXCLUDE_COLUMNS: list[str],
-    NUM_METHOD: Literal["auto","ks","wasserstein","psi","anderson","cramer","mannwhitney"],  # compat
+    NUM_METHOD: Literal["ks","wasserstein","psi"],
     NUM_THRESHOLD: Optional[float],
     DECAY_HALF_LIFE_HOURS: int = 24*7,
     DECAY_WEIGHT_MASS: float = 0.95,
@@ -436,9 +428,9 @@ def run_drift_batch(
 # ================== PATCH 1: SciPy guard & column cleaners ==================
 # Coloca esto al FINAL de drift_funcs.py
 
-# --- SciPy availability flag (para ks / wasserstein / mannwhitney) ---
+# --- SciPy availability flag (para ks / wasserstein) ---
 try:
-    from scipy.stats import ks_2samp, wasserstein_distance, mannwhitneyu
+    from scipy.stats import ks_2samp, wasserstein_distance
     _HAVE_SCIPY = True
 except Exception:
     _HAVE_SCIPY = False
@@ -474,12 +466,6 @@ def _drop_useless_cols(ref: pd.DataFrame, cur: pd.DataFrame, min_non_null: int =
 
 
 # ================== PATCH 2: Multi-métricas robustas =======================
-from typing import Tuple, Dict
-
-def list_supported_metrics() -> list[str]:
-    # Si prefieres manejar la lista EN el notebook, no uses esta función.
-    # La dejamos por compatibilidad.
-    return ["psi", "ks", "wasserstein", "mannwhitney"]
 
 def _score_numeric_series(a: pd.Series, b: pd.Series, metric: str) -> float | None:
     a = pd.to_numeric(a, errors="coerce").dropna()
@@ -494,11 +480,7 @@ def _score_numeric_series(a: pd.Series, b: pd.Series, metric: str) -> float | No
     if metric == "wasserstein":
         if not _HAVE_SCIPY: return None
         return float(wasserstein_distance(a, b))
-    if metric == "mannwhitney":
-        if not _HAVE_SCIPY: return None
-        res = mannwhitneyu(a, b, alternative="two-sided")
-        n, m = len(a), len(b)
-        return float(res.statistic / (n*m if n*m > 0 else 1))
+    
     # fallback
     return psi_numeric(a, b, n_bins=10)
 
@@ -515,7 +497,7 @@ def _dispatch_build_metrics(
     num_threshold: float | None = None
 ) -> pd.DataFrame:
     # thresholds por defecto
-    default_thr = {"psi": 0.2, "ks": 0.15, "wasserstein": float("nan"), "mannwhitney": 0.55}
+    default_thr = {"psi": 0.2, "ks": 0.15, "wasserstein": float("nan")}
     thr = default_thr.get(metric, 0.2) if num_threshold is None else num_threshold
 
     rows = []
@@ -602,7 +584,7 @@ def compare_with_metric(
     RESAMPLE: "Optional[str]",
     RESAMPLE_AGG: "Literal['mean','median']",
     EXCLUDE_COLUMNS: list[str],
-    metric: "Literal['psi','ks','wasserstein','mannwhitney']" = "psi",
+    metric: "Literal['psi','ks','wasserstein']" = "wasserstein",
     num_threshold: float | None = None,
     DECAY_HALF_LIFE_HOURS: int = 24*7,
     DECAY_WEIGHT_MASS: float = 0.95,
@@ -618,7 +600,7 @@ def compare_with_metric(
     _df.columns = [str(c) for c in _df.columns]
     _df[dt] = pd.to_datetime(_df[dt], errors="coerce")
     _df = _df.dropna(subset=[dt]).sort_values(dt).set_index(dt)
-    _df = strip_outliers(_df)
+    _df = _df
 
     now = _df.index.max()
     cur_start = now - pd.to_timedelta(CURRENT_WINDOW)
@@ -676,7 +658,7 @@ def compare_with_metric(
 
 # ================== AGGREGATE & MEMORY RUNNERS (mínimos CSV) ==================
 
-DEFAULT_METRICS = ['ks', 'mannwhitney', 'psi', 'wasserstein']
+DEFAULT_METRICS = ['ks', 'psi', 'wasserstein']
 
 def _compute_one(
     df: pd.DataFrame,
@@ -854,7 +836,6 @@ def run_drift_aggregate(
         )
 
     return paths
-
 
 
 def run_drift_minimal(
